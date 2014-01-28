@@ -17,10 +17,12 @@ ActiveRecord::Schema.define(version: 20140128223040) do
   enable_extension "plpgsql"
 
   create_table "bookmarks", force: true do |t|
-    t.text    "url"
-    t.text    "title"
-    t.text    "comment"
-    t.boolean "favorite"
+    t.text     "url"
+    t.text     "title"
+    t.text     "comment"
+    t.boolean  "favorite"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
