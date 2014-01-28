@@ -1,0 +1,8 @@
+<p><%= link_to 'New Bookmark', new_bookmark_path %></p>
+
+<dl>
+	<% @bookmarks.each do |bookmark| %>
+		<dt><%= link_to bookmark.title, bookmark %></dt>
+		<dd><%= link_to bookmark.url, bookmark %></dd>
+	<% end %>
+</dl>
