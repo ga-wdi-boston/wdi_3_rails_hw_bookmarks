@@ -1,0 +1,15 @@
+<%= form_for @bookmark do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+
+  <%= form.label :url %>
+  <%= form.text_field :url, placeholder: 'http:// required' %>
+
+  <%= form.label :comment %>
+  <%= form.text_field :comment, placeholder: 'optional' %>
+
+  <%= form.label :favorite %>
+  <%= form.check_box :favorite %>
+
+  <%= form.submit %>
+<% end %>

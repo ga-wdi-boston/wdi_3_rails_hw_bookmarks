@@ -2,6 +2,8 @@
 
 <ul>
 <% @bookmarks.each do |bookmark| %>
-  <li><%= link_to bookmark.title, bookmark %></li>
+  <li><%= link_to bookmark.title, bookmark %>
+  <%= link_to "Edit", edit_bookmark_path(bookmark) %> |
+  <%= link_to "Delete", bookmark_path(bookmark), method: :delete, confirm: 'PZ BKMK?' %></li>
 <% end %>
 </ul>
