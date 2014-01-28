@@ -10,7 +10,7 @@ class BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new(bookmark_params)
     if @bookmark.save
-      flash[:notice] = "Created #{@bookmark[:title]}"
+      flash[:notice] = "Created bookmark"
       redirect_to @bookmark
     else
       flash.now[:error] = @bookmark.errors.full_messages.join(', ')
