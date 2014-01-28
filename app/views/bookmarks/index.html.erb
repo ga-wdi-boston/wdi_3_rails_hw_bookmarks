@@ -1,1 +1,6 @@
-Hello
+<h2>Index</h2>
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+  <li><%= link_to bookmark[:title], bookmark %></li>
+  <% end %>
+</ul>

@@ -2,6 +2,7 @@ class BookmarksController < ApplicationController
   before_action :find_bookmark, only: [:show, :edit, :update, :destroy]
 
   def index
+    @bookmarks = Bookmark.order(updated_at: :desc)
   end
 
   def show
