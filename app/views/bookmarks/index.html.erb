@@ -2,10 +2,10 @@
 <% @bookmarks.each do |bookmark| %>
 	<p>
 		<% if bookmark.favorite %>
-			<strong><%= link_to bookmark.title, bookmark.url, target: '_blank' %></strong>
+			<strong><%= link_to bookmark.title, bookmark.url, target: '_blank' %></strong> | <%= link_to 'Edit', edit_bookmark_path(bookmark.id) %> | <%= link_to 'Delete', bookmark_path(bookmark), method: :delete, confirm: 'Are you sure?' %>
 		<% else %>
-			<%= link_to bookmark.title, bookmark.url %>
+			<%= link_to bookmark.title, bookmark.url %> | <%= link_to 'Edit', edit_bookmark_path(bookmark) %> | <%= link_to 'Delete', bookmark_path(bookmark), method: :delete, confirm: 'Are you sure?' %>
 		<% end %>
 	</p>
 <% end %>
-<%= link_to 'Add a new bookmark', new_bookmark_path %>
+<%= link_to 'Add a new bookmark', new_bookmark_path, class: 'btn btn-success' %>
