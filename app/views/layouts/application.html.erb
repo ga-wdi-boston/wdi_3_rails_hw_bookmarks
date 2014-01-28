@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header><%= link_to 'Bookmarker', root_path %></header>
+
+<% if flash[:error].present? %>
+  <%= flash.now[:error] %>
+<% end %>
+
+<% if flash[:notice].present? %>
+  <%= flash.now[:notice] %>
+<% end %>
 
 <%= yield %>
 

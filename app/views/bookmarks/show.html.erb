@@ -1,0 +1,5 @@
+<%= link_to @bookmark.title, @bookmark.url, :target => '_blank' %>
+<% if @bookmark.favorite %>
+  Favorite
+<% end %>
+<%= @bookmark.comment %>
