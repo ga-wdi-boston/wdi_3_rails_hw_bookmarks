@@ -1,4 +1,4 @@
 class Bookmark < ActiveRecord::Base
-  validates :name, presence: true, length: { maximum: 100 }
+  validates :name, presence: true
   validates :url, presence: true
 end

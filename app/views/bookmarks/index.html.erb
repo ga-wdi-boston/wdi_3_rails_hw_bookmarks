@@ -1,2 +1,9 @@
 <h1>Bookmarks#index</h1>
-<p>Find me in app/views/bookmarks/index.html.erb</p>
+
+
+<p> Janice Bookmarks </p>
+	<% @bookmarks.each do |bookmark| %>
+		<p>name: <%= link_to bookmark.name, bookmark_path(bookmark.id) %></p>
+		<p>url: <%= bookmark.url %></p>
+	<% end %>
+<p><%= link_to 'New Bookmark', new_bookmark_path %></p>
