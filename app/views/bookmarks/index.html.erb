@@ -1,0 +1,11 @@
+<h2>Bookmarks</h2>
+<% @bookmarks.each do |bookmark| %>
+	<p>
+		<% if bookmark.favorite %>
+			<strong><%= link_to bookmark.title, bookmark.url, target: '_blank' %></strong>
+		<% else %>
+			<%= link_to bookmark.title, bookmark.url %>
+		<% end %>
+	</p>
+<% end %>
+<%= link_to 'Add a new bookmark', new_bookmark_path %>
