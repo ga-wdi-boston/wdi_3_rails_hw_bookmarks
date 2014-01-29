@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20140128223048) do
     t.text    "title"
     t.text    "comment"
     t.boolean "favorite"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

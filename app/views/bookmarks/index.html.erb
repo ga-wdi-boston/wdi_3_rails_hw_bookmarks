@@ -1,0 +1,15 @@
+<p><%= link_to 'New bookmark', new_bookmark_path %></p>
+
+<h2>Here's a list of your Bookmarks:</h2>
+<ol>
+  <% @bookmarks.each do |bookmark| %>
+  	<% if bookmark.favorite == true %>
+
+  	<strong><li><%= truncate(bookmark.title, length: 100) %>   <em>:</em> <%= link_to bookmark.URL, bookmark %></li>
+  	<em>Comment: <%= bookmark.comment %></em></strong>
+  	<% else %>
+  	<li><%= truncate(bookmark.title, length: 100) %>   <em>:</em> <%= link_to bookmark.URL, bookmark %></li>
+  	<em>Comment: <%= bookmark.comment %></em>
+  	<% end %>
+  <% end %>
+</ol>

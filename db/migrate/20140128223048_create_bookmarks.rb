@@ -5,6 +5,8 @@ class CreateBookmarks < ActiveRecord::Migration
       t.text :title
       t.text :comment
       t.boolean :favorite
+
+      t.timestamps
     end
   end
 end
