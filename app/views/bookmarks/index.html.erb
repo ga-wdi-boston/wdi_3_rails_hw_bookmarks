@@ -1,0 +1,33 @@
+<h1>Bookmarks#index</h1>
+
+
+<h2>  Bookmarks Home Page </h2>
+<ul>
+
+		<% @bookmarks.each do |bookmark| %>
+			<li>
+			<dl>
+				<% if bookmark.favorite == true %>
+					<dt><strong>favorite:</strong><dt>
+					<dd><strong><%= bookmark.favorite %></strong></dd>
+				<%else%>
+					<dt>favorite:<dt>
+					<dd><%= bookmark.favorite %></dd>
+				<%end%>
+				<dt>name:</dt>
+				<dd><%= link_to bookmark.name, bookmark_path(bookmark.id) %></dd>
+				<dt>url:<dt>
+				<dd><a href="<%= bookmark.url %>" target="_blank"> <%= bookmark.url %> </a></dd>
+			</dl>
+			<p><%= link_to 'Edit Bookmark', "/bookmarks/#{bookmark.id}/edit" %></p>
+			<%= form_tag("/bookmarks/#{bookmark.id}", method: "delete") do -%>
+				<div><%= submit_tag 'delete' %></div>
+			<%end%>
+		<%end%>
+		</li>
+</ul>
+<p><%= link_to 'New Bookmark', new_bookmark_path %></p>
+
+
+
+
