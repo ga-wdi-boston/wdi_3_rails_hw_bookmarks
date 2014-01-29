@@ -46,7 +46,7 @@ class BookmarksController < ApplicationController
       flash[:notice] = "Updated bookmark"
       redirect_to @bookmark
     else
-      flash.now[:errors] = @bookmark.errors.full_messages.join(', ')
+      flash.now[:error] = @bookmark.errors.full_messages.join(', ')
       render :edit
     end
   end
@@ -56,7 +56,7 @@ class BookmarksController < ApplicationController
       flash[:notice] = "Bookmark deleted"
       redirect_to bookmarks_path
     else
-      flash.now[:errors] = @bookmark.errors.full_messages.join(', ')
+      flash[:error] = @bookmark.errors.full_messages.join(', ')
       redirect_to :back
     end
   end
