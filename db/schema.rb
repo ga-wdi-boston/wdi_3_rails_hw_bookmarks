@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20140129023053) do
     t.text     "url"
     t.text     "title"
     t.text     "comment"
-    t.integer  "favorite"
+    t.boolean  "favorite"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

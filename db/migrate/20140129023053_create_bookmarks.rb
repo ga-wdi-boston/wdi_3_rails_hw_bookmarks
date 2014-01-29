@@ -4,7 +4,7 @@ class CreateBookmarks < ActiveRecord::Migration
       t.text :url
       t.text :title
       t.text :comment
-      t.integer :favorite
+      t.boolean	 :favorite
 
       t.timestamps
     end
