@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-  before_action :find_bookmark, only: [:show, :edit, :update, :destroy]
+  before_action :find_bookmark, only: [:show, :edit, :update, :destroy, :ext]
 
   def index
     @bookmarks = Bookmark.order(updated_at: :desc)
@@ -48,6 +48,12 @@ class BookmarksController < ApplicationController
       flash.now[:error] = @bookmark.errors.full_messages.join(', ')
       redirect action: :index
     end
+  end
+
+  def ext
+    @bookmark[:visits].present? ? @bookmark[:visits] += 1 : @bookmark[:visits] = 1
+    @bookmark.save
+    redirect_to @bookmark[:url]
   end
 
   # Private methods
