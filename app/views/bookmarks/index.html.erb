@@ -1,0 +1,14 @@
+<div class="new-bookmark">
+    <%= link_to 'New Bookmark', new_bookmark_path %>
+</div>
+
+<div class="booklist">
+  <ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li><%= link_to bookmark.title, bookmark %>
+    <span class="right-pm"><%= render :partial => 'editdelete', locals: {bookmark: bookmark} %></span>
+    </li>
+    <li><span class="visists">Visited <%= bookmark.visits %> times</span></li>
+  <% end %>
+  </ul>
+</div>
