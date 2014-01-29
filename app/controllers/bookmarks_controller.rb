@@ -12,7 +12,6 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    binding.pry
     @bookmark = Bookmark.new(bookmark_params)
 
     if @bookmark.save

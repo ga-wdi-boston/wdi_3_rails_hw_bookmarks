@@ -1,5 +1,9 @@
 <h1>Your current Bookmarks</h1>
 <p><%= link_to 'New Bookmark', new_bookmark_path %></p>
 <% @bookmarks.each do | bm | %>
+	<% if bm.favorite == true %>
+<p><b><%= link_to bm.title, bm %></b></p>
+	<% else %>
 <p><%= link_to bm.title, bm %></p>
+	<% end %>
 <% end %>
