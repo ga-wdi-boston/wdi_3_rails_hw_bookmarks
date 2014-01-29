@@ -1,0 +1,8 @@
+<dl>
+
+	<% @bookmarks.each do |bookmark| %>
+		<dt> <%= bookmark.name %> </dt>
+		<dd> <a href="bookmark.url"><%= bookmark.url %></a> </dd>
+	<% end %>
+
+</dl>
