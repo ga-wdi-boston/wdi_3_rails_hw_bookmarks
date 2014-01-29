@@ -5,10 +5,26 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link rel='stylesheet' href='/style.css'>
+	<link href='http://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
+<div class='container'>
+	<h1><%= link_to 'Bookmarks', root_path %></h1>
+
+	<div class= 'alert'>
+		<% if flash[:error].present? %>
+			<p class='error'><%= flash[:error] %></p>
+		<% end %>
+		<% if flash[:notice].present? %>
+			<p class='notice'><%= flash[:notice] %></p>
+		<% end %>
+	</div>
+
 <%= yield %>
+
+</div>
 
 </body>
 </html>

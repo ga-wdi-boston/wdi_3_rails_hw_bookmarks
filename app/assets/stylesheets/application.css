@@ -1,13 +1,145 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+
+body {
+	font-family: 'Karla', sans-serif;
+	color: white;
+	background: url('bookshelf.jpg') no-repeat fixed;
+	background-size: 120%;
+}
+
+h1 a, h1 a:visited {
+	text-align: left;
+	font-size: 200%;
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+}
+
+h1 a:hover {
+	color: #FFC896
+}
+
+h2 {
+	font-size: 130%;
+
+}
+
+input {
+	border-radius: 5px;
+	height: 30px;
+	width: 150px;
+	border: none;
+	margin: 0 15px 15px 0;
+	padding: 5px 5px 5px 10px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+#form {
+	background: url('bm-sideways.png') no-repeat;
+	height: 115px;
+	padding: 30px 0 0 30px;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.black {
+	background: rgba(0, 0, 0, .7);
+}
+
+.list {
+	padding: 30px 30px;
+}
+
+.button {
+	height: 30px;
+	width: auto;
+	padding: 5px 10px;
+	background: #7A060B;
+	color: white;
+	font-weight: bold;
+	margin-bottom: -1px;
+}
+
+.button:hover {
+		background: #570306;
+		transition: all 0.3s ease;
+}
+
+.list-header {
+	color: gray;
+	font-size: 110%
+}
+
+.star {
+	background: url(star.png) no-repeat;
+}
+
+.alert {
+	height: 30px;
+	margin-top: -10px;
+}
+
+.error {
+	height: 30px;
+	color: red;
+	padding-top: 5px;
+	background: rgba(255, 255, 255, .8);
+	text-align: center;
+}
+
+.notice {
+	height: 30px;
+	color: green;
+	padding-top: 5px;
+	background: rgba(255, 255, 255, .8);
+	text-align: center;
+
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	display: inline-block;
+	list-style-type: none;
+	padding: 10px 10px;
+	width: 90px;
+}
+
+ul li.short {
+	width: 50px;
+}
+
+
+a, a:visited {
+	color: #FFC896;
+}
+
+a:hover {
+	color: #E8A05F;
+}
+
+
+
+@media (max-width: 500px) {
+
+	h1 {
+		font-size: 300%;
+	}
+
+	#form {
+		background: url('bm-sideways.png') no-repeat;
+	}
+
+	ul li {
+	padding: 10px 5px 3px 0;
+	}
+
+	ul.entry li:first-child {
+		width: 75px;
+	}

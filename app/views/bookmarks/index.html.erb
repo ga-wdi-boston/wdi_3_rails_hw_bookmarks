@@ -1,0 +1,38 @@
+<h2>ADD NEW BOOKMARK</h2>
+<div id='form'>
+	<%= form_for @bookmark do |form| %>
+		<%= form.text_field :name, placeholder: 'Site name' %>
+		<%= form.text_field :comment, placeholder: 'Comment (optional)'%>
+		<%= form.submit 'Add Bookmark', class: 'button' %><br>
+		<%= form.text_field :url, placeholder: 'Paste full URL here' %>
+		<%= form.label(:favorite) %>
+		<%= form.check_box :favorite %>
+	<% end %>
+</div>
+
+<div class='list black'>
+	<ul>
+		<ul class='list-header'>
+			<li>NAME</li>
+			<li>URL</li>
+			<li>COMMENT</li>
+			<li>FAVORITE</li>
+		</ul>
+
+		<% @all_bookmarks.each do |bookmark| %>
+			<ul class='in-line'>
+				<li><%= link_to bookmark.name, bookmark %></li>
+				<li><%= link_to "Visit site", bookmark.url, target: "_blank"%></li>
+				<li><%= bookmark.comment %></li>
+				<% if bookmark.favorite == true %>
+						<li class='star'></li>
+				<% else %>
+						<li></li>
+				<% end %>
+				<li class='short'><%= link_to "Edit", edit_bookmark_path(bookmark) %></li>
+				<li class='short'><%= link_to "Delete", bookmark_path(bookmark), method: :delete, confirm: "Are you sure you want to delete this bookmark?"%></li>
+			</ul>
+		<% end %>
+
+	</ul>
+</div>

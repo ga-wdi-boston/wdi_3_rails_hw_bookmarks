@@ -1,0 +1,20 @@
+<div class='list black'>
+	<h2><%= @bookmark.name %></h2>
+
+	<ul class='list-header'>
+			<li>URL</li>
+			<li>COMMENT</li>
+			<li>FAVORITE</li>
+		</ul>
+	<ul>
+		<li><%= link_to "Visit site", @bookmark.url, target: "_blank"%></li>
+		<li><%= @bookmark.comment %></li>
+		<% if @bookmark.favorite == true %>
+						<li class='star'></li>
+				<% else %>
+						<li></li>
+				<% end %>
+		<li class='short'><%= link_to "Edit", edit_bookmark_path(@bookmark) %></li>
+		<li class='short'><%= link_to "Delete", bookmark_path(@bookmark), method: :delete, confirm: "Are you sure you want to delete this bookmark?"%></li>
+	</ul>
+</div>
