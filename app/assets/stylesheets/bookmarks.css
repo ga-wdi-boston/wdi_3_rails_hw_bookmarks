@@ -10,11 +10,13 @@ h1 {
 ol {
   list-style: none;
   color: black;
+  font-size: 0;
   }
    li {
-    display: inline-block;
-    padding: 5px;
+    display: inline;
+    font-size: 12px;
         }
 ul {
   list-style: none;
+  font-size: 12px;
 }

@@ -5,3 +5,6 @@
   <li><%= @bookmark.comment %></li>
   <li><%= @bookmark.favourite? %></li>
 </ul>
+<p>
+  <%= link_to 'Create Another Bookmark', new_bookmark_path %><br>
+  <%= link_to 'Back to list', bookmarks_path %></p>
