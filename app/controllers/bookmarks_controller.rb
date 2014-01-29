@@ -1,11 +1,16 @@
 class BookmarksController < ApplicationController
-	before_action :find_bookmark, only: [:edit, :update, :destroy]
+	before_action :find_bookmark, only: [:edit, :update, :destroy, :show]
 
 	def index
 		@bookmarks = Bookmark.all.order(:title)
 	end
 	def new
 		@bookmark = Bookmark.new
+	end
+
+	def show
+		redirect_to @bookmark.url
+		@bookmark.increment! :clicked
 	end
 
 	def create

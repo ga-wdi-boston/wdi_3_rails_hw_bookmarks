@@ -2,9 +2,11 @@
 <% @bookmarks.each do |bookmark| %>
 	<p>
 		<% if bookmark.favorite %>
-			<strong><%= link_to bookmark.title, bookmark.url, target: '_blank' %></strong> | <%= link_to 'Edit', edit_bookmark_path(bookmark.id) %> | <%= link_to 'Delete', bookmark_path(bookmark), method: :delete, confirm: 'Are you sure?' %>
-		<% else %>
-			<%= link_to bookmark.title, bookmark.url %> | <%= link_to 'Edit', edit_bookmark_path(bookmark) %> | <%= link_to 'Delete', bookmark_path(bookmark), method: :delete, confirm: 'Are you sure?' %>
+			<strong>
+		<% end %>
+			<%= link_to bookmark.title, bookmark_path(bookmark), target: '_blank' %> | <%= link_to 'Edit', edit_bookmark_path(bookmark.id) %> | <%= link_to 'Delete', bookmark_path(bookmark), method: :delete, confirm: 'Are you sure?' %> (<%= bookmark.clicked %>)
+		<% if bookmark.favorite %>
+			</strong>
 		<% end %>
 	</p>
 <% end %>
