@@ -7,12 +7,17 @@
 		<% @bookmarks.each do |bookmark| %>
 			<li>
 			<dl>
+				<% if bookmark.favorite == true %>
+					<dt><strong>favorite:</strong><dt>
+					<dd><strong><%= bookmark.favorite %></strong></dd>
+				<%else%>
+					<dt>favorite:<dt>
+					<dd><%= bookmark.favorite %></dd>
+				<%end%>
 				<dt>name:</dt>
 				<dd><%= link_to bookmark.name, bookmark_path(bookmark.id) %></dd>
 				<dt>url:<dt>
 				<dd><%= bookmark.url %></dd>
-				<dt>favorite:<dt>
-				<dd><%= bookmark.favorite %></dd>
 			</dl>
 			<p><%= link_to 'Edit Bookmark', "/bookmarks/#{bookmark.id}/edit" %></p>
 			<%= form_tag("/bookmarks/#{bookmark.id}", method: "delete") do -%>
@@ -22,7 +27,6 @@
 		</li>
 </ul>
 <p><%= link_to 'New Bookmark', new_bookmark_path %></p>
-
 
 
 
