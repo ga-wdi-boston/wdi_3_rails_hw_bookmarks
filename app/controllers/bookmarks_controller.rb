@@ -20,14 +20,29 @@ class BookmarksController < ApplicationController
     redirect_to action: :index
   end
 
-  def edit
+  def show
+    redirect_to action: :index
   end
+
+def edit
+ @bookmark = Bookmark.find(params[:id])
+end
+
+def update
+ # Find object using form parameters
+ @bookmark = Bookmark.find(params[:id])
+ # Update the object
+ if @bookmark.update_attributes(bookmark_params)
+   redirect_to(@bookmark)
+  else
+    render :edit
+ end
+end
+
 
   private
 
   def bookmark_params
     params.require(:bookmark).permit(:title, :url, :comment)
   end
-
-
 end
