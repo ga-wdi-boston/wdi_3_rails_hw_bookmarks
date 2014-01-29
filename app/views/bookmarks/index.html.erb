@@ -25,7 +25,7 @@
 				<li><%= link_to bookmark.name, bookmark %></li>
 				<li><%= link_to "Visit site", bookmark.url, target: "_blank"%></li>
 				<li><%= bookmark.comment %></li>
-				<li class='center'><%= bookmark.click_count %></li>
+				<li><%= bookmark.click_count %></li>
 				<% if bookmark.favorite == true %>
 						<li class='star'></li>
 				<% else %>

@@ -73,11 +73,7 @@ input {
 }
 
 .star {
-	background: url(star.png) no-repeat;
-}
-
-.center {
-	padding-left: 35px;
+	background: url(star.png) no-repeat center;
 }
 
 .alert {
@@ -112,6 +108,7 @@ ul li {
 	list-style-type: none;
 	padding: 10px 10px;
 	width: 90px;
+	text-align: center;
 }
 
 ul li.short {

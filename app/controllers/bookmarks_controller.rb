@@ -16,13 +16,14 @@ class BookmarksController < ApplicationController
 
 	def create
 		@bookmark = Bookmark.new(bookmark_params)
+		@all_bookmarks = Bookmark.all.order(:name)
 
 		if @bookmark.save
 			flash[:notice] = 'Bookmark saved'
 			redirect_to root_path
 		else
-			flash[:error] = @bookmark.errors.full_messages.join(', ')
-			redirect_to root_path
+			flash.now[:error] = @bookmark.errors.full_messages.join(', ')
+			render :index
 		end
 	end
 
