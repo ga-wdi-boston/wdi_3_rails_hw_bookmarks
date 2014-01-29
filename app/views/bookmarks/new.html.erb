@@ -1,0 +1,7 @@
+<%= form_for @bookmark do |form| %>
+	<p><%= form.text_field :name, placeholder: "Name" %></p>
+	<p><%= form.text_field :url, placeholder: "http://" %></p>
+	<p><%= form.text_field :comment, placeholder: "optional comment" %></p>
+	<p><%= form.label(:favorite) %><%= form.check_box :favorite %></p>
+	<p><%= form.submit %> </p>
+<% end %>
