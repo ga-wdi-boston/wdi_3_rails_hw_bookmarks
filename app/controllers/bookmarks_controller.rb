@@ -27,10 +27,11 @@ class BookmarksController < ApplicationController
 	end
 
 	def edit
+		@bookmark = Bookmark.find_by( id: params[:id])
 	end
 
   def update
-  	@bookmark = Bookmark.new(bookmark_params)
+  	@bookmark = Bookmark.find_by( id: params[:id])
     @bookmark.assign_attributes(bookmark_params)
     if @bookmark.save
       flash[:notice] = 'Updated the bookmark!'
