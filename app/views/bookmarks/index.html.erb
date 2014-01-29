@@ -1,14 +1,6 @@
 <h2>ADD NEW BOOKMARK</h2>
-<div id='form'>
-	<%= form_for @bookmark do |form| %>
-		<%= form.text_field :name, placeholder: 'Site name' %>
-		<%= form.text_field :comment, placeholder: 'Comment (optional)'%>
-		<%= form.submit 'Add Bookmark', class: 'button' %><br>
-		<%= form.text_field :url, placeholder: 'Paste full URL here' %>
-		<%= form.label(:favorite) %>
-		<%= form.check_box :favorite %>
-	<% end %>
-</div>
+
+<%= render "form" %>
 
 <div class='list black'>
 	<ul>
@@ -26,7 +18,7 @@
 				<li><%= link_to "Visit site", bookmark.url, target: "_blank"%></li>
 				<li><%= bookmark.comment %></li>
 				<li><%= bookmark.click_count %></li>
-				<% if bookmark.favorite == true %>
+				<% if bookmark.favorite %>
 						<li class='star'></li>
 				<% else %>
 						<li></li>
