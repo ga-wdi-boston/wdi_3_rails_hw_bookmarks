@@ -11,6 +11,16 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
   end
 
+  def create
+    @bookmark = Bookmark.new(bookmark_params)
+    if @bookmark.save
+      redirect_to action: :index
+    else
+      # I am NOT redirecting to the new page.
+      render :new
+    end
+  end
+
   def update
   end
 
@@ -20,6 +30,10 @@ class BookmarksController < ApplicationController
   def destroy
   end
 
-  def create
+  private
+
+  def bookmark_params
+    params.require(:bookmark).permit(:title, :url, :comment, :favorite)
   end
+
 end
