@@ -1,4 +1,11 @@
 Bookmarker::Application.routes.draw do
+  get "bookmarks/show"
+  get "bookmarks/index"
+  get "bookmarks/new"
+  get "bookmarks/update"
+  get "bookmarks/edit"
+  get "bookmarks/destroy"
+  get "bookmarks/create"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
