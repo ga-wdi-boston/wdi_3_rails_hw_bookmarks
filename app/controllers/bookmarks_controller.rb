@@ -6,18 +6,34 @@ class BookmarksController <ApplicationController
 
 	def new
 		@bookmark = Bookmark.new
+		@bookmark.save
 	end
 
-	def edit
-		@bookmark = Bookmark.new
-		redirect_to @bookmark
+	# def edit
+	# 	@bookmark = Bookmark.new
+	# 	redirect_to @bookmark
+	# end
+
+	def show
+		@bookmark = Bookmark.find(params[:id])
+			if @bookmark.save
+				flash[:notice] = "Updated a new bookmark!"
+				redirect_to @bookmark
+			else
+				flash.now[:error] = @bookmark.errors.full_messages.join(', ')
+			end
 	end
 
 	def create
 			@bookmark = Bookmark.new(bookmark_params)
-			redirect_to @bookmark
-			# the above redirects to the show page for that bookmark default
+			if @bookmark.save
+				flash[:notice] = "Created a new bookmark!"
+				redirect_to @bookmark
+			else
+				flash.now[:error] = @bookmark.errors.full_messages.join(', ')
+			end
 	end
+
 
 private
 

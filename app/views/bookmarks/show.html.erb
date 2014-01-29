@@ -1,0 +1,18 @@
+<h1>You're about to Edit: <%=@bookmark.url%></h1>
+
+<%=form_tag @bookmark do |f|%>
+	<%= f.label :url %>
+	<%= f.text_field :url, placeholder: 'Enter URL' %>
+
+
+	<%= f.label :title, 'Title'%>
+	<%= f.text_field :title, placeholder: 'Enter title' %>
+
+
+	<%= f.label :comment, 'Comment'%>
+	<%= f.text_field :comment, placeholder: 'Enter comment' %>
+
+	<%= f.label :favorite, 'Favorite'%>
+	<%= f.check_box :favorite %>
+	<%= f.submit %>
+<%end%>

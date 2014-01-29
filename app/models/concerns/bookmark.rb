@@ -3,6 +3,5 @@ class Bookmark < ActiveRecord::Base
 	#We can set and get all of these attributes
 
 #validates_presence of is a method that takes the parameters (title, body) it could be writte as validates_presence_of(title, body) but that's not the convention
-
 	validates_presence_of :url, :title
 end
