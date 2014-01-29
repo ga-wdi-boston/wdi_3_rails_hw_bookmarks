@@ -1,0 +1,9 @@
+<h2>Add a Bookmark</h2>
+<p><em>Use the checkbox if it's a favourite of yours!</em></p>
+<%= form_for @bookmark, url: {action: 'create', controller: 'bookmarks'} do |f| %>
+  <%= f.text_field :title, placeholder: "Title" %>
+  <%= f.text_field :url, placeholder: "URL" %>
+  <%= f.text_field :comment, placeholder: "Comment" %>
+  <%= f.check_box (:favourite) %>
+  <%= f.submit "Bookmark it!" %>
+<% end %>

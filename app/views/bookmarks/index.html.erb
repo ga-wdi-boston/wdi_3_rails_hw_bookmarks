@@ -1,1 +1,15 @@
-hi!
+<p><%= link_to 'New Bookmark', new_bookmark_path %></p>
+
+  <% @bookmarks.each do |bookmark| %>
+  <ol>
+  <li>
+    <ul>
+      <li><%= bookmark.id %></li>
+      <li><%= link_to bookmark.title, bookmark %></li>
+      <li><%= bookmark.url %></li>
+      <li><%= bookmark.comment %></li>
+      <li><%= bookmark.favourite? %></li>
+    </ul>
+  </li>
+  </ol>
+  <% end %>
