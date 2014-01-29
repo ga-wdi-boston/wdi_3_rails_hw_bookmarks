@@ -1,4 +1,9 @@
+<p>
+  <%= link_to 'Edit bookmark?', edit_bookmark_path(@bookmark) %> |
+  <%= link_to 'Delete bookmark?', bookmark_path(@bookmark), method: :destroy, confirm: 'Are you sure?' %>
+</p>
+
 <h2><%= @bookmark.title %></h2>
-<p><%= @bookmark.url %></p>
-<p><%= @bookmark.comment %></p>
-<p><%= @bookmark.favorite %></p>
+<p>URL: <%= @bookmark.url %></p>
+<p>Comments: <%= @bookmark.comment %></p>
+<p>On the favorites list? <%= @bookmark.favorite %></p>

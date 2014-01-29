@@ -14,17 +14,46 @@ class BookmarksController < ApplicationController
 	def create
 		@bookmark = Bookmark.new(bookmark_params)
 
-		if @bookmark.save #or: @blat = Blat.create(params[:blat])
-			flash[:notice] = 'Created a new bookmark!' #We use flash[] because we want it to show on the *next* request.
+		if @bookmark.save
+			flash[:notice] = 'Created a new bookmark!'
 			redirect_to @bookmark
 		else
-			#Use flash.now[] because we want it to show on *this* request.
 			flash.now[:error] = @bookmark.errors.full_messages.join(', ')
 			render :new
 		end
 	end
 
+	def edit
+  end
+
+  def update
+    @bookmark.assign_attributes(bookmark_params)
+
+    if @bookmark.save
+      flash[:notice] = 'Your bookmark has been updated!'
+      redirect_to @bookmark
+    else
+      flash.now[:error] = @bookmark.errors.full_messages
+      render :edit
+    end
+  end
+
+  def destroy
+    if @bookmark.destroy
+      flash[:notice] = 'Your bookmark has been deleted!'
+      redirect_to action: :index
+    else
+      flash.now[:error] = @bookmark.errors.full_messages
+      redirect_to :back
+    end
+  end
+
 	private
+
+	def find_bookmark
+    @blat = Bookmark.find(params[:id])
+  end
+
 
 	def bookmark_params
 		params.require(:bookmark).permit(:url, :title, :comment, :favorite)
