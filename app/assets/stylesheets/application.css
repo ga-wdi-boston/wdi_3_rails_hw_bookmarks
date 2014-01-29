@@ -20,7 +20,6 @@ h1 a:hover {
 
 h2 {
 	font-size: 130%;
-
 }
 
 input {
@@ -115,7 +114,6 @@ ul li.short {
 	width: 50px;
 }
 
-
 a, a:visited {
 	color: #FFC896;
 }
@@ -123,23 +121,3 @@ a, a:visited {
 a:hover {
 	color: #E8A05F;
 }
-
-
-
-@media (max-width: 500px) {
-
-	h1 {
-		font-size: 300%;
-	}
-
-	#form {
-		background: url('bm-sideways.png') no-repeat;
-	}
-
-	ul li {
-	padding: 10px 5px 3px 0;
-	}
-
-	ul.entry li:first-child {
-		width: 75px;
-	}

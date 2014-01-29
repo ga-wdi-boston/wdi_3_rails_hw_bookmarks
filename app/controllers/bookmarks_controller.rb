@@ -28,6 +28,7 @@ class BookmarksController < ApplicationController
 	def update
 		@bookmark = Bookmark.find(params[:id])
 		@bookmark.assign_attributes(bookmark_params)
+
 		if @bookmark.save
 			flash[:notice] = 'Bookmark updated'
 			redirect_to root_path
