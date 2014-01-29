@@ -3,6 +3,10 @@ class BookmarksController < ApplicationController
     @bookmarks = Bookmark.all.order(title: :asc)
   end
 
+  def show
+    @bookmark = Bookmark.find(params[:id])
+  end
+
   def new
     @bookmark = Bookmark.new
   end
@@ -32,6 +36,17 @@ class BookmarksController < ApplicationController
     else
       flash.now[:errors] = @bookmark.errors.full_messages
       render :edit
+    end
+  end
+
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    if @bookmark.destroy
+      flash[:notice] = 'Deleted the bookmark!'
+      redirect_to '/bookmarks'
+    else
+      flash.now[:errors] = @bookmark.errors.full_messages
+      redirect_to :back
     end
   end
 

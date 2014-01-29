@@ -1,4 +1,4 @@
 Bookmarker::Application.routes.draw do
-  resources :bookmarks # this will generate a bunch of routes automatically
+  resources :bookmarks
   root to: 'bookmarks#index'
 end
