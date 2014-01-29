@@ -1,6 +1,7 @@
 <h2> <%= @bookmark.title %></h2>
 <p> URL: <a href="http://<%= @bookmark.url  %>" target="blank"><%= @bookmark.url  %></a></p>
 <p>Comment:  <%= @bookmark.comment  %></p>
+<p>Favorite?  <%= @bookmark.favorite  %></p>
 <p><a href="/">Back to main page</a>
 <p><%= link_to 'Edit Bookmark', edit_bookmark_path %></p>
 <p><%= link_to 'Delete Bookmark', {:controller=>:bookmarks, :action=>:destroy}, :method=>:delete %></p>
