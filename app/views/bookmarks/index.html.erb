@@ -1,4 +1,5 @@
 <h2>Index</h2>
+<%= link_to 'Create New', new_bookmark_path, class: 'btn btn-lg btn-success' %>
 <ul>
   <% @bookmarks.each do |bookmark| %>
   <li><%= link_to bookmark[:title], bookmark %></li>

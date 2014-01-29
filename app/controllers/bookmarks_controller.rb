@@ -10,9 +10,18 @@ class BookmarksController < ApplicationController
 
   #  Create new bookmarks
   def new
+    @bookmark = Bookmark.new
   end
 
   def create
+    @bookmark = Bookmark.new(bookmark_params)
+    if @bookmark.save
+      flash[:notice] = 'Bookmark added!'
+      redirect_to @bookmark
+    else
+      flash.now[:error] = @bookmark.errors.full_messages.join(', ')
+      render :new
+    end
   end
 
   # Edit bookmarks
@@ -31,7 +40,7 @@ class BookmarksController < ApplicationController
   private
 
   def bookmark_params
-    params.require(:bookmark).permits(:url, :title, :comment, :favorite)
+    params.require(:bookmark).permit(:url, :title, :comment, :favorite)
   end
 
   def find_bookmark

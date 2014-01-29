@@ -2,3 +2,4 @@
 <p>Url: <%= @bookmark[:url]%></p>
 <p>Comment: <%= @bookmark[:comment]%></p>
 <p>Favorite: <%= @bookmark[:favorite] ? 'Yes' : 'No' %></p>
+<%= link_to 'Go Back', root_path, class: 'btn btn-lg btn-success'%>
