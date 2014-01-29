@@ -4,5 +4,7 @@
 	<% @bookmarks.each do |bookmark| %>
 		<dt><%= link_to bookmark.title, bookmark %></dt>
 		<dd><%= link_to bookmark.url, bookmark %></dd>
+		<dd><%= link_to bookmark.comment, bookmark %></dd>
+		<dd><%= link_to bookmark.favorite, bookmark %></dd>
 	<% end %>
 </dl>
