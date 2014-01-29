@@ -1,0 +1,9 @@
+<h1>bookmarks#edit</h1>
+
+<%= form_for @bookmark do |form| %>
+	<%= form.label :name, "name of url:"%>
+	<p><%= form.text_field :name, placeholder: 'name of bookmark' %></p>
+	<%= form.label :url, "web address:"%>
+	<p><%= form.text_field :url, placeholder: 'url'%></p>
+	<p><%= form.submit %></p>
+<% end %>

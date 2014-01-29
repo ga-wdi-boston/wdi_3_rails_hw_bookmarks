@@ -5,5 +5,13 @@
 	<% @bookmarks.each do |bookmark| %>
 		<p>name: <%= link_to bookmark.name, bookmark_path(bookmark.id) %></p>
 		<p>url: <%= bookmark.url %></p>
+			<%= form_tag("/bookmarks/#{bookmark.id}", method: "delete") do -%>
+	  		<div><%= submit_tag 'delete' %></div>
+	  	<%end%>
 	<% end %>
 <p><%= link_to 'New Bookmark', new_bookmark_path %></p>
+
+
+
+
+
