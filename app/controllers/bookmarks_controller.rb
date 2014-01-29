@@ -13,7 +13,6 @@ class BookmarksController < ApplicationController
     @bookmark_params[:shorturl] =
       "#{@bookmark_params[:title].split('').shuffle.slice(0,6).join}"
     @bookmark = Bookmark.new(@bookmark_params)
-    @bookmark = Bookmark.new(@bookmark_params)
     if @bookmark.save
       flash.now[:notice] = "Created bookmark"
       redirect_to @bookmark
