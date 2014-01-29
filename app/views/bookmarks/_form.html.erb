@@ -1,0 +1,7 @@
+<%= form_for @bookmark, class: '.navbar-form' do |form|%>
+  <p><%= form.label :title, 'Title' %>:<%= form.text_field :title %></p>
+  <p><%= form.label :url, 'Url' %>:<%= form.text_field :url %></p>
+  <p><%= form.label :comment, 'Comment' %>:<%= form.text_field :comment %></p>
+  <p><%= form.label :favorite, 'Favorite' %>:<%= form.check_box :favorite %></p>
+  <p><%= form.submit value: 'Save Bookmark', class: 'btn btn-lg btn-success' %></p>
+<% end %>
