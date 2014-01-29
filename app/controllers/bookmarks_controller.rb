@@ -11,6 +11,7 @@ class BookmarksController < ApplicationController
 	end
 
 	def show
+		@count = @bookmark.increment! :click_count
 	end
 
 	def create

@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140128224120) do
     t.text     "url"
     t.text     "comment"
     t.boolean  "favorite"
+    t.integer  "click_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
