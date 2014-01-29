@@ -1,0 +1,18 @@
+<h1>Bookmarks</h1>
+
+<div class="bookmarks">
+  <% @bookmarks.each do |bookmark| %>
+  <div class="bookmark">
+    <% if bookmark.favorite %>
+      <strong><%= bookmark.title %></strong>
+    <% else %>
+      <%= bookmark.title %>
+    <% end %>
+    <%= link_to 'Edit', edit_bookmark_path(bookmark) %>
+    <%= link_to 'X',
+        {controller: :bookmarks, action: :destroy, id: bookmark },
+        method: :delete %>
+  </div>
+  <% end %>
+  <%= link_to "Create Bookmark", new_bookmark_path %>
+</div>
