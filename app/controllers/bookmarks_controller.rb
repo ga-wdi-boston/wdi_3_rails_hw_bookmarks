@@ -20,11 +20,9 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(bookmark_params)
 
     if @bookmark.save
-      # Using flash[] because we want it to appear on the *next* request
       flash[:notice] = 'Created a new bookmark!'
       redirect_to @bookmark
     else
-      # Using flash.now[] because we want it to appear on *this* request
       flash.now[:errors] = @bookmark.errors.full_messages
       render :new
     end
@@ -50,7 +48,6 @@ class BookmarksController < ApplicationController
       flash[:notice] = 'Deleted the bookmark!'
       redirect_to action: :index
     else
-      # Assume whatever prevented the destroy added an error message for us
       flash.now[:errors] = @bookmark.errors.full_messages
       redirect_to :back
     end

@@ -5,10 +5,10 @@
   <% @bookmarks.each do |bookmark| %>
   	<% if bookmark.favorite == true %>
 
-  	<strong><li><%= truncate(bookmark.title, length: 100) %>   <em>:</em> <%= link_to bookmark.URL, bookmark %></li>
+  	<strong><li><%= link_to truncate(bookmark.title, length: 100), bookmark %>   <em>:</em> <%= link_to bookmark.URL, bookmark.URL %></li>
   	<em>Comment: <%= bookmark.comment %></em></strong>
   	<% else %>
-  	<li><%= truncate(bookmark.title, length: 100) %>   <em>:</em> <%= link_to bookmark.URL, bookmark %></li>
+  	<li><%= link_to truncate(bookmark.title, length: 100), bookmark %>   <em>:</em> <%= link_to bookmark.URL, bookmark.URL %></li>
   	<em>Comment: <%= bookmark.comment %></em>
   	<% end %>
   <% end %>
