@@ -4,9 +4,19 @@
 
 <dl>
 <% @bookmarks.each do |bookmark| %>
+	<dt>URL: <%=bookmark.url%>
+	<br>
+	<a href="bookmarks/edit">Edit bookmark</a></dt>
+	<br>
 	<dt><%=link_to "Go to site", bookmark.url %></dt>
-	<dt><%=bookmark.title%></dt>
-	<dt><%=bookmark.comment%></dt>
+	<dt>TITLE: <%=bookmark.title%></dt>
+	<dt>COMMENT: <%=bookmark.comment%></dt>
+	<dt>
+	<% if bookmark.favorite == true%>
+	<strong>FAVORITE: <%=bookmark.favorite%></strong>
+		<%else bookmark.favorite %></dt>
+		<%end%>
 	<%end%>
 </dl>
+
 

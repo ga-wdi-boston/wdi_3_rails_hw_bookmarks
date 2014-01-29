@@ -1,0 +1,20 @@
+<p>Update your bookmark</p>
+
+<%=form_for @bookmark do |form| %>
+	<%= form.label :url %>
+	<%= form.text_field :url, placeholder: 'Enter URL' %>
+
+
+	<%= form.label :title, 'Title'%>
+	<%= form.text_field :title, placeholder: 'Enter title' %>
+
+
+	<%= form.label :comment, 'Comment'%>
+	<%= form.text_field :comment, placeholder: 'Enter comment' %>
+
+	<%= form.label :favorite, 'Favorite'%>
+	<%= form.check_box :favorite %>
+	<%= form.submit %>
+<%end%>
+
+<a href="bookmarks/<%= stock.symbol %>"><%= stock.symbol %></a>

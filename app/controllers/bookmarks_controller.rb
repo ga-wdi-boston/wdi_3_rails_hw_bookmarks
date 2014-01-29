@@ -1,27 +1,22 @@
 class BookmarksController <ApplicationController
 	def index
 		@bookmark = Bookmark.new
-		@bookmarks = Bookmark.all.order(:title)
-	end
-
-	def show
-		@bookmark.url
+		@bookmarks = Bookmark.all
 	end
 
 	def new
 		@bookmark = Bookmark.new
 	end
 
+	def edit
+		@bookmark = Bookmark.new
+		redirect_to @bookmark
+	end
+
 	def create
 			@bookmark = Bookmark.new(bookmark_params)
-
-		if @bookmark.save
-				flash[:notice] = "Bookmark Saved!"
-				redirect_to @bookmark
-		else
-				flash.now[:error] = @bookmark.errors.full_messages.join(', ')
-				render :new
-		end
+			redirect_to @bookmark
+			# the above redirects to the show page for that bookmark default
 	end
 
 private
