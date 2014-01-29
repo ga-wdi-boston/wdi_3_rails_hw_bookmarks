@@ -1,0 +1,9 @@
+<h2>Create a new bookmark</h2>
+<%= form_for @bookmark do |form| %>
+	<p>URL: <%= form.text_field :url %></p>
+	<p>Title: <%= form.text_field :title %></p>
+	<p>Comment: <%= form.text_area :comment , rows:10, cols: 50 %></p>
+	<%= form.check_box(:favorite) %>
+	<%= form.label(:favorite) %><br>
+	<p><%= form.submit %></p>
+<% end %>
