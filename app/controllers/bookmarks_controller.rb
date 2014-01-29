@@ -51,8 +51,9 @@ class BookmarksController < ApplicationController
   end
 
   def ext
-    @bookmark[:visits].present? ? @bookmark[:visits] += 1 : @bookmark[:visits] = 1
-    @bookmark.save
+    # @bookmark[:visits].present? ? @bookmark[:visits] += 1 : @bookmark[:visits] = 1
+    # @bookmark.save
+    @bookmark.increment! :visits
     redirect_to @bookmark[:url]
   end
 
