@@ -1,10 +1,13 @@
 <h2><%= link_to 'Add new bookmark', new_bookmark_path %></h2>
 
-<dl>
+
 
 	<% @bookmarks.each do |bookmark| %>
-		<dt> <a href="bookmark.url"><%= bookmark.name %></a> </dt>
-		<dd> <%= bookmark.url %> </dd>
+		<h3><a href="bookmark.url"><%= bookmark.name %></a></h3>
+		<ul>
+			<li> <%= bookmark.url %> </li>
+			<li> <%= link_to 'Edit', bookmark %></li>
+		</ul>
 	<% end %>
 
-</dl>
+
