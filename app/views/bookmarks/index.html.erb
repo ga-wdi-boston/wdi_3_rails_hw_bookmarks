@@ -1,4 +1,5 @@
 <h1>Bookmarks:</h1>
+<div class="container">
 <dl>
   <% @bookmarks.each do |bookmark| %>
   <% if bookmark.favorite == true %>
@@ -7,8 +8,9 @@
     <dt><a href="<%= bookmark.url %>"><%= bookmark.title %></a></dt>
   <% end %>
     <!-- calling the rails object will call the show view by default blat is the same as blat_path(blat.id) you can also see the link_to path helper if you run rake routes -->
-      <dd><%= bookmark.comment %></dd>
+      <dd>Comment: <%= bookmark.comment %></dd>
       <dd><%= link_to 'Delete bookmark', bookmark_path(bookmark.id), method: :delete %> <%= link_to 'Edit bookmark', edit_bookmark_path(bookmark.id), method: :get %></dd><br>
   <% end %>
 </dl>
 <p><%= link_to 'Create new bookmark', new_bookmark_path %></p>
+</div>

@@ -1,4 +1,5 @@
 <h1>Edit you bookmark below:</h1>
+<div class="container">
 <%= form_for(@bookmark, :title => {:action => 'update', :id => @bookmark.id}, :url => {:action => 'update', :id => @bookmark.id}) do |form| %>
   <p><%= form.text_field :title, placeholder: "Enter title" %></p>
   <p><%= form.text_field :url, placeholder: "Enter URL" %></p>
@@ -6,3 +7,4 @@
   <p>Check here if favorite: <%= form.check_box :favorite%></p>
   <p><%= form.submit %></p>
 <% end %>
+</div>
