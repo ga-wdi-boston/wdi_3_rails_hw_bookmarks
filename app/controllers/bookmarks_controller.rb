@@ -1,4 +1,5 @@
 class BookmarksController < ApplicationController
+  before_action :find_bookmark, only: [:show, :edit, :update, :destroy]
   def index
     @bookmarks = Bookmark.all.order(title: :asc)
   end
@@ -19,15 +20,12 @@ class BookmarksController < ApplicationController
   end
 
   def show
-    @bookmark = Bookmark.find(params[:id])
   end
 
   def edit
-    @bookmark = Bookmark.find(params[:id])
   end
 
   def update
-    @bookmark = Bookmark.find(params[:id])
     @bookmark.assign_attributes(bookmark_params)
 
     if @bookmark.save
@@ -40,7 +38,6 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    @bookmark = Bookmark.find(params[:id])
     if @bookmark.destroy
       flash[:notice] = "Bookmark deleted"
       redirect_to bookmarks_path
@@ -53,5 +50,8 @@ class BookmarksController < ApplicationController
   private
   def bookmark_params
     params.require(:bookmark).permit(:title, :url, :comment, :favorite)
+  end
+  def find_bookmark
+    @bookmark = Bookmark.find(params[:id])
   end
 end

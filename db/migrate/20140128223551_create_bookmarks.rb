@@ -6,7 +6,7 @@ class CreateBookmarks < ActiveRecord::Migration
       t.text :comment
       t.boolean :favorite
       t.text :shorturl
-      t.integer :visits
+      t.integer :visits, default: 0
 
       t.timestamps
     end

@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140128223551) do
     t.text     "comment"
     t.boolean  "favorite"
     t.text     "shorturl"
-    t.integer  "visits"
+    t.integer  "visits",     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
