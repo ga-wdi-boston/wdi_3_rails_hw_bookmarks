@@ -1,0 +1,22 @@
+<h3>Your Bookmarks:</h3>
+
+<% @bookmarks.each do |bookmark| %>
+	Title: <%= bookmark[:title] %><br>
+	URL: <%= bookmark[:url] %><br>
+	Comment: <%= bookmark[:comment] %><br>
+	Favorite: <%= bookmark[:favorite] %> <br> <br>
+<% end %>
+
+
+
+
+<h3>Add Bookmark:</h3>
+
+<%= form_for @bookmark do |f| %>
+	<%= f.text_field :title %>
+	<%= f.text_field :url %>
+	<%= f.text_field :comment %>
+	<%= f.text_field :favorite %>
+	<%= f.submit "Submit" %>
+<% end%>
+
