@@ -24,10 +24,11 @@ class BookmarksController < ApplicationController
 	end
 
 	def edit
-  end
+		@bookmark = Bookmark.find(params[:id])
+	end
 
-  def update
-    @bookmark.assign_attributes(bookmark_params)
+	def update
+		@bookmark = Bookmark.new(bookmark_params)
 
     if @bookmark.save
       flash[:notice] = 'Your bookmark has been updated!'
@@ -39,21 +40,18 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
+  	@bookmark = Bookmark.new(bookmark_params)
+
     if @bookmark.destroy
       flash[:notice] = 'Your bookmark has been deleted!'
       redirect_to action: :index
     else
       flash.now[:error] = @bookmark.errors.full_messages
-      redirect_to :back
+      redirect_to @bookmark
     end
   end
 
 	private
-
-	def find_bookmark
-    @blat = Bookmark.find(params[:id])
-  end
-
 
 	def bookmark_params
 		params.require(:bookmark).permit(:url, :title, :comment, :favorite)
