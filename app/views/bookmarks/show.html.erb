@@ -4,6 +4,6 @@
 </p>
 
 <h2><%= @bookmark.title %></h2>
-<p>URL: <%= @bookmark.url %></p>
+<p><a href="<%= @bookmark['url']%>" target="_blank"> <%= @bookmark['url'] %> </a></p>
 <p>Comments: <%= @bookmark.comment %></p>
 <p>On the favorites list? <%= @bookmark.favorite %></p>
