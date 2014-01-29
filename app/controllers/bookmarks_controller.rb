@@ -26,13 +26,13 @@ class BookmarksController < ApplicationController
   end
 
   def go
-    @bookmark = Bookmark.find_by_shorturl(params[:shorturl])
-    @bookmark.visits += 1
-    if @bookmark.save
+    if @bookmark = Bookmark.find_by_shorturl(params[:shorturl])
+      @bookmark.visits += 1
+      @bookmark.save
       redirect_to @bookmark.url
     else
       flash[:error] = "Bookmark not found."
-      redirect_to @bookmark
+      redirect_to bookmarks_path
     end
   end
 
