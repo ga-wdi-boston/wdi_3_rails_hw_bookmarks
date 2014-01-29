@@ -1,2 +1,9 @@
-<h1>Bookmarks#index</h1>
-<p>Find me in app/views/bookmarks/index.html.erb</p>
+<h1>Bookmarks</h1>
+
+<div class="bookmarks">
+  <%= @bookmarks.each do |bookmark| %>
+  <div class="bookmark">
+    <%= bookmark.title %>
+  </div>
+  <% end %>
+</div>
