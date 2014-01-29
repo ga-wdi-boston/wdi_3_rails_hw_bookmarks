@@ -1,11 +1,11 @@
 class BookmarksController < ApplicationController
-  before_action :find_bookmark, only: [:show, :edit]
+  before_action :find_bookmark, only: [:show, :edit, :update, :destroy]
 
   def show
   end
 
   def index
-    @bookmarks = Bookmark.all
+    @bookmarks = Bookmark.all.order(:title)
   end
 
   def new
@@ -26,9 +26,16 @@ class BookmarksController < ApplicationController
   end
 
   def update
+    if @bookmark.update_attributes(bookmark_params)
+      redirect_to action: :index
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @bookmark.destroy
+    redirect_to action: :index
   end
 
   private
