@@ -3,5 +3,4 @@
   Favorite
 <% end %>
 <%= @bookmark.comment %>
-<%= link_to "Edit", edit_bookmark_path(@bookmark) %> |
-<%= link_to "Delete", bookmark_path(@bookmark), method: :delete, confirm: 'PZ BKMK?' %>
+<%= render :partial => 'editdelete', locals: {bookmark: @bookmark} %>

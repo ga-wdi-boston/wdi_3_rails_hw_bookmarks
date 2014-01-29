@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
   def index
-    @bookmarks = Bookmark.all.order(updated_at: :desc)
+    @bookmarks = Bookmark.all.order(title: :asc)
   end
 
   def new
