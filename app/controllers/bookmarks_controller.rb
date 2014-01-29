@@ -2,7 +2,6 @@ class BookmarksController < ApplicationController
 
   def index
     @bookmarks = Bookmark.all.order(title: :asc)
-    @favorite_bookmarks = Bookmark.where(favorite: true)
   end
 
   def new
