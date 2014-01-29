@@ -2,9 +2,15 @@
 
 <dl>
 	<% @bookmarks.each do |bookmark| %>
-		<dt><%= link_to bookmark.title, bookmark %></dt>
-		<dd><%= link_to bookmark.url, bookmark %></dd>
-		<dd><%= link_to bookmark.comment, bookmark %></dd>
-		<dd><%= link_to bookmark.favorite, bookmark %></dd>
+		<dt><% if bookmark.favorite == true %></dt>
+				<strong><%= link_to bookmark.title, bookmark %></strong>
+				<% else %>
+					<%= link_to bookmark.title, bookmark %>
+				<% end %>
+		<dd>Url: <%= link_to bookmark.url, bookmark %></dd>
+		<dd>Comments: <%= link_to bookmark.comment, bookmark %></dd>
+		<dd>On your favorites list? <%= link_to bookmark.favorite, bookmark %></dd>
 	<% end %>
 </dl>
+
+

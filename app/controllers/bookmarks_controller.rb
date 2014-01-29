@@ -40,14 +40,14 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-  	@bookmark = Bookmark.new(bookmark_params)
+  	@bookmark = Bookmark.find(params[:id])
 
     if @bookmark.destroy
       flash[:notice] = 'Your bookmark has been deleted!'
       redirect_to action: :index
     else
       flash.now[:error] = @bookmark.errors.full_messages
-      redirect_to @bookmark
+      redirect_to :back
     end
   end
 
