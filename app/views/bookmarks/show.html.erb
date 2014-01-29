@@ -1,2 +1,5 @@
-<h1>Bookmarker#show</h1>
-<p>Find me in app/views/bookmarker/show.html.erb</p>
+<h2> <%= @bookmark.title %></h2>
+<p> URL: <a href="http://<%= @bookmark.url  %>" target="blank"><%= @bookmark.url  %></a></p>
+<p>Comment:  <%= @bookmark.comment  %></p>
+<p><a href="/">Back to main page</a>
+<p><%= link_to 'Edit Bookmark', edit_bookmark_path %></p>
