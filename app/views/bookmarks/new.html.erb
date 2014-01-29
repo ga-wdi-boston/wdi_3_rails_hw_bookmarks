@@ -2,7 +2,7 @@
 	<%= form.label :title, 'Enter title' %>
 	<p><%= form.text_field :title, placeholder: 'Enter title' %></p>
 	<%= form.label :url, 'Enter URL' %>
-	<p><%= form.text_field :url, placeholder: 'Enter URL' %></p>
+	<p><%= form.text_field :url, placeholder: 'Enter URL (must start with http://)' %></p>
 	<%= form.label :comment, 'Enter comment' %>
 	<p><%= form.text_area :comment, rows: 10, cols: 80, placeholder: 'Enter comment (optional)' %></p>
 	<%= form.label :favorite, 'Check if this is a favorites' %>
