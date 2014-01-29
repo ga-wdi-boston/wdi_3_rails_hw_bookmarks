@@ -5,5 +5,10 @@
 	<p><%= form.text_field :name, placeholder: 'name of bookmark' %></p>
 	<%= form.label :url, "web address:"%>
 	<p><%= form.text_field :url, placeholder: 'url'%></p>
+	<%= form.label :favorite, 'favorite'%>
+	<p><%= form.check_box :favorite %></p>
 	<p><%= form.submit %></p>
 <% end %>
+
+
+
