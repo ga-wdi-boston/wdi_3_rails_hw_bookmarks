@@ -5,6 +5,7 @@
 
 <dl>
 	<% @bookmarks.each do |bookmark| %>
+
 		<dt><% if bookmark.favorite == true %></dt>
 				<strong><%= link_to bookmark.title, bookmark %></strong>
 				<% else %>
@@ -13,6 +14,10 @@
 		<dd><a href="<%= bookmark['url']%>" target="_blank"> <%= bookmark['url'] %> </a></dd> <!--clickable link. I think this was the goal for Bonus 1? -->
 		<dd>Comments: <%= link_to bookmark.comment, bookmark %></dd>
 		<dd>On your favorites list? <%= bookmark.favorite %></dd>
+
+		<%= link_to 'Edit bookmark?', edit_bookmark_path(bookmark) %>
+		<%= link_to 'Delete bookmark?', bookmark_path(bookmark), method: :delete, confirm: 'Are you sure?' %><br>
+
 	<% end %>
 </dl>
 
