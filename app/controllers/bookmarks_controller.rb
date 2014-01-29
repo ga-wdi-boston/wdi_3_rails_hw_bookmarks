@@ -30,10 +30,24 @@ class BookmarksController < ApplicationController
   end
 
   def update
+    @bookmark.assign_attributes(bookmark_params)
+    if @bookmark.save
+      flash[:notice] = 'Bookmark updated!'
+      redirect_to @bookmark
+    else
+      flash.now[:error] = @bookmark.errors.full_messages.join(', ')
+      render :edit
+    end
   end
 
   def destroy
-
+    if @bookmark.destroy
+      flash[:notice] = 'Bookmark deleted!'
+      redirect_to action: :index
+    else
+      flash.now[:error] = @bookmark.errors.full_messages.join(', ')
+      redirect action: :index
+    end
   end
 
   # Private methods

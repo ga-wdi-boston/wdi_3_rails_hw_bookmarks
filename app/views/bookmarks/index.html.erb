@@ -1,7 +1,14 @@
-<h2>Index</h2>
-<%= link_to 'Create New', new_bookmark_path, class: 'btn btn-lg btn-success' %>
-<ul>
-  <% @bookmarks.each do |bookmark| %>
-  <li><%= link_to bookmark[:title], bookmark %></li>
-  <% end %>
-</ul>
+<div class="header">
+  <ul class="pull-right">
+    <li><%= link_to 'Create New', new_bookmark_path, class: 'btn btn-lg btn-success' %></li>
+  </ul>
+  <h2>Index</h2>
+</div>
+<br>
+<div class="jumbotron">
+  <ul>
+    <% @bookmarks.each do |bookmark| %>
+    <li><%= link_to bookmark[:title], bookmark %></li>
+    <% end %>
+  </ul>
+</div>
