@@ -11,9 +11,9 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(bookmark_params)
     if @bookmark.save
       flash[:notice] = 'Created a new bookmark!'
-      redirect_to @blat # redirects to the show path for this object
+      redirect_to '/bookmarks' # redirects to the show path for this object
     else
-      flash.now[:error] = @blat.errors.full_messages.join(', ') # flash.now used for a message for this current request
+      flash.now[:error] = @bookmark.errors.full_messages.join(', ') # flash.now used for a message for this current request
       render :new # instead of create template, renders this other template
     end
   end
