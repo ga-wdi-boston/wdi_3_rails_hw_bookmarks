@@ -2,13 +2,36 @@
 <html>
 <head>
   <title>Bookmarker</title>
+  <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<div class="jumbotron">
+	<div class="container">
+		<h1><%= link_to 'Bookmarks!', root_url %></h1>
+	</div>
+</div>
+<% if flash[:error].present? %>
+	<div class="alert alert-danger">
+		<div class="container">
+			<p><%= flash[:error] %></p>
+		</div>
+	</div>
+<% elsif flash[:notice].present? %>
+	<div class="alert alert-success">
+		<div class="container">
+			<p><%= flash[:notice] %></p>
+		</div>
+	</div>
+<% end %>
+<div class="row">
+	<div class="container">
+		<%= yield %>
+	</div>
+</div>
 
 </body>
 </html>

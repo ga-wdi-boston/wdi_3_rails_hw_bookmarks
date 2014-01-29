@@ -1,0 +1,16 @@
+<h2>Bookmarks</h2>
+<% @bookmarks.each do |bookmark| %>
+	<p>
+		<% if bookmark.favorite %>
+			<strong>
+		<% end %>
+			<%= link_to bookmark.title, bookmark_path(bookmark), target: '_blank' %>
+		<% if bookmark.favorite %>
+			</strong>
+		<% end %>
+			| <%= link_to 'Edit', edit_bookmark_path(bookmark.id) %> | <%= link_to 'Delete', bookmark_path(bookmark), method: :delete, confirm: 'Are you sure?' %> (<%= bookmark.clicked %>)
+
+	</p>
+	<p>Shortened URL - <%= link_to "localhost3000/bookmarks/#{bookmark.id}", bookmark_path(bookmark) %></p>
+<% end %>
+<%= link_to 'Add a new bookmark', new_bookmark_path, class: 'btn btn-success' %>
