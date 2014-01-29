@@ -5,14 +5,25 @@ class BookmarksController < ApplicationController
 	end
 
 	def new
+		@bookmark = Bookmark.new
 	end
 
 	def create
+		@bookmark = Bookmark.new(bookmark_params)
+		@bookmark.save
+
+		if @bookmark.save
+			flash.now[:notice] = "Yay! New bookmark!"
+			redirect_to root_path
+		else
+			flash.now[:error] = @bookmark.errors.full_messages.join(', ')
+			render :new
+		end
 	end
 
 	private
 
-	def blat_params
+	def bookmark_params
 		params.require(:bookmark).permit(:name, :url)
 	end
 
