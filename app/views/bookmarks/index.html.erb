@@ -8,7 +8,12 @@
 <div class="jumbotron">
   <ul>
     <% @bookmarks.each do |bookmark| %>
-    <li><%= link_to bookmark[:title], bookmark %></li>
+    <li>
+      <%= link_to bookmark[:title], bookmark %>
+      <% if bookmark.favorite %>
+        <span class="glyphicon glyphicon-star"></span>
+      <% end %>
+    </li>
     <% end %>
   </ul>
 </div>
