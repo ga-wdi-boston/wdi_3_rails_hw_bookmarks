@@ -4,6 +4,7 @@
   <% @bookmarks.each do |bookmark| %>
   <div class="bookmark">
     <%= bookmark.title %>
+    <%= link_to 'Edit', edit_bookmark_path(bookmark) %>
   </div>
   <% end %>
 </div>

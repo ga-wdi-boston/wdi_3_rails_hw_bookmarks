@@ -1,6 +1,7 @@
 class BookmarksController < ApplicationController
+  before_action :find_bookmark, only: [:show, :edit]
+
   def show
-    @bookmark = Bookmark.find(params[:id])
   end
 
   def index
@@ -21,16 +22,20 @@ class BookmarksController < ApplicationController
     end
   end
 
-  def update
+  def edit
   end
 
-  def edit
+  def update
   end
 
   def destroy
   end
 
   private
+
+  def find_bookmark
+    @bookmark = Bookmark.find(params[:id])
+  end
 
   def bookmark_params
     params.require(:bookmark).permit(:title, :url, :comment, :favorite)

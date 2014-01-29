@@ -1,2 +1,13 @@
-<h1>Bookmarks#edit</h1>
-<p>Find me in app/views/bookmarks/edit.html.erb</p>
+<h1>Editing <%= @bookmark.title %></h1>
+
+<%= form_for @bookmark do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+  <%= f.label :comment %>
+  <%= f.text_area :comment %>
+  <%= f.label :favorite %>
+  <%= f.check_box :favorite %>
+  <%= f.submit %>
+<% end %>
