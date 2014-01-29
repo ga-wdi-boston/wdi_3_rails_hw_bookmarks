@@ -10,7 +10,7 @@
 <br>
 <div class="jumbotron">
   <p>Url: <%= link_to @bookmark[:url], @bookmark[:url] %></p>
-  <p>Shortened Url: <%= link_to bookmarks_ext_path(@bookmark), bookmarks_ext_path(@bookmark) %></p>
+  <p>Shortened Url: <%= link_to bookmarks_ext_path(@bookmark), bookmarks_ext_path(@bookmark), method: :put %></p>
   <p>Shortened Url Clicked on <%= @bookmark[:visits].present? ? @bookmark[:visits] : 0 %> times</p>
   <p>Comment: <%= @bookmark[:comment]%></p>
   <p>Favorite: <%= @bookmark[:favorite] ? 'Yes' : 'No' %></p>
