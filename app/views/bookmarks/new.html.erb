@@ -1,7 +1,9 @@
 <%= form_for @bookmark do |form| %>
   <p><%= form.text_field :title, placeholder: "Enter title" %></p>
-  <p><%= form.text_area :url, placeholder: "Enter URL" %></p>
+  <p><%= form.text_field :url, placeholder: "Enter URL" %></p>
   <p><%= form.text_area :comment, placeholder: "Enter comment" %></p>
-  <p>Check here if favorite: <%= form.check_box :favorite%></p>
+  <p>Check here if favorite: <%= form.check_box :favorite, {}, "true", "false" %></p>
   <p><%= form.submit %></p>
 <% end %>
+
+
