@@ -11,7 +11,7 @@ class BookmarksController < ApplicationController
   def create
     @bookmark_params = bookmark_params
     @bookmark_params[:shorturl] =
-      "p.scott/#{@bookmark_params[:url].slice(7..-1).split('').shuffle.slice(0,6).join}"
+      "#{@bookmark_params[:title].split('').shuffle.slice(0,6).join}"
     @bookmark = Bookmark.new(@bookmark_params)
     @bookmark = Bookmark.new(@bookmark_params)
     if @bookmark.save
@@ -24,6 +24,13 @@ class BookmarksController < ApplicationController
   end
 
   def show
+  end
+
+  def go
+    @bookmark = Bookmark.find_by_shorturl(params[:shorturl])
+    @bookmark.visits += 1
+    @bookmark.save
+    redirect_to @bookmark.url
   end
 
   def edit
