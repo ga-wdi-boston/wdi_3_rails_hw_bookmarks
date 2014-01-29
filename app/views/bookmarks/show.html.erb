@@ -1,0 +1,8 @@
+		<dt><%= @bookmark.title %></dt>
+		<dd><%= @bookmark.url %></dd>
+		<dd><%= @bookmark.comment %></dd>
+		<dd><%= @bookmark.favorite %></dd>
+
+<p><%= link_to 'Edit bookmark', edit_bookmark_path(@bookmark) %></p>
+
+<p><%= link_to 'Delete bookmark', delete_bookmark_path(@bookmark) %></p>

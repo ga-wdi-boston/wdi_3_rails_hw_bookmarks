@@ -1,0 +1,26 @@
+<%= form_for @bookmark do |form| %>
+	<div>
+		<%= form.label :title %>
+		<%= form.text_field :title %>
+	</div>
+
+	<div>
+		<%= form.label :url %>
+		<%= form.text_area :url %>
+	</div>
+
+	<div>
+		<%= form.label :comment %>
+		<%= form.text_area :comment %>
+	</div>
+
+	<div>
+		<%= form.label :favorite %>
+		<%= form.check_box :favorite %>
+
+	</div>
+
+
+	<%= form.submit %>
+
+	<% end %>

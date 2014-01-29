@@ -1,0 +1,14 @@
+<p><%= link_to 'New bookmark', new_bookmark_path %></p>
+
+
+<dl>
+	<% @bookmark.each do |bookmark| %>
+
+		<dt><%= link_to bookmark.title , bookmark %></dt>
+		<dd><%= bookmark.url %></dd>
+		<dd><%= bookmark.comment %></dd>
+		<dd><%= "like" if bookmark.favorite == true %></dd>
+
+	<% end %>
+</dl>
+
