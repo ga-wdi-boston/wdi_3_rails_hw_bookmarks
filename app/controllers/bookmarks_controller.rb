@@ -18,6 +18,23 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def edit
+    @bookmark = Bookmark.find(params[:id])
+  end
+
+  def update
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.assign_attributes(bookmark_params)
+
+    if @bookmark.save
+      flash[:notice] = 'Updated the bookmark!'
+      redirect_to '/bookmarks'
+    else
+      flash.now[:errors] = @bookmark.errors.full_messages
+      render :edit
+    end
+  end
+
   private
 
   def bookmark_params
