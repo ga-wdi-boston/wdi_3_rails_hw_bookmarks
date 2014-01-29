@@ -1,12 +1,16 @@
 body {
   font-family: Helvetica, sans-serif;
   background: white;
+
 }
 h1 {
     color: tomato;
     font-style: italic;
     font-weight: bold;
     }
+p {
+    font-size: 12px;
+  }
 ol {
   list-style: none;
   color: black;
@@ -14,7 +18,7 @@ ol {
   }
    li {
     display: inline;
-    font-size: 12px;
+    margin: 0 25px 0 0;
         }
 ul {
   list-style: none;
