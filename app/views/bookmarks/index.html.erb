@@ -4,7 +4,7 @@
 
 <dl>
 <% @bookmarks.each do |bookmark| %>
-	<dt><%=link_to bookmark.url %></dt>
+	<dt><%=link_to "Go to site", bookmark.url %></dt>
 	<dt><%=bookmark.title%></dt>
 	<dt><%=bookmark.comment%></dt>
 	<%end%>
