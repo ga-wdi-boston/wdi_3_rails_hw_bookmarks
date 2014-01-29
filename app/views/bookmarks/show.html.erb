@@ -3,4 +3,5 @@
   Favorite
 <% end %>
 <%= @bookmark.comment %>
+<%= link_to @bookmark.shorturl, @bookmark.shorturl, :target => '_blank' %>
 <%= render :partial => 'editdelete', locals: {bookmark: @bookmark} %>
