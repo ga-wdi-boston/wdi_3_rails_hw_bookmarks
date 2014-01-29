@@ -4,9 +4,6 @@ class BookmarksController < ApplicationController
 		@bookmarks = Bookmark.all
 	end
 
-	def show
-	end
-
 	def new
 	end
 
