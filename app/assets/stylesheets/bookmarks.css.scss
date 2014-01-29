@@ -4,7 +4,13 @@
   margin-right: auto;
 }
 
+form {
+  width: 250px;
+}
 input {
-  position: absolute;
-  left: 250px;
+  float: right;
+}
+
+label {
+  float: left;
 }
