@@ -1,8 +1,22 @@
-<%= link_to @bookmark.title, @bookmark.url, :target => '_blank' %>
-<% if @bookmark.favorite %>
-  Favorite
-<% end %>
-<%= @bookmark.comment %>
-<%= @bookmark.visits %>
-<%= link_to "/p.scott/#{@bookmark.shorturl}", redirect_path(@bookmark.shorturl), :target => '_blank' %>
-<%= render :partial => 'editdelete', locals: {bookmark: @bookmark} %>
+<div class="row booklist bookshow">
+  <div class="small-7 column">
+  <ul>
+    <li>
+      <%= link_to @bookmark.title, @bookmark.url, target: '_blank' %>
+      <% if @bookmark.favorite %>
+        <span class="favorite">Favorite</span>
+      <% end %>
+    </li>
+    <li class="comment">
+      <%= @bookmark.comment %>
+    </li>
+  </ul>
+  </div>
+  <div class="small-5 column details">
+    <ul>
+      <li>Visited: <%= @bookmark.visits %> times</li>
+      <li>Shorturl: <%= link_to "/p.scott/#{@bookmark.shorturl}", redirect_path(@bookmark.shorturl), target: '_blank' %></li>
+      <li><%= render :partial => 'editdelete', locals: {bookmark: @bookmark} %></li>
+    </ul>
+  </div>
+</div>

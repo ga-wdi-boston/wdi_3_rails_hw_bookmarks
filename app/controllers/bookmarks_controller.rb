@@ -15,7 +15,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(@bookmark_params)
     @bookmark = Bookmark.new(@bookmark_params)
     if @bookmark.save
-      flash[:notice] = "Created bookmark"
+      flash.now[:notice] = "Created bookmark"
       redirect_to @bookmark
     else
       flash.now[:error] = @bookmark.errors.full_messages.join(', ')
@@ -29,8 +29,12 @@ class BookmarksController < ApplicationController
   def go
     @bookmark = Bookmark.find_by_shorturl(params[:shorturl])
     @bookmark.visits += 1
-    @bookmark.save
-    redirect_to @bookmark.url
+    if @bookmark.save
+      redirect_to @bookmark.url
+    else
+      flash[:error] = "Bookmark not found."
+      redirect_to @bookmark
+    end
   end
 
   def edit

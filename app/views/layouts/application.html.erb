@@ -1,23 +1,32 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Bookmarker</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<header><%= link_to 'Bookmarker', root_path %></header>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<% if flash[:error].present? %>
-  <%= flash.now[:error] %>
-<% end %>
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-<% if flash[:notice].present? %>
-  <%= flash.now[:notice] %>
-<% end %>
+    <link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<%= yield %>
+  <body>
+    <header class="main-link">
+    <%= link_to 'Bookmarker', root_path %><h1>
+    </header>
 
-</body>
+    <% if flash[:error].present? %>
+      <div class="error"><%= flash.now[:error] %></div>
+    <% end %>
+
+    <% if flash[:notice].present? %>
+      <div class="notice"><%= flash.now[:notice] %></div>
+    <% end %>
+
+    <%= yield %>
+
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

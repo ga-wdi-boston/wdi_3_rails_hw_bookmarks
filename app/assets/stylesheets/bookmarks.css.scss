@@ -1,0 +1,133 @@
+body {
+  background: rgba(135, 135, 135, 0.8);
+}
+
+form {
+  padding-top: 2rem;
+}
+
+.main-link {
+  font-family: 'Russo One', 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 5rem;
+  width: 100%;
+  height: 5.2rem;
+  background: rgba(45, 45, 65, 0.8);
+  box-shadow: 0 2px 5px rgba(220, 220, 220, 0.8);
+}
+
+.main-link a {
+  color: rgba(255, 99, 71, 0.7);
+  transition: all 0.5s ease;
+}
+
+.main-link a:hover {
+  text-shadow: 0 0 3px rgb(215, 215, 215);
+  color: rgba(255, 99, 71, 0.9);
+  transition: all 0.5s ease;
+}
+
+.edit-delete {
+  margin-left: 1.2rem;
+}
+
+.new-bookmark {
+  font-family: 'Russo One', 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 2.5rem;
+  width: 100%;
+  height: 3.2rem;
+  background: rgba(75, 75, 75, 0.8);
+  box-shadow: 0 1px 3px rgba(200, 200, 200, 0.8);
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-top: 0.25rem;
+}
+
+.new-bookmark a {
+  color: rgba(205, 205, 205, 0.6);
+  transition: all 0.5s ease;
+}
+
+.new-bookmark a:hover {
+  color: rgba(205, 205, 205, 0.8);
+  text-shadow: 0 0 3px rgb(175, 175, 175);
+  transition: all 0.5s ease;
+}
+
+.booklist {
+  width: 60%;
+}
+
+.right-pm {
+  float: right;
+}
+
+.booklist ul {
+  list-style-type: none;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.4rem;
+  color: rgb(255, 99, 71);
+}
+
+.booklist a {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: rgb(215, 215, 235);
+}
+
+.booklist a:hover {
+  color: rgb(235, 235, 235);
+}
+
+.booklist.bookshow ul {
+  font-size: 2rem;
+}
+
+.booklist.bookshow {
+  margin-right: 0;
+  margin-left: 1rem;
+  width: 90%;
+}
+
+.favorite {
+  font-size: 1.6rem;
+  color: rgba(115, 115, 215, 0.8);
+  text-shadow: 0 0 2px rgba(195, 195, 85, 0.8);
+}
+
+.comment {
+  font-size: 1.6rem;
+  color: rgb(35, 35, 35);
+  padding-left: 0.4rem;
+}
+
+.details li {
+  font-size: 1.4rem;
+}
+
+.error, .notice {
+  width: 30%;
+  height: 5.2rem;
+  position: fixed;;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+  text-align: center;
+  padding-top: 1rem;
+  font-family: 'Russo One', sans-serif;
+}
+
+.error {
+  color: darkred;
+  background: rgba(205, 165, 165, 0.8);
+}
+
+.notice {
+  color: darkgreen;
+  background: rgba(165, 205, 165, 0.8);
+}
+
+.visists {
+  color: rgb(45, 45, 65);
+  font-size: 1.2rem;
+}
