@@ -10,6 +10,10 @@ class BookmarksController < ApplicationController
     redirect_to action: :index
   end
 
+  def show
+    @bookmark = Bookmark.find(params[:id])
+  end
+
   def new
     @bookmark = Bookmark.new
   end
@@ -30,11 +34,11 @@ class BookmarksController < ApplicationController
 
   private
 
-  def find_blat
+  def find_bookmark
     @bookmark = Bookmark.find(params[:id])
   end
 
   def bookmark_params
-    params.require(:bookmark).permit(:title, :url, :comment)
+    params.require(:bookmark).permit(:title, :url, :comment, :favourite)
   end
 end

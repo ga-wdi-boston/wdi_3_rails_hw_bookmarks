@@ -1,11 +1,7 @@
-  <ol>
-  <li>
-    <ul>
-      <li><%= bookmark[:id] %></li>
-      <li><%= bookmark[:title] %></li>
-      <li><%= bookmark[:url] %></li>
-      <li><%= bookmark[:comment] %></li>
-      <li><%= bookmark[:favourite?] %></li>
-    </ul>
-  </li>
-  </ol>
+<h1>Bookmark <%= @bookmark.id %></h1>
+<ul>
+  <li><%= link_to @bookmark.title, @bookmark %></li>
+  <li><%= link_to @bookmark.url, @bookmark.url %></li>
+  <li><%= @bookmark.comment %></li>
+  <li><%= @bookmark.favourite? %></li>
+</ul>

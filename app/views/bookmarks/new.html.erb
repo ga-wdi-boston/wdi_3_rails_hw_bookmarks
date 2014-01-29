@@ -1,4 +1,4 @@
-<h2>Add a Bookmark</h2>
+<h1>Add a Bookmark</h1>
 <p><em>Use the checkbox if it's a favourite of yours!</em></p>
 <%= form_for @bookmark, url: {action: 'create', controller: 'bookmarks'} do |f| %>
   <%= f.text_field :title, placeholder: "Title" %>
