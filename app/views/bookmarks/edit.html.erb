@@ -1,2 +1,11 @@
-<h1>Bookmarker#edit</h1>
-<p>Find me in app/views/bookmarker/edit.html.erb</p>
+<h2>Edit this bookmark</h2>
+<%= form_for @bookmark do |form| %>
+	<p>URL: <%= form.text_field :url %></p>
+	<p>Title: <%= form.text_field :title %></p>
+	<p>Comment: <%= form.text_area :comment , rows:10, cols: 50 %></p>
+	<%= radio_button_tag(:favorite, "1") %>
+	<%= label_tag(:favorite_yes, "This is a favotite") %><br>
+	<%= radio_button_tag(:favorite, "0") %>
+	<%= label_tag(:favorite_no, "This is not a favorite") %>
+	<p><%= form.submit %></p>
+<% end %>
