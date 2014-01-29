@@ -16,7 +16,7 @@
 				<% else %>
 						<li></li>
 				<% end %>
-		<li><%= @bookmark.click_count %>
+		<li class='center'><%= @bookmark.click_count %>
 		<li class='short'><%= link_to "Edit", edit_bookmark_path(@bookmark) %></li>
 		<li class='short'><%= link_to "Delete", bookmark_path(@bookmark), method: :delete, confirm: "Are you sure you want to delete this bookmark?"%></li>
 	</ul>

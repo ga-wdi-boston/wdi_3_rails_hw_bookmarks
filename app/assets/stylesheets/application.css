@@ -76,6 +76,10 @@ input {
 	background: url(star.png) no-repeat;
 }
 
+.center {
+	padding-left: 35px;
+}
+
 .alert {
 	height: 30px;
 	margin-top: -10px;
