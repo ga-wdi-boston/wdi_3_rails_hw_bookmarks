@@ -18,3 +18,16 @@
 </ul>
 
 <iframe src="<%= @bookmark.url %>"></iframe>
+
+<br />
+
+
+<%= link_to 'Edit this bookmark', edit_bookmark_path(@bookmark) %>
+
+<br />
+
+<%= link_to 'Delete bookmark', @bookmark, method: :delete %>
+
+ <br>
+
+<%= link_to 'Return to bookmark index', bookmarks_path %>
