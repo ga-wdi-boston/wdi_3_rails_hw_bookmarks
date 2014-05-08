@@ -10,31 +10,31 @@
       <table>
         <tr>
           <td>URL:</td>
-          <td><input type="text" name="url" size="30" maxlength="50" value="http://"></td>
+          <td><input type="text" name="url" size="30" maxlength="50" value="http://www.test.com"></td>
         </tr>
         <tr>
           <td>Title:</td>
-          <td><input type="text" name="title" size="30" maxlength="50"></td>
+          <td><input type="text" name="title" size="30" maxlength="50" value="Test Title"></td>
         </tr>
         <tr>
           <td>Comment:</td>
-          <td><textarea name="comment" cols="50" rows="4"></textarea></td>
+          <td><textarea name="comment" cols="50" rows="4" placeholder="Put your comments here. Test 1 2 3."></textarea></td>
         </tr>
         <tr>
           <td>Category:</td>
           <td>
             <div id="category_radio_buttons">
               <ul>
-                <li><%= radio_button_tag(:category, 'serious') %>Serious</li>
-                <li><%= radio_button_tag(:category, 'funny') %>Funny</li>
-                <li><%= radio_button_tag(:category, 'useful') %>Useful</li>
+                <li><%= radio_button_tag :category, 'serious', :checked %>Serious</li>
+                <li><%= radio_button_tag :category, 'funny' %>Funny</li>
+                <li><%= radio_button_tag :category, 'useful' %>Useful</li>
               </ul>
             </div>
           </td>
         </tr>
         <tr>
           <td>Favorite:</td>
-          <td><%= check_box_tag(:is_favorite) %></td>
+          <td><%= check_box_tag :is_favorite, 1, true %></td>
         </tr>
         </table>
       <button type="submit" class="btn btn-lg btn-primary" id="add_bookmarkr">Add Bookmarkr</button>
