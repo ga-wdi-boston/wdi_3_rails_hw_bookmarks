@@ -1,0 +1,25 @@
+<div class="view_container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Viewing all Bookmarkr</h3>
+    </div>
+    <div class="panel-body">
+      <table>
+      <tr>
+        <td>URL</td>
+        <td>Title</td>
+        <td>Category</td>
+        <td>Favorite</td>
+      </tr>
+      <% Bookmark.all.each do |bookmark| %>
+      <tr>
+        <td><a href="<%= bookmark.url %>"><%= bookmark.url %></a></td>
+        <td><%= bookmark.title %></td>
+        <td><%= bookmark.category.capitalize %></td>
+        <td><%= bookmark.is_favorite %></td>
+      </tr>
+      </table>
+      <% end %>
+    </div>
+  </div>
+</div>

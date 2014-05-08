@@ -1,0 +1,34 @@
+td {
+  padding: 12px;
+  vertical-align: top;
+  font-size: 18px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+input[type="radio"] {
+  margin-right: 20px;
+}
+
+#category_radio_buttons {
+  margin: 0px 0px 0px -40px;
+}
+
+.new_container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+#add_bookmarkr {
+  float: right;
+  margin: 0 50px 20px 0;
+}
+
+#searchbar {
+  position: absolute;
+  top: 20px;
+  right: 250px;
+  font-size: 18px;
+}

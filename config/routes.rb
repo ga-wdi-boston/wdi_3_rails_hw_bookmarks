@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get '/' => 'home#index'
+  get '/new' => 'new#index'
+  get '/view' => 'view#index'
+  get '/modify' => 'modify#index'
+  get '/delete' => 'delete#index'
+  post '/new' => 'new#post'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
