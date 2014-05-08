@@ -4,10 +4,15 @@ These are my bookmarks:
 
 <% @bookmarks.each do |bmark| %>
   <ul>
+    <li><%= link_to bmark.title, bmark %> </li>
     <li><%= bmark[:title] %> </li>
     <li><%= bmark[:url] %> </li>
     <li><%= bmark[:comment] %> </li>
     <li><%= bmark[:category] %> </li>
     <li>Favorite? <%= bmark[:is_favorite] %> </li>
+    <!-- <li><iframe src="<%=bmark[:url]%>"></iframe></li> -->
+
   </ul>
 <% end %>
+
+

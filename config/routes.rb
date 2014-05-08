@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
-  get '/bookmarks' => 'bookmarks#index'
-  get '/bookmarks/:id' => 'bookmarks#show'
+  root 'bookmarks#index'
+
+  resources :bookmarks
+
+  # get '/bookmarks' => 'bookmarks#index'
+  # get '/bookmarks/:id' => 'bookmarks#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

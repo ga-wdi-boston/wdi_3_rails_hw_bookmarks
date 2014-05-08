@@ -1,1 +1,20 @@
-This is my show!
+<h1> <%= @bookmark.title %> </h1>
+
+
+<p> <%= @bookmark.comment %></p>
+
+<ul>
+<li>Category: <%= @bookmark.category %> </li>
+<li>URL: <%= @bookmark.url %> </li>
+<li>Favorite: <%= @bookmark.is_favorite %> </li>
+
+
+
+<% unless @bookmark.is_favorite %>
+  This book mark is not a favorite.
+  <% end %>
+
+
+</ul>
+
+<iframe src="<%= @bookmark.url %>"></iframe>
