@@ -1,0 +1,46 @@
+<div class="new_container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Add a new bookmark to Bookmarkr</h3>
+    </div>
+    <div class="panel-body">
+      <form action="/new" method="post">
+      <p>
+       <%= token_tag nil %>
+      <table>
+        <tr>
+          <td>URL:</td>
+          <td><input type="text" name="url" size="30" maxlength="50" value="http://www.test.com"></td>
+        </tr>
+        <tr>
+          <td>Title:</td>
+          <td><input type="text" name="title" size="30" maxlength="50" value="Test Title"></td>
+        </tr>
+        <tr>
+          <td>Comment:</td>
+          <td><textarea name="comment" cols="50" rows="4" placeholder="Put your comments here. Test 1 2 3."></textarea></td>
+        </tr>
+        <tr>
+          <td>Category:</td>
+          <td>
+            <div id="category_radio_buttons">
+              <ul>
+                <li><%= radio_button_tag :category, 'serious', :checked %>Serious</li>
+                <li><%= radio_button_tag :category, 'funny' %>Funny</li>
+                <li><%= radio_button_tag :category, 'useful' %>Useful</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Favorite:</td>
+          <td><%= check_box_tag :is_favorite, 1, true %></td>
+        </tr>
+        </table>
+      <button type="submit" class="btn btn-lg btn-primary" id="add_bookmarkr">Add Bookmarkr</button>
+      </p>
+      </form>
+    </div>
+  </div>
+</div>
+

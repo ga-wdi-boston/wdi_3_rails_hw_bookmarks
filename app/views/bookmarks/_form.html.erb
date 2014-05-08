@@ -1,0 +1,36 @@
+<%= form_for @bookmark do |f| %>
+<p>
+<table>
+  <tr>
+    <td><%= f.label :url, 'URL' %></td>
+    <td><%= f.text_field :url, size: 30 %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :title %></td>
+    <td><%= f.text_field :title, size: 30 %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :comment %></td>
+    <td><%= f.text_area :comment, cols: 40, rows: 4 %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :category %></td>
+    <td>
+      <div id="category_radio_buttons">
+        <ul>
+          <li><%= f.radio_button :category, 'serious' %>Serious</li>
+          <li><%= f.radio_button :category, 'funny' %>Funny</li>
+          <li><%= f.radio_button :category, 'useful' %>Useful</li>
+        </ul>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td><%= f.label :is_favorite, "Favorite" %></td>
+    <td><%= f.check_box :is_favorite %></td>
+  </tr>
+  </table>
+<%= f.submit 'Add Bookmarkr', class: 'btn btn-lg btn-primary', id: 'add_bookmarkr' %>
+<% end %>
+</p>
+</form>
