@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+   root 'bookmarks#index'
+  #root 'players#index' # this roots you to the domain
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

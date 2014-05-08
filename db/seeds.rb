@@ -51,5 +51,11 @@ Bookmark.create(
   category: 'serious',
   is_favorite: true
 )
-
+Bookmark.create(
+  url: 'http://www.usaa.com/',
+  title: 'USAA bank',
+  comment: '',
+  category: 'serious',
+  is_favorite: false
+)
 
