@@ -1,0 +1,23 @@
+Schema must have
+  - URL in text not null that begins http:
+  - title in text not null
+  - comment in text
+  - category in text
+  - favorite in boolean
+
+key requirements
+  - index.html should be a list sorted by title
+  - comments and url should not be listed here
+  - comment yes/no should be added
+  - bookmarks are clickable
+  - bookmark comment y/n should link to comment in 'more'
+
+functions
+  - must be able to be filetered
+  - must be able to add new, edit, and delete
+
+note
+  - include some data that allows base functionality
+
+
+database name is wdi_4_rails_hw_bookmarks_development
