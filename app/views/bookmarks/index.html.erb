@@ -1,16 +1,23 @@
 This is my index!
 
+
+
+
 These are my bookmarks:
 
 <% @bookmarks.each do |bmark| %>
   <ul>
-    <li><%= link_to bmark.title, bmark %> </li>
-    <li><%= bmark[:title] %> </li>
+    <li><%= link_to bmark.title, bmark.url, target: '_blank' %> </li>
     <li><%= bmark[:url] %> </li>
     <li><%= bmark[:comment] %> </li>
     <li><%= bmark[:category] %> </li>
     <li>Favorite? <%= bmark[:is_favorite] %> </li>
-    <!-- <li><iframe src="<%=bmark[:url]%>"></iframe></li> -->
+    <li><%= link_to 'More information', bmark %>
+
+    <% if bmark.is_favorite %>
+    YIPPEE!
+    <% else %>
+    <% end %>
 
   </ul>
 <% end %>
