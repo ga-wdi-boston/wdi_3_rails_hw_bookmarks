@@ -1,0 +1,19 @@
+<h1>Bookmarks</h1>
+
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+
+    <li>
+      <%= bookmark.title %>
+      (<%= bookmark.url %>)
+      | <%= bookmark.comment %>
+      | <%= bookmark.category %>
+      | <% bookmark.is_fav %>
+
+      <% if bookmark.is_fav %>
+        | Favorite
+      <% end %>
+    </li>
+
+  <% end %>
+</ul>
