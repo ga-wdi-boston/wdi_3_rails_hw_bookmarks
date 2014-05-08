@@ -1,1 +1,13 @@
 This is my index!
+
+These are my bookmarks:
+
+<% @bookmarks.each do |bmark| %>
+  <ul>
+    <li><%= bmark[:title] %> </li>
+    <li><%= bmark[:url] %> </li>
+    <li><%= bmark[:comment] %> </li>
+    <li><%= bmark[:category] %> </li>
+    <li>Favorite? <%= bmark[:is_favorite] %> </li>
+  </ul>
+<% end %>
