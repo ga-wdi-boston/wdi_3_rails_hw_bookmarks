@@ -1,1 +1,13 @@
-hellllloooooo
+<h1> WELCOME TO BOOKMARKER (by title asc) </h1>
+
+<% Bookmark.all.order(:title).each do |bookmark| %>
+  <section class="bookmark">
+    <h2><%= bookmark[:url] %></h2>
+    <ul>
+      <li>Title: <%= bookmark[:title] %></li>
+      <li>Comment: <%= bookmark[:comment] %></li>
+      <li>Category: <%= bookmark[:category] %></li>
+    </ul>
+  </section>
+<% end %>
+
