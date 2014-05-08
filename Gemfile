@@ -14,7 +14,11 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
-gem 'pry-rails'
+group :development do
+  gem 'pry-rails'
+  gem 'pry-nav'
+end
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
