@@ -2,24 +2,31 @@ class BookmarksController < ApplicationController
   def index
     @bookmarks = Bookmark.order(:title)
   end
+
   def show
-    #binding.pry
-    #@bookmark = Bookmark.find(params)[:id]
+    @bookmark = Bookmark.find(params[:id])
   end
+
+  def new
+    @bookmark = Bookmark.new
+  end
+
+  def create
+    bookmark = Bookmark.create(bookmark_params)
+    redirect_to root_path
+  end
+
+
+
+
+
+
+
 end
 
 
-# def new
-#  @player = Player.new
-#end
+private
 
-# def create
-#   player = Player.create(player_params)
-#   redirect_to player
-# end
-
-# private
-
-# def player_params
-#   params.require(:player).permit(:name, :description,:health, :magic, :is_alive)
-# end
+def bookmark_params
+  params.require(:bookmark).permit(:title, :url,:comment, :is_favorite, :category)
+end

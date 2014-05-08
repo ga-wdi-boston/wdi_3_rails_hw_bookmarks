@@ -2,16 +2,19 @@
 
 <% @bookmarks.each do |bookmark| %>
   <section class="bookmark">
-    <h2><%= bookmark.title %></h2>
+    <h2><%= link_to bookmark.title, bookmark %></h2>
     <ul>
       <li>Category: <%= bookmark.category %></li>
       <% if bookmark.comment.length > 0 %>
       <li>-- Has comment --</li>
       <% end %>
-      <% unless bookmark.is_favorite %>
+      <% if bookmark.is_favorite %>
        <li class="favorite">A favorite</li>
       <% end %>
     </ul>
   </section>
 <% end %>
+
+<button><%= link_to 'add a new bookmark', new_bookmark_path %></button>
+
 
