@@ -13,10 +13,10 @@
       </tr>
       <% @bookmarks.each do |bookmark| %>
       <tr>
-        <td><%= link_to bookmark.url, bookmark.url %></td>
-        <td><%= link_to bookmark.title, bookmark_path([bookmark]) %></td>
-        <td><%= bookmark.category.capitalize %></td>
-        <td>
+        <td width="30%"><%= link_to bookmark.url, bookmark.url %></td>
+        <td width="40%"><%= link_to bookmark.title, bookmark_path([bookmark]) %></td>
+        <td width="20%"><%= bookmark.category.capitalize %></td>
+        <td width="10%">
           <% if bookmark.is_favorite %>
             <img src="http://png.findicons.com/files/icons/1018/pixelicious/32/star.png">
           <% end %>
