@@ -1,0 +1,10 @@
+<h1><%= @bookmark.title %></h1>
+<p><%= @bookmark.url %></p>
+
+<ul>
+  <li>Comment: <%= @bookmark.comment %></li>
+  <li>Category: <%= @bookmark.category %></li>
+  <% unless @bookmark.is_fav %>
+  <li>Not a favorite</li>
+  <% end %>
+</ul>
