@@ -1,0 +1,28 @@
+<div class="panel panel-success">
+  <div class="panel-heading">Bookmarks</div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Comment</th>
+          <th>Category</th>
+          <th>Favorite</th>
+        </th>
+        <tbody>
+          <% @bookmarks.each do |bookmark| %>
+            <tr>
+              <td><%= bookmark.id %></td>
+              <td><%= link_to bookmark.title, bookmark %></td>
+              <td><%= bookmark.comment%></td>
+              <td><%= bookmark.category %></td>
+              <td><%= bookmark.is_favorite %></td>
+            </tr>
+          <%end%>
+        </tbody>
+      </thead>
+    </table>
+  </div>
+  <div class="panel-footer"><%= link_to 'Home', bookmarks_path, class: "btn btn-default", role: "button" %></div>
+</div>
