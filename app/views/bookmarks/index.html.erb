@@ -1,0 +1,32 @@
+<h1>Bookmark Index</h1>
+
+<%=link_to 'New bookmark', new_bookmark_path %>
+
+<div class='filters'>
+    Category filters:
+        <%= link_to "All", root_path%>
+        <% Bookmark::CATEGORIES.each do |category| %>
+            <%= link_to category, bookmarks_path(category: category) %>
+        <% end %>
+        <%= link_to "Uncategorized", bookmarks_path(category: 'uncategorized') %>
+
+</div>
+
+<ul>
+<% @bookmarks.each do |bookmark| %>
+<li>
+    <%= link_to bookmark.title, bookmark %>
+    <% if bookmark.category != nil %>
+     | (<%= bookmark.category %>)
+     <% else %>
+     | (uncategorized)
+    <% end %>
+    <% if bookmark.is_favorite? %>
+     | (favorite)
+    <% end %>
+    <% if bookmark.comment? %>
+     | (comment)
+    <% end %>
+</li>
+<% end %>
+</ul>

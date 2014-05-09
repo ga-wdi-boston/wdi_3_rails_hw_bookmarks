@@ -1,0 +1,23 @@
+<%= form_for bookmark do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :url %>
+    <%= f.text_field :url%>
+  </div>
+  <div>
+    <%= f.label :category %>
+    <%= f.select :category, Bookmark::CATEGORIES %>
+  </div>
+  <div>
+    <%= f.label :comment %>
+    <%= f.text_field :comment %>
+  </div>
+  <div>
+    <%= f.label :is_favorite, 'Favorite?' %>
+    <%= f.check_box :is_favorite %>
+  </div>
+  <%= f.submit %>
+<% end %>

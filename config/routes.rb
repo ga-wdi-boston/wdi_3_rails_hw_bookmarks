@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root 'bookmarks#index'
+
+  get '/bookmarks/search/(:query)' => 'bookmarks#search'
+  get 'bookmarks/uncategorized' => 'bookmarks#uncategorized'
+
+  resources :bookmarks
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
