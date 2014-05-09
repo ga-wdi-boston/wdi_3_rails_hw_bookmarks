@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   root 'bookmarks#index'
 
-  get '/bookmarks/serious' => 'bookmarks#serious'
-  get '/bookmarks/useful' => 'bookmarks#useful'
-  get '/bookmarks/funny' => 'bookmarks#funny'
+  get '/bookmarks/:category' => 'bookmarks#index'
+
+
 
   resources :bookmarks
 

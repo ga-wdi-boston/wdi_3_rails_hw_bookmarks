@@ -2,9 +2,15 @@
 class BookmarksController < ApplicationController
 
   def index
-    @bookmarks = Bookmark.order(:title)
+    category = params[:category]
 
+    if params[:category].present?
+      @bookmarks = Bookmark.order(:title).where(category: category)
+    else
+      @bookmarks = Bookmark.order(:title)
+    end
   end
+
 
   def show
     @bookmark = Bookmark.find(params[:id])
@@ -44,21 +50,25 @@ class BookmarksController < ApplicationController
     redirect_to root_path
   end
 
-  def serious
-    @bookmarks = Bookmark.where(category: 'Serious').order(:title)
-    render :index
-  end
+  # def serious
+  #   @bookmarks = Bookmark.where(category: 'Serious').order(:title)
+  #   render :index
+  # end
 
-  def useful
-    @bookmarks = Bookmark.where(category: 'Useful').order(:title)
-    render :index
-  end
+  # def useful
+  #   @bookmarks = Bookmark.where(category: 'Useful').order(:title)
+  #   render :index
+  # end
 
-  def funny
-    @bookmarks = Bookmark.where(category: 'Funny').order(:title)
-    render :index
-  end
+  # def funny
+  #   @bookmarks = Bookmark.where(category: 'Funny').order(:title)
+  #   render :index
+  # end
 
+  # def search
+  #    @bookmarks = Bookmark.where(params[:category])
+  #    render :index
+  # end
 
 
 

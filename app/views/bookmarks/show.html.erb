@@ -11,10 +11,13 @@
 
     <h1> <%= @bookmark.title %> </h1>
     <br>
+
     <h4><%= @bookmark.comment %></h4>
     <hr>
+
     <h4><small style="font-family:courier,'new courier';" class="text-muted">
-    URL: <%= link_to @bookmark.url, @bookmark.url, target: '_blank' %> </small></h4>
+      URL: <%= link_to @bookmark.url, @bookmark.url, target: '_blank' %>
+    </small></h4>
 
 
     <div>

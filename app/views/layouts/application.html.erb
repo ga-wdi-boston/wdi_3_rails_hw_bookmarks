@@ -22,15 +22,10 @@
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
 
-        <li>
-          <%= link_to 'Serious', '/bookmarks/serious' %>
-        </li>
-        <li>
-          <%= link_to 'Useful', '/bookmarks/useful' %>
-        </li>
-        <li>
-          <%= link_to 'Funny', '/bookmarks/funny' %>
-        </li>
+        <% Bookmark::CATEGORY.each do |cat| %>
+        <li> <%= link_to cat, bookmarks_path(category: cat) %>
+        <% end %>
+
         <li>
           <%= link_to '>> New Bookmark', new_bookmark_path %>
         </li>
