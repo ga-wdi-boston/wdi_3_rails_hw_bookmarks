@@ -1,6 +1,13 @@
 <div class="panel panel-success">
-  <div class="panel-heading"><%= @bookmark.title %></div>
+  <div class="panel-heading">New Bookmark</div>
   <div class="panel-body">
-    <%= render 'form' %>
+    <p>Name: <%= link_to @bookmark.title, @bookmark.url, target: "_blank" %></p>
+    <p>URL: <%= @bookmark.url %></p>
+    <p>Comments: <%= @bookmark.comment %></p>
+    <p>Category: <%= @bookmark.category %></p>
+    <p><span class="glyphicon glyphicon-star-empty"></span>Favorite: <%= @bookmark.is_favorite %></p>
+    <%= link_to 'Delete bookmark', @bookmark, class: "btn btn-danger", role: "button" , method: :delete, data: { confirm: 'Delete this bookmark?' } %>
+    <%= link_to 'Edit bookmark', edit_bookmark_path(@bookmark), class: "btn btn-default", role: "button"  %>
   </div>
+  <div class="panel-footer"><%= link_to 'Home', bookmarks_path, class: "btn btn-default", role: "button" %></div>
 </div>

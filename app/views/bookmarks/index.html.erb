@@ -6,7 +6,7 @@
         <tr>
           <th>#</th>
           <th>Name</th>
-          <th>URL</th>
+          <th>Comment</th>
           <th>Category</th>
           <th>Favorite</th>
         </th>
@@ -14,8 +14,8 @@
           <% @bookmarks.each do |bookmark| %>
             <tr>
               <td><%= bookmark.id %></td>
-              <td><%= link_to bookmark.title, bookmark.url, target: "_blank" %></td>
-              <td><%= bookmark.url%></td>
+              <td><%= link_to bookmark.title, bookmark %></td>
+              <td><%= bookmark.comment%></td>
               <td><%= bookmark.category %></td>
               <td><%= bookmark.is_favorite %></td>
             </tr>
