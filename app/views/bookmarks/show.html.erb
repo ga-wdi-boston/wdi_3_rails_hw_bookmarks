@@ -20,7 +20,7 @@
           <li role="presentation"><%= link_to 'View', bookmark_path(@bookmark) %></li>
           <li role="presentation"><%= link_to 'Modify', edit_bookmark_path(@bookmark) %></li>
           <li role="presentation" class="divider"></li>
-          <li role="presentation"><%= link_to 'Delete', edit_bookmark_path(@bookmark) %></li>
+          <li role="presentation"><%= link_to 'Delete', @bookmark, method: :delete %></li>
         </ul>
         </div>
       </td>
