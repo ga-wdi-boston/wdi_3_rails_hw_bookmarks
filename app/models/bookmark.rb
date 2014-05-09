@@ -1,6 +1,8 @@
 
 class Bookmark < ActiveRecord::Base
+  CATEGORIES = ['useful', 'serious', 'funny']
+  validates :title, :url, presence: true
+  validates :url, :format => URI::regexp(%w(http https))
 end
 
-# add a constant array for available jobs
-#JOBS = ['Knight', 'Wizard', 'Cleric', 'Rogue', 'Blacksmith']
+

@@ -14,6 +14,7 @@
  *= require_self
  */
 
+
 .container {
   width: 60%;
   background-color: white;
@@ -28,14 +29,14 @@ h1 {
   font-family: 'Lobster', cursive, serif;
   color: red;
   text-align: center;
-  font-size: 40px;
+  font-size: 2.5em;
 }
 h2 {
   color: purple;
   text-align: center;
 }
 h2:hover {
-  color: white;
+  color: #ddd;
   text-align: center;
   font-weight: bold;
 }
@@ -48,12 +49,16 @@ img {
 li {
   display: inline-block;
   text-align: center;
+  font-family: sans-serif;
+  padding: 0 5px;
 }
 body {
-  background-image: url(http://www.genaw.com/linda/tutorial_supplies/polka_dots.png);
+  background-image: url(http://www.onlinefabricstore.net/images/products/PDTBKW_1.jpg);
 }
 a:-webkit-any-link {
   text-decoration: none;
+  color: red;
+  font-family: 'Titillium Web', sans-serif;;
   }
 button {
   text-decoration: none;
@@ -65,18 +70,21 @@ div {
   width: 100%;
   text-align: center;
 }
+.sortby {
+  margin: 0 20px 0 0;
+}
 .hoverdiv:hover {
-  background-color:red;
+  background-color: black;
   border-radius: 10px
 }
-.filters {
+.cat_filters {
   width: 100%;
-  border-top: solid 1px red;
-  border-bottom: solid 1px red;
+  border-bottom: solid 2px red;
   height: 20px;
 }
 ul {
   margin: 0;
+  font-family: sans-serif;
 }
 
 form {
@@ -92,3 +100,36 @@ a:hover {
   color: #ddd;
 }
 
+.flashes {
+  position: absolute;
+  top: 100px;
+  left: -100;
+  opacity: 0;
+  animation:mymove 5s;
+  -webkit-animation:mymove 5s;
+  font-size: 16px;
+  color: red;
+  background-color: white;
+  border-radius: 10px;
+  width: 200px;
+  transform:rotate(270deg);
+  -ms-transform:rotate(270deg);
+  -webkit-transform:rotate(270deg);
+}
+#alternate_flash {
+  right: 0;
+  transform:rotate(90deg);
+  -ms-transform:rotate(90deg);
+  -webkit-transform:rotate(90deg);
+}
+@keyframes mymove
+{
+from {opacity: 1;}
+to {opacity: 0;}
+}
+
+@-webkit-keyframes mymove
+{
+from {opacity: 1;}
+to {opacity: 0;}
+}
