@@ -1,10 +1,10 @@
-
-
 <%= form_for @bookmark do |f| %>
 
   <%= f.label :url %>
   <%= f.text_field :url %>
   <br />
+
+
 
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -26,14 +26,19 @@
 
   <% end %>
 
+<br /> <br />
+
+<% if @bookmark.errors.any? %>
+  <div id="error_explanation">
+    <h4 class="error-color"><%= pluralize(@bookmark.errors.count, "error") %> prohibited this bookmark from being saved:</h4>
 
 
+    <% @bookmark.errors.full_messages.each do |msg| %>
+     - <%= msg %>
+    <% end %>
 
-
-
-
-
-
+  </div>
+<% end %>
 
 
 

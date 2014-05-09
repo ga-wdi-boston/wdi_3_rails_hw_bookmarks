@@ -15,8 +15,17 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    bookmark = Bookmark.create(bookmark_params)
-    redirect_to bookmark
+    @bookmark = Bookmark.create(bookmark_params)
+    if @bookmark.valid?
+      # Were good
+      redirect_to bookmark_path(@bookmark)
+      # redirect_to bookmark_path(@bookmark.id)
+      # redirect_to @bookmark
+    else
+      # Failed to create
+      render :new
+    end
+
   end
 
   def edit

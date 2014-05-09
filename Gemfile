@@ -19,6 +19,8 @@ group :development do
   gem 'pry-nav'
 end
 
+gem 'bootstrap_form'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
