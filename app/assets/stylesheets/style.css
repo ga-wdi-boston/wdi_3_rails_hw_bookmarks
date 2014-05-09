@@ -26,9 +26,9 @@ footer {
 
 iframe {
   margin-right: 15px;
-  height: 300px;
+  height: 275px;
   width: 450px;
-  border: 0;
+  border: 0 solid #222222;
   border-radius: 15px;
   overflow: hidden;
 
@@ -108,6 +108,16 @@ a,a:hover {
 
 .favorite {
   width: 50px;
+  margin-left: 25px;
+  position: relative;
+  top: -20px;
+}
+
+.favorite-show {
+  width: 50px;
+  margin-left: 25px;
+  position: relative;
+  top: -60px;
 }
 
 
@@ -116,6 +126,7 @@ a,a:hover {
     font-size: 45px;
   }
 }
+
 
 .navbar-bright {
   background-color:#111166;
