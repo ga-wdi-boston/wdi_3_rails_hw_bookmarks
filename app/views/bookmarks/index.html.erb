@@ -1,7 +1,10 @@
+
+<%= link_to 'New Bookmark', new_bookmark_path %>
+<%= link_to 'Serious Bookmarks', '/bookmarks/serious' %>
+<%= link_to 'Funny Bookmarks', '/bookmarks/funny' %>
+<%= link_to 'Useful Bookmarks', '/bookmarks/useful' %>
+
 <h1>Bookmarks</h1>
-
-<%= link_to 'New bookmark', new_bookmark_path %>
-
 
 <ul>
   <% @bookmarks.each do |bookmark| %>
