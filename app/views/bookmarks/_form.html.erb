@@ -1,0 +1,15 @@
+<%= form_for @bookmark do |f| %>
+   <%= f.label :title %>
+   <%= f.text_field :title %>
+   <br>
+   <%= f.label :url, 'URL' %>
+   <%= f.text_field :url%>
+   <br>
+   <%= f.label :category %>
+   <%= f.select :category, ['Useful', 'Funny', 'Serious']%>
+   <br>
+   <%= f.label :is_favorite, 'Favorite' %>
+   <%= f.check_box :is_favorite %>
+   <br>
+   <%= f.submit class: "btn btn-default", role: "button" %>
+<% end %>
