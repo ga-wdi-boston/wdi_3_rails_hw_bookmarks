@@ -81,6 +81,9 @@ div {
   width: 100%;
   border-bottom: solid 2px red;
   height: 20px;
+  background-color: #eee;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 ul {
   margin: 0;
