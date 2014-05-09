@@ -4,14 +4,21 @@
   <% @bookmarks.each do |bookmark| %>
 
     <li>
-      <%= bookmark.title %>
-      (<%= bookmark.url %>)
-      | <%= bookmark.comment %>
-      | <%= bookmark.category %>
-      | <% bookmark.is_fav %>
+    <!--  <%= link_to bookmark.title, bookmark.url %> -->
+   <!--  chose not to use link_to so website could open up in new tab -->
+    <a href="<%= bookmark.url %>" target="_blank"><%= bookmark.title %></a><br>
+      Category: <%= bookmark.category %><br>
+
+      <% if bookmark.comment %>
+        Contains Comment<br>
+      <% else %>
+
+      <% end %>
 
       <% if bookmark.is_fav %>
-        | Favorite
+        Favorite
+      <% else %>
+
       <% end %>
     </li>
 

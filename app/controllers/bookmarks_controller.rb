@@ -4,4 +4,6 @@ class BookmarksController < ApplicationController
     @bookmarks = Bookmark.order(:title)
   end
 
+
+
 end
