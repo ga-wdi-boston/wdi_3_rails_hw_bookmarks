@@ -1,0 +1,39 @@
+<!-- <h3>Categories</h3> -->
+<p>
+  <% @categories.each do |category| %>
+    <%= link_to category, root_path(category: category) %> |
+  <% end %>
+  <%= link_to 'reset filter', root_path %>
+</p>
+
+<ul>
+<% @bookmarks.each do |bookmark| %>
+  <li>
+    <% if bookmark.is_favorite %>
+      <span class="glyphicon glyphicon-heart fav"></span>
+    <% else %>
+      <span class="glyphicon glyphicon-heart-empty"></span>
+    <% end %>
+
+    <%= link_to bookmark.title, bookmark_path(bookmark) %> |
+    <%= link_to bookmark.category, root_path(category: bookmark.category) %>
+
+    <% if bookmark.comment %>
+      (has comment)
+    <% end %>
+  </li>
+<% end %>
+</ul>
+
+<div class="col-sm-6">
+  <div class="panel" data-toggle="collapse" data-target="#new">
+    <div class="panel-heading">
+        <h3 class="btn btn-info">Add New Bookmark</h3>
+    </div>
+    <div class="panel-body">
+      <div id="new" class="collapse in">
+        <%= render 'form', bookmark: Bookmark.new %>
+      </div>
+    </div>
+  </div>
+</div>
