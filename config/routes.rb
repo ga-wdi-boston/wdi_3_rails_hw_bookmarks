@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  #root 'players#index' # this roots you to the domain
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -10,9 +12,12 @@ Rails.application.routes.draw do
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
+    get '/bookmarks/serious', to: 'bookmarks#serious'
+    get '/bookmarks/funny', to: 'bookmarks#funny'
+    get '/bookmarks/useful', to: 'bookmarks#useful'
+    root 'bookmarks#index'
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+    resources :bookmarks
 
   # Example resource route with options:
   #   resources :products do

@@ -1,0 +1,20 @@
+<%= link_to 'All Bookmarks', root_path %>
+
+<% @bookmarks.each do |bookmark| %>
+  <div class="hoverdiv">
+    <h2> <%= link_to bookmark.title, bookmark %>
+    <span>
+    <% if bookmark.category.length > 0 %>
+      [<%=bookmark.category %>]
+    <% end %>
+    </span>
+    <% if bookmark.is_favorite %>
+     <img src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-basic/256/Favorite-icon.png"></li>
+    <% end %>
+    <% if bookmark.comment.length > 0 %>
+      <img src="http://www.ethicalinstyle.com/wp-content/uploads/comment.png">
+    <% end %>
+    </h2>
+  </div>
+<% end %>
+

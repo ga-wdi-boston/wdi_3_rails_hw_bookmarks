@@ -1,0 +1,23 @@
+<%= link_to 'All Bookmarks', root_path %>
+
+<h1><%= @bookmark.title %></h1>
+<h2><a href="<%= @bookmark.url %>"><%= @bookmark.url %></a></h2>
+<p>Comment: <%= @bookmark.comment %></p>
+<p>Category: <%= @bookmark.category %></p>
+<p>Is a favorite?:<% if @bookmark.is_favorite %>
+       <img src="http://sweetclipart.com/multisite/sweetclipart/files/check_mark_green.png">
+       <% else %>
+       <img src="http://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/600px-Red_x.svg.png">
+       </li>
+      <% end %></p>
+
+
+
+
+
+<button><%= link_to 'edit a bookmark', edit_bookmark_path(@bookmark) %></button>
+
+<button><%= link_to 'delete a bookmark', @bookmark, method: :delete, data: { confirm: 'Confirm delete' } %> </button>
+
+
+

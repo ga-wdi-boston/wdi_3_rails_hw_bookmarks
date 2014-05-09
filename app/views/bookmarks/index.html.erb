@@ -1,0 +1,34 @@
+<%= link_to root_path do %>
+  <h1>Welcome to Bookmarkr</h1>
+<% end %>
+<div class="cat_filters">
+  <ul>
+    <li class="sortby">Category filters:</li>
+    <li class="sortby"><%= link_to 'Funny', '/bookmarks/funny' %></li>
+    <li class="sortby"><%= link_to 'Useful', '/bookmarks/useful' %></li>
+    <li class="sortby"><%= link_to 'Serious', '/bookmarks/serious' %></li>
+  </ul>
+</div>
+<% @bookmarks.each do |bookmark| %>
+  <div class="hoverdiv">
+    <h2> <%= link_to bookmark.title, bookmark %>
+    <span>
+    <% if bookmark.category.length > 0 %>
+      [<%=bookmark.category %>]
+    <% end %>
+    </span>
+    <% if bookmark.is_favorite %>
+     <img src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-basic/256/Favorite-icon.png"></li>
+    <% end %>
+    <% if bookmark.comment.length > 0 %>
+    <img src="http://www.ethicalinstyle.com/wp-content/uploads/comment.png">
+    <% end %>
+    </h2>
+  </div>
+<% end %>
+
+<div class="button_div"><button><%= link_to 'add a new bookmark', new_bookmark_path %></button></div>
+
+
+
+

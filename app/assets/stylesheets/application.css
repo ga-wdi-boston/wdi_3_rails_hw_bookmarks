@@ -13,3 +13,128 @@
  *= require_tree .
  *= require_self
  */
+
+.top_link{
+  font-family: 'Lobster', cursive, serif;
+}
+.container {
+  width: 60%;
+  background-color: white;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+#filters_list {
+  margin: 0 auto;
+}
+h1 {
+  font-family: 'Lobster', cursive, serif;
+  color: red;
+  text-align: center;
+  font-size: 2.5em;
+}
+h2 {
+  color: purple;
+  text-align: center;
+}
+h2:hover {
+  color: #ddd;
+  text-align: center;
+  font-weight: bold;
+}
+.favorite {
+  color: green;
+}
+img {
+  height: 15px;
+}
+li {
+  display: inline-block;
+  text-align: center;
+  font-family: sans-serif;
+  padding: 0 5px;
+}
+body {
+  background-image: url(http://www.onlinefabricstore.net/images/products/PDTBKW_1.jpg);
+}
+a:-webkit-any-link {
+  text-decoration: none;
+  color: red;
+  font-family: 'Titillium Web', sans-serif;;
+  }
+button {
+  text-decoration: none;
+  font-family: 'Lobster', cursive, serif;
+  margin: auto;
+  padding:4px;
+}
+div {
+  width: 100%;
+  text-align: center;
+}
+.sortby {
+  margin: 0 20px 0 0;
+}
+.hoverdiv:hover {
+  background-color: black;
+  border-radius: 10px
+}
+.cat_filters {
+  width: 100%;
+  border-bottom: solid 2px red;
+  height: 20px;
+  background-color: #eee;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+ul {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+form {
+    width: 75%;
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    background: #EEE;
+    color: #888;
+    text-shadow: 1px 1px 1px #FFF;
+}
+a:hover {
+  color: #ddd;
+}
+
+.flashes {
+  position: absolute;
+  top: 100px;
+  left: -100;
+  opacity: 0;
+  animation:mymove 5s;
+  -webkit-animation:mymove 5s;
+  font-size: 16px;
+  color: red;
+  background-color: white;
+  border-radius: 10px;
+  width: 200px;
+  transform:rotate(270deg);
+  -ms-transform:rotate(270deg);
+  -webkit-transform:rotate(270deg);
+}
+#alternate_flash {
+  right: 0;
+  transform:rotate(90deg);
+  -ms-transform:rotate(90deg);
+  -webkit-transform:rotate(90deg);
+}
+@keyframes mymove
+{
+from {opacity: 1;}
+to {opacity: 0;}
+}
+
+@-webkit-keyframes mymove
+{
+from {opacity: 1;}
+to {opacity: 0;}
+}
