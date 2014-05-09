@@ -1,7 +1,14 @@
 td {
   padding: 12px;
-  vertical-align: top;
   font-size: 18px;
+}
+
+#td_center {
+  text-align: center;
+}
+
+#td_top {
+  vertical-align: top;
 }
 
 ul {
@@ -17,18 +24,38 @@ input[type="radio"] {
 }
 
 .new_container {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.view_container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.show_container {
   width: 60%;
   margin: 0 auto;
 }
 
-#add_bookmarkr {
+#submit_button {
   float: right;
   margin: 0 50px 20px 0;
 }
 
-#searchbar {
+.field_with_errors {
+  color: red;
+  font-weight: bold;
+}
+
+#top_banner {
+  padding-top: 1px;
+  padding-bottom: 10px;
+}
+
+/*#searchbar {
   position: absolute;
   top: 20px;
   right: 250px;
   font-size: 18px;
-}
+}*/

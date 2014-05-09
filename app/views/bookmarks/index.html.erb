@@ -1,24 +1,53 @@
 <div class="view_container">
   <div class="panel panel-primary">
     <div class="panel-heading">
-      <h3 class="panel-title">Viewing all Bookmarkr</h3>
+      <table>
+        <tr>
+          <td width="80%">
+            <h3 class="panel-title">Viewing All Bookmarkr</h3>
+          </td>
+          <td>
+            <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">Sort Options
+            <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><%= link_to 'All Bookmarkr', '/bookmarks' %></li>
+              <li role="presentation"><%= link_to 'Serious Bookmarkr', '/bookmarks/serious' %></li>
+              <li role="presentation"><%= link_to 'Funny Bookmarkr', '/bookmarks/funny' %></li>
+              <li role="presentation"><%= link_to 'Useful Bookmarkr', '/bookmarks/useful' %></li>
+            </ul>
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
     <div class="panel-body">
       <table>
       <tr>
-        <td>URL</td>
-        <td>Title</td>
-        <td>Category</td>
-        <td>Favorite</td>
+        <td><u>Title</u></td>
+        <td><u>Category</u></td>
+        <td><u>Favorite</u></td>
+        <td><u>Comments</u></td>
       </tr>
       <% @bookmarks.each do |bookmark| %>
       <tr>
-        <td width="30%"><%= link_to bookmark.url, bookmark.url %></td>
         <td width="40%"><%= link_to bookmark.title, bookmark_path([bookmark]) %></td>
-        <td width="20%"><%= bookmark.category.capitalize %></td>
-        <td width="10%">
+        <td width="30%">
+        <% if bookmark.category != nil %>
+          <%= bookmark.category.capitalize %>
+        <% else %>
+          <%= bookmark.category %>
+        <% end %>
+        </td>
+        <td width="15%" id="td_center">
           <% if bookmark.is_favorite %>
             <img src="http://png.findicons.com/files/icons/1018/pixelicious/32/star.png">
+          <% end %>
+        </td>
+        <td width="15%" id="td_center">
+          <% if bookmark.comment != '' %>
+            <img src="https://cdn2.iconfinder.com/data/icons/snipicons/5000/comment-32.png">
           <% end %>
         </td>
       </div>

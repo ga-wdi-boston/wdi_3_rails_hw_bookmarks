@@ -6,7 +6,14 @@ Rails.application.routes.draw do
   # get '/delete' => 'delete#index'
   # post '/new' => 'new#post'
 
+  get '/bookmarks/serious' => 'bookmarks#serious'
+  get '/bookmarks/funny' => 'bookmarks#funny'
+  get '/bookmarks/useful' => 'bookmarks#useful'
+
+
   resources :bookmarks
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

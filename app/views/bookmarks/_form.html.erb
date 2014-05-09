@@ -1,20 +1,21 @@
 <%= form_for @bookmark do |f| %>
 <p>
 <table>
+    <td><%= render 'flash_message' %>
   <tr>
     <td><%= f.label :url, 'URL' %></td>
-    <td><%= f.text_field :url, size: 30 %></td>
+    <td><%= f.text_field :url, size: 50 %></td>
   </tr>
   <tr>
     <td><%= f.label :title %></td>
-    <td><%= f.text_field :title, size: 30 %></td>
+    <td><%= f.text_field :title, size: 50 %></td>
   </tr>
   <tr>
-    <td><%= f.label :comment %></td>
-    <td><%= f.text_area :comment, cols: 40, rows: 4 %></td>
+    <td id="td_top"><%= f.label :comment %></td>
+    <td><%= f.text_area :comment, cols: 60, rows: 4 %></td>
   </tr>
   <tr>
-    <td><%= f.label :category %></td>
+    <td id="td_top"><%= f.label :category %></td>
     <td>
       <div id="category_radio_buttons">
         <ul>
@@ -26,11 +27,11 @@
     </td>
   </tr>
   <tr>
-    <td><%= f.label :is_favorite, "Favorite" %></td>
-    <td><%= f.check_box :is_favorite %></td>
+    <td id="td_top"><%= f.label :is_favorite, "Favorite" %></td>
+    <td id="td_top"><%= f.check_box :is_favorite %></td>
   </tr>
   </table>
-<%= f.submit 'Add Bookmarkr', class: 'btn btn-lg btn-primary', id: 'add_bookmarkr' %>
+<%= f.submit submit_text, class: 'btn btn-lg btn-primary', id: 'submit_button' %>
 <% end %>
 </p>
 </form>
