@@ -1,28 +1,35 @@
+
+
 <%= form_for @bookmark do |f| %>
 
-  <%= f.label :url %>
-  <%= f.text_field :url %>
+  <%= f.label :url, 'URL' %>
+  <%= f.text_field :url, :class => 'form-control' %>
   <br />
 
-
-
   <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, :class => 'form-control' %>
   <br />
 
   <%= f.label :comment %>
-  <%= f.text_area :comment %>
+  <%= f.text_area :comment, :class => 'form-control' %>
   <br />
 
   <%= f.label :category %>
-  <%= f.select :category, Bookmark::CATEGORY, include_blank: true  %>
+  <%= f.select :category, Bookmark::CATEGORY, include_blank: true, :class => 'col-sm-6 form-control'  %>
   <br />
 
-  <%= f.label :is_favorite %>
-  <%= f.check_box :is_favorite %>
+
+
+
   <br />
 
-  <%= f.submit %>
+   <%= f.label :is_favorite, 'Am I one of your favorites?' %>
+  <%= f.check_box :is_favorite, :class => 'checkbox' %>
+  <br />
+
+
+ <%= f.submit 'SUBMIT', :class => 'btn btn-default' %>
+
 
   <% end %>
 
@@ -32,10 +39,11 @@
   <div id="error_explanation">
     <h4 class="error-color"><%= pluralize(@bookmark.errors.count, "error") %> prohibited this bookmark from being saved:</h4>
 
-
+    <ul>
     <% @bookmark.errors.full_messages.each do |msg| %>
-     - <%= msg %>
+    <li> <%= msg %> </li>
     <% end %>
+    </ul>
 
   </div>
 <% end %>
