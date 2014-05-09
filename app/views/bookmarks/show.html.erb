@@ -28,7 +28,7 @@
         </td>
       </tr>
       <tr>
-        <td><h3><%= link_to @bookmark.url, @bookmark.url %></h3></td>
+        <td><h3><%= link_to @bookmark.url, "/bookmarks/#{@bookmark.id}/count", target: "_blank" %></h3></td>
       </tr>
       <tr>
         <td colspan="2">
