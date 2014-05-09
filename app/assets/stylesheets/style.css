@@ -24,6 +24,11 @@ footer {
 
 }
 
+footer p {
+  font-family:'Montserrat',arial narrow,sans-serif;
+  font-size: 13px;
+}
+
 iframe {
   margin-right: 15px;
   height: 275px;
