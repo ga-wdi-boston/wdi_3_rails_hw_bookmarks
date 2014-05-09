@@ -22,4 +22,6 @@ h2 {
 .favorite {
   color: green;
 }
-
+img {
+  height: 15px;
+}

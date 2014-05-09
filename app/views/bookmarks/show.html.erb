@@ -9,5 +9,5 @@
 
 <button><%= link_to 'edit a bookmark', edit_bookmark_path(@bookmark) %></button>
 
-<br><br><br>
- make a delete function
+<button><%= link_to 'delete a bookmark', @bookmark, method: :delete, data: { confirm: 'Confirm delete' } %> </button>
+

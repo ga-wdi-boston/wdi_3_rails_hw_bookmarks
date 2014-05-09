@@ -2,15 +2,17 @@
 
 <% @bookmarks.each do |bookmark| %>
   <section class="bookmark">
-    <h2><%= link_to bookmark.title, bookmark %></h2>
+    <h2><%= link_to bookmark.title, bookmark %>
+    <% if bookmark.is_favorite %>
+       <img src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-basic/256/Favorite-icon.png"></li>
+      <% end %>
+      <% if bookmark.comment.length > 0 %>
+      <img src="http://www.ethicalinstyle.com/wp-content/uploads/comment.png">
+      <% end %>
+      </h2>
     <ul>
       <li>Category: <%= bookmark.category %></li>
-      <% if bookmark.comment.length > 0 %>
-      <li>-- Has comment --</li>
-      <% end %>
-      <% if bookmark.is_favorite %>
-       <li class="favorite">A favorite</li>
-      <% end %>
+
     </ul>
   </section>
 <% end %>
