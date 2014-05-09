@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/bookmarks/funny' => 'bookmarks#funny'
   get '/bookmarks/useful' => 'bookmarks#useful'
   get '/bookmarks/:id/count' => 'bookmarks#count_and_redirect'
+  get ':controller/:action'
 
 
   resources :bookmarks

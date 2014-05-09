@@ -2,7 +2,11 @@ class BookmarksController < ApplicationController
 
   def index
     @page_title = 'View Bookmarkr'
-    @bookmarks = Bookmark.order(:title)
+    if params[:filter].present?
+      @bookmarks = Bookmark.where(category: params[:filter]).order(:title)
+    else
+      @bookmarks = Bookmark.order(:title)
+    end
   end
 
   def show
@@ -42,24 +46,6 @@ class BookmarksController < ApplicationController
     bookmark = Bookmark.find(params[:id])
     bookmark.destroy
     redirect_to root_path, message: 'Bookmarkr Deleted'
-  end
-
-  def serious
-    @page_title = 'Serious Bookmarkr'
-    @bookmarks = Bookmark.where(category: 'serious').order(:title)
-    render :index
-  end
-
-  def funny
-    @page_title = 'Funny Bookmarkr'
-    @bookmarks = Bookmark.where(category: 'funny').order(:title)
-    render :index
-  end
-
-  def useful
-    @page_title = 'Useful Bookmarkr'
-    @bookmarks = Bookmark.where(category: 'useful').order(:title)
-    render :index
   end
 
   def count_and_redirect
