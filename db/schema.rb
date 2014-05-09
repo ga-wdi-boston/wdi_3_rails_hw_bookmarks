@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140508001750) do
+ActiveRecord::Schema.define(version: 20140509141952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140508001750) do
     t.text    "comment"
     t.text    "category"
     t.boolean "is_favorite"
+    t.integer "click_count"
   end
 
 end
