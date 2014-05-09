@@ -1,10 +1,5 @@
 
-<%= link_to 'New Bookmark', new_bookmark_path %>
-<%= link_to 'Serious Bookmarks', '/bookmarks/serious' %>
-<%= link_to 'Funny Bookmarks', '/bookmarks/funny' %>
-<%= link_to 'Useful Bookmarks', '/bookmarks/useful' %>
-
-<h1>Bookmarks</h1>
+<h1>Sitemarks</h1>
 
 <ul>
   <% @bookmarks.each do |bookmark| %>
@@ -12,8 +7,9 @@
     <li>
     <!--  <%= link_to bookmark.title, bookmark.url %> -->
     <!--  chose not to use link_to so website could open up in new tab -->
-    <a href="<%= bookmark.url %>" target="_blank"><%= bookmark.title %></a><br>
-      Category: <%= bookmark.category %><br>
+      <a href="<%= bookmark.url %>" target="_blank"><%= bookmark.title %></a><br>
+      <%= link_to 'Full list of attributes', bookmark_path(bookmark) %><br>
+        Category: <%= bookmark.category %><br>
 
       <% if bookmark.comment %>
         Contains Comment<br>

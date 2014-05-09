@@ -2,13 +2,13 @@ Rails.application.routes.draw do
 
   root 'bookmarks#index'
 
+  get '/bookmarks/serious', to: 'bookmarks#serious', as: :serious
+
+  get '/bookmarks/funny', to: 'bookmarks#funny', as: :funny
+
+  get '/bookmarks/useful', to: 'bookmarks#useful', as: :useful
+
   resources :bookmarks
-
-  get '/bookmarks/serious', to: 'bookmarks#serious'
-
-  get '/bookmarks/funny', to: 'bookmarks#funny'
-
-  get '/bookmarks/useful', to: 'bookmarks#useful'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

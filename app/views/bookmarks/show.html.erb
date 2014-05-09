@@ -1,5 +1,7 @@
-<%= link_to 'Edit this bookmark', edit_bookmark_path(@bookmark)%>
-<%= link_to 'Delete bookmark', @bookmark, method: :delete, data: { confirm: 'Having second thoughts?' } %>
+
+
+
+
 
 <h1><%= @bookmark.title %></h1>
 <p><%= @bookmark.url %></p>
@@ -12,3 +14,8 @@
   <li>Not a favorite</li>
   <% end %>
 </ul>
+
+
+
+<%= link_to 'Edit Sitemark', edit_bookmark_path(@bookmark)%><br>
+<%= link_to 'Delete Sitemark', @bookmark, method: :delete, data: { confirm: 'Having second thoughts?' } %>
