@@ -1,10 +1,12 @@
-<h1> Welcome to Bookmarkr </h1>
+<%= link_to root_path do %>
+  <h1>Welcome to Bookmarkr</h1>
+<% end %>
 <div class="cat_filters">
   <ul>
     <li class="sortby">Category filters:</li>
-    <li class="sortby"><%= link_to 'Funny', 'bookmarks/funny' %></li>
-    <li class="sortby"><%= link_to 'Useful', 'bookmarks/useful' %></li>
-    <li class="sortby"><%= link_to 'Serious', 'bookmarks/serious' %></li>
+    <li class="sortby"><%= link_to 'Funny', '/bookmarks/funny' %></li>
+    <li class="sortby"><%= link_to 'Useful', '/bookmarks/useful' %></li>
+    <li class="sortby"><%= link_to 'Serious', '/bookmarks/serious' %></li>
   </ul>
 </div>
 <% @bookmarks.each do |bookmark| %>
