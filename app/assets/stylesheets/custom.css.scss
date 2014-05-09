@@ -1,0 +1,37 @@
+@import "bootstrap";
+
+#container {
+  width: 960px;
+  margin: auto;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: default;
+}
+
+#main {
+  margin: 1em;
+}
+
+span.glyphicon {
+  font-size: 0.8em;
+}
+
+li {
+  list-style: none;
+}
+
+.glyphicon-heart-empty {
+  color: #BBB;
+}
+
+span.del {
+ color: #E41B17;
+}
+
+.f-label, .f-field {
+  margin-bottom: 1em;
+}
