@@ -1,6 +1,9 @@
 <h1><%= @bookmark.title %></h1>
 <p><%= @bookmark.url %></p>
 
+<%= link_to 'Edit this bookmark', edit_bookmark_path(@bookmark)%>
+
+
 <ul>
   <li>Comment: <%= @bookmark.comment %></li>
   <li>Category: <%= @bookmark.category %></li>
