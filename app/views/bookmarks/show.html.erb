@@ -32,6 +32,13 @@
       </tr>
       <tr>
         <td colspan="2">
+          <h4><b><u>Click Count:</u></b>
+          <%= @bookmark.click_count %>
+        </h4>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
           <h4><b><u>Category:</u></b>
           <% if @bookmark.category != nil %>
             <%= @bookmark.category.capitalize %>

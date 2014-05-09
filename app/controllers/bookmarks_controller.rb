@@ -62,6 +62,12 @@ class BookmarksController < ApplicationController
     render :index
   end
 
+  def count_and_redirect
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.click_count += 1
+    redirect_to @bookmark.url
+  end
+
 private
 
   def bookmark_params

@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140509141952) do
     t.text    "comment"
     t.text    "category"
     t.boolean "is_favorite"
-    t.integer "click_count"
+    t.integer "click_count", default: 0
   end
 
 end
