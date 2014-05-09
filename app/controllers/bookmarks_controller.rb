@@ -14,7 +14,13 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.create(bookmark_params)
+    if @bookmark.valid?
+    flash[:success] = 'successfully created bookmark'
     redirect_to bookmarks_path
+    else
+      flash.now[:danger] = "Could not save bookmark"
+      render :new
+    end
   end
 
   def edit
@@ -22,9 +28,13 @@ class BookmarksController < ApplicationController
   end
 
   def update
-    bookmark = Bookmark.find(params[:id])
-    bookmark.update(bookmark_params)
-    redirect_to bookmark
+    @bookmark = Bookmark.find(params[:id])
+    if @bookmark.update(bookmark_params)
+      redirect_to bookmark_path
+    else
+      flash.now[:danger] = "Could not update bookmark"
+      render :new
+    end
   end
 
   def destroy
@@ -40,6 +50,16 @@ class BookmarksController < ApplicationController
 
   def funny
     @bookmarks = Bookmark.where(category: 'Funny').order(:title)
+    render :index
+  end
+
+  def favorites
+    @bookmarks = Bookmark.where(is_favorite: true)
+    render :index
+  end
+
+  def comments
+    @bookmarks = Bookmark.where.not(comment: nil)
     render :index
   end
 
