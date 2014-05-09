@@ -13,9 +13,9 @@
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
               <li role="presentation"><%= link_to 'All Bookmarkr', '/bookmarks' %></li>
-              <li role="presentation"><%= link_to 'Serious Bookmarkr', '/bookmarks/serious' %></li>
-              <li role="presentation"><%= link_to 'Funny Bookmarkr', '/bookmarks/funny' %></li>
-              <li role="presentation"><%= link_to 'Useful Bookmarkr', '/bookmarks/useful' %></li>
+              <% Bookmark::CATEGORIES.each do |category| %>
+                <li role="presentation"><%= link_to "#{category} Bookmarkr", "/bookmarks/#{category.downcase}" %></li>
+              <% end %>
             </ul>
             </div>
           </td>

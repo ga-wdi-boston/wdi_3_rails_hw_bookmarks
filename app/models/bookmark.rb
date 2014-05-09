@@ -1,5 +1,5 @@
 class Bookmark < ActiveRecord::Base
-
+CATEGORIES = ['Serious', 'Funny', 'Useful']
 
 validates :url, presence: true
 validates :url, format: URI::regexp(%w(http https))

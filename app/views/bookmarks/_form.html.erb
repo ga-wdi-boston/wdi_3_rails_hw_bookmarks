@@ -19,9 +19,9 @@
     <td>
       <div id="category_radio_buttons">
         <ul>
-          <li><%= f.radio_button :category, 'serious' %>Serious</li>
-          <li><%= f.radio_button :category, 'funny' %>Funny</li>
-          <li><%= f.radio_button :category, 'useful' %>Useful</li>
+          <% Bookmark::CATEGORIES.each do |category| %>
+          <li><%= f.radio_button :category, category %><%= category %></li>
+          <% end %>
         </ul>
       </div>
     </td>
