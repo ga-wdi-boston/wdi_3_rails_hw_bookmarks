@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   resources :bookmarks
 
+  get '/serious' => 'bookmarks#serious'
+  get '/useful' => 'bookmarks#useful'
+  get '/funny' => 'bookmarks#funny'
+
   # get '/bookmarks' => 'bookmarks#index'
   # get '/bookmarks/:id' => 'bookmarks#show'
 

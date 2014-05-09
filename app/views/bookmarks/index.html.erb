@@ -1,6 +1,10 @@
 This is my index!
 
+<br />
 
+<%= link_to 'Serious', '/serious' %> | <%= link_to 'Useful', '/useful' %> | <%= link_to 'Funny', '/funny' %>
+
+<br>
 
 
 These are my bookmarks:
@@ -8,14 +12,19 @@ These are my bookmarks:
 <% @bookmarks.each do |bmark| %>
   <ul>
     <li><%= link_to bmark.title, bmark.url, target: '_blank' %> </li>
-    <li><%= bmark[:url] %> </li>
-    <li><%= bmark[:comment] %> </li>
     <li><%= bmark[:category] %> </li>
-    <li>Favorite? <%= bmark[:is_favorite] %> </li>
     <li><%= link_to 'More information', bmark %>
 
+    <br>
+
+    <% if bmark[:comment].present? %>
+    Comments included.
+    <% end %>
+
+    <br>
+
     <% if bmark.is_favorite %>
-    YIPPEE!
+    My fave.
     <% else %>
     <% end %>
 
