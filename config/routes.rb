@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  root 'home#index'
+  # get '/new' => 'new#index'
+  # get '/view' => 'view#index'
+  # get '/modify' => 'modify#index'
+  # get '/delete' => 'delete#index'
+  # post '/new' => 'new#post'
+
+  get '/bookmarks/:id/count' => 'bookmarks#count_and_redirect'
+
+  get '/bookmarks/category/:filter' => 'bookmarks#index', as: 'bookmarks_category'
+
+  resources :bookmarks
+
+#  get ':controller/:action' => 'bookmarks#index?filter=?????'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

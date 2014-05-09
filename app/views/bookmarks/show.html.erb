@@ -1,0 +1,59 @@
+<div class="show_container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Viewing Bookmarkr</h3>
+    </div>
+    <div class="panel-body" id="individual_bookmark">
+      <table>
+      <tr>
+        <td width="70%">
+          <h1><%= @bookmark.title %>
+          <% if @bookmark.is_favorite %>
+            <img id="star" src="http://png.findicons.com/files/icons/1018/pixelicious/32/star.png" alt="Favorite" title="Favorite">
+          <% end %>
+          </h1>
+        </td>
+        <td>
+          <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">Bookmarkr Options
+          <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation"><%= link_to 'View', bookmark_path(@bookmark) %></li>
+            <li role="presentation"><%= link_to 'Modify', edit_bookmark_path(@bookmark) %></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><%= link_to 'Delete', @bookmark, method: :delete, data: { confirm: 'Delete Bookmarkr?'} %></li>
+          </ul>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><h3><%= link_to @bookmark.url, "/bookmarks/#{@bookmark.id}/count", target: "_blank" %></h3></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <h4><b><u>Click Count:</u></b>
+          <%= @bookmark.click_count %>
+        </h4>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <h4><b><u>Category:</u></b>
+          <% if @bookmark.category != nil %>
+            <%= @bookmark.category.capitalize %>
+          <% else %>
+            <%= @bookmark.category %>
+          <% end %>
+        </h4>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"><h4><b><u>Comment: </u></b> <%= @bookmark.comment %></h4></td>
+      </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+

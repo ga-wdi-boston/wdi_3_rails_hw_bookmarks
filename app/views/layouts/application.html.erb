@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wdi4RailsHwBookmarks</title>
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <title>Bookmarkr - <%= @page_title %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<%= yield %>
+<div class='container'>
+  <!-- INTRO -->
+  <div class="jumbotron" id="top_banner">
+        <h1>Bookmarkr</h1>
+        <p>The simple and enjoyable way to manage your bookmarks online! View the list of bookmarks or add one of your own!</p>
+        <p>
+          <a href="/bookmarks" class="btn btn-primary btn-lg" role="button">Bookmarkr View »</a>
+          <a href="/bookmarks/new" class="btn btn-primary btn-lg" role="button">Add Bookmarkr »</a>
+        </p>
+      </div>
+
+  <!-- <div id="searchbar">
+    <input type="text" name="search" size="30" maxlength="50">
+    <a href="/delete"><button type="button" class="btn btn-primary">Search</button></a>
+  </div> -->
+
+  <!-- MAIN -->
+  <div>
+    <p>
+    <%= yield %>
+    </p>
+  </div>
+</div>
 
 </body>
 </html>

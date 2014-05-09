@@ -1,0 +1,65 @@
+<div class="view_container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <table>
+        <tr>
+          <td width="80%">
+            <h3 class="panel-title">Viewing All Bookmarkr</h3>
+          </td>
+          <td>
+            <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">Filter Options
+            <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><%= link_to 'All Bookmarkr', '/bookmarks' %></li>
+              <% Bookmark::CATEGORIES.each do |category| %>
+                <li role="presentation"><%= link_to "#{category} Bookmarkr", "/bookmarks/category/#{category}" %></li>
+              <% end %>
+            </ul>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="panel-body">
+      <table>
+      <tr>
+        <td><u>View</u></td>
+        <td><u>Title</u></td>
+        <td><u>Category</u></td>
+        <td><u>Favorite</u></td>
+        <td><u>Comments</u></td>
+      </tr>
+      <% @bookmarks.each do |bookmark| %>
+      <tr>
+        <td width="15%">
+          <%= link_to image_tag('http://png-2.findicons.com/files/icons/573/must_have/32/search.png'), bookmark_path([bookmark]) %>
+        </td>
+        <td width="40%">
+          <%= link_to bookmark.title, "/bookmarks/#{bookmark.id}/count", target: "_blank" %>
+        </td>
+        <td width="20%">
+          <% if bookmark.category != nil %>
+            <%= bookmark.category.capitalize %>
+          <% else %>
+            <%= bookmark.category %>
+          <% end %>
+        </td>
+        <td width="12%" id="td_center">
+          <% if bookmark.is_favorite %>
+            <img src="http://png.findicons.com/files/icons/1018/pixelicious/32/star.png">
+          <% end %>
+        </td>
+        <td width="12%" id="td_center">
+          <% if bookmark.comment != '' %>
+            <img src="https://cdn2.iconfinder.com/data/icons/snipicons/5000/comment-32.png">
+          <% end %>
+        </td>
+      </div>
+      </tr>
+      <% end %>
+      </table>
+    </div>
+  </div>
+</div>
