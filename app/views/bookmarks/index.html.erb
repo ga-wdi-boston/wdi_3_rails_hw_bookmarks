@@ -1,34 +1,48 @@
-This is my index!
-
-<br />
-
-<%= link_to 'Serious', '/serious' %> | <%= link_to 'Useful', '/useful' %> | <%= link_to 'Funny', '/funny' %>
-
-<br>
-
-
-These are my bookmarks:
 
 <% @bookmarks.each do |bmark| %>
-  <ul>
-    <li><%= link_to bmark.title, bmark.url, target: '_blank' %> </li>
-    <li><%= bmark[:category] %> </li>
-    <li><%= link_to 'More information', bmark %>
 
-    <br>
-
-    <% if bmark[:comment].present? %>
-    Comments included.
-    <% end %>
-
-    <br>
-
+<div class="row">
+<br>
+  <div class="col-md-2 col-sm-3 text-center">
     <% if bmark.is_favorite %>
-    My fave.
-    <% else %>
-    <% end %>
+              <img class="favorite" src="assets/bookmark.png">
+              <% else %>
+              <% end %>
 
-  </ul>
+    <!-- <a class="story-title" href="http://www.techvisually.com/p/2LmGb0yEsL"><img alt="Repurpose Content to Reach a Wider Audience" src="http://site2img-api.herokuapp.com/1078600787" style="width:100px;height:100px" class="img-circle"></a> -->
+  </div>
+  <div class="col-md-10 col-sm-9">
+    <h3><%= link_to bmark.title, bmark.url, target: '_blank' %> </h3>
+      <div class="row">
+        <div class="col-xs-9">
+          <small class="text-muted">
+            <%= link_to 'More information',bmark%><!--
+            --><% if bmark[:comment].present? %>, including comments<% end %>
+          </small>
+        </div>
+          <div class="col-xs-3">
+            <h4><span class="label label-default"><%= bmark[:category] %> </span></h4>
+        <br>
+          </div>
+        </div>
+      </div>
+    </div>
+<hr>
+
 <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
