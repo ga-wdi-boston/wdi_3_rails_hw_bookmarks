@@ -13,11 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+.container {
+  width: 60%;
+  background-color: white;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+#filters_list {
+  margin: 0 auto;
+}
 h1 {
+  font-family: 'Lobster', cursive, serif;
   color: red;
+  text-align: center;
+  font-size: 40px;
 }
 h2 {
   color: purple;
+  text-align: center;
+}
+h2:hover {
+  color: white;
+  text-align: center;
+  font-weight: bold;
 }
 .favorite {
   color: green;
@@ -25,3 +45,50 @@ h2 {
 img {
   height: 15px;
 }
+li {
+  display: inline-block;
+  text-align: center;
+}
+body {
+  background-image: url(http://www.genaw.com/linda/tutorial_supplies/polka_dots.png);
+}
+a:-webkit-any-link {
+  text-decoration: none;
+  }
+button {
+  text-decoration: none;
+  font-family: 'Lobster', cursive, serif;
+  margin: auto;
+  padding:4px;
+}
+div {
+  width: 100%;
+  text-align: center;
+}
+.hoverdiv:hover {
+  background-color:red;
+  border-radius: 10px
+}
+.filters {
+  width: 100%;
+  border-top: solid 1px red;
+  border-bottom: solid 1px red;
+  height: 20px;
+}
+ul {
+  margin: 0;
+}
+
+form {
+    width: 75%;
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    background: #EEE;
+    color: #888;
+    text-shadow: 1px 1px 1px #FFF;
+}
+a:hover {
+  color: #ddd;
+}
+
