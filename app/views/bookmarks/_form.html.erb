@@ -1,0 +1,47 @@
+<%= form_for bookmark do |f| %>
+  <div class="row">
+    <div class="col-sm-3 f-label pull-left">
+      <%= f.label :title %>:
+    </div>
+    <div class="col-sm-9 f-field pull-left">
+      <%= f.text_field :title %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3 f-label pull-left">
+      <%= f.label :url, "URL" %>:
+    </div>
+    <div class="col-sm-9 f-field pull-left">
+      <%= f.text_field :url %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3 f-label pull-left">
+      <%= f.label :category %>:
+    </div>
+    <div class="col-sm-9 f-field pull-left">
+      <%= f.text_field :category %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3 f-label pull-left">
+      <%= f.label :comment %>:
+    </div>
+    <div class="col-sm-9 f-field pull-left">
+      <%= f.text_area :comment %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3 f-label pull-left">
+      <%= f.label :is_favorite, "Favorite?" %>:
+    </div>
+    <div class="col-sm-9 f-field pull-left">
+      <%= f.check_box :is_favorite %>
+    </div>
+  </div>
+  <%= f.submit %>
+<% end %>

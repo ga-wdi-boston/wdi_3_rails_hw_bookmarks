@@ -1,0 +1,32 @@
+<p>
+  <% @categories.each do |category| %>
+    <%= link_to category, root_path(category: category) %> |
+  <% end %>
+  <%= link_to 'reset filter', root_path %>
+</p>
+
+<ul>
+<% @bookmarks.each do |bookmark| %>
+  <li>
+    <% if bookmark.is_favorite %>
+      <span class="glyphicon glyphicon-heart fav"></span>
+    <% else %>
+      <span class="glyphicon glyphicon-heart-empty"></span>
+    <% end %>
+
+    <%= link_to bookmark.title, bookmark_path(bookmark) %> |
+    <%= link_to bookmark.category, root_path(category: bookmark.category) %>
+
+    <% if bookmark.comment %>
+      <span class="tip glyphicon glyphicon-align-left" data-toggle="tooltip" data-placement="right" title="Has Comment"></span>
+    <% end %>
+  </li>
+<% end %>
+</ul>
+
+<hr>
+
+<div class="col-sm-9">
+  <h3>Add New Bookmark</h3>
+  <%= render 'form', bookmark: Bookmark.new %>
+</div>

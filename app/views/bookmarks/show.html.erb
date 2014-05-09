@@ -1,0 +1,15 @@
+<h3><%= link_to @bookmark.title, @bookmark.url %>
+  <% if @bookmark.is_favorite %>
+      <span class="glyphicon glyphicon-heart"></span>
+  <% end %>
+  <%= link_to bookmark_path(@bookmark), method: :delete, data: {confirm: 'Really delete this bookmark?'} do %>
+    <span class="del tip glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="right" title="Delete"></span>
+  <% end %>
+</h3>
+<ul>
+  <li>URL:  <%= link_to @bookmark.url, @bookmark.url %></li>
+  <li>Category:  <%=@bookmark.category%></li>
+  <li>Comment: <%=@bookmark.comment%></li>
+</ul>
+
+<%= link_to "Edit Bookmark Details", edit_bookmark_path %> | <%= link_to "Home", bookmarks_path %>
