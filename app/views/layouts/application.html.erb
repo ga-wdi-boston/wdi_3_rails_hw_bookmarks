@@ -1,14 +1,111 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wdi4RailsHwBookmarks</title>
+  <title>Bookmarkr</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="/" class="navbar-brand" style="font-size: 20px;
+        font-family:'Montserrat'; color: #fff !important">
+        &nbsp; Bookmarkr >> </a>
+      </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <% Bookmark::CATEGORY.each do |cat| %>
+        <li> <%= link_to cat, bookmarks_path(category: cat) %>
+        <% end %>
+
+        <li>
+          <%= link_to '>> New Bookmark', new_bookmark_path %>
+        </li>
+      </ul>
+
+    </nav>
+  </div>
+</header>
+
+<div id="masthead">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg">
+          <!-- Make your bookmarks easy to find! &nbsp;Tag it, name it, favorite it. Everything that your bookmarks need to get organized. -->
+        </div>
+      </div>
+    </div>
+  </div><!-- /cont -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div>
+  </div><!-- /cont -->
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel">
+        <div class="panel-body">
+
+
+
+
 <%= yield %>
+
+
+
+
+        </div>
+      </div>
+
+
+
+    </div><!--/col-12-->
+   </div>
+  </div>
+
+
+  <hr>
+
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+        </div>
+        <div class="col-sm-6">
+          <p class="pull-right">By <a href="http://lisaplesko.github.io">Lisa Plesko</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  </body>
+</html>
+
+
+
+
+
 
 </body>
 </html>

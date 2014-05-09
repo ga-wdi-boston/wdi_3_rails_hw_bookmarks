@@ -1,0 +1,42 @@
+<div class="row show-page">
+
+
+    <% if @bookmark.is_favorite %>
+       <div class="favorite-show"><%= image_tag "bookmark.png" %></div>
+    <% end %>
+
+    <% if @bookmark.category.present? %>
+    <h4><span class="label label-default pull-right"><%= @bookmark.category %></span></h4>
+    <% end %>
+
+    <h1> <%= @bookmark.title %> </h1>
+    <br>
+
+    <h4><%= @bookmark.comment %></h4>
+    <hr>
+
+    <h4><small style="font-family:courier,'new courier';" class="text-muted">
+      URL: <%= link_to @bookmark.url, @bookmark.url, target: '_blank' %>
+    </small></h4>
+
+
+    <div>
+      <iframe scrolling="no" class="pull-right" src="<%= @bookmark.url %>"></iframe>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <div class="btn-group-vertical">
+      <button type="button" class="btn btn-default btn-md"><%= link_to 'Edit this bookmark', edit_bookmark_path(@bookmark) %></button>
+      <button type="button" class="btn btn-default btn-md"><%= link_to 'Delete bookmark', @bookmark, method: :delete %></button>
+    </button>
+
+  </div>
+
+</div>
+
+
+
+
