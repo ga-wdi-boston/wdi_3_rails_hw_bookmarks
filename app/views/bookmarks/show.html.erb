@@ -4,6 +4,8 @@
 <%= link_to 'Edit this bookmark', edit_bookmark_path(@bookmark)%>
 
 
+<%= link_to 'Delete bookmark', @bookmark, method: :delete, data: { confirm: 'Having second thoughts?' } %>
+
 <ul>
   <li>Comment: <%= @bookmark.comment %></li>
   <li>Category: <%= @bookmark.category %></li>

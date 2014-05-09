@@ -27,6 +27,13 @@ def update
   redirect_to bookmark
 end
 
+def destroy
+  bookmark = Bookmark.find(params[:id])
+  bookmark.destroy
+  redirect_to root_path
+end
+
+
 
   private
 
