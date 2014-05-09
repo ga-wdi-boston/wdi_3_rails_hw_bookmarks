@@ -16,6 +16,16 @@ class BookmarksController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @bookmark = Bookmark.find(params[:id])
+  end
+
+  def update
+    bookmark = Bookmark.find(params[:id])
+    bookmark.update(bookmark_params)
+    redirect_to bookmark_path
+
+  end
 
 
 
