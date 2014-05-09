@@ -1,0 +1,28 @@
+
+<h1>Sitemarks</h1>
+
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+
+    <li>
+    <!--  <%= link_to bookmark.title, bookmark.url %> -->
+    <!--  chose not to use link_to so website could open up in new tab -->
+      <a href="<%= bookmark.url %>" target="_blank"><%= bookmark.title %></a><br>
+      <%= link_to 'Full list of attributes', bookmark_path(bookmark) %><br>
+        Category: <%= bookmark.category %><br>
+
+      <% if bookmark.comment %>
+        Contains Comment<br>
+      <% else %>
+
+      <% end %>
+
+      <% if bookmark.is_fav %>
+        Favorite
+      <% else %>
+
+      <% end %>
+    </li>
+
+  <% end %>
+</ul>

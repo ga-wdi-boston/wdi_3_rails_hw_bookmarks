@@ -2,13 +2,47 @@
 <html>
 <head>
   <title>Wdi4RailsHwBookmarks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
-<%= yield %>
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
+
+
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><%= link_to 'Sitemarks Index', root_path %></h1>
+      </li>
+
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li><class="active"><%= link_to 'New Sitemark', new_bookmark_path %></li>
+        <li class="has-dropdown">
+          <a href="#">Sitemark Categories</a>
+          <ul class="dropdown">
+            <li><%= link_to 'Serious Sitemarks', '/bookmarks/serious' %></li>
+            <li><%= link_to 'Funny Sitemarks', '/bookmarks/funny' %></li>
+            <li><%= link_to 'Useful Sitemarks', '/bookmarks/useful' %></li>
+          </ul>
+        </li>
+      </ul>
+
+  </nav>
+
+
+
+  <%= yield %>
 
 </body>
 </html>
