@@ -4,20 +4,20 @@ class BookmarksController < ApplicationController
     @bookmarks = Bookmark.order(:title)
   end
 
-  # def serious
-  #   @bookmarks = Bookmark.where(category: 'Serious').order(:title)
-  #   render :index
-  # end
+  def serious
+    @bookmarks = Bookmark.where(category: 'Serious').order(:title)
+    render :index
+  end
 
-  # def funny
-  #   @bookmarks = Bookmark.where(category: 'Funny').order(:title)
-  #   render :index
-  # end
+  def funny
+    @bookmarks = Bookmark.where(category: 'Funny').order(:title)
+    render :index
+  end
 
-  # def useful
-  #   @bookmarks = Bookmark.where(category: 'Useful').order(:title)
-  #   render :index
-  # end
+  def useful
+    @bookmarks = Bookmark.where(category: 'Useful').order(:title)
+    render :index
+  end
 
   def show
     @bookmark = Bookmark.find(params[:id])
@@ -31,10 +31,10 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.create(bookmark_params)
 
     if @bookmark.valid?
-      flash[:error] = 'You created a new bookmark.'
+      flash[:error] = 'You created a new sitemark.'
       redirect_to @bookmark
     else
-      flash.now[:error] = 'Missing title or url.'
+      flash.now[:error] = 'Missing title or url. Ensure url starts with http.'
       render :new
     end
   end
@@ -45,8 +45,9 @@ class BookmarksController < ApplicationController
 
   def update
     @bookmark = Bookmark.find(params[:id])
+
     if @bookmark.update(bookmark_params)
-      flash[:error] = 'You have successfully updated bookmark #{@bookmark.title}.'
+      flash[:error] = 'You have successfully updated stiemark #{@bookmark.title}.'
       redirect_to @bookmark
     else
       flash.now[:error] = 'Missing title or url.'
@@ -55,11 +56,9 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-
-
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
-    flash[:notice] = 'You have deleted a bookmark.'
+    flash[:error] = 'You have deleted a sitemark.'
     redirect_to bookmark_url
   end
 
