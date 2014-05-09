@@ -14,7 +14,7 @@
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
               <li role="presentation"><%= link_to 'All Bookmarkr', '/bookmarks' %></li>
               <% Bookmark::CATEGORIES.each do |category| %>
-                <li role="presentation"><%= link_to "#{category} Bookmarkr", "/bookmarks/index?filter=#{category}" %></li>
+                <li role="presentation"><%= link_to "#{category} Bookmarkr", "/bookmarks/category/#{category}" %></li>
               <% end %>
             </ul>
             </div>

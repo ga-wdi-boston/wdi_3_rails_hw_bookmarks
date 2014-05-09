@@ -6,14 +6,13 @@ Rails.application.routes.draw do
   # get '/delete' => 'delete#index'
   # post '/new' => 'new#post'
 
-  get '/bookmarks/serious' => 'bookmarks#serious'
-  get '/bookmarks/funny' => 'bookmarks#funny'
-  get '/bookmarks/useful' => 'bookmarks#useful'
   get '/bookmarks/:id/count' => 'bookmarks#count_and_redirect'
-  get ':controller/:action'
 
+  get '/bookmarks/category/:filter' => 'bookmarks#index', as: 'bookmarks_category'
 
   resources :bookmarks
+
+#  get ':controller/:action' => 'bookmarks#index?filter=?????'
 
 
 
