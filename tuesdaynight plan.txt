@@ -1,0 +1,16 @@
+things I can do as of tuesday night:
+
+create database with bookmarks
+STUFF BOOKMARKS HAVE
+- URL not null, starts with http
+- title not null
+- comment
+- category
+- favorite (true/false)
+
+STUFF CATEGORIES HAVE
+- name
+
+
+
+
