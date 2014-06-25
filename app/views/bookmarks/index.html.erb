@@ -8,6 +8,9 @@
         <% end %>
         <%= bookmark.title %> --
         <%= bookmark.category %>
+        <% if bookmark.comment %>
+          ^^
+        <% end %>
     </li>
   <% end %>
 </ul>
