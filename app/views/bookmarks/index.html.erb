@@ -1,8 +1,9 @@
 <h1> All bookmarks </h1>
 
-<ul>
+
+<ul class="list">
   <% @bookmarks.each do |bookmark| %>
-    <li>
+    <li class="text-left">
         <% if bookmark.favorite %>
           **
         <% end %>

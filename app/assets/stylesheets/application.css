@@ -21,7 +21,10 @@
    -box-sizing: border-box;
 }
 
-
+.list {
+  width: 60%;
+  margin-left: 20%;
+}
 input, textarea, select, .uneditable-input  {
    border: 1px solid black;
    width: 100%;
