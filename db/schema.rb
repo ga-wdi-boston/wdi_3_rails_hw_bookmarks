@@ -11,17 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140624232521) do
+ActiveRecord::Schema.define(version: 20140625213955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookmarks", force: true do |t|
-    t.text    "url",                 null: false
-    t.text    "title",               null: false
-    t.text    "comment"
-    t.text    "category"
-    t.boolean "is_checked_favorite"
+    t.string   "url",                                 null: false
+    t.string   "title",                               null: false
+    t.text     "comment"
+    t.string   "category"
+    t.boolean  "is_checked_favorite", default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
