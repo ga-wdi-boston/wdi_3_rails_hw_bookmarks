@@ -17,7 +17,17 @@ class BookmarksController < ApplicationController
     @bookmarks = Bookmark.order(title: :desc)
   end
 
+  def funny
+    @bookmarks = Bookmark.where(category: 'funny')
+  end
 
+  def serious
+    @bookmarks = Bookmark.where(category: 'serious')
+  end
+
+  def useful
+    @bookmarks = Bookmark.where(category: 'useful')
+  end
 
   private
 
