@@ -4,7 +4,7 @@ class CreateBookmark < ActiveRecord::Migration
       t.text :url, null: false
       t.text :title, null: false
       t.text :comment
-      t.text :category
+      t.text :category, default: "none"
       t.boolean :favorite, default: false
     end
   end
