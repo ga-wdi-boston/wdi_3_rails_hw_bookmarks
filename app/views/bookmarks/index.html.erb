@@ -7,7 +7,7 @@
           **
         <% end %>
         <%= bookmark.title %> --
-        <%= bookmark.category %>
+        (<%= bookmark.category %>)
         <% if bookmark.comment %>
           ^^
         <% end %>
@@ -19,13 +19,24 @@
 
 <!-- in INDEX.HTML.ERB
       1) title links to URL
-      2) favorite and comment marked clearly
-      3) Add SHOW button to EACH bookmark
+      2) favorite and comment marked clearly (glyphs)
+          a. add key to homepage
+      5) Fixed header
+          a. Add NEW BOOKMARK button
+          b. Add 'Home' button
+      6) fixed footer
+          a. BOOKMARKr by Jake
+
+      4) Add button linked to show to EACH bookmark
           a. create method / view for show
           b. show has EDIT and DELETE options
-      4) Add CATEGORIES navigation button
-          a. create method / views for each category
-          b. somehow yield into index??
-      5) Add NEW BOOKMARK button
-      6) STYLE!!!!!
+            i. destroy is simple enough
+            ii. how to do edit???? -- edit/update methods
+
+      3) Add CATEGORIES navigation buttons
+          a. HOW TO DISPLAY category lists?? How to represent categories
+          b. views will be identical to index
+              i. somehow yield into index?? ****
+
+      7) STYLE!!!!!
 -->
