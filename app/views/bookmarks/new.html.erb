@@ -1,0 +1,56 @@
+<h1>Make a new bookmark!</h1>
+
+<%= form_for (@bookmark) do |f| %>
+
+  <% if @bookmark.errors.any? %>
+    <div id="error_explanation"></div>
+  <% end %>
+
+ <% if @bookmark.errors.any? %>
+  <div id ="error_explanation">
+    <div class="alert alert-error">
+      the form contains <%=pluralize(@bookmark.errors.count, "error") %>.
+    </div>
+    <ul>
+      <% @bookmark.errors.full_messages.each do |msg| %>
+        <li>* <%= msg %> </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+  <div class="field">
+    <%= f.label :url, 'URL' %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title, 'Title' %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comment, 'Comment (optional)' %>
+    <%= f.text_field :comment %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category, 'Category (optional)' %>
+    <%= f.radio_button :category, 'serious' %>
+    <%= label :category_serious, 'Serious' %>
+    <%= f.radio_button :category, 'funny' %>
+    <%= label :category_funny, 'Funny' %>
+    <%= f.radio_button :category, 'useful' %>
+    <%= label :category_useful, 'Useful' %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Favorite?" %>
+    <%= f.check_box :favorite %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save Bookmark!" %>
+  </div>
+<% end %>
