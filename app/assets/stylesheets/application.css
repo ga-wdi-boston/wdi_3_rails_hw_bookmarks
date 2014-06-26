@@ -23,6 +23,8 @@
 
 
 .top_nav {
+
+  display: inline;
   padding: 10px 3px;
   float:right;
   text-align: center;
@@ -37,19 +39,21 @@
 }
 
 .view_path {
+  display: inline;
   text-align: center;
-  background-color: blue;
   background-color: blue;
   border: 2px solid black;
   border-radius: 30%;
   float:right;
-  font-size: 12px;
-  width: 12%;
+  width: 10%;
 }
 
-li p {
-  font-size: 30px;
+.list_title {
+  padding: 10px 0px;
+  width: 90%;
+  float:left;
 }
+
 html {
   overflow-y: scroll;
 }
