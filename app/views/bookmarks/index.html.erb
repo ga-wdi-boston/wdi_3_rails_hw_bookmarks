@@ -4,7 +4,10 @@
 <ul class="list">
   <% @bookmarks.each do |bookmark| %>
   <li class="text-left list_title">
-    (<%= bookmark.category %>)-- <strong><%= bookmark.title %></strong>
+    <strong><%= bookmark.title %></strong>
+    <% if bookmark.category %>
+    -- (<%= bookmark.category %>)
+    <% end %>
     <% if bookmark.favorite %>
     **
     <% end %>
@@ -25,15 +28,19 @@
       6) fixed footer
           a. BOOKMARKr by Jake
 
-   -------------------------------------------------------
       4). bookmark show has EDIT and DELETE options
             i. destroy is simple enough
             ii. how to do edit???? -- edit/update methods
+              -- make _form partial to use in new & edit
 
       3) Add CATEGORIES navigation buttons
-          a. HOW TO DISPLAY category lists?? How to represent categories
-          b. views will be identical to index
-              i. somehow yield into index?? ****
+        -in model, make CONST array of acceptable categories
+          --validate that they passed in one of these (otherwise none)
+        - in controller, assign @bookmarks based on params[:category]
+          ALSO define @category for index
+        - in index, fix h1 with @category, none -> all
+          ALSO enumerate categories to make buttons, link to bookmarks/?category='this'
+            --------HOW
 
       7) STYLE!!!!!
     -->
