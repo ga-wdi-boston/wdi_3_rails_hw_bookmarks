@@ -2,7 +2,7 @@
   <% @bookmarks.each do |bookmark| %>
 
   <li><%= link_to(bookmark.title, bookmark.url) %> | <%= bookmark.category %>
-  | <%= link_to('etc' , bookmark_path(bookmark.id)) %>
+  | <%= link_to('etc' , bookmark_path(bookmark.id)) %> | <%= link_to('Edit', edit_bookmark_path(bookmark.id))%>
   <% end %>
 
 </ul>
