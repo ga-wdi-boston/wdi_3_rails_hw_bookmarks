@@ -40,6 +40,13 @@ class BookmarksController < ApplicationController
     end
   end
 
+  # delete specific bookmark
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.destroy
+    redirect_to bookmarks_path, notice: "You have deleted the bookmark"
+  end
+
   private
 
   # return parameters that are allowed to be edited by user

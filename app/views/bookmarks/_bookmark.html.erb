@@ -4,4 +4,5 @@ Title: <%= link_to(bookmark.title, bookmark_path(bookmark.id)) %>
  | Favorite: <%= bookmark.is_favorite %>
  | Comments: <%= bookmark.comment.nil? ? "No" : "Yes" %>
  | <%= link_to "Edit", edit_bookmark_path(bookmark.id) %>
+ | <%= link_to "Delete", bookmark, method: :delete, data: {confirm: 'Are you sure you would like to delete the bookmark?'} %>
  </li>
