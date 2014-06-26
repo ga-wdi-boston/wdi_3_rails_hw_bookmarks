@@ -8,10 +8,10 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
   end
 
-  # # Get Bookmark/new
-  # def new
-  #   @bookmark = Bookmark.new
-  # end
+  # Get Bookmark/new
+  def new
+    @bookmark = Bookmark.new
+  end
 
   # # Post /Bookmarks
   # def create
