@@ -4,11 +4,36 @@
   <title>Wdi4RailsHwBookmarks</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+  <%= stylesheet_link_tag "styles.css" %>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Roboto' %>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Pacifico' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <div class="row">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="row">
+       <div class="col-md-9">
+          <div class="row">
+            <h1>Bookmarkr</h1>
+          </div>
+          <div class="row">
+            <p class="subhead">disrupting the world of mobile based bookmarking software</p>
+          </div>
+      </div>
+       <div class="user-info col-md-3">
+          <span class="login"><a href="#">zhbanton@gmail.com</a></span>
+          <span class="signout"><a href="#">Sign out</a></span>
+      </div>
+      </div>
+    </nav>
+  </div>
 
 <%= yield %>
 
 </body>
 </html>
+
+
