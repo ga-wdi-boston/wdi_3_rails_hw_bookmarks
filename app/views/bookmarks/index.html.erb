@@ -1,0 +1,6 @@
+<ul> Bookmarks
+<%= render partial: "bookmark", collection: @bookmarks %>
+#shortcut to do each- collection: instance_var will populate each item from the array
+</ul>
+
+<h3><%= link_to 'Create a new Bookmark', new_bookmark_path %></h3>

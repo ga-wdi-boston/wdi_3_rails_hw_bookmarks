@@ -1,0 +1,9 @@
+<li>
+  Url is
+    <%= link_to(bookmark.url, bookmark_path(bookmark.id) ) %></br>
+  Title is <%= bookmark.title %></br>
+  <!--- link_to view helper will create an < a href > with the name of the bookmark -->
+
+  | <%= link_to('Edit', edit_bookmark_path(bookmark)) %></br>
+    | <%= link_to 'Destroy', bookmark, method: :delete, data: {confirm: 'Are you sure?'} %>
+</li>
