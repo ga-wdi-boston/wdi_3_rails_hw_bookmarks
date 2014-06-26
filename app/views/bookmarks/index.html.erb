@@ -1,1 +1,7 @@
-index!
+<% @bookmarks.each do |b| %>
+  <div class="bookmark-index">
+    <h3 class="bookmark-title"><a href="<%= b.url %>"><%= b.title %></a></h3>
+    <small><%= b.url %></small>
+
+  </div>
+<% end %>
