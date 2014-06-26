@@ -1,0 +1,20 @@
+<h3>Look at all these bookmarks!</h3>
+
+<table>
+  <tr>
+    <td>Title</td>
+    <td>URL</td>
+    <td>Category</td>
+    <td>Comment</td>
+    <td>Favorite?</td>
+  </tr>
+  <% @bookmarks.each do |bookmark| %>
+    <tr>
+      <td><%= bookmark.title %></td>
+      <td><%= bookmark.url %></td>
+      <td><%= bookmark.category %></td>
+      <td><%= bookmark.comment %></td>
+      <td><%= bookmark.is_favorite %></td>
+    </tr>
+  <% end %>
+</table>
