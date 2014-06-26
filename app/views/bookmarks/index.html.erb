@@ -3,36 +3,30 @@
 
 <ul class="list">
   <% @bookmarks.each do |bookmark| %>
-  <li class="text-left">
-    <p>(<%= bookmark.category %>)-- <strong><%= bookmark.title %></strong>
-      <% if bookmark.favorite %>
-      **
-      <% end %>
-      <% if bookmark.comment %>
-      ^^
-      <% end %>
-      <%= link_to "View", new_bookmark_path, class: "view_path" %>
-      </p>
+  <li class="text-left list_title">
+    (<%= bookmark.category %>)-- <strong><%= bookmark.title %></strong>
+    <% if bookmark.favorite %>
+    **
     <% end %>
-  </ul>
+    <% if bookmark.comment %>
+    ^^
+    <% end %>
 
-  <!-- TO DO -->
+    <%= link_to "View", bookmark_path(bookmark.id), class: "view_path" %>
+  </li>
+  <% end %>
+</ul>
 
-<!-- in INDEX.HTML.ERB
-      1) title links to URL
+<!-- TO DO -->
+
+<!--  1) title links to URL
       2) favorite and comment marked clearly (glyphs)
           a. add key to homepage
-      5) Fixed header
-          a. Add NEW BOOKMARK button
-          b. Add 'Home' button
       6) fixed footer
           a. BOOKMARKr by Jake
 
-      4) Add button linked to show to EACH bookmark
-        -- link_to "jdjdj", bookmark_path(bookmark.id)
-          a. create method / view for show
    -------------------------------------------------------
-          b. show has EDIT and DELETE options
+      4). bookmark show has EDIT and DELETE options
             i. destroy is simple enough
             ii. how to do edit???? -- edit/update methods
 
