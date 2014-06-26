@@ -25,6 +25,21 @@ class BookmarksController < ApplicationController
     end
   end
 
+  # return a specific bookmark to edit
+  def edit
+    @bookmark = Bookmark.find(params[:id])
+  end
+
+  # update a specific bookmark based off user input and save changes to db
+  def update
+    @bookmark = Bookmark.find(params[:id])
+    if @bookmark.update(bookmark_params)
+      redirect_to bookmark_path, notice: "You have updated the #{@bookmark.title}"
+    else
+      render :edit
+    end
+  end
+
   private
 
   # return parameters that are allowed to be edited by user
