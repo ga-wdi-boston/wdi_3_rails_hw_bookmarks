@@ -14,6 +14,13 @@ th {
   background-color: #4D94B8;
 }
 
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
+  color: #006699;
+  padding-left: 10px;
+}
+
 .glyphicon-star {
   color: rgba(200,200,0,1);
   padding-left: 8px;
@@ -27,3 +34,13 @@ th {
 .col-md-2 {
   background: blue;
 }
+
+#left, #right {
+  background: #E6F0F5;
+  position: fixed;
+  height: 100%;
+  width: 250px;
+}
+#left { left: 0; }
+#right { right: 0; }
+
