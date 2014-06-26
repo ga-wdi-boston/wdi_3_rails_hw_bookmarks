@@ -32,7 +32,7 @@ class BookmarksController < ApplicationController
   def update
     @bookmark = Bookmark.find(params[:id])
     if @bookmark.update(bookmark_params)
-      redirect_to @bookmark, notice: "You have updated the #{@bookmark.name}"
+      redirect_to @bookmark, notice: "You have updated the #{@bookmark.title}"
     else
       render :edit
     end
