@@ -7,7 +7,9 @@
     <% end %>
 
     <% if b.comment %>
-    <p>See more...</p>
+      <%= link_to(b) do %>
+      <p>view comment <span class="glyphicon glyphicon-circle-arrow-right"></span></p>
+      <% end %>
     <% end %>
   </div>
 <% end %>

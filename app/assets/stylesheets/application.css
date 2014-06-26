@@ -22,10 +22,14 @@
   margin-bottom: 0px;
 }
 
+.bookmark-title a {
+  color: black;
+}
+
 div.bookmark-index {
   position: relative;
   padding: 10px;
-  background: #C7FCCF;
+  border: 1px solid #e4e4e4;
   margin: 5px 0;
 }
 
@@ -48,3 +52,9 @@ div.bookmark-index {
   text-align: center;
   bottom: 0;
 }
+
+span.glyphicon-floppy-disk {
+  top: 4px;
+}
+
+
