@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20140625002402) do
     t.boolean "is_favorited", default: false
   end
 
-  add_index "bookmarks", ["category"], name: "index_bookmarks_on_category", unique: true, using: :btree
+  add_index "bookmarks", ["category"], name: "index_bookmarks_on_category", using: :btree
   add_index "bookmarks", ["title"], name: "index_bookmarks_on_title", using: :btree
   add_index "bookmarks", ["url"], name: "index_bookmarks_on_url", unique: true, using: :btree
 

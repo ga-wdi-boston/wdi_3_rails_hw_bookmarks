@@ -9,7 +9,7 @@ class CreateBookmarks < ActiveRecord::Migration
 
       t.index :url, unique: true
       t.index :title
-      t.index :category, unique: true
+      t.index :category
 
     end
   end
