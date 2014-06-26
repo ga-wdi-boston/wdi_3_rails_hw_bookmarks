@@ -7,7 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Bookmark.delete_all
-Category.delete_all
 
 Bookmark.create!(
   url: "http://cosmarxpolitan.tumblr.com",
@@ -18,22 +17,12 @@ Bookmark.create!(
 
 Bookmark.create!(
   url: "http://www.chalkboardnails.com",
-  title: "Chalkboard Nails"
+  title: "Chalkboard Nails",
+  category: "Useful"
 )
 
 Bookmark.create!(
   url: "http://thenoser.com/article/MAN-WANT-SEX-WITH-WOMAN-BUT-DO-MAN-THINK-OF-ANYTHI",
-  title: "MAN WANT SEX WITH WOMAN BUT DO MAN THINK OF ANYTHING ELSE? NO. MAN MONSTER"
-)
-
-Category.create!(
-  name: "Serious"
-)
-
-Category.create!(
-  name: "Funny"
-)
-
-Category.create!(
-  name: "Useful"
+  title: "MAN WANT SEX WITH WOMAN BUT DO MAN THINK OF ANYTHING ELSE? NO. MAN MONSTER",
+  category: "Funny"
 )
