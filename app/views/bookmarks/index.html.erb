@@ -5,7 +5,7 @@
   <% @bookmarks.each do |bookmark| %>
   <li class="text-left list_title">
   <div class="bmark_title"
-    <strong><%= bookmark.title %></strong>
+    <strong><%= link_to "#{bookmark.title}", bookmark.url  %></strong>0
     <% if bookmark.category %>
     -- (<%= bookmark.category %>)
     <% end %>
@@ -29,7 +29,7 @@
 
 <!-- TO DO -->
 
-<!--  1) title links to URL
+<!--
       2) favorite and comment marked clearly (glyphs)
           a. add key to homepage
       6) fixed footer
@@ -43,11 +43,10 @@
       3) Add CATEGORIES navigation buttons
         -in model, make CONST array of acceptable categories
           --validate that they passed in one of these (otherwise nil)
-        - in controller, assign @bookmarks based on params[:category]
-          ALSO define @category for index
-        - in index, reference .category
+        - in controller, assign @bookmarks and @category based on params[:category]
+        - in index, reference @category
           ALSO enumerate categories to make buttons, link to bookmarks/?category='this'
-            --------HOW
+            linkto "funny", bookmarks_path(category: "meh")
 
       7) STYLE!!!!!
     -->
