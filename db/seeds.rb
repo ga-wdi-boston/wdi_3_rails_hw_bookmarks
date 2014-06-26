@@ -46,3 +46,23 @@ Bookmark.create!(
   is_checked_favorite: true
   )
 
+Bookmark.create!(
+  url: 'http://facebook.com',
+  title: 'The Facebook',
+  is_checked_favorite: true
+  )
+
+Bookmark.create!(
+  url: 'http://www.github.com',
+  title: 'Github',
+  category: 'useful',
+  is_checked_favorite: false
+  )
+
+Bookmark.create!(
+  url: 'http://www.mbta.com',
+  title: 'MBTA',
+  category: 'useful',
+  is_checked_favorite: true
+  )
+
