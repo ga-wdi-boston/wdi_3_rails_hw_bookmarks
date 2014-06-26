@@ -5,3 +5,20 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Bookmark.delete_all
+
+puts "Creating 20 Bookmarks"
+bookmark_count = 20
+
+bookmark_count.times do |i|
+  Bookmark.create!(
+    url: "Bookmark url #{i}",
+    title: "Title #{i}",
+    comment: "Comment #{i}",
+    checkbox: (true if rand(2) == 0)
+  )
+end
+
+#Bookmark.create! does the following two things
+#bookmark = Bookmark.new
+#bookmark.save
