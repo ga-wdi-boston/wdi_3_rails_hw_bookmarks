@@ -1,13 +1,16 @@
 <h1> <%= @category %> bookmarks </h1>
 
 
-<ul class="list">
+<ul class="span6">
   <% @bookmarks.each do |bookmark| %>
   <li class="text-left list_title">
+  <div class="bmark_title"
     <strong><%= bookmark.title %></strong>
     <% if bookmark.category %>
     -- (<%= bookmark.category %>)
     <% end %>
+  </div>
+  <div class="glyphs">
     <% if bookmark.comment != "" %>
     ^^
     <% end %>
@@ -15,10 +18,13 @@
     <% if bookmark.favorite  %>
     **
     <% end %>
-
-    <%= link_to "View", bookmark_path(bookmark.id), class: "view_path" %>
-  </li>
-  <% end %>
+  </div>
+  <div class="view_path">
+    <%= link_to "View", bookmark_path(bookmark.id) %>
+  </div>
+</li>
+<hr>
+<% end %>
 </ul>
 
 <!-- TO DO -->

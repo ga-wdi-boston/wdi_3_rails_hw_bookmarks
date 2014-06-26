@@ -38,20 +38,31 @@
   float:left;
 }
 
+.list_title {
+  padding: 10px 0px;
+}
+
+.bmark_title {
+  display:inline-block;
+  width: 80%;
+  float:left;
+
+}
+
+.glyphs {
+  display:inline-block;
+  width: 10%;
+}
+
 .view_path {
-  display: inline;
+  display:inline-block;
   text-align: center;
   background-color: blue;
   border: 2px solid black;
   border-radius: 30%;
-  float:right;
   width: 10%;
-}
+  float: right;
 
-.list_title {
-  padding: 10px 0px;
-  width: 90%;
-  float:left;
 }
 
 html {
@@ -66,10 +77,6 @@ section {
 textarea {
   resize: vertical;
 
-.list {
-  width: 60%;
-  margin-left: 20%;
-}
 input, textarea, select, .uneditable-input  {
    border: 1px solid black;
    width: 100%;
