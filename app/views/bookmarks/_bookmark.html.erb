@@ -2,4 +2,5 @@
 Title: <%= link_to(bookmark.title, bookmark_path(bookmark.id)) %>
  | Category: <%= bookmark.category %>
  | Favorite: <%= bookmark.is_favorite %>
- | Comments: <%= bookmark.comment.nil? ? "No" : "Yes" %></li>
+ | Comments: <%= bookmark.comment.nil? ? "No" : "Yes" %>
+ </li>
