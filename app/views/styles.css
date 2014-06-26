@@ -8,6 +8,7 @@ table, th, td {
    padding: 5px 15px 5px 7px;
    background-color: #E6F0F5;
    margin: 0 auto;
+   margin-top: 150px;
 }
 
 th {
@@ -16,9 +17,14 @@ th {
 
 h1 {
   font-family: 'Pacifico', cursive;
-  font-size: 50px;
+  font-size: 56px;
   color: #006699;
-  padding-left: 10px;
+  padding-left: 25px;
+}
+
+.subhead {
+  padding-left: 75px;
+  color: #006699;
 }
 
 .glyphicon-star {
@@ -26,21 +32,25 @@ h1 {
   padding-left: 8px;
 }
 
-.new_bookmark {
+.new-bookmark {
   padding: 50px 0px;
   text-align: center;
 }
 
-.col-md-2 {
-  background: blue;
+.navbar {
+  background: #E6F0F5;
 }
 
-#left, #right {
-  background: #E6F0F5;
-  position: fixed;
-  height: 100%;
-  width: 250px;
+.user-info {
+  text-align: right;
 }
-#left { left: 0; }
-#right { right: 0; }
+
+.login {
+  padding-right: 15px;
+}
+
+.signout {
+  padding-right: 15px;
+}
+
 
