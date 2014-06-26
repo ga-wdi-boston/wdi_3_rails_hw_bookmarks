@@ -1,0 +1,7 @@
+<ul>Your Bookmarks
+
+  <% @bookmarks.each do |bookmark| %>
+  <li> <%= link_to(bookmark.title, bookmark.url, :target => "_blank") %> </li>
+  <% end %>
+
+</ul>
