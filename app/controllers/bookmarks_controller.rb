@@ -13,15 +13,15 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
   end
 
-  # # Post /Bookmarks
-  # def create
-  #   @bookmark = Bookmark.new(bookmark_params)
-  #   if @bookmark.save
-  #     redirect_to bookmarks_path
-  #   else
-  #     render :new
-  #   end
-  # end
+  # Post /Bookmarks
+  def create
+    @bookmark = Bookmark.new(bookmark_params)
+    if @bookmark.save
+      redirect_to bookmarks_path
+    else
+      render :new
+    end
+  end
 
 
   # def edit
@@ -47,11 +47,11 @@ class BookmarksController < ApplicationController
   # end
 
 
-  # private
+  private
 
-  # def bookmark_params
-  #   params.require(:bookmark).permit([:url, :title, :comment,:category,:is_favorited])
-  # end
+  def bookmark_params
+    params.require(:bookmark).permit([:url, :title, :comment,:category,:is_favorited])
+  end
 
 
 end
