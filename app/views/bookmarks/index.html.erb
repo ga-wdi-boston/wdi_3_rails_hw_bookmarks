@@ -2,6 +2,10 @@
   <div class="bookmark-index">
     <h3 class="bookmark-title"><a href="<%= b.url %>"><%= b.title %></a></h3>
     <small><%= b.url %></small>
+    <%= link_to(b) do %>
+      <div class="etc-button"><span class="glyphicon glyphicon-bookmark"></span></div>
+    <% end %>
+
     <% if b.comment %>
     <p>See more...</p>
     <% end %>
