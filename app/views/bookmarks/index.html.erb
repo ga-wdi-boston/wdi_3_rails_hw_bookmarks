@@ -3,20 +3,20 @@
 
 <ul class="list">
   <% @bookmarks.each do |bookmark| %>
-    <li class="text-left">
-        <% if bookmark.favorite %>
-          **
-        <% end %>
-        <%= bookmark.title %> --
-        (<%= bookmark.category %>)
-        <% if bookmark.comment %>
-          ^^
-        <% end %>
-    </li>
-  <% end %>
-</ul>
+  <li class="text-left">
+    <p>(<%= bookmark.category %>)-- <strong><%= bookmark.title %></strong>
+      <% if bookmark.favorite %>
+      **
+      <% end %>
+      <% if bookmark.comment %>
+      ^^
+      <% end %>
+      <%= link_to "View", new_bookmark_path, class: "view_path" %>
+      </p>
+    <% end %>
+  </ul>
 
-<!-- TO DO -->
+  <!-- TO DO -->
 
 <!-- in INDEX.HTML.ERB
       1) title links to URL
@@ -42,4 +42,4 @@
               i. somehow yield into index?? ****
 
       7) STYLE!!!!!
--->
+    -->

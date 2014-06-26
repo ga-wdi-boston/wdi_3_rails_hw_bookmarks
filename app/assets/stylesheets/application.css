@@ -21,6 +21,47 @@
    -box-sizing: border-box;
 }
 
+
+.top_nav {
+  padding: 10px 3px;
+  float:right;
+  text-align: center;
+  background-color: blue;
+  border: 10px solid black;
+  border-radius: 30%;
+  font-size: 40px;
+}
+
+#home {
+  float:left;
+}
+
+.view_path {
+  text-align: center;
+  background-color: blue;
+  background-color: blue;
+  border: 2px solid black;
+  border-radius: 30%;
+  float:right;
+  font-size: 12px;
+  width: 12%;
+}
+
+li p {
+  font-size: 30px;
+}
+html {
+  overflow-y: scroll;
+}
+body {
+  padding-top: 20%;
+}
+section {
+  overflow: auto;
+}
+textarea {
+  resize: vertical;
+
 .list {
   width: 60%;
   margin-left: 20%;
