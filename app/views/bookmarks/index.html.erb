@@ -1,0 +1,9 @@
+<ul>All the bookmarks
+
+
+<% @bookmarks.each do |bookmark| %>
+<li>
+  <%= bookmark.title + " | " + bookmark.category %>
+</li>
+<% end %>
+
