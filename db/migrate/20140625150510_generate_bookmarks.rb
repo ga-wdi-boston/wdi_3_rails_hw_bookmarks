@@ -1,4 +1,4 @@
-class CreateBookmarks < ActiveRecord::Migration
+class GenerateBookmarks < ActiveRecord::Migration
   def up
     create_table :bookmarks do |t|
       t.text :url, null: false
