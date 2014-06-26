@@ -8,12 +8,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header>
-  <h1 class="logo">
-    <span class="glyphicon glyphicon-floppy-disk"></span>bookmarkr</h1>
-</header>
+<div class="container main-body">
+  <div class="row">
+    <div class="col-sm-6">
+      <header>
+        <h1 class="logo"><span class="glyphicon glyphicon-floppy-disk"></span>bookmarkr</h1>
+      </header>
+    </div>
+    <div class="col-sm-6">
+      <button type="button" class="btn btn-default btn-lg btn-block new-bookmark">add new</button>
+    </div>
+  </div>
+  <%= yield %>
 
-<%= yield %>
-
+</div>
 </body>
 </html>
