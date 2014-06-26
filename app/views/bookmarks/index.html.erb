@@ -1,0 +1,12 @@
+
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+
+  <li><%= link_to(bookmark.title, bookmark.url) %>, <%= bookmark.category %>
+  <% end %>
+
+</ul>
+
+
+
+<h3><%= link_to 'Create a new bookmark', new_bookmark_path %> </h3>
