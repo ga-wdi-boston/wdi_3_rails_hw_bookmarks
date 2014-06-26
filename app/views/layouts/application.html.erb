@@ -16,7 +16,9 @@
       </header>
     </div>
     <div class="col-sm-6">
-      <button type="button" class="btn btn-default btn-lg btn-block new-bookmark">add new</button>
+      <form method="get" action="bookmarks/new/">
+      <button type="submit" class="btn btn-default btn-lg btn-block new-bookmark">add new</button>
+      </form>
     </div>
   </div>
   <%= yield %>
