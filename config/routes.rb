@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :bookmarks
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  root 'bookmarks#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
