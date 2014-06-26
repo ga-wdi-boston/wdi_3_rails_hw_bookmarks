@@ -39,12 +39,12 @@ class BookmarksController < ApplicationController
   end
 
 
-  # def destroy
-  #   @bookmark = Bookmark.find(params[:id])
-  #   @bookmark.destroy
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.destroy
 
-  #   redirect_to @bookmark, notice: "You have deleted the bookmark"
-  # end
+    redirect_to @bookmark, notice: "You have deleted the bookmark"
+  end
 
 
   private
