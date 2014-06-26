@@ -22,6 +22,23 @@
   margin-bottom: 0px;
 }
 
+div.bookmark-index {
+  position: relative;
+  padding: 10px;
+  background: #C7FCCF;
+  margin: 5px 0;
+}
+
+.bookmark-index h3, .bookmark-index p {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+.etc-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 
 .footer {
   width: 100%;
