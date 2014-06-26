@@ -15,6 +15,7 @@ class BookmarksController < ApplicationController
 
   def index
     @bookmarks = Bookmark.order(title: :desc)
+    @category = "will be better"
   end
 
   def show
@@ -24,7 +25,7 @@ class BookmarksController < ApplicationController
   private
 
     def bookmark_params
-      params.require(:bookmark).permit(:url, :title, :category, :favorite)
+      params.require(:bookmark).permit(:url, :title, :category, :comment, :favorite)
     end
 
 end

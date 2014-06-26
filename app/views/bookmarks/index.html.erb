@@ -1,4 +1,4 @@
-<h1> All bookmarks </h1>
+<h1> <%= @category %> bookmarks </h1>
 
 
 <ul class="list">
@@ -8,11 +8,12 @@
     <% if bookmark.category %>
     -- (<%= bookmark.category %>)
     <% end %>
-    <% if bookmark.favorite %>
-    **
-    <% end %>
-    <% if bookmark.comment %>
+    <% if bookmark.comment != "" %>
     ^^
+    <% end %>
+
+    <% if bookmark.favorite  %>
+    **
     <% end %>
 
     <%= link_to "View", bookmark_path(bookmark.id), class: "view_path" %>
@@ -35,10 +36,10 @@
 
       3) Add CATEGORIES navigation buttons
         -in model, make CONST array of acceptable categories
-          --validate that they passed in one of these (otherwise none)
+          --validate that they passed in one of these (otherwise nil)
         - in controller, assign @bookmarks based on params[:category]
           ALSO define @category for index
-        - in index, fix h1 with @category, none -> all
+        - in index, reference .category
           ALSO enumerate categories to make buttons, link to bookmarks/?category='this'
             --------HOW
 
