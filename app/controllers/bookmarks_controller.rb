@@ -14,8 +14,7 @@ class BookmarksController < ApplicationController
   end
 
   def index
-    @bookmarks = Bookmark.order(title: :desc)
-    @category = "All"
+        @bookmarks = Bookmark.order(title: :desc)
   end
 
   def show

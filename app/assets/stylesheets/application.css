@@ -64,6 +64,7 @@
   background-color: blue;
   border: 2px solid black;
   border-radius: 30%;
+  font-size: 25px;
   width: 10%;
   float: right;
 
@@ -78,6 +79,13 @@
 #menu_type {
   padding: 30px;
   font-size: 70px;
+}
+.cat_type {
+  display:inline-block;
+  background-color: black;
+  border-radius: 20px;
+  border: 2px solid white;
+  color:yellow;
 }
 html {
   overflow-y: scroll;
