@@ -1,6 +1,6 @@
 <% if @bookmark.errors.any? %>
 <div id="error_explanation">
-  <h2><%= pluralize(@bookmark.errors.count, "error") %> prohibited this post from being saved:</h2>
+  <p class="error_text"><%= pluralize(@bookmark.errors.count, "error") %> prohibited this post from being saved:</p>
   <ul>
   <% @bookmark.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
@@ -10,7 +10,8 @@
 <% end %>
 
 <div class="bookmark_form">
-<%= form_for @bookmark do |f| %>
+<%= form_for @bookmark, :html => {:class => "form-horizontal"} do |f| %>
+  <fieldset>
   <%= f.label :url %> <br>
   <%= f.text_field :url %>
   <br>
@@ -18,15 +19,16 @@
   <%= f.text_field :title%>
   <br>
   <%= f.label :comment%> <br>
-  <%= f.text_field :comment%>
+  <%= f.text_area :comment%>
   <br>
   <%= f.label :category%> <br>
-  <%= f.text_field :category%>
+  <%= f.select :category, Bookmark::CATEGORIES %>
   <br>
+  <%= f.label :favorite%>
+  <%= f.check_box :is_favorite, :class => "checkbox" %>
   <br>
-  <%= f.label :favorite%> <br>
-  <%= f.check_box :is_favorite %>
-  <br>
-  <%= f.submit %>
+  <%= f.submit :class => "btn btn-primary" %>
 <% end %>
+</fieldset>
+
 </div>
