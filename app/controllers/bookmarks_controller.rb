@@ -20,4 +20,25 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def edit
+    @bookmark = Bookmark.find(params[:id])
+  end
+
+  def update
+    @bookmark = Bookmark.find(params[:id])
+
+    if @bookmark.update(bookmark_params)
+      redirect_to @bookmark
+    else
+      render :edit
+    end
+  end
+
+  private
+
+  def bookmark_params
+    params.require(:bookmark).permit([:url, :title, :category, :comment, :is_favorite])
+  end
+
+
 end
