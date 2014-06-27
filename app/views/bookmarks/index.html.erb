@@ -1,3 +1,10 @@
+<ul>Filter by Category
+  <% @bookmarks.map(&:category).uniq.sort.each do |category| %>
+    <li><%= link_to category, filter: category %></li>
+  <% end %>
+  <li><%= link_to "Clear Filter", filter: nil %></li>
+</ul>
+
 <ul>Bookmarks
 <%= render partial: "bookmark", collection: @bookmarks %>
 </ul>

@@ -2,7 +2,11 @@ class BookmarksController < ApplicationController
 
   # return all bookmarks in alphabetical order
   def index
-    @bookmarks = Bookmark.order(:title)
+    if params[:filter].nil?
+      @bookmarks = Bookmark.order(:title)
+    else
+      @bookmarks = Bookmark.order(:title).where(category: params[:filter])
+    end
   end
 
   # return a specific bookmark
