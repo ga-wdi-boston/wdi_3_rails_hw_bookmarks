@@ -35,17 +35,22 @@ header, header a, header a:hover {
 
 .pseudobutton {
   color: white;
-  background-color: rgba(241, 159, 61, 0.9);
+  background-color: rgba(156, 210, 197, 0.9);
   border: none;
   margin-top: 14px;
   width: 100%;
   text-align: center;
-  padding: 10px;
+  padding: 4px;
   border-radius: 4px;
 }
 
 .pseudobutton:hover {
-  background-color: rgba(241, 159, 61, 0.97);
+  background-color: rgba(156, 210, 197, 0.97);
+}
+
+.pseudobutton span {
+  font-size: 23px;
+  font-weight: lighter;
 }
 
 .button-holder a:hover {
@@ -155,18 +160,18 @@ span.glyphicon-floppy-disk {
 }
 
 a.comment-link, a:hover.comment-link, .index-comment {
-  color: rgb(199, 118, 21);
+  color: rgb(184, 138, 197);
 }
 
 .category-box {
   display: inline;
-  color: rgb(231, 100, 100);
+  color: rgb(138, 197, 184);
   text-transform: uppercase;
   font-size: 13px;
 }
 
 .category-box a {
-  color:rgb(231, 100, 100);
+  color: rgb(138, 197, 184);
 }
 
 .sidebar {
@@ -193,12 +198,13 @@ a.comment-link, a:hover.comment-link, .index-comment {
   color: black;
   border-radius: 0;
   margin-bottom: 4px;
+  text-transform: lowercase;
 }
 .cat-button:hover {
-  background: #9FD7F7;
+  background: #9cd2c5;
 }
 .order-button:hover {
-  background: #E6DAA7;
+  background: #c59cd2;
 }
 #cat-buttons .btn, #order-buttons .btn {
   border-radius: 0;

@@ -1,4 +1,4 @@
-<div class="col-sm-2 sidebar">
+<div class="col-sm-3 sidebar">
   <h3 class="sidebar-header">sort</h3>
   <div class="btn-group-vertical" id="order-buttons">
     <%= link_to "by date", {order: "created_at"}, class: "btn order-button btn-block"%>
@@ -6,12 +6,12 @@
   </div>
   <h3 class="sidebar-header">categories</h3>
   <div class="btn-group-vertical" id="cat-buttons">
-    <%= link_to "funny", {category: "Funny"}, class: "btn btn-block cat-button"%>
-    <%= link_to "useful", {category: "Useful"}, class: "btn btn-block cat-button"%>
-    <%= link_to "serious", {category: "Serious"}, class: "btn btn-block cat-button"%>
+    <% Bookmark::CATEGORIES.each do |cat| %>
+      <%= link_to cat, {category: cat}, class: "btn btn-block cat-button" %>
+    <% end %>
   </div>
 </div>
-<div class="col-sm-10">
+<div class="col-sm-9">
   <% @bookmarks.each do |b| %>
     <div class="bookmark-index">
       <h3 class="bookmark-title"><a href="<%= b.url %>"><%= b.title %></a></h3>

@@ -24,7 +24,7 @@
   <div class="form-label">
   <%= f.label :category %>
   </div>
-  <%= f.select :category, Bookmark::CATEGORIES, {}, {:class => 'form-control'} %>
+  <%= f.select :category, Bookmark::CATEGORIES, {include_blank: true}, {:class => 'form-control'} %>
 
   <div class="form-label">
   <%= f.label :comment %>
