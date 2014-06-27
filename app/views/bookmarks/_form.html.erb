@@ -1,0 +1,31 @@
+<% if flash[:alert].present? %>
+  <p><%= flash[:alert] %></p>
+<% end %>
+
+<% if flash[:notice].present? %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+<div class="well well-lg">
+<%= bootstrap_form_for @bookmark do |f| %>
+
+  <%= f.text_field :title, placeholder: "Enter title", label: "Title,yo." %>
+  <%= f.url_field :url, placeholder: "Enter URL" %><br>
+  <%= f.text_area :comment, placeholder: "Enter a comment", label: "Got a comment?" %>
+  <%= f.check_box :favorite %>
+
+  <%= f.form_group :category, label: { text: "Category" } do %><br>
+    <%= f.radio_button :category, 'none' , label: "None", inline: true, checked: true %>
+    <%= f.radio_button :category, 'work' , label: "Work", inline: true %>
+    <%= f.radio_button :category, 'funny' , label: "Funny", inline: true %>
+    <%= f.radio_button :category, 'serious' , label: "Serious", inline: true %>
+    <%= f.radio_button :category, 'news' , label: "News", inline: true %>
+  <% end %>
+
+<%= f.submit "Submit", class: "btn btn-success btn-lg" %>
+</div>
+
+
+<% end %>
+
+

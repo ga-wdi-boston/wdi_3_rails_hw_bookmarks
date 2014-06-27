@@ -1,0 +1,66 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-2">
+      <div class="panel panel-info">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+          <h4>Show Category!</h4>
+        </div>
+      </div>
+      <div class="list-group">
+        <%= link_to "Work", bookmarks_path(category: 'work'), class:'list-group-item'%>
+        <%= link_to "Funny", {category:'funny'}, class:'list-group-item'%>
+        <%= link_to "Serious", {category:'serious'}, class:'list-group-item'%>
+        <%= link_to "News", {category:'news'}, class:'list-group-item'%>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="panel panel-info">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><h1>BookMarkr</h1></div>
+        <!-- Table -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th> Title </th>
+              <th> Category </th>
+              <th> Favorite </th>
+              <th> Edit </th>
+              <th> Delete </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @bookmarks.each do |bookmark| %>
+              <tr>
+                <td> <%= link_to(bookmark.title,bookmark_path(bookmark.id)) %></td>
+                <td> <%= bookmark.category %> </td>
+                <td>
+                  <% if bookmark.favorite %>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  <% else %>
+                    <span class="glyphicon glyphicon-remove"></span>
+                  <% end %>
+                </td>
+                <td>
+                <%= link_to 'Edit', edit_bookmark_path(bookmark), class:'btn btn-primary'%>
+                </td>
+                <td>
+                  <%= link_to 'Delete', bookmark_path(bookmark), method:'delete', confirm: 'Are you sure?', class:'btn btn-danger' %>
+                </td>
+              </tr>
+              <% end %>
+          </tbody>
+        </table>
+      </div>
+       <%= link_to 'Make a New Bookmark!', new_bookmark_path,type:"button", class:"btn btn-success btn-lg" %>
+    </div>
+
+    <div class="col-md-2"> </div>
+  </div>
+</div>
+
+
