@@ -41,7 +41,7 @@ h1 {
 form {
   width: 300px;
   margin: 0 auto;
-  padding-top: 120px;
+  padding-top: 10px;
 }
 
 label {
@@ -101,11 +101,6 @@ select {
   padding-right: 15px;
 }
 
-#error_explanation {
-  margin-top: 100px;
-  text-align: center;
-}
-
 .error_text {
   font-size: 20px;
   color: #bb0000;
@@ -114,3 +109,10 @@ select {
 .show-bookmark {
   margin-top : 200px;
 }
+
+.alert {
+  padding-top: 130px;
+  text-align: center;
+  color: #C87575
+}
+

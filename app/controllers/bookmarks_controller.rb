@@ -22,6 +22,7 @@ class BookmarksController < ApplicationController
     if @bookmark.save
       redirect_to(bookmarks_path)
     else
+      flash.now[:alert] = @bookmark.errors.full_messages
       render :new
     end
 
@@ -36,6 +37,7 @@ class BookmarksController < ApplicationController
     if @bookmark.update(bookmark_params)
       redirect_to(bookmarks_path)
     else
+      flash.now[:alert] = @bookmark.errors.full_messages
       render :edit
     end
   end

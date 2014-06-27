@@ -1,31 +1,35 @@
-<% if @bookmark.errors.any? %>
-<div id="error_explanation">
-  <p class="error_text"><%= pluralize(@bookmark.errors.count, "error") %> prohibited this post from being saved:</p>
-  <% @bookmark.errors.full_messages.each do |msg| %>
-    <p class="msg"><%= msg %></p>
+<p class="alert">
+  <% if flash[:alert].present? %>
+    <% if flash[:alert].length == 1 %>
+      You have 1 error: <br>
+    <% else %>
+      You have <%= flash[:alert].length %> errors: <br>
+    <% end %>
+  <% flash[:alert].each do |alert| %>
+    <%= alert %> <br>
   <% end %>
-</div>
-<% end %>
+  <% end %>
+</p>
 
 <div class="bookmark_form">
 <%= form_for @bookmark, :html => {:class => "form-horizontal"} do |f| %>
-  <fieldset>
-  <%= f.label :url %> <br>
-  <%= f.text_field :url %>
-  <br>
-  <%= f.label :title%> <br>
-  <%= f.text_field :title%>
-  <br>
-  <%= f.label :comment%> <br>
-  <%= f.text_area :comment%>
-  <br>
-  <%= f.label :category%> <br>
-  <%= f.select :category, Bookmark::CATEGORIES %>
-  <br>
-  <%= f.label :favorite%>
-  <%= f.check_box :is_favorite, :class => "checkbox" %>
-  <br>
-  <%= f.submit :class => "btn btn-primary" %>
+<fieldset>
+<%= f.label :url %> <br>
+<%= f.text_field :url %>
+<br>
+<%= f.label :title%> <br>
+<%= f.text_field :title%>
+<br>
+<%= f.label :comment%> <br>
+<%= f.text_area :comment%>
+<br>
+<%= f.label :category%> <br>
+<%= f.select :category, Bookmark::CATEGORIES %>
+<br>
+<%= f.label :favorite%>
+<%= f.check_box :is_favorite, :class => "checkbox" %>
+<br>
+<%= f.submit :class => "btn btn-primary" %>
 <% end %>
 </fieldset>
 
