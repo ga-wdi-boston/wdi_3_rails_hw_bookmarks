@@ -2,13 +2,49 @@
 <html>
 <head>
   <title>Wdi4RailsHwBookmarks</title>
+  <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+  <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+
   <%= csrf_meta_tags %>
+
 </head>
 <body>
+<div class='container'>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <h1>BookMc's
+        <small>- worlds greatest collection of bookmarks</small>
+        <ul class="nav navbar-nav navbar-right"><button type="button" class="btn btn-primary"><%= link_to('Add a New Bookmark', new_bookmark_path) %></button></ul>
+      </h1>
 
-<%= yield %>
+    </div>
+  </nav>
+  <div class='row'>
+    <div class='col-md-2'>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Menu</h3>
+        </div>
+        <div class="panel-body">
+          <p><%= link_to('Home', bookmarks_path) %></p>
+          <p><%= link_to('New Bookmark', new_bookmark_path) %></p>
+          <p><%= link_to('Sports', bookmarks_path(category: 'Sports')) %></p>
+          <p><%= link_to('Technology', bookmarks_path(category: 'Technology')) %></p>
+          <p><%= link_to('Business', bookmarks_path(category: 'Business')) %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class='col-md-10'>
+      <%= yield %>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
