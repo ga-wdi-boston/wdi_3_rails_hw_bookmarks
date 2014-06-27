@@ -1,5 +1,5 @@
 class Bookmark < ActiveRecord::Base
-  #validate that we have a name
+
   validates :title, presence: true
 
   validates :url, uniqueness: true

@@ -8,10 +8,19 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
   end
 
+  # def edit
+  #   @bookmark = Bookmark.edit(params)
+
+  # end
+
   def show
   end
 
   def create
   end
 
+  private
+  def bookmark_params
+    params.require(:bookmark).permit([:title, :url])
+  end
 end
