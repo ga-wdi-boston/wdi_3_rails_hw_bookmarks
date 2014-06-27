@@ -22,8 +22,9 @@ body {
   background-repeat: no-repeat;
 }
 
-header {
+header, header a, header a:hover {
   color: white;
+  text-decoration: none;
 }
 
 .pseudobutton {
