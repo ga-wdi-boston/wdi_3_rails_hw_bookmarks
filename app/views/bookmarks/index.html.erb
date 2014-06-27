@@ -14,9 +14,10 @@
 
 <div class="filters">
     <ul>
-        <li><%=link_to 'all', :filter => 'all' %></li>
+        <li class="filter-item">Filter by: </li>
+        <li class = "filter-item"><%=link_to 'all', :filter => 'all' %></li>
         <% Bookmark::CATEGORIES.flatten.uniq.each do |category| %>
-            <li><%=link_to category, :filter => category %></li>
+            <li class= "filter-item"><%=link_to category, :filter => category %></li>
         <%end %>
     </ul>
 </div>
