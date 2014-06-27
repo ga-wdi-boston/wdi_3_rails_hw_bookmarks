@@ -9,7 +9,7 @@
 # Why do I need delete_all?
 Bookmark.delete_all
 
- "All Bookmarks"
+ puts "All Bookmarks"
 
  bookmark_count = 30
 
