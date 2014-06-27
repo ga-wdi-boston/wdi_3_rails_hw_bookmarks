@@ -7,8 +7,8 @@ class BookmarksController < ApplicationController
 
   # POST /bookmarks
   def create
-    bookmark = Bookmark.new(bookmark_params)
-    if bookmark.save
+    @bookmark = Bookmark.new(bookmark_params)
+    if @bookmark.valid? && bookmark.save
       redirect_to bookmarks_path
     else
       render :new
@@ -22,8 +22,8 @@ class BookmarksController < ApplicationController
 
   # PATCH /bookmarks/:id
   def update
-    bookmark = Bookmark.find(params[:id])
-    if bookmark.update(bookmark_params)
+    @bookmark = Bookmark.find(params[:id])
+    if @bookmark.update(bookmark_params)
       redirect_to bookmarks_path
     else
       render :edit
@@ -32,8 +32,8 @@ class BookmarksController < ApplicationController
 
   # DELETE /bookmarks/:id
   def destroy
-    obj = Bookmark.find(params[:id])
-    if obj.destroy
+    @bookmark = Bookmark.find(params[:id])
+    if @bookmark.destroy
       redirect_to bookmarks_path
     else
       render :show
