@@ -58,7 +58,7 @@ div.bookmark-index, div.bookmark-show {
   position: relative;
   padding: 10px;
   background: rgba(255,255,255,0.85);
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
 .bookmark-index h3, .bookmark-index p, .bookmark-show h1, .bookmark-show p {
@@ -105,4 +105,8 @@ span.glyphicon-floppy-disk {
 .edit-delete-buttons a, .edit-delete-buttons a:hover {
   color: black;
   text-decoration: none;
+}
+
+.edit-delete-buttons .glyphicon {
+  margin-left: 9px;
 }
