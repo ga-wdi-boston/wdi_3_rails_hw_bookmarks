@@ -1,12 +1,22 @@
-<ul>
+<div class="container">
+  <ul class="list-group">
 
-<% bookmarks.each do |bookmark| %>
-<li>
-  <%= link_to(bookmark.title, bookmark.url) + " | " + bookmark.category + " | " + link_to("show", bookmark) + " | " + link_to("edit", edit_bookmark_path(bookmark)) + " | " + link_to("remove", bookmark, method: :delete) %>
-</li>
 
-<% end %>
-</ul>
+    <% bookmarks.each do |bookmark| %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <li class="list-group-item">
+            <% if bookmark.is_favorite %>
+              <span class="glyphicon glyphicon-ok"></span>
+            <% end %>
+            <%= link_to(bookmark.title, bookmark.url) + " | " + bookmark.category + " | " + link_to("show", bookmark) + " | " + link_to("edit", edit_bookmark_path(bookmark)) + " | " + link_to("remove", bookmark, method: :delete) %>
+          </li>
+        </div>
+      </div>
+
+    <% end %>
+  </ul>
+</div>
 
 
 
