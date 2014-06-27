@@ -26,6 +26,27 @@ class BookmarksController < ApplicationController
     end
   end
 
+  # Provides bookmark to edit
+  def edit
+    @bookmark = Bookmark.find(params[:id])
+  end
+
+ # Update an existing model, Bookmark
+ # BookmarksController update method
+  def update
+    # Get the Bookmark to update
+    @bookmark = Bookmark.find(params[:id])
+
+    # Using strong params, update this bookmark
+    if @bookmark.update(bookmark_params)
+      redirect_to @bookmark, notice: "You have updated the #{@bookmark.title}"
+    else
+    # Doesn't work, shows the form
+      render :edit
+    end
+  end
+
+
 
 private
 
