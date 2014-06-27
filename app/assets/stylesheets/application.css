@@ -19,7 +19,9 @@ html, body {
 }
 
 body {
-  background: url(https://i.imgur.com/aCLUZvZ.gif);
+  /*background: url(https://i.imgur.com/aCLUZvZ.gif); -- TREES AND WATER
+  background: url(http://annstreetstudio.com/wp-content/uploads/2014/01/patagonia-cinemagraph.gif);*/
+  background: url(http://i.imgur.com/UZEUBpI.gif);
   background-size: cover;
   -moz-background-size: cover;
   background-attachment: fixed;
@@ -98,7 +100,7 @@ div.bookmark-index, div.bookmark-show {
 
 .footer {
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   color: #ffffff;
   height: 25px;
   text-align: center;
@@ -152,7 +154,7 @@ span.glyphicon-floppy-disk {
   margin: 0 5px;
 }
 
-a .index-comment {
+a .index-comment, a:hover .index-comment {
   color: rgb(199, 118, 21);
 }
 
