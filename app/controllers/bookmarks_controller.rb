@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
   def index
-    @bookmarks = Bookmark.all
+    @bookmarks = Bookmark.all.sort_by{ |bookmark| [bookmark.title.downcase]}
 
     #render text: "THIS WORK NOW"
   end
