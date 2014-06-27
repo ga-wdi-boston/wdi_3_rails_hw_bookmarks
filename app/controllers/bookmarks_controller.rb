@@ -1,6 +1,15 @@
 class BookmarksController < ApplicationController
+
   def index
-    @bookmarks = Bookmark.all
+    if params[:order] == "alpha"
+      @bookmarks = Bookmark.order(:title)
+    elsif params[:order] == "created_at"
+      @bookmarks = Bookmark.order(created_at: :desc)
+    elsif params[:category]
+      @bookmarks = Bookmark.where(category: params[:category])
+    else
+      @bookmarks = Bookmark.all
+    end
   end
 
   def show
