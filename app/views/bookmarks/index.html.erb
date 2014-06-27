@@ -1,8 +1,7 @@
 <ul> All Bookmarks
 <% @bookmarks.each do |bookmark| %>
-  <li> URL is <%= bookmark.url %>,
+  <li>
   Title is <%= bookmark.title %>,
-  Comment is <%= bookmark.comment %>,
   Category is <%= bookmark.category %>
   Is favorite? <%= bookmark.is_favorite %>
   </li>

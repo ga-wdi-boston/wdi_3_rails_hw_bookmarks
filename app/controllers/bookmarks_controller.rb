@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
   def index
-    @bookmarks = Bookmark.all
+    @bookmarks = Bookmark.order(:title)
   end
 end
