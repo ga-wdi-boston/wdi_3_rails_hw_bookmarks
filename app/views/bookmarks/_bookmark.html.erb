@@ -1,13 +1,11 @@
-<div class="list-group">
-  <a href="#" class="list-group-item active">
-    <h4 class="list-group-item-heading">
-      <%= link_to(bookmark.title,bookmark_path(bookmark.id)) %>
-    </h4>
-    <p class="list-group-item-text">
-      <%= bookmark.url %>
-      <%= bookmark.category %>
-      <%= bookmark.favorite %>
-    </p>
-  </a>
-</div>
 
+<li>
+  Title: <%= link_to(bookmark.title,bookmark_path(bookmark.id)) %>
+  <br>
+  url: <%= bookmark.url %>
+  <br>
+  category: <%= bookmark.category %>
+  <br>
+  favorite: <%= bookmark.favorite %>
+</li>
+<br>
