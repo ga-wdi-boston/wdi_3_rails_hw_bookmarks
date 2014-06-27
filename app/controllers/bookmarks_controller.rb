@@ -7,6 +7,10 @@ class BookmarksController < ApplicationController
       @bookmarks = Bookmark.order(created_at: :desc)
     elsif params[:category]
       @bookmarks = Bookmark.where(category: params[:category])
+    elsif params[:fav]
+      @bookmarks = Bookmark.where(is_favorite: params[:fav])
+    elsif params[:commented] == "true"
+      @bookmarks = Bookmark.where.not(comment: "")
     else
       @bookmarks = Bookmark.all
     end

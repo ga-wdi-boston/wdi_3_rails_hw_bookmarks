@@ -3,6 +3,8 @@
   <div class="btn-group-vertical" id="order-buttons">
     <%= link_to "by date", {order: "created_at"}, class: "btn order-button btn-block"%>
     <%= link_to "by title", {order: "title"}, class: "btn order-button btn-block"%>
+    <%= link_to "favorites", {fav: "true"}, class: "btn order-button btn-block"%>
+    <%= link_to "commented", {commented: "true"}, class: "btn order-button btn-block"%>
   </div>
   <h3 class="sidebar-header">categories</h3>
   <div class="btn-group-vertical" id="cat-buttons">
