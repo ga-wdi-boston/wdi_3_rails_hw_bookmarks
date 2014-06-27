@@ -1,4 +1,11 @@
-
+<div class="filters">
+    <ul>
+        <li><%=link_to 'all', :filter => 'all' %></li>
+        <% Bookmark::CATEGORIES.flatten.uniq.each do |category| %>
+            <li><%=link_to category, :filter => category %></li>
+        <%end %>
+    </ul>
+</div>
 
 <table class="table-striped">
     <thead>
@@ -37,4 +44,3 @@
 <div class="new-bookmark">
     <%= link_to 'new bookmark', new_bookmark_path %> </h3>
 </div>
-

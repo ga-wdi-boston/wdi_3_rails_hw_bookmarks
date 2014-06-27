@@ -12,7 +12,7 @@ Bookmark.create!(
   url: "http://api.rubyonrails.org/",
   title: 'Ruby on Rails API',
   comment: '',
-  category: 'Useful',
+  category: 'useful',
   is_favorite: true
 )
 
@@ -20,7 +20,7 @@ Bookmark.create!(
   url: 'http://guides.rubyonrails.org/',
   title: 'Ruby on Rails Guides',
   comment: '',
-  category: 'Useful',
+  category: 'useful',
   is_favorite: true
 )
 
@@ -28,7 +28,7 @@ Bookmark.create!(
   url: 'http://getbootstrap.com/css/#buttons',
   title: 'Bootstrap Library',
   comment: 'sweet CSS library',
-  category: 'Useful',
+  category: 'useful',
   is_favorite: false
 )
 
@@ -36,7 +36,7 @@ Bookmark.create!(
   url: 'http://www.ruby-doc.org/',
   title: 'Ruby Docs',
   comment: '',
-  category: 'Useful',
+  category: 'useful',
   is_favorite: true
 )
 
@@ -44,7 +44,7 @@ Bookmark.create!(
   url: 'http://www.sporcle.com/',
   title: 'Sporcle',
   comment: 'mentally stimulating diversions',
-  category: 'Funny',
+  category: 'funny',
   is_favorite: false
 )
 
@@ -52,7 +52,7 @@ Bookmark.create!(
   url: 'http://www.nytimes.com/',
   title: 'New York Times',
   comment: 'good news source',
-  category: 'Serious',
+  category: 'serious',
   is_favorite: false
 )
 
@@ -60,7 +60,7 @@ Bookmark.create!(
   url: 'http://www.reddit.com/',
   title: 'Reddit',
   comment: 'big waste of time',
-  category: 'Funny',
+  category: 'funny',
   is_favorite: false
 )
 
@@ -68,7 +68,7 @@ Bookmark.create!(
   url: 'http://www.seriouseats.com/',
   title: 'Serious Eats',
   comment: 'good food',
-  category: 'Serious',
+  category: 'serious',
   is_favorite: true
 )
 
@@ -76,7 +76,7 @@ Bookmark.create!(
   url: 'http://espn.go.com/',
   title: 'ESPN',
   comment: '',
-  category: 'Funny',
+  category: 'funny',
   is_favorite: true
 )
 
@@ -84,6 +84,6 @@ Bookmark.create!(
   url: 'http://basketball.realgm.com/',
   title: 'RealGm',
   comment: 'good basketball news',
-  category: 'Funny',
+  category: 'funny',
   is_favorite: false
 )

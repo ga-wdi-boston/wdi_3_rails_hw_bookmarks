@@ -1,11 +1,9 @@
 <% if @bookmark.errors.any? %>
 <div id="error_explanation">
   <p class="error_text"><%= pluralize(@bookmark.errors.count, "error") %> prohibited this post from being saved:</p>
-  <ul>
   <% @bookmark.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
+    <p class="msg"><%= msg %></p>
   <% end %>
-  </ul>
 </div>
 <% end %>
 

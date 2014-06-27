@@ -1,7 +1,11 @@
 class BookmarksController < ApplicationController
 
   def index
-    @bookmarks = Bookmark.all
+    if params[:filter].present? && params[:filter] != 'all'
+      @bookmarks = Bookmark.where(category: params[:filter])
+    else
+      @bookmarks = Bookmark.all
+    end
   end
 
   def show
