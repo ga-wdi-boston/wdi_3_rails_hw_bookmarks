@@ -10,26 +10,28 @@
 </head>
 <body>
 
-<div class="contain-to-grid">
-  <nav class="top-bar" data-topbar>
-    <ul class="title-area">
-      <li class= "name">
-        <h1><a href="#">Bookmarkr</a></h1>
-      </li>
-      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-    </ul>
-    <section class="top-bar-section">
-      <ul class="right">
-        <li><%= link_to "Add bookmark", new_bookmark_path %></li>
+<header>
+  <div class="contain-to-grid">
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class= "name">
+          <h1><%= link_to "Bookmarkr", bookmarks_path %></a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
-    </section>
-  </nav>
-</div>
+      <section class="top-bar-section">
+        <ul class="right">
+          <li><%= link_to "Add bookmark", new_bookmark_path %></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+</header>
 
 <div class="row">
   <div class="small-12 small-centered columns">
 
-<%= yield %>
+  <%= yield %>
 
   </div>
 </div>

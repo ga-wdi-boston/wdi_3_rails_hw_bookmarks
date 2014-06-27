@@ -1,12 +1,25 @@
 <h1>Bookmarks</h1>
-<ul>Filter by Category
-  <% @bookmarks.map(&:category).uniq.sort.each do |category| %>
-    <li><%= link_to category, filter: category %></li>
-  <% end %>
-  <% unless params[:filter].nil? %>
-    <li><%= link_to "Clear Filter", filter: nil %></li>
-  <% end %>
-</ul>
+
+<!-- <% if params[:filter].nil? %>
+  <a href="#" data-dropdown="drop1" class="tiny button dropdown">Filter By Category</a><br>
+  <ul id="drop1" data-dropdown-content class="f-dropdown">
+    <% @bookmarks.map(&:category).uniq.sort.each do |category| %>
+      <li><%= link_to category, filter: category %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <%= link_to "Clear Filter", filter: nil, class: "button" %>
+<% end %> -->
+
+<% if params[:filter].nil? %>
+  <ul>Filter by Category
+    <% @bookmarks.map(&:category).uniq.sort.each do |category| %>
+      <li><%= link_to category, filter: category %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <li><%= link_to "Clear Filter", filter: nil %></li>
+<% end %>
 
 <div>
 <%= render partial: "bookmark", collection: @bookmarks %>
