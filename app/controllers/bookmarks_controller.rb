@@ -12,10 +12,6 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
   end
 
-  def manage
-    @bookmarks = Bookmark.all
-  end
-
   def create
     @bookmark = Bookmark.new(bookmark_params)
 
