@@ -1,8 +1,21 @@
-# show page, needs edit & delete options
 <% if flash[:notice] %>
   <div class = "flash-message"><%= flash[:notice] %></div>
 <% end %>
-<%= link_to 'Edit', edit_bookmark_path(@bookmark) %>
-<%= link_to 'Delete', @bookmark, method: :delete, data: {confirm: 'Are you sure?'}%>
+
+<div class="menu_type">
 <%= @bookmark.title %>
-<%= @bookmark.category %>
+</div>
+<div>
+<%= link_to @bookmark.url, @bookmark.url %>
+<br>
+(<%= @bookmark.category %>)
+<br>
+<%= @bookmark.comment %>
+</div>
+
+
+
+<br>
+<%= link_to 'Edit bookmark', edit_bookmark_path(@bookmark) %>
+<br>
+<%= link_to 'Delete bookmark', @bookmark, method: :delete, data: {confirm: 'Are you sure?'}%>
