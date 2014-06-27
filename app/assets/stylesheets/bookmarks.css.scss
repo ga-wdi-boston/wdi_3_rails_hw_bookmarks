@@ -1,4 +1,16 @@
 // Place all the styles related to the bookmarks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
- body {margin: 20px}
+ body {
+  padding: 20px;
+  background-image: url('http://i.imgur.com/NoN1Deb.jpg');
+  background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+p, div {
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
