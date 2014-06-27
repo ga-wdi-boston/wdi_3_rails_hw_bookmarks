@@ -1,0 +1,21 @@
+<div class="menu_type">
+<%= @bookmark.title %>
+
+<% if flash[:notice] %>
+  <div class = "flash-message alert-success alert-dismissable" role="alert"><%= flash[:notice] %></div>
+<% end %>
+<div>
+<%= link_to @bookmark.url, @bookmark.url %>
+<% if @bookmark.category %>
+<br>(<%= @bookmark.category %>)
+<% end %>
+<br>
+<%= @bookmark.comment %>
+</div>
+</div>
+
+
+<br>
+<%= link_to 'Edit bookmark', edit_bookmark_path(@bookmark) %>
+<br>
+<%= link_to 'Delete bookmark', @bookmark, method: :delete, data: {confirm: 'Are you sure?'}%>

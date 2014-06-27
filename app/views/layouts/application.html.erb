@@ -4,11 +4,17 @@
   <title>Wdi4RailsHwBookmarks</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+<%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'layouts/header' %>
+  <div class="container-liquid text-center">
+    <%= yield %>
+  </div>
+  <div id="footer"><%= render 'layouts/footer' %></div>
 
-<%= yield %>
 
 </body>
 </html>

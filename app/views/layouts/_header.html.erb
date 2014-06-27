@@ -1,0 +1,33 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+    <span class = "icon-bar"></span>
+    <span class = "icon-bar"></span>
+    <span class = "icon-bar"></span>
+  </button>
+
+  <div class = "collapse navbar-collapse navHeaderCollapse">
+    <div class = "navbar-inner">
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to bookmarks_path, class: "btn btn-default" do %>
+            <i class="glyphicon glyphicon-home"> All</i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_bookmark_path, class: "btn btn-success" do %>
+            <i class="glyphicon glyphicon-plus-sign"> New</i>
+            <% end %>
+          </li>
+          <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown"><i class="glyphicon glyphicon-th-list"> Categories</i><b class = "caret"></b></a>
+            <ul class = "dropdown-menu">
+              <% Bookmark::VALID_CATEGORIES.each do |cat| %>
+              <li><%= link_to cat.capitalize, bookmarks_path(:category => cat) %></li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>

@@ -12,4 +12,95 @@
  *
  *= require_tree .
  *= require_self
+
  */
+@mixin box_sizing {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   -box-sizing: border-box;
+}
+
+.menu_type {
+  font-size: 70px;
+  color: gold;
+}
+
+.menu type a {
+  text-decoration:none;
+  color: cyan;
+}
+
+#footer {
+  color: cyan;
+  font-size: 30px;
+  text-align:center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.list_items {
+  padding: 10px 0px;
+  font-size: 3vw;
+}
+
+.bmark_title {
+  display:inline-block;
+  color: gold;
+  width: 80%;
+  float:left;
+}
+
+.list_items a {
+  text-decoration: none;
+  color: cyan;
+}
+
+.list_items a:hover {
+  text-decoration: none;
+  color: green;
+}
+
+.glyphs {
+  display:inline-block;
+  color:white;
+  width: 10%;
+}
+
+.view_path {
+  display:inline-block;
+  text-align: center;
+  background-color: navy;
+  border: 2px solid black;
+  border-radius: 30%;
+  width: 10%;
+  font-size: 3vw;
+  float: right;
+
+}
+
+.field {
+  color: black;
+}
+
+html {
+  overflow-y: scroll;
+}
+body {
+  padding-top: 40px;
+  background-color: #252d32 !important;
+}
+section {
+  overflow: auto;
+}
+
+input, textarea, select, .uneditable-input  {
+   border: 1px solid black;
+   margin-bottom: 15px;
+   @Include box_sizing;
+}
+
+input {
+   height: auto !important;
+}
