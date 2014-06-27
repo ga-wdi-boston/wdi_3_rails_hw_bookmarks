@@ -21,6 +21,10 @@
   <%= f.label :url %>
   </div>
   <%= f.text_field :url %>
+  <div class="form-label">
+  <%= f.label :category %>
+  </div>
+  <%= f.select :category, Bookmark::CATEGORIES %>
 
   <div class="form-label">
   <%= f.label :comment %>

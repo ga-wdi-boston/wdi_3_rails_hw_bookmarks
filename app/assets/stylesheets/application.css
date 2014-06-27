@@ -26,11 +26,23 @@ header {
   color: white;
 }
 
-.new-bookmark {
-  margin-top: 14px;
+.pseudobutton {
   color: white;
   background-color: rgba(241, 159, 61, 0.9);
   border: none;
+  margin-top: 14px;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.pseudobutton:hover {
+  background-color: rgba(241, 159, 61, 1);
+}
+
+.button-holder a:hover {
+  text-decoration: none;
 }
 
 .bookmark-title {
