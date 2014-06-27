@@ -2,6 +2,14 @@ class BookmarksController < ApplicationController
 
   def index
     @bookmarks = Bookmark.all
+    if params[:category] == "funny"
+      @bookmarks = Bookmark.where(category: 'funny')
+    elsif params[:category] == "serious"
+      @bookmarks = Bookmark.where(category: 'serious')
+    elsif params[:category] == "useful"
+      @bookmarks = Bookmark.where(category: 'useful')
+
+    end
   end
 
   def new

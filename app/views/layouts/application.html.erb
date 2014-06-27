@@ -25,9 +25,9 @@
     <div class="col-md-2">
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><%= link_to("All", bookmarks_path) %></li>
-        <li><%= link_to("Funny", new_bookmark_path) %></li>
-        <li><%= link_to("Serious", new_bookmark_path) %></li>
-        <li><%= link_to("Useful", new_bookmark_path) %></li>
+        <li><%= link_to "Funny", {category: 'funny'} %></li>
+        <li><%= link_to "Serious", {category: 'serious'} %></li>
+        <li><%= link_to "Useful", {category: 'useful'} %></li>
       </ul>
       <%= link_to("Create new", new_bookmark_path, class: "btn btn-danger btn-md nav-justified") %>
     </div>
