@@ -28,3 +28,7 @@ header {
   padding: 0 0.4em;
   font-size: 0.9em;
 }
+
+.notice, .alert {
+  color: red;
+}

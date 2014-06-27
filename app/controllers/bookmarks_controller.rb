@@ -38,8 +38,10 @@ class BookmarksController < ApplicationController
   def update
     @bookmark = Bookmark.find(params[:id])
     if @bookmark.update(bookmark_params)
-      redirect_to @bookmark, notice: "You have updated the #{@bookmark.title}"
+      flash[:notice] = "You have updated the #{@bookmark.title}"
+      redirect_to @bookmark
     else
+      flash.now[:alert] = @bookmark.errors.full_messages.join(', ')
       render :edit
     end
   end
@@ -47,8 +49,10 @@ class BookmarksController < ApplicationController
   # delete specific bookmark
   def destroy
     @bookmark = Bookmark.find(params[:id])
+    title = @bookmark.title
     @bookmark.destroy
-    redirect_to bookmarks_path, notice: "You have deleted the bookmark"
+    redirect_to bookmarks_path
+    flash[:notice] = "You have deleted #{title}"
   end
 
   private
