@@ -36,7 +36,11 @@
       <%= yield %>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-4">
+    <% if flash[:notice].present? %>
+      <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
+    <% end %>
+    <p class="alert"><%= flash[:alert] %></p>
     </div>
 </div>
 

@@ -6,6 +6,7 @@ class BookmarksController < ApplicationController
 
   def new
     @bookmark = Bookmark.new
+
   end
 
   # def edit
@@ -14,17 +15,18 @@ class BookmarksController < ApplicationController
   # end
 
   def show
+    @bookmark = Bookmark.find(params[:id])
   end
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
-
     if @bookmark.save
-      redirect_to bookmarks_path
+        flash[:notice] = "Bookmark successfully created"
+        redirect_to @bookmark
     else
+      flash.now[:alert] = @bookmark.errors.full_messages.join(', ')
       render :new
     end
-
   end
 
   private
