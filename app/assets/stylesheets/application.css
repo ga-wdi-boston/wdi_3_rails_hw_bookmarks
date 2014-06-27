@@ -87,9 +87,10 @@ span.glyphicon-floppy-disk {
   top: 4px;
 }
 
-.new-form {
+.bookmark-form {
   background: rgba(255,255,255,0.85);
   padding-bottom: 15px;
+  margin-top: 20px;
 }
 
 .edit-delete-buttons {

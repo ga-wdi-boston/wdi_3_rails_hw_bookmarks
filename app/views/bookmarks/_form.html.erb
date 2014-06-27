@@ -15,22 +15,23 @@
   <%= f.label :title %>
   </div>
 
-  <%= f.text_field :title %>
+  <%= f.text_field :title, class: 'form-control' %>
 
   <div class="form-label">
   <%= f.label :url %>
   </div>
-  <%= f.text_field :url %>
+  <%= f.text_field :url , class: 'form-control' %>
   <div class="form-label">
   <%= f.label :category %>
   </div>
-  <%= f.select :category, Bookmark::CATEGORIES %>
+  <%= f.select :category, Bookmark::CATEGORIES, {}, {:class => 'form-control'} %>
 
   <div class="form-label">
   <%= f.label :comment %>
   </div>
-  <%= f.text_area :comment %>
+  <%= f.text_area :comment , class: 'form-control' %>
   <div>
-  <%= f.submit %>
+  <br>
+  <%= f.submit "add bookmark", class: "btn btn-block btn-danger"%>
   </div>
 <% end %>
