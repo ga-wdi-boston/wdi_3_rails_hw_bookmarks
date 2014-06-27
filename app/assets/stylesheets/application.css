@@ -26,13 +26,22 @@ header {
   display: inline;
   color: rgba(0, 0, 0, 0.5);
   padding: 0 0.4em;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 
 .notice, .alert {
   color: red;
 }
 
-.fi-pencil, .fi-trash, .fi-plus {
-  color: #2ba6cb;
+.fi-plus.add {
+  font-size: 1.5rem;
+  padding: 0 0.2em;
+}
+
+.top-bar-section ul li>a {
+  font-size: 1rem;
+}
+
+.top-bar .name h1 {
+  font-size: 1.25rem;
 }

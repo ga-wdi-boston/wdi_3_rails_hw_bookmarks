@@ -15,11 +15,11 @@
         <li class="inline"><i class="fi-star"></i> favorited</li>
       <% end %>
       <% if bookmark.comment.present? %>
-        <li class="inline"><i class="fi-comment"></i> comments</li>
+        <li class="inline"><i class="fi-comment"></i> comment</li>
       <% end %>
-      <li class="inline"><i class="fi-pencil"></i> <%= link_to "edit", edit_bookmark_path(bookmark.id) %></li>
-      <li class="inline"><i class="fi-trash"></i> <%= link_to "delete", bookmark, method: :delete, data: {confirm: 'Are you sure you would like to delete the bookmark?'} %></li>
-      <li class="inline"><i class="fi-plus"></i> <%= link_to "more", bookmark_path(bookmark.id) %></li>
+      <li class="inline"><%= link_to edit_bookmark_path(bookmark.id) do %><i class="fi-pencil"></i> edit<% end %></li>
+        <li class="inline"><%= link_to bookmark, method: :delete, data: {confirm: 'Are you sure you would like to delete the bookmark?'} do %><i class="fi-trash"></i> delete<% end %></li>
+        <li class="inline"><%= link_to bookmark_path(bookmark.id) do %><i class="fi-plus"></i> more<% end %></li>
     </ul>
   </div>
 

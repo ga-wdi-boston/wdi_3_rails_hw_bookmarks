@@ -15,13 +15,13 @@
     <nav class="top-bar" data-topbar>
       <ul class="title-area">
         <li class= "name">
-          <h1><%= link_to "Bookmarkr", bookmarks_path %></a></h1>
+          <h1><%= link_to "Bookmarkr", bookmarks_path %></h1>
         </li>
-        <li class="toggle-topbar"><%= link_to "Add", new_bookmark_path %></a></li>
+        <li class="toggle-topbar"><%= link_to new_bookmark_path do %><i class="fi-plus add"></i><% end %></li>
       </ul>
       <section class="top-bar-section">
         <ul class="right">
-          <li><%= link_to "Add bookmark", new_bookmark_path %></li>
+          <li><%= link_to new_bookmark_path do %><i class="fi-plus"></i> Create bookmark<% end %></li>
         </ul>
       </section>
     </nav>
