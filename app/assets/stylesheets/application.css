@@ -57,7 +57,7 @@ header, header a, header a:hover {
 div.bookmark-index, div.bookmark-show {
   position: relative;
   padding: 10px;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.9);
   margin: 10px 0;
 }
 
@@ -70,12 +70,13 @@ div.bookmark-index, div.bookmark-show {
   font-style: italic;
   color: rgb(153, 153, 153);
   font-size: 13px;
+  display: inline;
 }
 
 .etc-button .glyphicon {
   position: absolute;
   top: 0px;
-  color: rgb(231, 100, 100);
+  color: #222;
   right: 10px;
   font-size: 26px;
 }
@@ -149,4 +150,11 @@ span.glyphicon-floppy-disk {
 
 a .index-comment {
   color: rgb(199, 118, 21);
+}
+
+.category-box {
+  display: inline;
+  color: rgb(231, 100, 100);
+  text-transform: uppercase;
+  font-size: 13px;
 }

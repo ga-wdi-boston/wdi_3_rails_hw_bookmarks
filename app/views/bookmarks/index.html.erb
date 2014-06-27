@@ -1,7 +1,11 @@
 <% @bookmarks.each do |b| %>
   <div class="bookmark-index">
     <h3 class="bookmark-title"><a href="<%= b.url %>"><%= b.title %></a></h3>
+
     <p class="bookmark-url"><%= b.url %></p>
+    <% if b.category != "" %>
+      <div class="category-box">- <%= b.category %></div>
+    <% end %>
     <%= link_to(b) do %>
       <div class="etc-button"><span class="glyphicon glyphicon-bookmark"></span></div>
     <% end %>
@@ -11,5 +15,6 @@
       <p class="index-comment">see comment <span class="glyphicon glyphicon-circle-arrow-right"></span></p>
       <% end %>
     <% end %>
+
   </div>
 <% end %>
