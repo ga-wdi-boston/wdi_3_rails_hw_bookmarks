@@ -3,4 +3,5 @@ class Bookmark < ActiveRecord::Base
   # validates that the name is unique
   validates :title, presence: true
 
+
 end

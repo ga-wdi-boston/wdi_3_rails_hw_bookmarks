@@ -1,8 +1,14 @@
 <ul>
   <% @bookmarks.each do |bookmark| %>
 
-  <li><%= link_to(bookmark.title, bookmark.url) %> | <%= bookmark.category %>
-  | <%= link_to('etc' , bookmark_path(bookmark.id)) %> | <%= link_to('Edit', edit_bookmark_path(bookmark.id))%> | <%= link_to 'Delete', bookmark, method: :delete, data: {confirm: 'Are you sure?'} %>
+  <li><%= link_to(bookmark.title, bookmark.url) %>
+  | <%= bookmark.category %>
+  | <%= link_to('Details' , bookmark_path(bookmark.id)) %>
+  | <%= check_box_tag :is_favorited,1,bookmark.is_favorited ,disabled: true%>
+    <%= label_tag :is_favorited,'Favorite' %>
+    <%= '| Comments' unless bookmark.comment.empty? %>
+  | <%= link_to('Edit', edit_bookmark_path(bookmark.id))%>
+  | <%= link_to 'Delete', bookmark, method: :delete, data: {confirm: 'Are you sure?'} %>
   <% end %>
 
 </ul>

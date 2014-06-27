@@ -1,3 +1,10 @@
 <p>
-<%= @bookmark.title %> | <%= @bookmark.url %> | <%= @bookmark.category %> | <%= @bookmark.comment %> | <%= link_to('Edit', edit_bookmark_path(@bookmark))%>
+<%= @bookmark.title %>
+| <%= @bookmark.url %>
+| <%= @bookmark.category %>
+| <%= @bookmark.comment %>
+| <%= label_tag :is_favorited,'Favorite' %>
+  <%= check_box_tag :is_favorited,1,@bookmark.is_favorited ,disabled: true%>
+
+| <%= link_to('Edit', edit_bookmark_path(@bookmark))%>
 </p>
