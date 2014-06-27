@@ -1,0 +1,61 @@
+<!-- <div class="filters">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    all
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li><%=link_to 'all', :filter => 'all' %></li>
+    <% Bookmark::CATEGORIES.flatten.uniq.each do |category| %>
+        <li><%=link_to category, :filter => category %></li>
+    <%end %>
+  </ul>
+</div> -->
+
+
+<div class="filters">
+    <ul>
+        <li class="filter-item">Filter by: </li>
+        <li class = "filter-item"><%=link_to 'all', :filter => 'all' %></li>
+        <% Bookmark::CATEGORIES.flatten.uniq.each do |category| %>
+            <li class= "filter-item"><%=link_to category, :filter => category %></li>
+        <%end %>
+    </ul>
+</div>
+
+<table class="table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Comment</th>
+            <th>Category</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @bookmarks.order(:title).each do |bookmark| %>
+        <tr>
+            <%if bookmark.is_favorite%>
+                <td><span class="glyphicon glyphicon-star"></span></td>
+            <%else%>
+                <td></td>
+            <%end%>
+            <td> <%=link_to(bookmark.title, bookmark.url)%> </td>
+            <%if bookmark.comment == '' %>
+                <td></td>
+            <%else%>
+                <td class="check"><span class="glyphicon glyphicon-check"></span></td>
+            <%end%>
+            <td> <%=bookmark.category%> </td>
+            <td> <%=link_to('view', bookmark_path(bookmark.id))%> </td>
+            <td> <%=link_to('edit', edit_bookmark_path(bookmark))%> </td>
+            <td> <%=link_to 'delete', bookmark, method: :delete, data: {confirm: 'Are you sure?'}%> </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+<div class="new-bookmark">
+    <%= link_to 'new bookmark', new_bookmark_path %> </h3>
+</div>

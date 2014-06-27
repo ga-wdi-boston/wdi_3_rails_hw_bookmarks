@@ -1,4 +1,4 @@
-/*
+/*/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -13,3 +13,114 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+table, th, td {
+   border: 1px solid #006699;
+   padding: 5px 15px 5px 7px;
+   background-color: #E6F0F5;
+   margin: 0 auto;
+}
+
+th {
+  background-color: #4D94B8;
+  color: white;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 56px;
+  color: #006699;
+  padding-left: 25px;
+}
+
+form {
+  width: 300px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+label {
+  padding-top: 20px;
+}
+
+input {
+  width: 300px
+}
+
+textarea {
+  width: 300px;
+  height: 100px;
+}
+
+select {
+  width: 200px;
+}
+
+.subhead {
+  padding-left: 75px;
+  color: #006699;
+}
+
+.filters {
+  margin: 150px 0 20px 0;
+  text-align: center
+}
+
+.filter-item {
+  display: inline;
+  padding: 0 25px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.glyphicon-star {
+  color: rgba(200,200,0,1);
+  padding-left: 8px;
+}
+
+.check {
+  text-align: center;
+}
+
+.new-bookmark {
+  padding: 50px 0px;
+  text-align: center;
+}
+
+.navbar {
+  background: #E6F0F5;
+}
+
+.user-info {
+  text-align: right;
+  padding-top: 10px;
+}
+
+.login {
+  padding-right: 15px;
+}
+
+.signout {
+  padding-right: 15px;
+}
+
+.error_text {
+  font-size: 20px;
+  color: #bb0000;
+}
+
+.show-bookmark {
+  margin-top : 200px;
+}
+
+.alert {
+  padding-top: 130px;
+  text-align: center;
+  color: #C87575
+}
+

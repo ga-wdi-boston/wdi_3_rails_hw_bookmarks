@@ -1,0 +1,33 @@
+<table class="show-bookmark table-striped">
+    <thead>
+        <tr>
+            <%if @bookmark.is_favorite%>
+                <th></th>
+            <%end%>
+            <th>Title</th>
+            <%if @bookmark.comment != ""%>
+                <th>Comment</th>
+            <%end%>
+            <th>Category</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <%if @bookmark.is_favorite%>
+                <td><span class="glyphicon glyphicon-star"></span></td>
+            <%end%>
+            <td> <%=link_to(@bookmark.title, @bookmark.url)%> </td>
+            <%if @bookmark.comment != ""%>
+                <td> <%=@bookmark.comment%> </td>
+            <%end%>
+            <td> <%=@bookmark.category%> </td>
+            <td> <%=link_to('view', bookmark_path(@bookmark.id))%> </td>
+            <td> <%=link_to('edit', edit_bookmark_path(@bookmark))%> </td>
+            <td> <%=link_to 'delete', @bookmark, method: :delete, data: {confirm: 'Are you sure?'}%> </td>
+        </tr>
+    </tbody>
+</table>
+
