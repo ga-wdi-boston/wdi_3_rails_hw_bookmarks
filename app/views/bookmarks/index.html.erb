@@ -1,11 +1,12 @@
-<ul>Your Bookmarks
+<h3>Your Bookmarks</h3>
+
+<ul>
 
   <% @bookmarks.each do |bookmark| %>
-  <li> <%= link_to(bookmark.title, bookmark.url, :target => "_blank") %>
-      | <%= link_to('Edit', bookmark(bookmark)) %>
-      | <%= link_to('Delete', bookmark, method: :delete, data: {confirm: 'Are you sure?'})%>
-  </li>
-
+  <li> <%= link_to(bookmark.title, bookmark.url, :target => "_blank") %></li>
   <% end %>
 
 </ul>
+
+<h4> <%= link_to('Manage your bookmarks', </h4>
+

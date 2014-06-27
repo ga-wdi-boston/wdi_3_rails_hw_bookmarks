@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  match '/bookmarks/manage', :controller => 'bookmarks', :action => 'manage'
+
   resources :bookmarks
 
   # The priority is based upon order of creation: first created -> highest priority.
