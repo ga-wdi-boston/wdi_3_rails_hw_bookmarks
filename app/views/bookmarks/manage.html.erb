@@ -1,3 +1,5 @@
+<h3>Manage Your Bookmarks</h3>
+
 <ul>
 
   <% @bookmarks.each do |bookmark| %>
@@ -9,3 +11,5 @@
   <% end %>
 
 </ul>
+
+<h4> <%= link_to('Back to My Bookmarks', bookmarks_path) %> </h4>

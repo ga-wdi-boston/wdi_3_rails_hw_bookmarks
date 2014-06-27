@@ -3,15 +3,14 @@
 <ul>
 
   <% @bookmarks.each do |bookmark| %>
-  <li> <%= link_to(bookmark.title, bookmark.url, :target => "_blank") %>
-      | <%= link_to('Edit', bookmark) %> |
+  <li> <%= link_to(bookmark.title, bookmark.url, :target => "_blank") %> </li>
 
-  </li>
   <% end %>
 
 </ul>
 
 <h4> <%= link_to('Add a new bookmark', new_bookmark_path) %> </h4>
+<h4> <%= link_to('Manage your bookmarks', bookmarks_manage_path) %> </h4>
 
 
 
