@@ -166,6 +166,14 @@ span.glyphicon-floppy-disk {
   margin: 0 5px;
 }
 
+.click-count {
+  font-size: 24px;
+  position: absolute;
+  top: 8px;
+  right: 24px;
+  font-weight: bold;
+}
+
 a.comment-link, a:hover.comment-link, .index-comment {
   color: rgb(184, 138, 197);
 }

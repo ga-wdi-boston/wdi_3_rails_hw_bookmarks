@@ -5,6 +5,8 @@ class BookmarksController < ApplicationController
       @bookmarks = Bookmark.order(:title)
     elsif params[:order] == "created_at"
       @bookmarks = Bookmark.order(created_at: :desc)
+    elsif params[:order] == "popular"
+      @bookmarks = Bookmark.order(click_count: :desc)
     elsif params[:category]
       @bookmarks = Bookmark.where(category: params[:category])
     elsif params[:fav]

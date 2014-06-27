@@ -5,6 +5,7 @@
     <%= link_to "by title", {order: "title"}, class: "btn order-button btn-block"%>
     <%= link_to "favorites", {fav: "true"}, class: "btn order-button btn-block"%>
     <%= link_to "commented", {commented: "true"}, class: "btn order-button btn-block"%>
+    <%= link_to "popular", {order: "popular"}, class: "btn order-button btn-block"%>
   </div>
   <h3 class="sidebar-header">categories</h3>
   <div class="btn-group-vertical" id="cat-buttons">
@@ -23,7 +24,7 @@
       <%= link_to b.title, count_bookmark_url(b) %></h3>
 
       <p class="bookmark-url"><%= b.url %></p>
-      <% if b.category != "" %>
+      <% if b.category.present? %>
         <div class="category-box">- <%= link_to b.category, category: b.category %></div>
       <% end %>
       <%= link_to(b) do %>
