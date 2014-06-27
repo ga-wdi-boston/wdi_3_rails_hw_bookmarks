@@ -1,3 +1,6 @@
+<% if flash[:notice] %>
+  <div class = "flash-message"><%= flash[:notice] %></div>
+<% end %>
 <div class="menu_type"><%= @category %> BookMarks</div>
 
 Favorites  - <div class="glyphicon glyphicon-barcode"></div>
