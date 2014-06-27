@@ -1,7 +1,7 @@
 <% Bookmark::VALID_CATEGORIES.each do |cat| %>
-<div class="cat_type"<>%= cat %></div>
+<div class="cat_type"><%= cat %></div>
 <% end %>
-<div id="menu_type"><%= @category %> BookMarks</div>
+<div class="menu_type"><%= @category %> BookMarks</div>
 
 Favorites  - <div class="glyphicon glyphicon-barcode"></div>
 <br>
@@ -38,7 +38,7 @@ Comments  - <div class="glyphicon glyphicon-plus"></div>
 <!-- TO DO -->
 
 <!--
-
+      2) make bookmark show view
       3) Add CATEGORIES navigation buttons
         -in model, make CONST array of acceptable categories
           --validate that they passed in one of these (otherwise nil)

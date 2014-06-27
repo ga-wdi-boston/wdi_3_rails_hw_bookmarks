@@ -71,15 +71,22 @@
 }
 
 .inner_app{
-  padding-top:30px;
   font-size:40px;
   font-color:white;
 
 }
-#menu_type {
+
+#footer {
+  color: cyan;
+  font-size: 30px;
+  text-align:center;
+}
+
+.menu_type {
   padding: 30px;
   font-size: 70px;
 }
+
 .cat_type {
   display:inline-block;
   background-color: black;
