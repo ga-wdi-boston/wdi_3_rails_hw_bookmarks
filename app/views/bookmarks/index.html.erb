@@ -14,7 +14,11 @@
 <div class="col-sm-9">
   <% @bookmarks.each do |b| %>
     <div class="bookmark-index">
-      <h3 class="bookmark-title"><a href="<%= b.url %>"><%= b.title %></a></h3>
+      <h3 class="bookmark-title">
+      <% if b.is_favorite %>
+        <span class="glyphicon glyphicon-star"></span>
+      <% end %>
+      <a href="<%= b.url %>"><%= b.title %></a></h3>
 
       <p class="bookmark-url"><%= b.url %></p>
       <% if b.category != "" %>
