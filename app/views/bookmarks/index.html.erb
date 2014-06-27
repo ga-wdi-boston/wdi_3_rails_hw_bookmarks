@@ -9,7 +9,7 @@
   <% @bookmarks.each do |bookmark| %>
   <li class="text-left list_title">
   <div class="bmark_title"
-    <strong><%= link_to "#{bookmark.title}", bookmark.url  %></strong>
+    <strong><%= link_to "#{bookmark.title}", click_track_path(bookmark.id)  %></strong>
     <br>
     <% if bookmark.category %>
     -- (<%= bookmark.category %>)
@@ -40,6 +40,6 @@
         -LINKS
           -list_title
           -view_path
-        -glyphs
-        -
+        - Show page
+      9) ?
     -->

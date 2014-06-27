@@ -38,7 +38,6 @@ class BookmarksController < ApplicationController
       flash.keep[:notice] = "Bookmark updated!"
       redirect_to @bookmark
     else
-      # No worky, try again, show me the form you.
       render :edit
     end
   end
@@ -49,6 +48,15 @@ class BookmarksController < ApplicationController
     redirect_to root_path
   end
 
+  def click_track
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.click_count += 1
+    if @bookmark.save
+      redirect_to @bookmark.url
+    else
+      flash.keep[:notice] = "There was an error in click_track"
+    end
+  end
 
   private
 

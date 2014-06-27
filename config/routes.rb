@@ -2,6 +2,7 @@
 Rails.application.routes.draw do
   resources :bookmarks
   root "bookmarks#index"
+  get '/bookmarks/click_track/:id', to: 'bookmarks#click_track', as: 'click_track'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -6,6 +6,7 @@ class CreateBookmark < ActiveRecord::Migration
       t.text :comment, default: ""
       t.text :category
       t.boolean :favorite, default: false
+      t.integer :click_count, default: 0
     end
   end
 end
