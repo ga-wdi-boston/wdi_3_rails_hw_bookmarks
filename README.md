@@ -18,8 +18,8 @@ One more thing: Make sure you provide some working seed data so we can easily te
 
 ## Specifications
 
-* App has a database schema with appropriate columns and indexes
-* App has working seed data that creates a variety of bookmarks
+* App has a database schema with appropriate columns and indexes YES
+* App has working seed data that creates a variety of bookmarks YES
 * User can view bookmarks in an alphabetical list with titles/categories
 * User can see from the list which bookmarks are favorite/commented
 * User can filter the list of bookmarks by category, and clear the filter

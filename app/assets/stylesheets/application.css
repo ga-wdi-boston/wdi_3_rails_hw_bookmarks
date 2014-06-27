@@ -162,3 +162,7 @@ a .index-comment {
   text-transform: uppercase;
   font-size: 13px;
 }
+
+.category-box a {
+  color:rgb(231, 100, 100);
+}

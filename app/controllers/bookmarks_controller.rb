@@ -1,7 +1,7 @@
 class BookmarksController < ApplicationController
 
   def index
-    if params[:order] == "alpha"
+    if params[:order] == "title"
       @bookmarks = Bookmark.order(:title)
     elsif params[:order] == "created_at"
       @bookmarks = Bookmark.order(created_at: :desc)

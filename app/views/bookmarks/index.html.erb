@@ -4,7 +4,7 @@
 
     <p class="bookmark-url"><%= b.url %></p>
     <% if b.category != "" %>
-      <div class="category-box">- <%= b.category %></div>
+      <div class="category-box">- <%= link_to b.category, category: b.category %></div>
     <% end %>
     <%= link_to(b) do %>
       <div class="etc-button"><span class="glyphicon glyphicon-bookmark"></span></div>
