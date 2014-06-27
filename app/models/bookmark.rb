@@ -1,7 +1,9 @@
 class Bookmark < ActiveRecord::Base
-  cats = %W(serious funny useful)
-  CATEGORIES = cats.map{|cat| [cat, cat]}
-  NUM_OF_CATEGORIES = CATEGORIES.size
+  CATEGORIES = %W(serious funny useful)
+
+  validates(:url, format: {with: /\A(http:\/\/).+\z/}, presence: true)
+  validates(:category, inclusion: {in: Bookmark::CATEGORIES})
+
 
   def self.filter_by_category(cat)
     self.where(category: cat)

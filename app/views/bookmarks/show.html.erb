@@ -2,3 +2,7 @@
 <p>URL: <%= @bookmark.url %> </p>
 <p>Comment: <%= @bookmark.comment %> </p>
 <p>Favorite?: <%= @bookmark.is_favorite %></p>
+
+<h3><%= link_to("Back to bookmarks", bookmarks_path) %> </h3>
+<p> <%= flash[:notice] %> </p>
+<p> <%= flash[:alert] %> </p>

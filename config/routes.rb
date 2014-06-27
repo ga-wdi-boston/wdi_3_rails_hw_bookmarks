@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :bookmarks
 
-  post '/bookmarks/filter', to: 'bookmarks#filter'
+  #post '/bookmarks/filter', to: 'bookmarks#filter'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

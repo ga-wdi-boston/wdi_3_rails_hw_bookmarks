@@ -2,13 +2,23 @@
 
 <% bookmarks.each do |bookmark| %>
 <li>
-  <%= link_to(bookmark.title, bookmark.url) + " | " + bookmark.category + " | " +link_to("show", bookmark_path(bookmark.id)) %>
+  <%= link_to(bookmark.title, bookmark.url) + " | " + bookmark.category + " | " + link_to("show", bookmark) + " | " + link_to("edit", edit_bookmark_path(bookmark)) + " | " + link_to("remove", bookmark, method: :delete) %>
 </li>
 
 <% end %>
 </ul>
 
-<%= form_tag("/bookmarks/filter") do %>
-  <%= select_tag(:filter_id, options_for_select([["none", Bookmark::NUM_OF_CATEGORIES]] + Bookmark::CATEGORIES)) %>
-  <%= submit_tag("Filter") %>
-<%end%>
+
+
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Filter
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><%= link_to('none', bookmarks_path) %></li>
+    <% Bookmark::CATEGORIES.each do  |cat| %>
+      <li role="presentation"><%= link_to(cat, bookmarks_path(filter_id: cat)) %></li>
+    <% end %>
+  </ul>
+</div>

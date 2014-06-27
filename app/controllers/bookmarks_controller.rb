@@ -1,19 +1,15 @@
 class BookmarksController < ApplicationController
 
   def index
-    @bookmarks = Bookmark.all.order(:title)
+    if params[:filter_id].nil?
+      @bookmarks = Bookmark.all.order(:title)
+    else
+      @bookmarks = Bookmark.filter_by_category(params[:filter_id])
+    end
   end
 
   def show
     @bookmark = Bookmark.find(params[:id])
-  end
-
-  def filter
-    if params[:filter_id].to_i < Bookmark::NUM_OF_CATEGORIES
-      @bookmarks = Bookmark.filter_by_category(params[:filter_id])
-    else
-      redirect_to(bookmarks_path)
-    end
   end
 
   def new
@@ -24,10 +20,34 @@ class BookmarksController < ApplicationController
     @bookmark= Bookmark.new(bkmk_params)
 
     if @bookmark.save
+      flash[:notice] = "Bookmark Created"
       redirect_to @bookmark
     else
+      flash.now[:alert] = @bookmark.errors.full_messages.join(' ')
       render :new
     end
+  end
+
+  def edit
+    @bookmark = Bookmark.find(params[:id])
+  end
+
+  def update
+    @bookmark = Bookmark.find(params[:id])
+
+    if @bookmark.update(bkmk_params)
+      flash[:notice] = "Bookmark Updated"
+      redirect_to(@bookmark)
+    else
+      flash.now[:alert] = @bookmark.errors.full_messages.join(' ')
+      render :edit
+    end
+  end
+
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.delete
+    redirect_to(bookmarks_path)
   end
 
   private
