@@ -1,33 +1,33 @@
 <div class="menu_type">
-<%= @category.capitalize if @category %> Bookmarks
+  <%= @category.capitalize if @category %> Bookmarks
 </div>
 <% if flash[:notice] %>
-  <div class = "flash-message alert-success alert-dismissable"><%= flash[:notice] %></div>
+<div class = "flash-message alert-success alert-dismissable"><%= flash[:notice] %></div>
 <% end %>
 <hr>
 <ul class="span6">
   <% @bookmarks.each do |bookmark| %>
-  <li class="text-left list_title">
-  <div class="bmark_title"
+  <li class="text-left list_items">
+    <div class="bmark_title"
     <strong><%= link_to "#{bookmark.title}", click_track_path(bookmark.id)  %></strong>
     <br>
     <% if bookmark.category %>
     -- (<%= bookmark.category %>)
     <% end %>
-  </div>
-  <div class="glyphs">
+    </div>
+    <div class="glyphs">
     <% if bookmark.comment != "" %>
     <div class="glyphicon glyphicon-list-alt"></div>
     <% end %>
     <% if bookmark.favorite  %>
     <div class="glyphicon glyphicon-star-empty"></div>
     <% end %>
-  </div>
-  <div class="view_path">
+    </div>
+    <div class="view_path">
 
     <%= link_to "View", bookmark_path(bookmark.id) %>
-  </div>
-</li>
+    </div>
+  </li>
 <br>
 <hr>
 <% end %>

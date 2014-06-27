@@ -20,11 +20,6 @@
    -box-sizing: border-box;
 }
 
-.inner_app{
-  font-color:white;
-  background-color:#999;
-}
-
 .menu_type {
   font-size: 70px;
   color: gold;
@@ -40,10 +35,9 @@ ul {
   list-style-type: none;
 }
 
-.list_title {
+.list_items {
   padding: 10px 0px;
   font-size: 3vw;
-  height: 75px;
 }
 
 .bmark_title {
@@ -53,12 +47,12 @@ ul {
   float:left;
 }
 
-.list_title a {
+.list_items a {
   text-decoration: none;
   color: green;
 }
 
-.list_title a:hover {
+.list_items a:hover {
   text-decoration: none;
   color: cyan;
 }
@@ -90,6 +84,7 @@ html {
 }
 body {
   padding-top: 40px;
+  background-color: #999 !important;
 }
 section {
   overflow: auto;
