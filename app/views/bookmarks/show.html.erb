@@ -1,4 +1,6 @@
 # show page, needs edit & delete options
 
+<%= link_to 'Edit', edit_bookmark_path(@bookmark) %>
+<%= link_to 'Delete', @bookmark, method: :delete, data: {confirm: 'Are you sure?'}%>
 <%= @bookmark.title %>
 <%= @bookmark.category %>
