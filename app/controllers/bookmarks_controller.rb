@@ -1,6 +1,10 @@
 class BookmarksController < ApplicationController
   def index
     @bookmarks = Bookmark.order(:title)
+    @categories = Bookmark.distinct.pluck(:category)
+    if params[:category].present?
+      @bookmarks = Bookmark.where(category: params[:category]).order(:title)
+    end
   end
 
   # Get Bookmark/:id
@@ -17,8 +21,10 @@ class BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new(bookmark_params)
     if @bookmark.save
+      flash[:notice] = "Bookmark successfully created"
       redirect_to bookmarks_path
     else
+      flash.now[:notice] = "Post wasn't saved"
       render :new
     end
   end
@@ -44,7 +50,6 @@ class BookmarksController < ApplicationController
 
     redirect_to @bookmark, notice: "You have deleted the bookmark"
   end
-
 
   private
 
