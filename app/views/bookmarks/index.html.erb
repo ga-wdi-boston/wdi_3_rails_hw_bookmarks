@@ -9,23 +9,25 @@ Comments  - <div class="glyphicon glyphicon-plus"></div>
   <li class="text-left list_title">
   <div class="bmark_title"
     <strong><%= link_to "#{bookmark.title}", bookmark.url  %></strong>
+    <br>
     <% if bookmark.category %>
     -- (<%= bookmark.category %>)
     <% end %>
   </div>
   <div class="glyphs">
     <% if bookmark.comment != "" %>
-    ^^
+    <div class="glyphicon glyphicon-plus"></div>
     <% end %>
-
     <% if bookmark.favorite  %>
-    **
+    <div class="glyphicon glyphicon-barcode"></div>
     <% end %>
   </div>
   <div class="view_path">
+
     <%= link_to "View", bookmark_path(bookmark.id) %>
   </div>
 </li>
+<br>
 <hr>
 <% end %>
 </ul>
@@ -33,8 +35,6 @@ Comments  - <div class="glyphicon glyphicon-plus"></div>
 <!-- TO DO -->
 
 <!--
-      2) favorite and comment marked clearly (glyphs)
-          a. add key to homepage
       6) fixed footer
           a. BOOKMARKr by Jake
 
