@@ -45,3 +45,7 @@ header {
 .top-bar .name h1 {
   font-size: 1.25rem;
 }
+
+h4 {
+  color: rgba(0, 0, 0, 0.5);
+}
