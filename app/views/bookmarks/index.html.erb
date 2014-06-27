@@ -1,7 +1,7 @@
 <% if flash[:notice] %>
   <div class = "flash-message"><%= flash[:notice] %></div>
 <% end %>
-<div class="menu_type"><%= @category %> BookMarks</div>
+<div class="menu_type"><%= @category.capitalize %> Bookmarks</div>
 
 Favorites  - <div class="glyphicon glyphicon-barcode"></div>
 <br>
@@ -39,6 +39,10 @@ Comments  - <div class="glyphicon glyphicon-plus"></div>
 
 <!--
       2) make bookmark show view
+      3) category capitalization on index view
 
       7) STYLE!!!!!
+        -LINKS
+        -glyphs
+        -
     -->
