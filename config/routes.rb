@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root to: 'bookmarks#index'
+
   get '/bookmarks/manage', to: 'bookmarks#manage'
 
   resources :bookmarks

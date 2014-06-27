@@ -15,7 +15,6 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
-
     if @bookmark.save
       redirect_to bookmarks_path
     else
@@ -33,7 +32,6 @@ class BookmarksController < ApplicationController
 
   def update
     @bookmark = Bookmark.find(params[:id])
-
     if @bookmark.update(bookmark_params)
       redirect_to @bookmark, notice: "Bookmark updated!"
     else
@@ -43,7 +41,6 @@ class BookmarksController < ApplicationController
 
   def destroy
     @bookmark = Bookmark.find(params[:id])
-
     @bookmark.destroy
     redirect_to bookmarks_path, notice: "Bookmark deleted!"
   end
