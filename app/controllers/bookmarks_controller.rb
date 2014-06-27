@@ -34,7 +34,8 @@ class BookmarksController < ApplicationController
 
   def update
     @bookmark = Bookmark.find(params[:id])
-    if @bookmark.update(product_params)
+    if @bookmark.update(bookmark_params)
+      flash.keep[:notice] = "Bookmark updated!"
       redirect_to @bookmark
     else
       # No worky, try again, show me the form you.
