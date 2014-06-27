@@ -1,14 +1,14 @@
 <% @bookmarks.each do |b| %>
   <div class="bookmark-index">
     <h3 class="bookmark-title"><a href="<%= b.url %>"><%= b.title %></a></h3>
-    <small><%= b.url %></small>
+    <p class="bookmark-url"><%= b.url %></p>
     <%= link_to(b) do %>
       <div class="etc-button"><span class="glyphicon glyphicon-bookmark"></span></div>
     <% end %>
 
     <% if b.comment != "" %>
       <%= link_to(b) do %>
-      <p>view comment <span class="glyphicon glyphicon-circle-arrow-right"></span></p>
+      <p class="index-comment">see comment <span class="glyphicon glyphicon-circle-arrow-right"></span></p>
       <% end %>
     <% end %>
   </div>

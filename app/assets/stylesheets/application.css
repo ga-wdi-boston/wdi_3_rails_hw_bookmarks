@@ -66,6 +66,12 @@ div.bookmark-index, div.bookmark-show {
   -webkit-margin-after: 0;
 }
 
+.bookmark-url {
+  font-style: italic;
+  color: rgb(153, 153, 153);
+  font-size: 13px;
+}
+
 .etc-button .glyphicon {
   position: absolute;
   top: 0px;
@@ -139,4 +145,8 @@ span.glyphicon-floppy-disk {
 
 .bookmark-comment .quotething {
   margin: 0 5px;
+}
+
+a .index-comment {
+  color: rgb(199, 118, 21);
 }
