@@ -3,7 +3,7 @@
 
 <% @bookmarks.each do |bookmark| %>
 <li>
-  <%= bookmark.title + " | " + bookmark.category %>
+  <%= link_to(bookmark.title, bookmark.url) + " | " + bookmark.category + " | " +link_to("show", bookmark_path(bookmark.id)) %>
 </li>
 <% end %>
 
