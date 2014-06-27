@@ -20,7 +20,7 @@
       <% if b.is_favorite %>
         <span class="glyphicon glyphicon-star"></span>
       <% end %>
-      <a href="<%= b.url %>"><%= b.title %></a></h3>
+      <%= link_to b.title, count_bookmark_url(b) %></h3>
 
       <p class="bookmark-url"><%= b.url %></p>
       <% if b.category != "" %>

@@ -3,7 +3,7 @@
 <% if @bookmark.is_favorite %>
   <span class="glyphicon glyphicon-star"></span>
 <% end %>
-<a href="<%= @bookmark.url %>"><%= @bookmark.title %></a></h1>
+<%= link_to @bookmark.title, count_bookmark_url %></h1>
 <% if @bookmark.comment != "" %>
   <p class="bookmark-comment"><span class="quotething">"</span><%= @bookmark.comment %><span class="quotething">"</span></p>
 <% end %>

@@ -23,6 +23,7 @@ class BookmarksController < ApplicationController
   def count
     @bookmark = Bookmark.find(params[:id])
     @bookmark.click_count += 1
+
     if @bookmark.save
       redirect_to @bookmark.url
     end
@@ -67,4 +68,5 @@ class BookmarksController < ApplicationController
   def bookmark_params
     params.require(:bookmark).permit([:title, :url, :comment, :category, :is_favorite])
   end
+
 end
