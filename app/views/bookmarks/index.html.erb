@@ -1,3 +1,4 @@
+<h1>Bookmarks</h1>
 <ul>Filter by Category
   <% @bookmarks.map(&:category).uniq.sort.each do |category| %>
     <li><%= link_to category, filter: category %></li>
@@ -7,7 +8,6 @@
   <% end %>
 </ul>
 
-<ul>Bookmarks
+<div>
 <%= render partial: "bookmark", collection: @bookmarks %>
-</ul>
-<h3><%= link_to "Create a new bookmark", new_bookmark_path %></h3>
+</div>
