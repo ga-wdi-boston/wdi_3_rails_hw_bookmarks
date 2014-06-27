@@ -5,9 +5,9 @@
 <%= @category.capitalize if @category %> Bookmarks
 </div>
 
-Comments  - <div class="glyphicon glyphicon-plus"></div>
+Comments  - <div class="glyphicon glyphicon-pencil"></div>
 <br>
-Favorites  - <div class="glyphicon glyphicon-barcode"></div>
+Favorites  - <div class="glyphicon glyphicon-star-empty"></div>
 
 <hr>
 <ul class="span6">
@@ -22,10 +22,10 @@ Favorites  - <div class="glyphicon glyphicon-barcode"></div>
   </div>
   <div class="glyphs">
     <% if bookmark.comment != "" %>
-    <div class="glyphicon glyphicon-plus"></div>
+    <div class="glyphicon glyphicon-pencil"></div>
     <% end %>
     <% if bookmark.favorite  %>
-    <div class="glyphicon glyphicon-barcode"></div>
+    <div class="glyphicon glyphicon-star-empty"></div>
     <% end %>
   </div>
   <div class="view_path">
