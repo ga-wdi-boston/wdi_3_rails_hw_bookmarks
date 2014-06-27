@@ -1,6 +1,6 @@
 
 <div class="hero-unit">
-  <h1>Bookmarkr</h1>
+  <h1 class="hero-text-index">Bookmarkr</h1>
   <p>saving bookmarks one day at a time</p>
   <p>
     <%= link_to('Add a new bookmark', new_bookmark_path, :class => "btn btn-primary btn-large") %>
@@ -8,12 +8,9 @@
 </div>
 
 <ul>
-
   <% @bookmarks.each do |bookmark| %>
   <li style="list-style-type: none;"> <%= link_to(bookmark.title, bookmark.url, :target => "_blank") %> </li>
-
   <% end %>
-
 </ul>
 
 
