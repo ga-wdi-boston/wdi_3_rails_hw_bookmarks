@@ -6,7 +6,7 @@
       <div class="etc-button"><span class="glyphicon glyphicon-bookmark"></span></div>
     <% end %>
 
-    <% if b.comment %>
+    <% if b.comment != "" %>
       <%= link_to(b) do %>
       <p>view comment <span class="glyphicon glyphicon-circle-arrow-right"></span></p>
       <% end %>

@@ -93,6 +93,10 @@ span.glyphicon-floppy-disk {
   margin-top: 20px;
 }
 
+.body-row {
+  padding: 0 16px;
+}
+
 .edit-delete-buttons {
   position: absolute;
   right: 9px;

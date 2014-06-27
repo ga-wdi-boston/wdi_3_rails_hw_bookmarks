@@ -1,12 +1,15 @@
 <div class="bookmark-show">
 <h1 class="bookmark-title"><a href="<%= @bookmark.url %>"><%= @bookmark.title %></a></h1>
   <br>
-<% if @bookmark.comment %>
+<% if @bookmark.comment != "" %>
   <p><strong>You added:</strong> <%= @bookmark.comment %></p>
 <% end %>
 <br>
+<% if @bookmark.category %>
+  <p><strong>Category: </strong><%= @bookmark.category %></p>
+<% end %>
 <br>
-<small>Added on <%= @bookmark.created_at %></small>
+<p>Added on <%= @bookmark.created_at %></p>
   <div class="edit-delete-buttons">
   <%= link_to edit_bookmark_path do %>
     <span class="glyphicon glyphicon-pencil"></span>
