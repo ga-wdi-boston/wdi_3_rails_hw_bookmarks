@@ -1,5 +1,31 @@
-<h1> BOOKMARKS AND STUFF </h1>
-<h2> <%= link_to 'Add a new Bookmark!!!!!!! YAYYYY', new_bookmark_path %>
-<ul>
-  <%= render partial:"bookmark", collection: @bookmarks %>
-</ul>
+
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">BookMarkr</div>
+
+  <!-- Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Title </th>
+        <th> Category </th>
+        <th> Url </th>
+        <th> Favorite </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @bookmarks.each do |bookmark| %>
+        <tr>
+          <td> <%= link_to(bookmark.title,bookmark_path(bookmark.id)) %></td>
+          <td> <%= bookmark.url %> </td>
+          <td> <%= bookmark.category %> </td>
+          <td> <%= bookmark.favorite %> </td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to 'New', new_bookmark_path,type:"button", class:"btn btn-default" %>
