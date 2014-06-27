@@ -1,13 +1,10 @@
 class BookmarksController < ApplicationController
   def index
-    @bookmarks = Bookmark.all.sort_by{ |bookmark| [bookmark.title.downcase]}
-
-    #render text: "THIS WORK NOW"
-  end
-
-  #first attempt at Sorting by category!
-  def index_by_category(:category)
-    @bookmarks =
+    if params[:category]
+      @bookmarks = Bookmark.where(category: params[:category])
+    else
+      @bookmarks = Bookmark.all.sort_by{ |bookmark| [bookmark.title.downcase]}
+    end
   end
 
   def show

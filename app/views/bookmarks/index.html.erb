@@ -7,14 +7,14 @@
         <!-- Default panel contents -->
         <div class="panel-heading">
           <h4>Show Category!</h4>
-            <ul class="nav nav-pills nav-stacked">
-              <li> Work </li>
-              <li> Funny </li>
-              <li> Serious </li>
-              <li> News </li>
-            </ul>
         </div>
       </div>
+      <div class="list-group">
+        <%= link_to "Work", {category:'work'}, class:'list-group-item'%>
+        <%= link_to "Funny", {category:'funny'}, class:'list-group-item'%>
+        <%= link_to "Serious", {category:'serious'}, class:'list-group-item'%>
+        <%= link_to "News", {category:'news'}, class:'list-group-item'%>
+        </div>
     </div>
 
     <div class="col-md-8">
