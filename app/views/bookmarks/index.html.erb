@@ -9,9 +9,9 @@
       <tr>
         <th>Title</th>
         <th>Category</th>
-        <th>Favorite?</th>
-        <th>Comment?</th>
-        <th>View Bookmark</th>
+        <th class="text-center">Favorites</th>
+        <th class="text-center">Comment</th>
+        <th class="text-center">View Bookmark</th>
       </tr>
     </thead>
     <tbody>
@@ -19,9 +19,15 @@
       <tr>
         <td><%= link_to(bookmark.title, bookmark.url) %></td>
         <td><%= bookmark.category %></td>
-        <td><%= bookmark[:is_favorite] %></td>
-        <td><%= bookmark[:comment] ? "Yes" : "No" %></td>
-        <td><%= link_to("View", bookmark_path(bookmark.id)) %></td>
+        <td class="text-center"><% if bookmark[:is_favorite] %>
+        <span class="glyphicon glyphicon-heart"></span>
+          <% end %>
+        </td>
+        <td class="text-center"><% if bookmark[:comment] %>
+          <span class="glyphicon glyphicon-ok"></span>
+          <% end %>
+        </td>
+        <td class="text-center"><%= link_to("View", bookmark_path(bookmark.id)) %></td>
 
 
         <% end %>
