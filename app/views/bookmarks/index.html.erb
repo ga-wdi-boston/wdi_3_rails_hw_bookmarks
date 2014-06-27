@@ -1,7 +1,8 @@
 <ul class="list-group">
 <% @bookmarks.each do |bookmark| %>
   <li class="list-group-item"><strong><%= bookmark.title %></strong> | <%= bookmark.url %>
-   <%= link_to('Edit', edit_bookmark_path(bookmark), class: "btn btn-default pull-right") %></li>
+   <%= link_to('Edit', edit_bookmark_path(bookmark), class: "btn btn-default pull-right") %>
+   </li>
 
 <% end %>
 
