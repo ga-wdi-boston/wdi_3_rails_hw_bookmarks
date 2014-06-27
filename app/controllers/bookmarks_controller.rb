@@ -25,7 +25,17 @@ class BookmarksController < ApplicationController
   end
 
   def edit
+    @bookmark = Bookmark.find(params[:id])
+  end
 
+  def update
+    @bookmark = Bookmark.find(params[:id])
+
+    if @bookmark.update(bookmark_params)
+      redirect_to @bookmark
+    else
+      render :edit
+    end
   end
 
   def destroy
