@@ -1,57 +1,58 @@
-<div>
-  <%= form_for (@bookmark) do |f| %>
+
+<%= form_for (@bookmark) do |f| %>
 
 
-  <% if @bookmark.errors.any? %>
-  <div id="errorExplanation text-center">
-    <div class="bg-danger">
-      the form contains <%=pluralize(@bookmark.errors.count, "error") %>.
-    </div>
-    <ul>
-      <% @bookmark.errors.full_messages.each do |msg| %>
-      <li>* <%= msg %> </li>
-      <% end %>
-    </ul>
+<% if @bookmark.errors.any? %>
+<div id="errorExplanation text-center">
+  <div class="bg-danger">
+    the form contains <%=pluralize(@bookmark.errors.count, "error") %>.
   </div>
-  <% end %>
-
-  <div
-  <div class="field">
-    <%= f.label :url, 'URL' %>
-    <%= f.text_field :url %>
-  </div>
-  <br><hr><br>
-  <div class="field">
-    <%= f.label :title, 'Title' %>
-    <%= f.text_field :title %>
-  </div>
-  <br><hr><br>
-  <div class="field">
-    <%= f.label :comment, 'Comment (optional)' %>
-    <%= f.text_field :comment %>
-  </div>
-  <br><hr><br>
-  <div class="field">
-    <%= f.label :category, 'Category (optional)' %>
-    <br>
-    <%= f.radio_button :category, 'serious' %>
-    <%= f.label :category_serious, 'Serious' %>
-    <br>
-    <%= f.radio_button :category, 'funny' %>
-    <%= f.label :category_funny, 'Funny' %>
-    <br>
-    <%= f.radio_button :category, 'useful' %>
-    <%= f.label :category_useful, 'Useful' %>
-  </div>
-  <br><hr><br>
-  <div class="field">
-    <%= f.label "Favorite?" %>
-    <br>
-    <%= f.check_box :favorite %>
-  </div>
-  <br><hr><br>
-  <div class="actions">
-    <%= f.submit "Save Bookmark!", class: "btn btn-large btn-primary" %>
-  </div>
-  <% end %>
+  <ul>
+    <% @bookmark.errors.full_messages.each do |msg| %>
+    <li>* <%= msg %> </li>
+    <% end %>
+  </ul>
 </div>
+<% end %>
+
+<div
+<div class="field">
+  <%= f.label :url, 'URL' %>
+  <%= f.text_field :url %>
+</div>
+<br><hr><br>
+<div class="field">
+  <%= f.label :title, 'Title' %>
+  <%= f.text_field :title %>
+</div>
+<br><hr><br>
+<div class="field">
+  <%= f.label :comment, 'Comment (optional)' %>
+  <%= f.text_field :comment %>
+</div>
+<br><hr><br>
+<div class="field">
+  <%= f.label :category, 'Category (optional)' %>
+  <br>
+  <%= f.radio_button :category, 'serious' %>
+  <%= f.label :category_serious, 'Serious' %>
+  <br>
+  <%= f.radio_button :category, 'funny' %>
+  <%= f.label :category_funny, 'Funny' %>
+  <br>
+  <%= f.radio_button :category, 'useful' %>
+  <%= f.label :category_useful, 'Useful' %>
+</div>
+<br><hr><br>
+<div class="field">
+  <%= f.label "Favorite?" %>
+  <br>
+  <%= f.check_box :favorite %>
+</div>
+<br><hr><br>
+<div class="actions">
+  <%= f.submit "Save Bookmark!", class: "btn btn-large btn-primary" %>
+</div>
+<br>
+<% end %>
+

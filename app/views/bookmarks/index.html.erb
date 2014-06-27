@@ -1,9 +1,9 @@
-<% if flash[:notice] %>
-  <div class = "flash-message alert-success alert-dismissable"><%= flash[:notice] %></div>
-<% end %>
 <div class="menu_type">
 <%= @category.capitalize if @category %> Bookmarks
 </div>
+<% if flash[:notice] %>
+  <div class = "flash-message alert-success alert-dismissable"><%= flash[:notice] %></div>
+<% end %>
 <hr>
 <ul class="span6">
   <% @bookmarks.each do |bookmark| %>
@@ -32,14 +32,3 @@
 <hr>
 <% end %>
 </ul>
-
-<!-- TO DO -->
-
-<!--
-      7) STYLE!!!!!
-        -LINKS
-          -list_title
-          -view_path
-        - Show page
-      9) ?
-    -->

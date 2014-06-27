@@ -21,20 +21,13 @@
 }
 
 .inner_app{
-  font-size:20px;
   font-color:white;
+  background-color:#999;
 }
 
 .menu_type {
   font-size: 70px;
-}
-
-.cat_type {
-  display:inline-block;
-  background-color: black;
-  border-radius: 20px;
-  border: 2px solid white;
-  color:yellow;
+  color: gold;
 }
 
 #footer {
@@ -55,33 +48,48 @@ ul {
 
 .bmark_title {
   display:inline-block;
+  color: gold;
   width: 80%;
   float:left;
+}
 
+.list_title a {
+  text-decoration: none;
+  color: green;
+}
+
+.list_title a:hover {
+  text-decoration: none;
+  color: cyan;
 }
 
 .glyphs {
   display:inline-block;
+  color:white;
   width: 10%;
 }
 
 .view_path {
   display:inline-block;
   text-align: center;
-  background-color: blue;
+  background-color: navy;
   border: 2px solid black;
   border-radius: 30%;
   width: 10%;
-  font-size: 2vw;
+  font-size: 3vw;
   float: right;
 
+}
+
+.field {
+  color: black;
 }
 
 html {
   overflow-y: scroll;
 }
 body {
-  padding-top: 20%;
+  padding-top: 40px;
 }
 section {
   overflow: auto;
