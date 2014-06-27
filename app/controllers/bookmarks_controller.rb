@@ -50,4 +50,9 @@ class BookmarksController < ApplicationController
   def show
     @bookmark = Bookmark.find(params[:id])
   end
+
+  private
+  def bookmark_params
+    params.require(:bookmark).permit([:url, :title, :comments, :category, :is_favorite])
+  end
 end

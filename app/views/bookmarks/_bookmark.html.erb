@@ -1,0 +1,7 @@
+  <div>
+    <div class="list-link-container">
+      <div class="list_btn"><%= link_to 'Edit', edit_bookmark_path(bookmark.id) %></div>
+      <div class="list_btn"><%= link_to 'Delete', bookmark_path(bookmark.id), method: :delete, data: { confirm: 'Are you sure?'} %></div>
+    </div>
+    <div><%= bookmark.title %></div>
+  </div>
