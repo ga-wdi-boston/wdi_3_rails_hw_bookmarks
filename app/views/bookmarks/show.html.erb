@@ -1,0 +1,16 @@
+<h3>This is the page for my <%= @bookmark.title %> bookmark.</h3>
+
+<p>Title:<p>
+<p><%= @bookmark.title %></p>
+<p>URL:<p>
+<p><%= @bookmark.url %></p>
+<p>Comment:<p>
+<p><%= @bookmark.comment %></p>
+<p>Category:<p>
+<p><%= @bookmark.category %></p>
+<p>Is this a favorite?</p>
+<p><%= @bookmark.is_favorite %></p>
+<p>When did this get added as a bookmark?</p>
+<p><%= @bookmark.created_at %></p>
+
+<%= link_to 'All Bookmarks', bookmarks_path %>
