@@ -9,22 +9,22 @@
     </ul>
     </div>
   <% end %>
-
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br>
-  <%= f.label :url %>
-  <%= f.text_field :url %>
-  <br>
-  <%= f.label :comment %>
-  <%= f.text_field :comment %>
-  <br>
-  <%= f.label :category %>
-  <%= f.text_field :category %>
-  <br>
-  <%= f.label :is_favorite %>
-  <%= f.text_field :is_favorite %>
-  <br>
-
+  <div class='inline'>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+    <br>
+    <%= f.label :comment %>
+    <%= f.text_field :comment %>
+    <br>
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+    <br>
+    <%= f.label :is_favorite %>
+    <%= f.text_field :is_favorite %>
+    <br>
+  </div>
   <%= f.submit %>
 <% end %>

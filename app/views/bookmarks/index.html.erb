@@ -1,21 +1,18 @@
-<header>
-<h1>Look at all these bookmarks!</h1>
-</header>
-
-<table>
+<table class='box effect8'>
   <tr>
-    <td>Title</td>
-    <td>Category</td>
-    <td>Favorite?</td>
-    <td>Comment?</td>
+    <td class='column_header'>Title</td>
+    <td class='column_header'>Category</td>
+    <td class='column_header'>Favorite?</td>
+    <td class='column_header'>Comment?</td>
   </tr>
   <% @bookmarks.each do |bookmark| %>
     <tr>
       <td><a href='<%= bookmark.url %>' target='_blank'><%= bookmark.title %></td>
-      <td><%= bookmark.category %></td>
-      <td><%= bookmark.is_favorite %></td>
+      <td class='column_header'><%= bookmark.category %></td>
+      <td class='column_header'><%= bookmark.is_favorite %></td>
+      <td class='column_header'><%= bookmark.is_favorite %></td>
       <td><%= bookmark.comment %></td>
-      <td><%= link_to 'Show me all attributes', bookmark %></td>
+      <td class='column_header'><%= link_to 'Show me all attributes', bookmark %></td>
     </tr>
   <% end %>
 </table>
