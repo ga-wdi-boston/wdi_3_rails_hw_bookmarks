@@ -1,9 +1,16 @@
 class BookmarksController < ApplicationController
+
+
+  # If I wanted to keep a tally of how many time user clicks on the url link
+  # I could link to a method in here that would increment a column(I would add to database)
+  # and redirect back to the url (which we have in params).
+
+
   def index
     if params[:category]
       @bookmarks = Bookmark.where(category: params[:category])
     else
-      @bookmarks = Bookmark.all.sort_by{ |bookmark| [bookmark.title.downcase]}
+      @bookmarks = Bookmark.order(:title)
     end
   end
 

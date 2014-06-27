@@ -5,23 +5,23 @@
     </div>
     <div class="col-md-8">
       <div class="well well-lg">
-        <h2>
-          Title: <%= @bookmark.title %>
-          <br>
+
+          <h2> <%= @bookmark.title %></h2><br>
+        <p>
           url: <%= link_to(@bookmark.url,@bookmark.url) %>
           <br>
-          comment: <%= @bookmark.comment %>
-          <br>
-          category: <%= @bookmark.category %>
-          <br>
-          favorite:
+          " <%= @bookmark.comment %> "
+          <br><br>
+          We call this- <%= @bookmark.category %>
+          <br><br>
+          favorite?:
           <% if @bookmark.favorite %>
-            <span class="glyphicon glyphicon-ok"></span>
+            <span class="glyphicon glyphicon-ok"></span><p> Yeah it is </p>
           <% else %>
-            <span class="glyphicon glyphicon-remove"></span>
+            <span class="glyphicon glyphicon-remove"></span><p> Nah </p>
           <% end %>
           <br>
-        </h2>
+        </p>
       </div>
 
       <div class="form-actions">

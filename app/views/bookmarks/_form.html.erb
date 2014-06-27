@@ -14,7 +14,7 @@
   <%= f.text_area :comment, placeholder: "Enter a comment", label: "Got a comment?" %>
   <%= f.check_box :favorite %>
 
-  <%= f.form_group :category, label: { text: "Category" } do %>
+  <%= f.form_group :category, label: { text: "Category" } do %><br>
     <%= f.radio_button :category, 'none' , label: "None", inline: true, checked: true %>
     <%= f.radio_button :category, 'work' , label: "Work", inline: true %>
     <%= f.radio_button :category, 'funny' , label: "Funny", inline: true %>
