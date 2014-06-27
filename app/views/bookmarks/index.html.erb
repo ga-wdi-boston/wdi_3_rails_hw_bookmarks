@@ -1,4 +1,4 @@
-<h1> <%= @category %> bookmarks </h1>
+<div id="menu_type"><%= @category %> bookmarks</div>
       <span class="glypicon glyphicon-pls-sign"></span>
 
 
@@ -6,7 +6,7 @@
   <% @bookmarks.each do |bookmark| %>
   <li class="text-left list_title">
   <div class="bmark_title"
-    <strong><%= link_to "#{bookmark.title}", bookmark.url  %></strong>0
+    <strong><%= link_to "#{bookmark.title}", bookmark.url  %></strong>
     <% if bookmark.category %>
     -- (<%= bookmark.category %>)
     <% end %>
