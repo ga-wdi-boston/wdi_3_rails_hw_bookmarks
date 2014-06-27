@@ -32,12 +32,16 @@ header, header a, header a:hover {
   color: white;
   text-decoration: none;
 }
+header .logo {
+  font-family: 'Cabin Sketch';
+  font-size: 130%;
+}
 
 .pseudobutton {
   color: white;
   background-color: rgba(156, 210, 197, 0.9);
   border: none;
-  margin-top: 14px;
+  margin-top: 20px;
   width: 100%;
   text-align: center;
   padding: 4px;
@@ -123,6 +127,9 @@ span.glyphicon-floppy-disk {
   background: rgba(255,255,255,0.85);
   padding-bottom: 15px;
   margin-top: 20px;
+}
+.btn-bookmark-submit {
+  background: #D2C69C;
 }
 
 /*div.body-row {
