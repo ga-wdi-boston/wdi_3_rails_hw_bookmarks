@@ -115,3 +115,14 @@ span.glyphicon-floppy-disk {
 .edit-delete-buttons .glyphicon {
   margin-left: 9px;
 }
+
+.bookmark-comment {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: lighter;
+  color: rgb(105, 105, 105);
+}
+
+.bookmark-comment .quotething {
+  margin: 0 5px;
+}

@@ -1,11 +1,10 @@
 <div class="bookmark-show">
 <h1 class="bookmark-title"><a href="<%= @bookmark.url %>"><%= @bookmark.title %></a></h1>
-  <br>
 <% if @bookmark.comment != "" %>
-  <p><strong>You added:</strong> <%= @bookmark.comment %></p>
+  <p class="bookmark-comment"><span class="quotething">"</span><%= @bookmark.comment %><span class="quotething">"</span></p>
 <% end %>
 <br>
-<% if @bookmark.category %>
+<% if @bookmark.category != "" %>
   <p><strong>Category: </strong><%= @bookmark.category %></p>
 <% end %>
 <br>
