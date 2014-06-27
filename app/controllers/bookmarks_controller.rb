@@ -2,13 +2,13 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks/new
   def new
-    @bookmark = Bookmark.new
+    @view = { bookmark: Bookmark.new, categories: get_categories }
   end
 
   # POST /bookmarks
   def create
     @bookmark = Bookmark.new(bookmark_params)
-    if @bookmark.valid? && bookmark.save
+    if @bookmark.valid? && @bookmark.save
       redirect_to bookmarks_path
     else
       render :new
@@ -17,7 +17,7 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks/:id/edit
   def edit
-    @bookmark = Bookmark.find(params[:id])
+    @view = { bookmark: Bookmark.find(params[:id]), categories: get_categories }
   end
 
   # PATCH /bookmarks/:id
@@ -43,18 +43,21 @@ class BookmarksController < ApplicationController
   # GET /
   # GET /bookmarks
   def index
-    categories = Bookmark.pluck('distinct category').uniq
+    categories = Bookmark.pluck('distinct category').uniq.insert(0, "All")
     bookmarks = Bookmark.all.order(:title)
-    url_for_action = 'bookmarks/category/'
-    @view = { categories: categories, bookmarks: bookmarks, form_action: url_for_action, category: nil }
+    @view = {
+      categories: categories,
+      bookmarks: bookmarks,
+      category: nil
+    }
   end
 
   # GET /bookmarks/:id
   def show
-    @bookmark = Bookmark.find(params[:id])
+    @view = { bookmark: Bookmark.find(params[:id]), categories: get_categories }
   end
 
-  # POST /bookmarks/category/
+  # POST /bookmarks/category/:category
   def filter_index
     if params[:category] == 'All'
       redirect_to bookmarks_path
@@ -62,10 +65,14 @@ class BookmarksController < ApplicationController
 
     categories = Bookmark.pluck('distinct category').uniq.insert(0, "All")
     bookmarks = Bookmark.where('category = ?', params[:category]).order(:title)
-    @view = { categories: categories, bookmarks: bookmarks, form_action: nil, category: params[:category] }
+    @view = {
+      categories: categories,
+      bookmarks: bookmarks,
+      category: params[:category]
+    }
   end
 
-  # GET bookmarks/counter
+  # GET bookmarks/counter/:id
   def counter
     bookmark = Bookmark.find(params[:id])
     bookmark.counter += 1
@@ -79,5 +86,9 @@ class BookmarksController < ApplicationController
   private
   def bookmark_params
     params.require(:bookmark).permit([:url, :title, :comments, :category, :is_favorite])
+  end
+
+  def get_categories
+    Bookmark.pluck('distinct category').uniq.insert(0, "All")
   end
 end

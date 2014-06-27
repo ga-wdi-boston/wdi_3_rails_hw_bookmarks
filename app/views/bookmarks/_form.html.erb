@@ -1,29 +1,43 @@
-  <% if bookmark.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(bookmark.errors.count, "error") %> prohibited this post from being saved:</h2>
+  <div class="row">
+  <div class="small-offset-3 columns">
 
-    <ul>
+  <% if !bookmark.nil? && bookmark.errors.any? %>
+  <div id="error_explanation">
+    <h2 class="error-alert"><%= pluralize(bookmark.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+    <ul class="error-list-container">
       <% bookmark.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      <li class="error-list-item"><%= msg %></li>
       <% end %>
     </ul>
   </div>
   <% end %>
   <%= form_for bookmark do |f| %>
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
-    <br>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-    <br>
-    <%= f.label :category %><br>
-    <%= f.select :category, %w[Serious Funny Useful], {include_blank: true} %>
-    <br>
-    <%= f.label :is_favorite %><br>
-    <%= f.check_box :is_favorite %>
-    <br>
-    <%= f.label :comments %><br>
-    <%= f.text_area :comments, cols: 40, rows: 3 %>
-    <br>
-    <%= f.submit btn_label %>
+    <div class="form-element-container">
+      <div class="form-element-label required"><%= f.label :url %></div>
+      <div class="form-element"><%= f.text_field :url, size: 42 %></div>
+    </div>
+    <div class="form-element-container">
+      <div class="form-element-label required"><%= f.label :title %></div>
+      <div class="form-element"><%= f.text_field :title, size: 42 %></div>
+    </div>
+    <div class="form-element-container">
+      <div class="form-element-label"><%= f.label :category %></div>
+      <div class="form-element"><%= f.select :category, %w[Serious Funny Useful], {include_blank: true} %></div>
+    </div>
+    <div class="form-element-container">
+      <div class="form-element-label"><%= f.label 'Favorite?' %></div>
+      <div class="form-element"><%= f.check_box :is_favorite %></div>
+    </div>
+    <div class="form-element-container">
+      <div class="form-element-label"><%= f.label :comments %></div>
+      <div class="form-element"><%= f.text_area :comments, cols: 40, rows: 3 %></div>
+    </div>
+    <div class="form-element-container">
+      <div class="form-element-label"></div>
+      <div class="form-element"><%= f.submit btn_label %></div>
+    </div>
   <% end %>
+
+</div>
+</div>

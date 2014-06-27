@@ -1,2 +1,7 @@
-<h1>Create Bookmark</h1>
-<%= render 'form', bookmark: @bookmark, btn_label: 'Create' %>
+<%= render 'header' %>
+<div class="row">
+  <div class="small-6 columns">
+    <h2 class="title">Create Bookmark</h2>
+    <%= render 'form', bookmark: @view[:bookmark], btn_label: 'Create' %>
+  </div>
+</div>

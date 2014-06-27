@@ -1,7 +1,5 @@
-    <div class="">
-      <%= form_tag action_url do %>
-        <%= label_tag 'Filter by category: ' %>
-        <%= select_tag :category, options_for_select(categories, selected: category, include_blank: true) %>
-        <%= submit_tag 'Search' %>
+      <ul class="dropdown">
+      <% categories.each do |c| %>
+        <li><%= link_to c, category_bookmark_path(c) %></li>
       <% end %>
-    </div>
+      </ul>

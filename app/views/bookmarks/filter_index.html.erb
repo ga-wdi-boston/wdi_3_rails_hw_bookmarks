@@ -1,13 +1,10 @@
-<h1>Blair's Nifty Bookmark App</h1>
-<p>Here you will find bookmarks to all your awesome sites</p>
-<div class="new-bookmark-containter"><%= link_to 'Create New Bookmark', new_bookmark_path, class: 'new-btn' %></div>
-
-<div class="">
-  <h3>Bookmarks</h3>
-  <div class="">
-  <%= render 'search', categories: @view[:categories], action_url: @view[:form_action], category: @view[:category] %>
-  </div>
-  <ul>
-  <%= render partial: 'bookmark', collection: @view[:bookmarks] %>
-  </ul>
+<%= render 'header' %>
+<div style="clear:both"></div>
+<div class="row">
+  <div class="small-12 columns">
+    <h2 class="title">Bookmarks</h2>
+      <ul class="list-container">
+      <%= render partial: 'bookmark', collection: @view[:bookmarks] %>
+      </ul>
+   </div>
 </div>

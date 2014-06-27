@@ -1,3 +1,90 @@
 // Place all the styles related to the bookmarks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-size: 1em;
+}
+a {
+  color: #f33;
+}
+
+a:hover {
+  color: #66f;
+}
+
+h1.site-title {
+  color: #fff;
+  font-size: 2em;
+  padding: 0 7px;
+}
+
+h2.title {
+  font-size: 1.5em;
+  margin-bottom: 0;
+  margin-left: 20px;
+  padding-bottom: 20px
+}
+
+.list-item:first-child {
+  border-top: 1px solid #fc9;
+}
+
+.list-item {
+  border-bottom: 1px solid #fc9;
+  clear: both;
+  height: 32px;
+}
+
+.list-edit, .list-delete, .list-link, .list-category, .list-comments, .list-is-favorite, .list-icon-container {
+  float: left;
+}
+
+.list-edit, .list-delete, .list-link, .list-category, .list-comments, .list-is-favorite {
+  margin-right: 10px;
+}
+
+.list-link, .list-category {
+  padding: 3px 0;
+}
+
+.list-icon-container {
+  margin: 2px 0;
+}
+
+.list-comments {
+  background-image: image-url('glyphicons/png/glyphicons_029_notes_2.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  height: 27px;
+  width: 20px;
+}
+
+.list-is-favorite {
+  background-image: image-url('glyphicons/png/glyphicons_343_thumbs_up.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  height: 21px;
+  margin-top: 3px;
+  width: 24px;
+}
+
+.form-element-container {
+  clear: both;
+}
+
+.form-element-label {
+  float: left;
+  width: 80px;
+}
+
+input[type="text"], select {
+  width: auto !important;
+}
+
+input[type="submit"] {
+  font-size: 1em;
+  padding: 3px 10px;
+}
