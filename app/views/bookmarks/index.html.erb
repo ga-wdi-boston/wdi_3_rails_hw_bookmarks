@@ -1,10 +1,6 @@
-<h1>Bookmarkr</h1>
-<p>Check out all the amazing bookmarks I have. They're even sorted into categories!</p>
-
-<ul> I will have all the bookmarks!
+<ul class="list-group">
 <% @bookmarks.each do |bookmark| %>
-  <li>Title | <%= bookmark.title %><br>
-  URL | <%= bookmark.url %>
+  <li class="list-group-item"><strong><%= bookmark.title %></strong> | <%= bookmark.url %>
   </li>
   <!--| <%= link_to('Edit', edit_bookmark_path(bookmark)) %>
   | <%= link_to 'Destroy', bookmark, method: :delete, data: {confirm: 'Are you sure?'} %>-->
