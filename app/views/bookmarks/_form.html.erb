@@ -19,17 +19,17 @@
   <%= f.label :url, 'URL' %>
   <%= f.text_field :url %>
 </div>
-<br><hr><br>
+<br><br>
 <div class="field">
   <%= f.label :title, 'Title' %>
   <%= f.text_field :title %>
 </div>
-<br><hr><br>
+<br><br>
 <div class="field">
   <%= f.label :comment, 'Comment (optional)' %>
   <%= f.text_field :comment %>
 </div>
-<br><hr><br>
+<br><br>
 <div class="field">
   <%= f.label :category, 'Category (optional)' %>
   <br>
@@ -42,16 +42,16 @@
   <%= f.radio_button :category, 'useful' %>
   <%= f.label :category_useful, 'Useful' %>
 </div>
-<br><hr><br>
+<br><br>
 <div class="field">
   <%= f.label "Favorite?" %>
   <br>
   <%= f.check_box :favorite %>
 </div>
-<br><hr><br>
+<br><br>
 <div class="actions">
   <%= f.submit "Save Bookmark!", class: "btn btn-large btn-primary" %>
 </div>
-<br>
+<br><br><br>
 <% end %>
 

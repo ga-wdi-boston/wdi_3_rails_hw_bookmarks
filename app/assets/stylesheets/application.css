@@ -25,6 +25,11 @@
   color: gold;
 }
 
+.menu type a {
+  text-decoration:none;
+  color: cyan;
+}
+
 #footer {
   color: cyan;
   font-size: 30px;
@@ -49,12 +54,12 @@ ul {
 
 .list_items a {
   text-decoration: none;
-  color: green;
+  color: cyan;
 }
 
 .list_items a:hover {
   text-decoration: none;
-  color: cyan;
+  color: green;
 }
 
 .glyphs {
@@ -84,7 +89,7 @@ html {
 }
 body {
   padding-top: 40px;
-  background-color: #999 !important;
+  background-color: #252d32 !important;
 }
 section {
   overflow: auto;

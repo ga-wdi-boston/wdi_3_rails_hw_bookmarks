@@ -1,17 +1,18 @@
 <div class="menu_type">
 <%= @bookmark.title %>
-</div>
+
 <% if flash[:notice] %>
   <div class = "flash-message alert-success alert-dismissable" role="alert"><%= flash[:notice] %></div>
 <% end %>
 <div>
 <%= link_to @bookmark.url, @bookmark.url %>
+<% if @bookmark.category %>
+<br>(<%= @bookmark.category %>)
+<% end %>
 <br>
-<%= @bookmark.category %>
-<br><br>
 <%= @bookmark.comment %>
 </div>
-
+</div>
 
 
 <br>
