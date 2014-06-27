@@ -18,22 +18,38 @@ One more thing: Make sure you provide some working seed data so we can easily te
 
 ## Specifications
 
-* App has a database schema with appropriate columns and indexes YES
-* App has working seed data that creates a variety of bookmarks YES
+* App has a database schema with appropriate columns and indexes
+YES
+* App has working seed data that creates a variety of bookmarks
+YES
 * User can view bookmarks in an alphabetical list with titles/categories
+YES
 * User can see from the list which bookmarks are favorite/commented
+
 * User can filter the list of bookmarks by category, and clear the filter
+YES
 * New categories can be easily added to your code without any duplication
+YES
 * User can view all attributes of a specific bookmark
+YES
 * User can submit new bookmarks
+YES
 * User can edit the attributes of existing bookmarks
+YES
 * User can delete existing bookmarks
+YES
 * Bookmarks have appropriate validations and show errors to the user
+YES
 * App has at least basic styles to provide an attractive and intuitive experience
+YES
 * App generates HTML and CSS that validates with no errors
+YES
 * Code is placed in the correct locations and files according to Rails conventions
+YES
 * Code follows style conventions and has descriptive variable and method names
+YES
 * Repository has clean, logical, single-task commits with descriptive messages
+YES
 
 ## Extra Challenges
 
