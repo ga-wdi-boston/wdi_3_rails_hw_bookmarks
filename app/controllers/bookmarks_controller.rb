@@ -4,9 +4,10 @@ class BookmarksController < ApplicationController
     @bookmarks = Bookmark.all
   end
 
+
   # User can view bookmarks in an alphabetical list with titles/categories
   def alphabetize
-    @bookmarks = Bookmark.where(:title, :categories).order(:title)
+    @bookmarks = Bookmark.all.order(:title).pluck(:title, category)
   end
 
   # #GET /products/:id (the prod number)
