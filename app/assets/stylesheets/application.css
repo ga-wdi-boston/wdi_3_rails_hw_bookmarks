@@ -74,13 +74,27 @@ div.bookmark-index, div.bookmark-show {
   font-size: 26px;
 }
 
+.main-body {
+  min-height: 100%;
+  padding-bottom: 10px;
+  margin-bottom: -25px;
+}
+.main-body:after {
+  content: "";
+  display: block;
+  height: 25px;
+}
+
 .footer {
   width: 100%;
-  background: #828DA7;
+  background: rgba(0, 0, 0, 0.4);
   color: #ffffff;
-  position: absolute;
+  height: 25px;
   text-align: center;
-  bottom: 0;
+  font-weight: lighter;
+}
+.footer p {
+  margin: 0;
 }
 
 span.glyphicon-floppy-disk {

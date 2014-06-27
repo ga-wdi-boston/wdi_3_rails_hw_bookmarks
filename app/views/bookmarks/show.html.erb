@@ -4,18 +4,18 @@
   <p class="bookmark-comment"><span class="quotething">"</span><%= @bookmark.comment %><span class="quotething">"</span></p>
 <% end %>
 <br>
-<% if @bookmark.category != "" %>
-  <p><strong>Category: </strong><%= @bookmark.category %></p>
-<% end %>
+  <% if @bookmark.category != "" %>
+    <p><strong>Category: </strong><%= @bookmark.category %></p>
+  <% end %>
 <br>
 <p>Added on <%= @bookmark.created_at %></p>
   <div class="edit-delete-buttons">
-  <%= link_to edit_bookmark_path do %>
-    <span class="glyphicon glyphicon-pencil"></span>
-  <%end%>
-  <%= link_to @bookmark, method: :delete, data: {confirm: 'Are you sure?'} do %>
-    <span class="glyphicon glyphicon-trash"></span>
-  <% end %>
+    <%= link_to edit_bookmark_path do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+    <%end%>
+    <%= link_to @bookmark, method: :delete, data: {confirm: 'Are you sure?'} do %>
+      <span class="glyphicon glyphicon-trash"></span>
+    <% end %>
   </div>
 
 </div>
