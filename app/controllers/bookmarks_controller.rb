@@ -20,6 +20,14 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
   end
 
+  def count
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.click_count += 1
+    if @bookmark.save
+      redirect_to @bookmark.url
+    end
+  end
+
   def new
     @bookmark = Bookmark.new
   end

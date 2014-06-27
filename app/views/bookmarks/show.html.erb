@@ -7,6 +7,7 @@
 <% if @bookmark.comment != "" %>
   <p class="bookmark-comment"><span class="quotething">"</span><%= @bookmark.comment %><span class="quotething">"</span></p>
 <% end %>
+<p><%= @bookmark.click_count %></p>
 <br>
   <% if @bookmark.category != "" %>
     <p><strong>Category: </strong><%= @bookmark.category %></p>
