@@ -1,5 +1,5 @@
 class Bookmark < ActiveRecord::Base
-  CATEGORIES = ["Serious", "Funny", "Useful"]
+  CATEGORIES = ["Funny", "Serious", "Useful"]
   validates :title, presence: true
   validates :url, presence: true
   validates :url, format: { with: /\Ahttp.+\z/ }

@@ -18,7 +18,8 @@
     <% end %>
   </ul>
 <% else %>
-  <li><%= link_to "Clear Filter", filter: nil %></li>
+  <h3><%= params[:filter] %></h3>
+  <p><%= link_to "Clear Filter", filter: nil %></p>
 <% end %>
 
 <div>

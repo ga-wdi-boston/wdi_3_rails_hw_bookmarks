@@ -1,6 +1,6 @@
 <% if @bookmark.errors.any? %>
      <div id="error_explanation">
-     <h2><%= pluralize(@bookmark.errors.count, "error") %> prohibited this post from being saved:</h2>
+     <h3><%= pluralize(@bookmark.errors.count, "error") %> prohibited this post from being saved:</h3>
      <ul>
           <% @bookmark.errors.full_messages.each do |msg| %>
                <li><%= msg %></li>
@@ -10,20 +10,30 @@
 <% end %>
 
 <%= form_for bookmark do |f| %>
-     <%= f.label :title %> <br>
-     <%= f.text_field :title %>
-     <br>
-     <%= f.label :category %> <br>
-     <%= f.select :category, options_for_select(Bookmark::CATEGORIES) %>
-     <br>
-     <%= f.label :url %> <br>
-     <%= f.url_field :url %>
-     <br>
-     <%= f.label "Favorite" %>
-     <%= f.check_box :is_favorite %>
-     <br>
-     <%= f.label :comment %> <br>
-     <%= f.text_field :comment %>
-     <br>
-     <%= f.submit %>
+     <div>
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+     </div>
+
+     <div>
+          <%= f.label :category %>
+          <%= f.select :category, options_for_select(Bookmark::CATEGORIES) %>
+     </div>
+
+     <div>
+          <%= f.label :url %>
+          <%= f.url_field :url %>
+     </div>
+
+     <div>
+          <%= f.label "Favorite" %>
+          <%= f.check_box :is_favorite %>
+     </div>
+
+     <div>
+          <%= f.label :comment %>
+          <%= f.text_field :comment %>
+     </div>
+
+     <%= f.submit class: "small button" %>
 <% end %>
