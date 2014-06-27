@@ -1,5 +1,7 @@
 class Bookmark < ActiveRecord::Base
 
-  validates :title, :url presence: true
+  validates :title, presence: true
+  validates :url, presence: true
+
 
 end
