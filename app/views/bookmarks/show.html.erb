@@ -1,21 +1,29 @@
 
-<h2>
-  Title: <%= @bookmark.title %>
-  <br>
-  url: <%= @bookmark.url %>
-  <br>
-  comment: <%= @bookmark.comment %>
-  <br>
-  category: <%= @bookmark.category %>
-  <br>
-  favorite: <%= @bookmark.favorite %>
-  <br>
-  <%= link_to("Edit", edit_bookmark_path) %>
-  | <%= link_to 'Destroy', @bookmark, method: :delete, data:{confirm: 'Are you sure?'} %>
-</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+      <div class="well well-lg">
+        <h2>
+          Title: <%= @bookmark.title %>
+          <br>
+          url: <%= @bookmark.url %>
+          <br>
+          comment: <%= @bookmark.comment %>
+          <br>
+          category: <%= @bookmark.category %>
+          <br>
+          favorite: <%= @bookmark.favorite %>
+          <br>
+        </h2>
+      </div>
 
-<div class="form-actions">
-  <%= link_to 'Back', bookmarks_path, :class => 'btn'  %>
-  <%= link_to 'Edit', edit_bookmark_path, :class => 'btn' %>
-  <%= link_to 'Delete', bookmark_path, :method => 'delete', confirm: 'Are you sure?', :class => 'btn btn-danger' %>
+      <div class="form-actions">
+        <%= link_to 'Back', bookmarks_path, :class => 'btn'  %>
+        <%= link_to 'Edit', edit_bookmark_path, :class => 'btn' %>
+        <%= link_to 'Delete', bookmark_path, :method => 'delete', confirm: 'Are you sure?', :class => 'btn btn-danger' %>
+      </div>
+    </div>
+  </div>
 </div>
