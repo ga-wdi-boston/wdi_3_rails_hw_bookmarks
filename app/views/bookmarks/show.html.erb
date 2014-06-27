@@ -1,0 +1,9 @@
+<div class="bookmark-show">
+<h1 class="bookmark-title"><a href="<%= @bookmark.url %>"><%= @bookmark.title %></a></h1>
+<% if @bookmark.comment %>
+  <br>
+  <h5>You added:</h5>
+  <em><%= @bookmark.comment %></em>
+<% end %>
+
+</div>

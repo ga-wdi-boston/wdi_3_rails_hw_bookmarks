@@ -41,14 +41,14 @@ header {
   color: black;
 }
 
-div.bookmark-index {
+div.bookmark-index, div.bookmark-show {
   position: relative;
   padding: 10px;
   background: rgba(255,255,255,0.85);
   margin: 5px 0;
 }
 
-.bookmark-index h3, .bookmark-index p {
+.bookmark-index h3, .bookmark-index p, .bookmark-show h1, .bookmark-show p {
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
 }
@@ -61,7 +61,7 @@ div.bookmark-index {
 
 .footer {
   width: 100%;
-  background: #FF3198;
+  background: #828DA7;
   color: #ffffff;
   position: absolute;
   text-align: center;
