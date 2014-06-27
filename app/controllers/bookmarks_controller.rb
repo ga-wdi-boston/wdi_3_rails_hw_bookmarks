@@ -1,8 +1,13 @@
-class BookmarksControllerController < ApplicationController
+class BookmarksController < ApplicationController
 
-  # def index
-  #   @songs = Song.all
-  # end
+  def index
+    @bookmarks = Bookmark.all
+  end
+
+  # User can view bookmarks in an alphabetical list with titles/categories
+  def alphabetize
+    @bookmarks = Bookmark.where(:title, :categories).order(:title)
+  end
 
   # #GET /products/:id (the prod number)
   # def show
@@ -57,8 +62,8 @@ class BookmarksControllerController < ApplicationController
 
   # #define which params are allowed to be used to create a song
   # #these are called strong params- they are a security thing
-  # def song_params
-  #   params.require(:song).permit([:name, :description, :price])
+  # def bookmark_params
+  #   params.require(:bookmark).permit([:url, :title, :comment, :category, :checkbox])
   # end
 
 
