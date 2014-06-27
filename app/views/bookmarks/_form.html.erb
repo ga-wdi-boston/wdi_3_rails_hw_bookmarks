@@ -4,20 +4,15 @@
 
 
     <h3>Edit Bookmark</h3>
-  <%= form_for @bookmark do |f| %>
-    <%= f.label :url %> <br>
+  <%= bootstrap_form_for @bookmark do |f| %>
     <%= f.text_field :url %>
     <br>
-    <%= f.label :title %> <br>
     <%= f.text_area :title %>
     <br>
-    <%= f.label :comment %> <br>
     <%= f.text_field :comment %>
     <br>
-    <%= f.label :category %> <br>
     <%= f.text_field :category %>
     <br>
-    <%= f.label :is_favourite %> <br>
     <%= f.text_field :is_favourite %>
     <%= f.submit %>
   <% end %>

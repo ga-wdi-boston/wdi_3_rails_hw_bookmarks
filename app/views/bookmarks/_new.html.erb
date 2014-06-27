@@ -1,9 +1,6 @@
-<div class="panel panel-default">
-  <div class="panel-heading">New Bookmark</div>
-  <div class="panel-body">
 
 
-    <h3>New Bookmark</h3>
+    <h3></h3>
   <%= form_for @bookmark do |f| %>
     <%= f.label :url %> <br>
     <%= f.text_field :url %>
@@ -19,7 +16,7 @@
     <br>
     <%= f.label :is_favourite %> <br>
     <%= f.text_field :is_favourite %>
-    <%= f.submit %>
+     <button type="button" class="btn btn-default"><%= f.submit %></button>
   <% end %>
 
   </div>

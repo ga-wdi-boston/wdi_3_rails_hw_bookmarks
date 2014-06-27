@@ -6,3 +6,5 @@
   <div class="small-3 columns">3 columns</div>
   <div class="small-9 columns">9 columns</div>
 </div>
+
+require rails_bootstrap_forms
