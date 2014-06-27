@@ -7,5 +7,8 @@
 <br>
 <br>
 <small>Added on <%= @bookmark.created_at %></small>
+  <%= link_to edit_bookmark_path do %>
+    <div class="edit-button"><span class="glyphicon glyphicon-pencil"></span></div>
+  <% end %>
 
 </div>

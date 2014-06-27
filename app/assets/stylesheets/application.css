@@ -38,7 +38,7 @@ header {
 }
 
 .pseudobutton:hover {
-  background-color: rgba(241, 159, 61, 1);
+  background-color: rgba(241, 159, 61, 0.97);
 }
 
 .button-holder a:hover {
@@ -87,4 +87,11 @@ span.glyphicon-floppy-disk {
 .new-form {
   background: rgba(255,255,255,0.85);
   padding-bottom: 15px;
+}
+
+.edit-button {
+  position: absolute;
+  right: 9px;
+  bottom: 7px;
+  font-size: 18px;
 }
