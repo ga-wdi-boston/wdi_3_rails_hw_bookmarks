@@ -32,3 +32,7 @@ header {
 .notice, .alert {
   color: red;
 }
+
+.fi-pencil, .fi-trash, .fi-plus {
+  color: #2ba6cb;
+}
