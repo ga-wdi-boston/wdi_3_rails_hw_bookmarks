@@ -15,6 +15,7 @@ header {
   color: white;
   font-family: 'Paytone One', sans-serif;
   font-weight: bold;
+  text-decoration: none;
   font-size: 65px;
   word-spacing: 5px;
   padding-top: 25px;
@@ -38,6 +39,12 @@ table {
 
 .column_header {
   text-align: center;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.table_entry {
+  text-align: center;
 }
 
 .box {
@@ -45,6 +52,10 @@ table {
   height:200px;
   background:#FFF;
   margin:40px auto;
+}
+
+.category_selection {
+  display: inline;
 }
 
 /*==================================================

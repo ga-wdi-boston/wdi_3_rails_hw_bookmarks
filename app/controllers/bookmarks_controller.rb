@@ -1,9 +1,16 @@
 class BookmarksController < ApplicationController
 
   def index
+    @category = params[:category]
+
     @bookmarks = Bookmark.all.order(:title)
 
-    @commented_bookmarks = @bookmarks.select { |bookmark| bookmark.has_comment? }
+    Bookmark::CATEGORIES.each do |cat|
+      if cat == @category
+        @bookmarks = Bookmark.where(category: @category.order(:title))
+      end
+    end
+    render :index
   end
 
   def show

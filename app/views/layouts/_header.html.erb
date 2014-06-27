@@ -3,7 +3,7 @@
     <nav class="top-bar" data-topbar>
       <ul class="title-area">
         <li class="name">
-          <h1><a href="#">Bookmarkr</a></h1>
+          <h1><%= link_to 'Bookmarkr', bookmarks_path %></h1>
         </li>
          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -11,20 +11,24 @@
 
       <section class="top-bar-section">
         <!-- Right Nav Section -->
-        <ul class="right">
-          <li class="active"><a href="#">Right Button Active</a></li>
-          <li class="has-dropdown">
-            <a href="#">Right Button Dropdown</a>
-            <ul class="dropdown">
-              <li><a href="#">First link in dropdown</a></li>
-            </ul>
-          </li>
-        </ul>
 
         <!-- Left Nav Section -->
+        <ul class="left">
+          <li class="has-dropdown active">
+            <a href="#">Categories</a>
+            <ul class="dropdown">
+              <li><a href="#">Funny</a></li>
+              <li><a href="#">Useful</a></li>
+              <li><a href="#">Serious</a></li>
+            </ul>
+          </li>
+          <li>
+            <%= link_to 'New Bookmark', new_bookmark_path %>
+          </li>
+        </ul>
       </section>
     </nav>
   </div>
-  <a href='http://localhost:3000'><h1 class='main_title'>Bookmarkr.</h1></a>
+  <h1 class='main_title'>Bookmarkr.</h1>
   <h4 class='sub_title'>Bookmarks that don't suck.</h4>
 </header>

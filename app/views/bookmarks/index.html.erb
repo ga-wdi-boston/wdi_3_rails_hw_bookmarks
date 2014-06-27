@@ -1,20 +1,18 @@
 <table class='box effect8'>
   <tr class="table_headers">
     <td class='column_header'>Webpage</td>
-    <td class='column_header'>Category</td>
-    <td class='column_header'>Favorite?</td>
-    <td class='column_header'>Comment?</td>
+    <td class='column_header'>Description</td>
+    <td class='column_header'></td>
+    <td class='column_header'></td>
+
   </tr>
   <% @bookmarks.each do |bookmark| %>
     <tr>
-      <td><a href='<%= bookmark.url %>' target='_blank'><%= bookmark.title %></td>
-      <td class='column_header'><%= bookmark.category %></td>
-      <td class='column_header'><%= bookmark.is_favorite %></td>
-      <td class='column_header'><%= bookmark.is_favorite %></td>
-      <td><%= bookmark.comment %></td>
-      <td class='column_header'><%= link_to 'Show me all attributes', bookmark %></td>
+      <td class='table_entry'><a href='<%= bookmark.url %>' target='_blank'><%= bookmark.title %></td>
+      <td class='table_entry'><%= bookmark.comment %></td>
+      <td class='table_entry'><%= bookmark.category %></td>
+      <td class='table_entry'><%= link_to 'Dig deeper...', bookmark %></td>
     </tr>
   <% end %>
 </table>
 <br>
-<%= link_to 'Add a new bookmark', new_bookmark_path, class: 'button' %>
