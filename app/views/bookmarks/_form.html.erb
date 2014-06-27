@@ -1,0 +1,41 @@
+<% if @bookmark.errors.any? %>
+    <div id="error_explanation">
+      <h4><%= pluralize(@bookmark.errors.count, "error") %> prohibited this
+      post from being saved:</h4>
+     <ul>
+        <% @bookmark.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+         <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<%= form_for @bookmark do |f| %>
+  <div class="form-label">
+  <%= f.label :title %>
+  </div>
+
+  <%= f.text_field :title, class: 'form-control' %>
+
+  <div class="form-label">
+  <%= f.label :url %>
+  </div>
+  <%= f.text_field :url , class: 'form-control' %>
+  <div class="form-label">
+  <%= f.label :category %>
+  </div>
+  <%= f.select :category, Bookmark::CATEGORIES, {include_blank: true}, {:class => 'form-control'} %>
+
+  <div class="form-label">
+  <%= f.label :comment %>
+  </div>
+  <%= f.text_area :comment , class: 'form-control' %>
+  <div>
+    <%= f.label :is_favorite %>
+  </div>
+    <%= f.check_box :is_favorite, class: 'form-control' %>
+  <br>
+  <br>
+  <%= f.submit "add bookmark", class: "btn btn-block btn-default btn-bookmark-submit"%>
+
+<% end %>

@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+  $("[name='bookmark[is_favorite]'][type!='hidden']").bootstrapSwitch();
+});

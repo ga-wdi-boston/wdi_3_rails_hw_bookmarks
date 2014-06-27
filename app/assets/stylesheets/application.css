@@ -13,3 +13,214 @@
  *= require_tree .
  *= require_self
  */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  /*background: url(https://i.imgur.com/aCLUZvZ.gif); -- TREES AND WATER
+  background: url(http://annstreetstudio.com/wp-content/uploads/2014/01/patagonia-cinemagraph.gif);*/
+  background: url(http://i.imgur.com/UZEUBpI.gif);
+  background-size: cover;
+  -moz-background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+header, header a, header a:hover {
+  color: white;
+  text-decoration: none;
+}
+header .logo {
+  font-family: 'Cabin Sketch';
+  font-size: 130%;
+}
+
+.pseudobutton {
+  color: white;
+  background-color: rgba(156, 210, 197, 0.9);
+  border: none;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.pseudobutton:hover {
+  background-color: rgba(156, 210, 197, 0.97);
+}
+
+.pseudobutton span {
+  font-size: 23px;
+  font-weight: lighter;
+}
+
+.button-holder a:hover {
+  text-decoration: none;
+}
+
+.bookmark-title {
+  margin-bottom: 0px;
+}
+
+.bookmark-title a {
+  color: black;
+}
+
+div.bookmark-index, div.bookmark-show {
+  position: relative;
+  padding: 10px;
+  background: rgba(255,255,255,0.9);
+  margin: 0 0 10px 0;
+}
+
+.bookmark-index h3, .bookmark-index p, .bookmark-show h1, .bookmark-show p {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+.bookmark-url {
+  font-style: italic;
+  color: rgb(153, 153, 153);
+  font-size: 13px;
+  display: inline;
+}
+
+.etc-button .glyphicon {
+  position: absolute;
+  top: 0px;
+  color: #222;
+  right: 10px;
+  font-size: 26px;
+}
+
+.main-body {
+  min-height: 100%;
+  padding-bottom: 10px;
+  margin-bottom: -25px;
+}
+.main-body:after {
+  content: "";
+  display: block;
+  height: 25px;
+}
+
+.footer {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  height: 25px;
+  text-align: center;
+  font-weight: lighter;
+}
+.footer p {
+  margin: 0;
+}
+
+span.glyphicon-floppy-disk {
+  top: 4px;
+}
+
+.bookmark-form {
+  background: rgba(255,255,255,0.85);
+  padding-bottom: 15px;
+  margin-top: 20px;
+}
+.btn-bookmark-submit {
+  background: #D2C69C;
+}
+
+/*div.body-row {
+  padding: 0 16px;
+}*/
+
+.edit-delete-buttons {
+  position: absolute;
+  right: 9px;
+  bottom: 7px;
+  font-size: 20px;
+  color: black;
+}
+.button-gap {
+  width: 5px;
+}
+.edit-delete-buttons a, .edit-delete-buttons a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.edit-delete-buttons .glyphicon {
+  margin-left: 9px;
+}
+
+.bookmark-comment {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: lighter;
+  color: rgb(105, 105, 105);
+}
+
+.bookmark-comment .quotething {
+  margin: 0 5px;
+}
+
+.click-count {
+  font-size: 24px;
+  position: absolute;
+  top: 8px;
+  right: 24px;
+  font-weight: bold;
+}
+
+a.comment-link, a:hover.comment-link, .index-comment {
+  color: rgb(184, 138, 197);
+}
+
+.category-box {
+  display: inline;
+  color: rgb(138, 197, 184);
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.category-box a {
+  color: rgb(138, 197, 184);
+}
+
+.sidebar {
+  padding-right: 0;
+}
+
+.sidebar-header {
+  color: white;
+  text-align: center;
+  background: black;
+}
+
+.sidebar-header:first-child {
+  margin-top: 0;
+}
+
+.sidebar .btn-group-vertical {
+  width: 100%;
+  border-radius: 0;
+}
+
+.cat-button, .order-button {
+  background: white;
+  color: black;
+  border-radius: 0;
+  margin-bottom: 4px;
+  text-transform: lowercase;
+}
+.cat-button:hover {
+  background: #9cd2c5;
+}
+.order-button:hover {
+  background: #c59cd2;
+}
+#cat-buttons .btn, #order-buttons .btn {
+  border-radius: 0;
+}

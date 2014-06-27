@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wdi4RailsHwBookmarks</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>Bookmarkr</title>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Cabin+Sketch' rel='stylesheet' type='text/css'>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container main-body">
 
-<%= yield %>
+  <div class="row">
+    <div class="col-sm-6 col-xs-8">
+      <header>
+        <h1>
+        <%= link_to root_path do %>
+        <span class="glyphicon glyphicon-floppy-disk"></span><span class="logo">bookmarkr</span>
+        <% end %>
+        </h1>
+      </header>
+    </div>
+    <div class="col-sm-6 col-xs-4 button-holder">
+      <%= link_to new_bookmark_path do %>
+      <div class="pseudobutton">
+      <span>add new</span>
+      </div>
+      <% end %>
+    </div>
+  </div>
 
+  <div class="row body-row">
+  <%= yield %>
+  </div>
+</div>
+<div class="footer">
+  <p>By Clara Beyer for WDI. Built with <a href="http://getbootstrap.com/">Bootstrap</a></p>
+</div>
 </body>
 </html>

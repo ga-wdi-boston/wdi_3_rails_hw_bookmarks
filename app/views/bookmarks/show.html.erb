@@ -1,0 +1,32 @@
+<div class="col-md-12">
+<div class="bookmark-show">
+  <div class="row">
+  <div class="col-sm-9">
+  <h1 class="bookmark-title">
+  <% if @bookmark.is_favorite %>
+    <span class="glyphicon glyphicon-star"></span>
+  <% end %>
+  <%= link_to @bookmark.title, count_bookmark_url %></h1></div>
+  <div class="col-sm-3">
+  <div class="click-count"><p>Clicks: <%= @bookmark.click_count %></p></div></div>
+  </div>
+<% if @bookmark.comment.present? %>
+  <p class="bookmark-comment"><span class="quotething">"</span><%= @bookmark.comment %><span class="quotething">"</span></p>
+<% end %>
+<br>
+  <% if @bookmark.category.present? %>
+    <p><strong>Category: </strong><%= @bookmark.category %></p>
+  <% end %>
+<br>
+<p>Added on <%= @bookmark.created_at %></p>
+  <div class="edit-delete-buttons">
+    <%= link_to edit_bookmark_path do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+    <%end%>
+    <%= link_to @bookmark, method: :delete, data: {confirm: 'Are you sure?'} do %>
+      <span class="glyphicon glyphicon-trash"></span>
+    <% end %>
+  </div>
+
+</div>
+</div>

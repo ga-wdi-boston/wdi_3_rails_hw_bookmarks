@@ -1,0 +1,43 @@
+<div class="col-sm-3 sidebar">
+  <h3 class="sidebar-header">sort</h3>
+  <div class="btn-group-vertical" id="order-buttons">
+    <%= link_to "by date", {order: "created_at"}, class: "btn order-button btn-block"%>
+    <%= link_to "by title", {order: "title"}, class: "btn order-button btn-block"%>
+    <%= link_to "favorites", {fav: "true"}, class: "btn order-button btn-block"%>
+    <%= link_to "commented", {commented: "true"}, class: "btn order-button btn-block"%>
+    <%= link_to "popular", {order: "popular"}, class: "btn order-button btn-block"%>
+  </div>
+  <h3 class="sidebar-header">categories</h3>
+  <div class="btn-group-vertical" id="cat-buttons">
+    <% Bookmark::CATEGORIES.each do |cat| %>
+      <%= link_to cat, {category: cat}, class: "btn btn-block cat-button" %>
+    <% end %>
+  </div>
+</div>
+<div class="col-sm-9">
+  <% @bookmarks.each do |b| %>
+    <div class="bookmark-index">
+      <h3 class="bookmark-title">
+      <% if b.is_favorite %>
+        <span class="glyphicon glyphicon-star"></span>
+      <% end %>
+      <%= link_to b.title, count_bookmark_url(b) %></h3>
+
+      <p class="bookmark-url"><%= b.url %></p>
+      <% if b.category.present? %>
+        <div class="category-box">- <%= link_to b.category, category: b.category %></div>
+      <% end %>
+      <%= link_to(b) do %>
+        <div class="etc-button"><span class="glyphicon glyphicon-bookmark"></span></div>
+      <% end %>
+
+      <% if b.comment != "" %>
+        <p class="index-comment">
+        <%= link_to("see comment", b, class: "comment-link") %>
+        <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </p>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>
