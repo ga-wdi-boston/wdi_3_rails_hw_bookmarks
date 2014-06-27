@@ -1,30 +1,45 @@
-<%= form_for @bookmark do |f| %>
-  <% if @bookmark.errors.any? %>
-    <div id='error_explanation'>
-    <h2><% pluralize(@bookmark.errors.count, 'error') %> prohibited this bookmark from being saved:</h2>
-    <ul>
-    <% @bookmark.errors.full_messages.each do |bookmark|%>
-      <li><%= bookmark %></li>
-    <% end %>
-    </ul>
-    </div>
-  <% end %>
-  <div class='inline'>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <br>
-    <%= f.label :url %>
-    <%= f.text_field :url %>
-    <br>
-    <%= f.label :comment %>
-    <%= f.text_field :comment %>
-    <br>
-    <%= f.label :category %>
-    <%= f.text_field :category %>
-    <br>
-    <%= f.label :is_favorite %>
-    <%= f.text_field :is_favorite %>
-    <br>
+<div class='row'>
+  <div class='large-3 columns'>
   </div>
-  <%= f.submit %>
-<% end %>
+  <div class='large-6 columns'>
+    <%= form_for @bookmark do |f| %>
+      <% if @bookmark.errors.any? %>
+        <div id='error_explanation'>
+        <h2><% pluralize(@bookmark.errors.count, 'error') %> prohibited this bookmark from being saved:</h2>
+        <ul>
+        <% @bookmark.errors.full_messages.each do |bookmark|%>
+          <li><%= bookmark %></li>
+        <% end %>
+        </ul>
+        </div>
+      <% end %>
+        <div>
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+        </div>
+        <div class='row collapse'>
+          <div class="small-3 large-2 columns">
+            <span class="prefix">http://</span>
+          </div>
+          <div class="small-9 large-10 columns">
+          <%= f.text_field :url %>
+          </div>
+        </div>
+        <div>
+        <%= f.label :comment %>
+        <%= f.text_field :comment %>
+        </div>
+        <div>
+        <%= f.label :category %>
+        <%= f.text_field :category %>
+        </div>
+        <div>
+        <%= f.label :is_favorite %>
+        <%= f.text_field :is_favorite %>
+        </div>
+      <%= f.submit class: 'button' %>
+    <% end %>
+  </div>
+  <div class='large-3 columns'>
+  </div>
+</div>

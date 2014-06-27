@@ -1,6 +1,6 @@
 <table class='box effect8'>
-  <tr>
-    <td class='column_header'>Title</td>
+  <tr class="table_headers">
+    <td class='column_header'>Webpage</td>
     <td class='column_header'>Category</td>
     <td class='column_header'>Favorite?</td>
     <td class='column_header'>Comment?</td>
@@ -17,5 +17,4 @@
   <% end %>
 </table>
 <br>
-<%= link_to 'Add a new bookmark', new_bookmark_path %>
-
+<%= link_to 'Add a new bookmark', new_bookmark_path, class: 'button' %>
