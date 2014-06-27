@@ -14,14 +14,21 @@ class BookmarksController < ApplicationController
   end
 
   def index
-        @bookmarks = Bookmark.order(title: :asc)
+    @category = params[:category]
+    @bookmarks = Bookmark.order(title: :asc)
+
+    Bookmark::VALID_CATEGORIES.each do |cat|
+      if cat == @category
+        @bookmarks = Bookmark.where(category: cat).order(title: :asc)
+      end
+    end
   end
 
   def show
     @bookmark = Bookmark.find(params[:id])
   end
 
-def edit
+  def edit
     @bookmark = Bookmark.find(params[:id])
   end
 
@@ -44,9 +51,9 @@ def edit
 
   private
 
-    def bookmark_params
-      params.require(:bookmark).permit(:url, :title, :category, :comment, :favorite)
-    end
+  def bookmark_params
+    params.require(:bookmark).permit(:url, :title, :category, :comment, :favorite)
+  end
 
 end
 
