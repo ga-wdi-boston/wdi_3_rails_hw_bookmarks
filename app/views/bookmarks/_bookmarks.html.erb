@@ -9,6 +9,6 @@
 </ul>
 
 <%= form_tag("/bookmarks/filter") do %>
-  <%= select_tag(:filter_id, options_for_select([["none", 3],[Bookmark::CATEGORIES[0], 0],[Bookmark::CATEGORIES[1],1], [Bookmark::CATEGORIES[2],2]])) %>
+  <%= select_tag(:filter_id, options_for_select([["none", Bookmark::NUM_OF_CATEGORIES]] + Bookmark::CATEGORIES)) %>
   <%= submit_tag("Filter") %>
 <%end%>
