@@ -8,4 +8,9 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
   end
 
+  def filter
+    @bookmarks = Bookmark.where(category: Bookmark::CATEGORIES[params[:filter_id]])
+    redirect_to(bookmarks_path)
+  end
+
 end
