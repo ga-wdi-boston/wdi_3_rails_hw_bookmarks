@@ -33,7 +33,6 @@
   border-radius: 30%;
   font-size: 40px;
   width: 25%;
-  height:;
 }
 
 #home {
@@ -44,6 +43,10 @@
   padding: 10px 0px;
   font-size: 40px;
   height: 75px;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .bmark_title {
@@ -73,7 +76,6 @@
 .inner_app{
   font-size:40px;
   font-color:white;
-
 }
 
 

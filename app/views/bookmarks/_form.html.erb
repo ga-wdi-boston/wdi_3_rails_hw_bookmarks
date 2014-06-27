@@ -20,27 +20,30 @@
     <%= f.label :url, 'URL' %>
     <%= f.text_field :url %>
   </div>
-
+  <br><hr><br>
   <div class="field">
     <%= f.label :title, 'Title' %>
     <%= f.text_field :title %>
   </div>
-
+  <br><hr><br>
   <div class="field">
     <%= f.label :comment, 'Comment (optional)' %>
     <%= f.text_field :comment %>
   </div>
-
+  <br><hr><br>
   <div class="field">
     <%= f.label :category, 'Category (optional)' %>
+    <br>
     <%= f.radio_button :category, 'serious' %>
     <%= f.label :category_serious, 'Serious' %>
+    <br>
     <%= f.radio_button :category, 'funny' %>
     <%= f.label :category_funny, 'Funny' %>
+    <br>
     <%= f.radio_button :category, 'useful' %>
     <%= f.label :category_useful, 'Useful' %>
   </div>
-
+  <br><hr><br>
   <div class="field">
     <%= f.label "Favorite?" %>
     <%= f.check_box :favorite %>
