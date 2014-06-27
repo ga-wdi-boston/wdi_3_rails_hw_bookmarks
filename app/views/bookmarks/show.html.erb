@@ -1,5 +1,42 @@
-<p>
-<table class="table">
-<%= @bookmark.title %> <%= link_to(@bookmark.url) %>
-</table>
-</p>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"> SITE TITLE HERE </div>
+  <div class="panel-body">
+    <p>Something Here
+    </p>
+  </div>
+
+  <!-- Table -->
+  <table class="table">
+    <tr>
+      <td>
+        Title
+      </td>
+      <td>
+        URL
+      </td>
+      <td>
+        Category
+      </td>
+      <td>
+        Comments
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <%= @bookmark.title %>
+      </td>
+      <td>
+        <%= link_to @bookmark.url, @bookmark.url %>
+      </td>
+      <td>
+        <%= @bookmark.category %>
+      </td>
+      <td>
+        <%= @bookmark.comment %>
+      </td>
+    </tr>
+  </table>
+
+</div>
