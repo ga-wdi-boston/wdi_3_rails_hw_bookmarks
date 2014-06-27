@@ -9,8 +9,11 @@ class BookmarksController < ApplicationController
   end
 
   def filter
-    @bookmarks = Bookmark.where(category: Bookmark::CATEGORIES[params[:filter_id]])
-    redirect_to(bookmarks_path)
+    if params[:filter_id].to_i < 3
+      @bookmarks = Bookmark.where(category: Bookmark::CATEGORIES[params[:filter_id].to_i])
+    else
+      redirect_to(bookmarks_path)
+    end
   end
 
 end
