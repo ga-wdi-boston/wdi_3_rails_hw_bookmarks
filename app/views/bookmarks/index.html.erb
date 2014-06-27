@@ -1,27 +1,19 @@
-<h1>Bookmarks</h1>
+<div class="row">
+  <div class="small-3 columns">
+    <aside>
+      <ul class="side-nav">Categories
+        <li><%= link_to "All", bookmarks_path %></li>
+        <% @bookmarks.map(&:category).uniq.sort.each do |category| %>
+          <li><%= link_to category, filter: category %></li>
+        <% end %>
+      </ul>
+    </aside>
+  </div>
 
-<!-- <% if params[:filter].nil? %>
-  <a href="#" data-dropdown="drop1" class="tiny button dropdown">Filter By Category</a><br>
-  <ul id="drop1" data-dropdown-content class="f-dropdown">
-    <% @bookmarks.map(&:category).uniq.sort.each do |category| %>
-      <li><%= link_to category, filter: category %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <%= link_to "Clear Filter", filter: nil, class: "button" %>
-<% end %> -->
-
-<% if params[:filter].nil? %>
-  <ul>Filter by Category
-    <% @bookmarks.map(&:category).uniq.sort.each do |category| %>
-      <li><%= link_to category, filter: category %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <h3><%= params[:filter] %></h3>
-  <p><%= link_to "Clear Filter", filter: nil %></p>
-<% end %>
-
-<div>
-<%= render partial: "bookmark", collection: @bookmarks %>
+  <div class="small-9 columns">
+    <h1>Bookmarks</h1>
+    <div>
+      <%= render partial: "bookmark", collection: @bookmarks %>
+    </div>
+  </div>
 </div>

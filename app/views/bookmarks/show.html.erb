@@ -1,9 +1,12 @@
-<h1>Title: <%= @bookmark.title %></h1>
-<h2>Category: <%= @bookmark.category %></h2>
-<h3>URL: <%= @bookmark.url %></h3>
-<p>Favorite: <%= @bookmark.is_favorite %></p>
-<p>Comment: <%= @bookmark.comment %></p>
-<p><%= link_to "Edit", edit_bookmark_path(@bookmark.id) %>
- | <%= link_to "Delete", @bookmark, method: :delete, data: {confirm: 'Are you sure you would like to delete the bookmark?'} %></p>
-<p><%= link_to "Back to All Bookmarks", bookmarks_path %>
-
+<div class="row">
+  <div class="small-12 columns centered">
+    <h1>Title: <%= @bookmark.title %></h1>
+    <h2>Category: <%= @bookmark.category %></h2>
+    <h3>URL: <%= @bookmark.url %></h3>
+    <p>Favorite: <%= @bookmark.is_favorite %></p>
+    <p>Comment: <%= @bookmark.comment %></p>
+    <p><%= link_to "Edit", edit_bookmark_path(@bookmark.id) %>
+     | <%= link_to "Delete", @bookmark, method: :delete, data: {confirm: 'Are you sure you would like to delete the bookmark?'} %></p>
+    <p><%= link_to "Back to All Bookmarks", bookmarks_path %>
+  </div>
+</div>
