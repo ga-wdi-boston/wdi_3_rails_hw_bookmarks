@@ -12,9 +12,9 @@
  *
  *= require_tree .
  *= require_self
- *= require bootstrap.min
- */
+ *= require bootstrap
 
+ */
 @mixin box_sizing {
    -moz-box-sizing: border-box;
    -webkit-box-sizing: border-box;
