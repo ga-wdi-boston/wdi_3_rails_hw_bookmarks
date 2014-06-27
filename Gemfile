@@ -38,6 +38,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 group :development, :test do
+  gem 'pry-rails'
   gem 'faker'
 
   # Turn off verbose logging of asset requests
