@@ -1,9 +1,9 @@
   <div>
     <div class="list-link-container">
-      <div class="list_btn"><%= link_to 'Edit', edit_bookmark_path(bookmark.id) %></div>
-      <div class="list_btn"><%= link_to 'Delete', bookmark_path(bookmark.id), method: :delete, data: { confirm: 'Are you sure?'} %></div>
+      <div class="list_btn"><%= link_to 'Edit', edit_bookmark_path(bookmark) %></div>
+      <div class="list_btn"><%= link_to 'Delete', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?'} %></div>
     </div>
-    <div class=""><%= link_to bookmark.title, bookmark.url, target: '_blank' %></div>
+    <div class=""><%= link_to bookmark.title, counter_bookmark_path(bookmark), target: '_blank' %></div>
     <div class=""><%= bookmark.category %></div>
     <% if bookmark.comments != '' %><div class="list-comments">C</div><% end %>
     <% if bookmark.is_favorite == true %><div class="list-is-favorite">F</div><% end %>

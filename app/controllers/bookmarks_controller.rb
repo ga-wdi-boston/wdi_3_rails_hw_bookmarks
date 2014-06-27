@@ -65,6 +65,17 @@ class BookmarksController < ApplicationController
     @view = { categories: categories, bookmarks: bookmarks, form_action: nil, category: params[:category] }
   end
 
+  # GET bookmarks/counter
+  def counter
+    bookmark = Bookmark.find(params[:id])
+    bookmark.counter += 1
+    if bookmark.save
+      redirect_to bookmark.url
+    else
+      render bookmarks_path
+    end
+  end
+
   private
   def bookmark_params
     params.require(:bookmark).permit([:url, :title, :comments, :category, :is_favorite])

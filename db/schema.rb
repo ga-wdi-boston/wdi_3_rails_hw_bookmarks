@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626231745) do
+ActiveRecord::Schema.define(version: 20140627104443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20140626231745) do
     t.boolean  "is_favorite"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "counter",     default: 0
   end
 
   add_index "bookmarks", ["category"], name: "index_bookmarks_on_category", using: :btree
