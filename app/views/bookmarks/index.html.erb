@@ -1,7 +1,7 @@
 <ul> Bookmarks
 
 <% @bookmarks.each do |bookmark| %>
-<li><%= bookmark.title %></li>
+<li><%= link_to(bookmark.title, bookmark.url) %></li>
 <% end %>
 
 
@@ -25,4 +25,7 @@
 
 </ul>
 
+<h3>
+<%= link_to 'Create a new bookmark', new_bookmark_path %>
+</h3>
 
