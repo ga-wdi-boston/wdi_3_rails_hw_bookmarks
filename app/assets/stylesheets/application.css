@@ -21,3 +21,9 @@ header {
 .bookmark_info {
   margin: 0 0 2em 0;
 }
+
+.inline {
+  display: inline;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 0 0.4em;
+}

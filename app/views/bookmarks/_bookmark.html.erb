@@ -2,25 +2,21 @@
 
 <div class="bookmark_info">
   <div class="bookmark_title">
-    <h2><%= link_to bookmark.title, bookmark.url, target: "blank" %></h2>
+    <h3><%= link_to bookmark.title, bookmark.url, target: "blank" %></h3>
   </div>
 
   <div class="category">
-    <h3>Category: <%= bookmark.category %></h3>
+    <h4><%= bookmark.category %></h4>
   </div>
 
-  <div class="is_favorite">
-  Favorite: <%= bookmark.is_favorite %>
-  </div>
-
-  <div class="comments_included">
-    <p>Comments: <%= (bookmark.comment.nil? || bookmark.comment == "") ? "No" : "Yes" %></p>
-  </div>
-
-  <div class="action_links">
-  <%= link_to "More Details", bookmark_path(bookmark.id) %>
-   | <%= link_to "Edit", edit_bookmark_path(bookmark.id) %>
-   | <%= link_to "Delete", bookmark, method: :delete, data: {confirm: 'Are you sure you would like to delete the bookmark?'} %>
+  <div class="right">
+    <ul>
+      <li class="inline"><%= "favorited" if bookmark.is_favorite %></li>
+      <li class="inline"><%= "comments" if bookmark.comment.present? %></li>
+      <li class="inline"><%= link_to "edit", edit_bookmark_path(bookmark.id) %></li>
+      <li class="inline"><%= link_to "delete", bookmark, method: :delete, data: {confirm: 'Are you sure you would like to delete the bookmark?'} %></li>
+      <li class="inline"><%= link_to "more", bookmark_path(bookmark.id) %></li>
+    </ul>
   </div>
 
  </div>
