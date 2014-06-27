@@ -1,0 +1,28 @@
+<ul> Bookmarks
+
+<% @bookmarks.each do |bookmark| %>
+<li><%= bookmark.title %></li>
+<% end %>
+
+
+</ul>
+
+<ul> Comment
+
+<% @bookmarks.each do |bookmark| %>
+<li><%= bookmark[:comment] ? "See comments" : "No comments" %></li>
+<% end %>
+
+
+</ul>
+
+<ul> Favorite
+
+<% @bookmarks.each do |bookmark| %>
+<li><%= bookmark[:is_favorite] %></li>
+<% end %>
+
+
+</ul>
+
+
