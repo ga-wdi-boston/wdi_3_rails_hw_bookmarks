@@ -14,3 +14,11 @@
     </tr>
   <% end %>
 </table>
+<br>
+<% @commented_bookmarks.each do |bookmark| %>
+  <tr>
+    <td><%= bookmark.title %></td>
+    <td><%= bookmark.category %></td>
+    <td><%= bookmark.is_favorite %></td>
+  </tr>
+<% end %>
