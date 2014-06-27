@@ -24,7 +24,7 @@ class BookmarksController < ApplicationController
       flash[:notice] = "Bookmark successfully created"
       redirect_to bookmarks_path
     else
-      flash.now[:notice] = "Post wasn't saved"
+      flash.now[:notice] = "Bookmark not saved"
       render :new
     end
   end
@@ -38,7 +38,8 @@ class BookmarksController < ApplicationController
   def update
     @bookmark = Bookmark.find(params[:id])
     if @bookmark.update(bookmark_params)
-      redirect_to @bookmark, notice: "You have updated the #{@bookmark.title}"
+      flash[:notice] = "You have updated the #{@bookmark.title}"
+      redirect_to @bookmark
     else
       render :edit
     end
@@ -48,7 +49,8 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
 
-    redirect_to @bookmark, notice: "You have deleted the bookmark"
+    flash[:notice] = "You have deleted the bookmark"
+    redirect_to @bookmark
   end
 
   private

@@ -1,35 +1,45 @@
 <div class="container">
-  <div class="row">
+  <div class="row" id="header">
     <h1>Bookmarkr</h1>
+    <p><%= link_to 'Create a new bookmark', new_bookmark_path %> </p>
+    <p class=“notice”><%= flash[:notice] %></p>
   </div>
 
   <div class="row">
-    <h3><%= link_to 'Create a new bookmark', new_bookmark_path %> </h3>
-  </div>
+    <div class="col-md-2">
 
-  <ul>
-    <% @bookmarks.each do |bookmark| %>
-
-    <div class="row">
-      <li><%= link_to(bookmark.title, bookmark.url) %>
-      | <%= bookmark.category %>
-      | <%= link_to('Details' , bookmark_path(bookmark.id)) %>
-      | <%= check_box_tag :is_favorited,1,bookmark.is_favorited ,disabled: true%>
-        <%= label_tag :is_favorited,'Favorite' %>
-        <%= '| Comments' unless bookmark.comment.empty? %>
-      | <%= link_to('Edit', edit_bookmark_path(bookmark.id))%>
-      | <%= link_to 'Delete', bookmark, method: :delete, data: {confirm: 'Are you sure?'} %>
-      <% end %>
+      <ul>
+        <li> <%= link_to('All', bookmarks_path) %></li>
+        <% @categories.each do |category| %>
+          <li> <%= link_to(category, bookmarks_path(category: category)) %></li>
+        <% end %>
+      </ul>
     </div>
 
-  </ul>
+    <div class="col-md-10">
+     <table class="table table-hover">
+      <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Details</th>
+        <th>Favorite</th>
+        <th>Comments</th>
+      </tr>
+        <% @bookmarks.each do |bookmark| %>
+            <tr>
+              <th><%= link_to(bookmark.title, bookmark.url) %></th>
+              <th><%= bookmark.category %></th>
+              <th><%= link_to('Details' , bookmark_path(bookmark.id)) %></th>
+              <th><%  if bookmark.is_favorited? %> <span class="glyphicon glyphicon-star"></span> <%end%></th>
+              <th><%  if bookmark.comment.present? %><span class="glyphicon glyphicon-comment"></span><%end%></th>
+              <th><%= link_to('Edit', edit_bookmark_path(bookmark.id))%></th>
+              <th><%= link_to 'Delete', bookmark, method: :delete, data: {confirm: 'Are you sure?'} %></th>
+            </tr>
+           <% end %>
+        </table>
+      </div>
+  </div>
 
 
-  <ul>
-      <li> <%= link_to('All', bookmarks_path) %></li>
-      <% @categories.each do |category| %>
-      <li> <%= link_to(category, bookmarks_path(category: category)) %></li>
-      <% end %>
-  </ul>
 
 </div>
