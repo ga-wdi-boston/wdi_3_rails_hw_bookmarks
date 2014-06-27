@@ -6,8 +6,10 @@
 
   <% @bookmarks.each do |bookmark| %>
   <li> <%= link_to(bookmark.title, bookmark.url, :target => "_blank") %>
-      | <%= link_to('Edit', bookmark) %>
-      | <%= link_to('Delete', bookmark, method: :delete, data: {confirm: 'Are you sure?'})%>
+      <div class='btn-group'>
+      <%= link_to('Edit', bookmark, :class => "btn btn-primary btn-xs") %>
+      <%= link_to('Delete', bookmark, method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-primary btn-xs") %>
+      </div>
   </li>
 
   <% end %>

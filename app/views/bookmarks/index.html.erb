@@ -6,12 +6,18 @@
     <%= link_to('Add a new bookmark', new_bookmark_path, :class => "btn btn-primary btn-large") %>
   </p>
 </div>
+<hr>
+<br>
 
 <ul>
   <% @bookmarks.each do |bookmark| %>
   <li style="list-style-type: none;"> <%= link_to(bookmark.title, bookmark.url, :target => "_blank") %> </li>
   <% end %>
 </ul>
+<br>
+<br>
+<br>
+
 
 
 <h4> <%= link_to('Manage your bookmarks', bookmarks_manage_path) %> </h4>
