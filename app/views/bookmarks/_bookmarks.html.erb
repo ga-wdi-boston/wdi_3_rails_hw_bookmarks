@@ -10,15 +10,3 @@
 
 
 
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-    Filter
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><%= link_to('none', bookmarks_path) %></li>
-    <% Bookmark::CATEGORIES.each do  |cat| %>
-      <li role="presentation"><%= link_to(cat, bookmarks_path(filter_id: cat)) %></li>
-    <% end %>
-  </ul>
-</div>
