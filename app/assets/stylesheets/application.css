@@ -12,7 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require bootstrap
 
  */
 @mixin box_sizing {
@@ -22,7 +21,7 @@
 }
 
 .inner_app{
-  font-size:40px;
+  font-size:20px;
   font-color:white;
 }
 

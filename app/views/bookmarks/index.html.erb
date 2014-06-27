@@ -1,5 +1,5 @@
 <% if flash[:notice] %>
-  <div class = "flash-message"><%= flash[:notice] %></div>
+  <div class = "flash-message alert-success alert-dismissable"><%= flash[:notice] %></div>
 <% end %>
 <div class="menu_type">
 <%= @category.capitalize if @category %> Bookmarks
@@ -41,8 +41,6 @@ Favorites  - <div class="glyphicon glyphicon-barcode"></div>
 <!-- TO DO -->
 
 <!--
-      2) make bookmark show view
-
       7) STYLE!!!!!
         -LINKS
           -list_title
