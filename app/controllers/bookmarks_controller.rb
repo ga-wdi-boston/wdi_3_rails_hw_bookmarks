@@ -8,9 +8,19 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
 
   end
-
   def edit
-   @bookmark = Bookmark.edit(params)
+    @bookmark = Bookmark.find(params[:id])
+  end
+  def update
+   @bookmark = Bookmark.find(params[:id])
+
+   if @bookmark.update(bookmark_params)
+        flash[:notice] = "Bookmark successfully updated"
+        redirect_to @bookmark
+    else
+      flash.now[:alert] = @bookmark.errors.full_messages.join(', ')
+      render :new
+    end
   end
 
   def destroy
