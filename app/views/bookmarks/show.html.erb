@@ -13,5 +13,8 @@
 <p>When did this get added as a bookmark?</p>
 <p><%= @bookmark.created_at %></p>
 
-<%= link_to 'Edit this bookmark', edit_bookmark_path %>
-<%= link_to 'All Bookmarks', bookmarks_path %>
+<%= link_to 'Edit this Bookmark', edit_bookmark_path %>
+<br>
+<%= link_to 'Delete this Bookmark', @bookmark, method: :delete, data: {confirm: 'Are you sure?'} %>
+<br>
+<%= link_to 'Back to All Bookmarks', bookmarks_path %>

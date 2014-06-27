@@ -39,7 +39,10 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
+    @bookmark = Song.find(params[:id])
 
+    @bookmark.destroy
+    redirect_to bookmark_path, notice: "You have deleted this bookmark."
   end
 
   private
