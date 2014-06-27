@@ -1,7 +1,9 @@
 
-<p>
-Title is <%= @bookmark.title %>, URL is <%= @bookmark.url %>
+<h1><%= @bookmark.title %></h1>
+<%= link_to 'Update', edit_bookmark_path(@bookmark), class: "btn btn-sm btn-default pull-right" %><h4><%= @bookmark.url %></h4>
+<hr>
+<p><strong>Category</strong> | <%= @bookmark.category %></p>
+<p><i><%= @bookmark.comment %></i></p>
 
-<%= link_to 'Update', edit_bookmark_path(@bookmark) %>
 
 </p>

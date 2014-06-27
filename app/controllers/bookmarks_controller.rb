@@ -8,7 +8,6 @@ class BookmarksController < ApplicationController
       @bookmarks = Bookmark.where(category: 'serious')
     elsif params[:category] == "useful"
       @bookmarks = Bookmark.where(category: 'useful')
-
     end
   end
 
