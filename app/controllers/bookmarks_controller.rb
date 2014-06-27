@@ -1,6 +1,7 @@
 class BookmarksController < ApplicationController
   def index
-    @bookmarks = Bookmark.all
+    @bookmarks = Bookmark.all.order(:title)
+    render :index
   end
 
   def show
@@ -39,6 +40,21 @@ class BookmarksController < ApplicationController
 
     @bookmark.destroy
     redirect_to bookmarks_path
+  end
+
+  def sport
+    @bookmarks = Bookmark.where(category: 'Sports').order(:title)
+    render :index
+  end
+
+  def technology
+    @bookmarks = Bookmark.where(category: 'Technology').order(:title)
+    render :index
+  end
+
+  def business
+    @bookmarks = Bookmark.where(category: 'Business').order(:title)
+    render :index
   end
 
   private

@@ -4,11 +4,35 @@
   <title>Wdi4RailsHwBookmarks</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+  <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
-<%= yield %>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-2'>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Menu</h3>
+        </div>
+        <div class="panel-body">
+          <p><%= link_to('Home', bookmarks_path) %></p>
+          <p><%= link_to('New Bookmark', new_bookmark_path) %></p>
+          <p><%= link_to('Sports', bookmarks_sport_path) %></p>
+          <p><%= link_to('Technology', bookmarks_technology_path) %></p>
+          <p><%= link_to('Business', bookmarks_business_path) %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class='col-md-10'>
+      <%= yield %>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

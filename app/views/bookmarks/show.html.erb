@@ -1,2 +1,11 @@
-<p><%= @bookmark.url %>, <%= @bookmark.title %>,<%= @bookmark.comment %>,<%= @bookmark.category %>,<%= @bookmark.is_favorite %>
-</p>
+<div class="well">
+<p>Name: <%= @bookmark.title %></p>
+<p>URL: <%= @bookmark.url %></p>
+<p>Category: <%= @bookmark.category %></p>
+<p>Comment: <%= @bookmark.comment %></p>
+<p>Favorite? <%= @bookmark.is_favorite %></p>
+</div>
+
+
+<%= link_to('Edit', edit_bookmark_path) %>
+    | <%= link_to 'Destroy', @bookmark, method: :delete, data: {confirm: 'Are you sure?'} %>

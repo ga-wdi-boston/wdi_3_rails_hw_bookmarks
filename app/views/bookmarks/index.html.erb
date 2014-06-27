@@ -1,31 +1,33 @@
-<ul> Bookmarks
 
-<% @bookmarks.each do |bookmark| %>
-<li><%= link_to(bookmark.title, bookmark.url) %></li>
-<% end %>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Bookmarks</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Favorite?</th>
+        <th>Comment?</th>
+        <th>View Bookmark</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bookmarks.each do |bookmark| %>
+      <tr>
+        <td><%= link_to(bookmark.title, bookmark.url) %></td>
+        <td><%= bookmark.category %></td>
+        <td><%= bookmark[:is_favorite] %></td>
+        <td><%= bookmark[:comment] ? "Yes" : "No" %></td>
+        <td><%= link_to("View", bookmark_path(bookmark.id)) %></td>
 
 
-</ul>
+        <% end %>
+      </tr>
 
-<ul> Comment
-
-<% @bookmarks.each do |bookmark| %>
-<li><%= bookmark[:comment] ? "See comments" : "No comments" %></li>
-<% end %>
-
-
-</ul>
-
-<ul> Favorite
-
-<% @bookmarks.each do |bookmark| %>
-<li><%= bookmark[:is_favorite] %></li>
-<% end %>
-
-
-</ul>
-
-<h3>
-<%= link_to 'Create a new bookmark', new_bookmark_path %>
-</h3>
-
+    </tbody>
+    </table>
+  </div>
+</div>
