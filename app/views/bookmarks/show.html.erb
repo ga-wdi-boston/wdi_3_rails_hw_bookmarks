@@ -1,5 +1,9 @@
 <div class="bookmark-show">
-<h1 class="bookmark-title"><a href="<%= @bookmark.url %>"><%= @bookmark.title %></a></h1>
+<h1 class="bookmark-title">
+<% if @bookmark.is_favorite %>
+  <span class="glyphicon glyphicon-star"></span>
+<% end %>
+<a href="<%= @bookmark.url %>"><%= @bookmark.title %></a></h1>
 <% if @bookmark.comment != "" %>
   <p class="bookmark-comment"><span class="quotething">"</span><%= @bookmark.comment %><span class="quotething">"</span></p>
 <% end %>

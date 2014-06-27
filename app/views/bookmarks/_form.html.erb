@@ -33,7 +33,7 @@
   <div>
     <%= f.label :is_favorite %>
   </div>
-    <%= f.check_box :is_favorite, class: 'form-control' %>
+    <%= f.check_box :is_favorite, include_hidden: false, class: 'form-control' %>
   <div>
   <br>
   <%= f.submit "add bookmark", class: "btn btn-block btn-danger"%>
