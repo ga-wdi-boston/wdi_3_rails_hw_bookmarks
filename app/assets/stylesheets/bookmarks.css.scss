@@ -3,14 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
  body {
   padding: 20px;
-  background-image: url('http://i.imgur.com/NoN1Deb.jpg');
+  background: url('http://i.imgur.com/NoN1Deb.jpg');
   background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.9;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Love Ya Like A Sister', cursive;
+    font-weight: bold;
 }
 p, div {
     font-family: 'Love Ya Like A Sister', cursive;
+    font-weight: bold;
 }
-
