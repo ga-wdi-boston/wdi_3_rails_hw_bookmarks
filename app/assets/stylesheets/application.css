@@ -64,7 +64,7 @@ div.bookmark-index, div.bookmark-show {
   position: relative;
   padding: 10px;
   background: rgba(255,255,255,0.9);
-  margin: 10px 0;
+  margin: 0 0 10px 0;
 }
 
 .bookmark-index h3, .bookmark-index p, .bookmark-show h1, .bookmark-show p {
@@ -120,9 +120,9 @@ span.glyphicon-floppy-disk {
   margin-top: 20px;
 }
 
-.body-row {
+/*div.body-row {
   padding: 0 16px;
-}
+}*/
 
 .edit-delete-buttons {
   position: absolute;
@@ -154,7 +154,7 @@ span.glyphicon-floppy-disk {
   margin: 0 5px;
 }
 
-a .index-comment, a:hover .index-comment {
+a.comment-link, a:hover.comment-link, .index-comment {
   color: rgb(199, 118, 21);
 }
 
@@ -167,4 +167,39 @@ a .index-comment, a:hover .index-comment {
 
 .category-box a {
   color:rgb(231, 100, 100);
+}
+
+.sidebar {
+  padding-right: 0;
+}
+
+.sidebar-header {
+  color: white;
+  text-align: center;
+  background: black;
+}
+
+.sidebar-header:first-child {
+  margin-top: 0;
+}
+
+.sidebar .btn-group-vertical {
+  width: 100%;
+  border-radius: 0;
+}
+
+.cat-button, .order-button {
+  background: white;
+  color: black;
+  border-radius: 0;
+  margin-bottom: 4px;
+}
+.cat-button:hover {
+  background: #9FD7F7;
+}
+.order-button:hover {
+  background: #E6DAA7;
+}
+#cat-buttons .btn, #order-buttons .btn {
+  border-radius: 0;
 }

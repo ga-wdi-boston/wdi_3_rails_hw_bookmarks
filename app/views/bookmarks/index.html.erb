@@ -1,20 +1,36 @@
-<% @bookmarks.each do |b| %>
-  <div class="bookmark-index">
-    <h3 class="bookmark-title"><a href="<%= b.url %>"><%= b.title %></a></h3>
-
-    <p class="bookmark-url"><%= b.url %></p>
-    <% if b.category != "" %>
-      <div class="category-box">- <%= link_to b.category, category: b.category %></div>
-    <% end %>
-    <%= link_to(b) do %>
-      <div class="etc-button"><span class="glyphicon glyphicon-bookmark"></span></div>
-    <% end %>
-
-    <% if b.comment != "" %>
-      <%= link_to(b) do %>
-      <p class="index-comment">see comment <span class="glyphicon glyphicon-circle-arrow-right"></span></p>
-      <% end %>
-    <% end %>
-
+<div class="col-sm-2 sidebar">
+  <h3 class="sidebar-header">sort</h3>
+  <div class="btn-group-vertical" id="order-buttons">
+    <%= link_to "by date", {order: "created_at"}, class: "btn order-button btn-block"%>
+    <%= link_to "by title", {order: "title"}, class: "btn order-button btn-block"%>
   </div>
-<% end %>
+  <h3 class="sidebar-header">categories</h3>
+  <div class="btn-group-vertical" id="cat-buttons">
+    <%= link_to "funny", {category: "Funny"}, class: "btn btn-block cat-button"%>
+    <%= link_to "useful", {category: "Useful"}, class: "btn btn-block cat-button"%>
+    <%= link_to "serious", {category: "Serious"}, class: "btn btn-block cat-button"%>
+  </div>
+</div>
+<div class="col-sm-10">
+  <% @bookmarks.each do |b| %>
+    <div class="bookmark-index">
+      <h3 class="bookmark-title"><a href="<%= b.url %>"><%= b.title %></a></h3>
+
+      <p class="bookmark-url"><%= b.url %></p>
+      <% if b.category != "" %>
+        <div class="category-box">- <%= link_to b.category, category: b.category %></div>
+      <% end %>
+      <%= link_to(b) do %>
+        <div class="etc-button"><span class="glyphicon glyphicon-bookmark"></span></div>
+      <% end %>
+
+      <% if b.comment != "" %>
+        <p class="index-comment">
+        <%= link_to("see comment", b, class: "comment-link") %>
+        <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </p>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>
