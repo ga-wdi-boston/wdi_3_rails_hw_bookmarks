@@ -1,12 +1,9 @@
-<% Bookmark::VALID_CATEGORIES.each do |cat| %>
-<div class="cat_type"><%= cat %></div>
-<% end %>
 <div class="menu_type"><%= @category %> BookMarks</div>
 
 Favorites  - <div class="glyphicon glyphicon-barcode"></div>
 <br>
 Comments  - <div class="glyphicon glyphicon-plus"></div>
-
+<hr>
 <ul class="span6">
   <% @bookmarks.each do |bookmark| %>
   <li class="text-left list_title">
