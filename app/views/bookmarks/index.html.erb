@@ -3,15 +3,15 @@
   <h1 class="hero-text-index">Bookmarkr</h1>
   <p>saving bookmarks one day at a time</p>
   <p>
-    <%= link_to('Add a new bookmark', new_bookmark_path, :class => "btn btn-primary btn-large") %>
+    <%= link_to('Add bookmark!', new_bookmark_path, :class => "btn btn-primary btn-large") %>
   </p>
 </div>
 <hr>
 <br>
 
-<ul>
+<ul class='list'>
   <% @bookmarks.each do |bookmark| %>
-  <li style="list-style-type: none;"> <%= link_to(bookmark.title, bookmark.url, :target => "_blank") %> </li>
+  <li> <%= link_to(bookmark.title, bookmark.url, :target => "_blank") %> </li>
   <% end %>
 </ul>
 <br>

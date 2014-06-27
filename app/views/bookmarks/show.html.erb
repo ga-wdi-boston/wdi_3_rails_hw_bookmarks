@@ -2,9 +2,9 @@
 <div class="page-header">
   <h1 class="hero-text-header">Your Bookmark Details <small>check me out!</small></h1>
 </div>
+<br>
 
-
-<ul>
+<ul class='list'>
 
   <li> <%= @bookmark.title %> </li>
   <li> <%= @bookmark.url %> </li>
@@ -12,6 +12,9 @@
   <li> <%= @bookmark.category %> </li>
 
 </ul>
+<br>
+<br>
 
 <h4> <%= link_to('Edit this bookmark', edit_bookmark_path) %> </h4>
 <h4> <%= link_to('Delete this bookmark', @bookmark, method: :delete, data: {confirm: 'Are you sure you want to delete?'})%> </h4>
+<h4> <%= link_to('Back to My Bookmarks', bookmarks_path) %> </h4>

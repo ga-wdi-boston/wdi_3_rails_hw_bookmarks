@@ -2,11 +2,16 @@ class BookmarksController < ApplicationController
 
   def index
     @bookmarks = Bookmark.all.order(:title)
-    if Bookmark.is_checked_favorite == true
-      <show>
-    else
-      <hidden>
-    end
+    #if Bookmark.is_checked_favorite == true
+     # <show>
+    #else
+     # <hidden>
+    #end
+    #if Bookmark.comment != nil
+    #  <show>
+    #else
+    #  <hidden>
+    #end
   end
 
   def show

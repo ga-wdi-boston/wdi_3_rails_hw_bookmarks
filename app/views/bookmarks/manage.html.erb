@@ -1,8 +1,9 @@
 <div class="page-header">
   <h1 class="hero-text-header">Manage Your Bookmarks <small>edit or delete</small></h1>
 </div>
+<br>
 
-<ul>
+<ul class='list'>
 
   <% @bookmarks.each do |bookmark| %>
   <li> <%= link_to(bookmark.title, bookmark.url, :target => "_blank") %>
@@ -15,5 +16,7 @@
   <% end %>
 
 </ul>
-
+<br>
+<br>
+<br>
 <h4> <%= link_to('Back to My Bookmarks', bookmarks_path) %> </h4>

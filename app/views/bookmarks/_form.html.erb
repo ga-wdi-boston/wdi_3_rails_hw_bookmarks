@@ -10,6 +10,7 @@
   </div>
 <% end %>
 
+<div class= 'form'>
 <%= form_for @bookmark  do |f| %>
     <%= f.label :title %> <br>
     <%= f.text_field :title %> <br>
@@ -25,3 +26,6 @@
     <%= f.check_box :is_checked_favorite %> <br><br>
     <%= f.submit %>
     <% end %>
+</div>
+<br>
+<h4> <%= link_to('Back to My Bookmarks', bookmarks_path) %> </h4>
