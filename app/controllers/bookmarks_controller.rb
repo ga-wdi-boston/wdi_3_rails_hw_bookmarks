@@ -5,6 +5,11 @@ class BookmarksController < ApplicationController
     #render text: "THIS WORK NOW"
   end
 
+  #first attempt at Sorting by category!
+  def index_by_category(:category)
+    @bookmarks =
+  end
+
   def show
     @bookmark = Bookmark.find(params[:id])
   end
