@@ -8,7 +8,7 @@
   </tr>
   <% @bookmarks.each do |bookmark| %>
     <tr>
-      <td><%= bookmark.title %></td>
+      <td><a href='<%= bookmark.url %>' target='_blank'><%= bookmark.title %></td>
       <td><%= bookmark.category %></td>
       <td><%= bookmark.is_favorite %></td>
     </tr>
@@ -20,5 +20,6 @@
     <td><%= bookmark.title %></td>
     <td><%= bookmark.category %></td>
     <td><%= bookmark.is_favorite %></td>
+    <br>
   </tr>
 <% end %>
