@@ -2,13 +2,15 @@ class BookmarksController < ApplicationController
 
   def index
     @bookmarks = Bookmark.all
+    @category = params[:category]
   end
+
 
 
   # User can view bookmarks in an alphabetical list with titles/categories
-  def alphabetize
-    @bookmarks = Bookmark.all.order(:title).pluck(:title, category)
-  end
+  # def alphabetize
+  #   @bookmarks = Bookmark.all.order(:title).pluck(:title, category)
+  # end
 
   # #GET /products/:id (the prod number)
   def show
@@ -26,7 +28,7 @@ class BookmarksController < ApplicationController
     #   #constructs and instantiates a new song instance from the form fields, which live in the params hash
     @bookmark = Bookmark.new(bookmark_params)
     if @bookmark.save #can be local var bc we arent using it anywhere outside this method
-      redirect_to bookmark_path #after it saves the new song, this redirects (301) to the overall product list
+      redirect_to bookmark_path(@bookmark.id) #after it saves the new song, this redirects (301) to the overall product list
     else
       render :new #will go back to the form to try again
     end
@@ -43,7 +45,7 @@ class BookmarksController < ApplicationController
 
     #   #Using strong params update this product Product#update- mode
     if @bookmark.update(bookmark_params)
-      redirect_to @bookmark, notice: "You have updated the #{@bookmark.name}"
+      redirect_to @bookmark, notice: "You have updated the #{@bookmark.title}"
     else
       # No worky, try again, show me the form you.
       render :edit
@@ -53,8 +55,6 @@ class BookmarksController < ApplicationController
   def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
-
-
     redirect_to bookmarks_path, notice: "You have deleted the bookmark"
   end
 
