@@ -50,7 +50,39 @@ Bookmark.create!(
 Bookmark.create!(
   title: "31 GIFs That Will Make You Laugh Every Time",
   url: "http://www.buzzfeed.com/summeranne/gifs-that-will-make-you-laugh-every-time",
-  comment: "Awesome guide!",
+  comment: "silly",
   category: "Funny",
   is_favorite: true
+  )
+
+Bookmark.create!(
+  title: "RSpec Documentation",
+  url: "https://www.relishapp.com/rspec/",
+  comment: "",
+  category: "Useful",
+  is_favorite: false
+  )
+
+Bookmark.create!(
+  title: "Mozilla Developer Network: CSS",
+  url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  comment: "",
+  category: "Serious",
+  is_favorite: false
+  )
+
+Bookmark.create!(
+  title: "The 28 Funniest Notes Written By Kids In 2013",
+  url: "http://www.buzzfeed.com/erinchack/the-28-funniest-notes-written-by-kids-in-2013",
+  comment: "???",
+  category: "Funny",
+  is_favorite: false
+  )
+
+Bookmark.create!(
+  title: "25 Pets That Have No Idea How To Use Human Things",
+  url: "http://www.viralnova.com/pets-cant-use-furniture/",
+  comment: "long title",
+  category: "Funny",
+  is_favorite: false
   )
