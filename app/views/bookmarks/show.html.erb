@@ -7,8 +7,13 @@
 <br>
 <br>
 <small>Added on <%= @bookmark.created_at %></small>
+  <div class="edit-delete-buttons">
   <%= link_to edit_bookmark_path do %>
-    <div class="edit-button"><span class="glyphicon glyphicon-pencil"></span></div>
+    <span class="glyphicon glyphicon-pencil"></span>
+  <%end%>
+  <%= link_to @bookmark, method: :delete, data: {confirm: 'Are you sure?'} do %>
+    <span class="glyphicon glyphicon-trash"></span>
   <% end %>
+  </div>
 
 </div>

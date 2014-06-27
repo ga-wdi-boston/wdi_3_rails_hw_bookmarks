@@ -66,10 +66,12 @@ div.bookmark-index, div.bookmark-show {
   -webkit-margin-after: 0;
 }
 
-.etc-button {
+.etc-button .glyphicon {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 0px;
+  color: rgb(231, 100, 100);
+  right: 10px;
+  font-size: 26px;
 }
 
 .footer {
@@ -90,9 +92,17 @@ span.glyphicon-floppy-disk {
   padding-bottom: 15px;
 }
 
-.edit-button {
+.edit-delete-buttons {
   position: absolute;
   right: 9px;
   bottom: 7px;
-  font-size: 18px;
+  font-size: 20px;
+  color: black;
+}
+.button-gap {
+  width: 5px;
+}
+.edit-delete-buttons a, .edit-delete-buttons a:hover {
+  color: black;
+  text-decoration: none;
 }
