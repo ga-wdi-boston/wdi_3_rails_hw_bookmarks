@@ -1,10 +1,12 @@
+
+
 Bookmark.delete_all
 
 puts "Creating 20 Bookmarks"
 bookmark_count = 20
 
 bookmark_count.times do |i|
-  Bookmark.create!(title: "Bookmark #{i}", url: "http://#{i}")
+  Bookmark.create!(title: "Bookmark #{i}", url: "http://#{i}.com")
 end
 
 # This file should contain all the record creation needed to seed the database with its default values.
