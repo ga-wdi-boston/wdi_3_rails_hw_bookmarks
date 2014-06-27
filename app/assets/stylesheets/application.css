@@ -33,6 +33,7 @@
   border-radius: 30%;
   font-size: 40px;
   width: 25%;
+  height:;
 }
 
 #home {
@@ -67,12 +68,13 @@
 }
 
 .inner_app{
-  padding-top:40px;
+  padding-top:70px;
   font-size:40px;
   font-color:white;
 
 }
 #menu_type {
+  padding: 30px;
   font-size: 70px;
 }
 html {
