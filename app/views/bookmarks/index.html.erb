@@ -1,6 +1,9 @@
 <ul class="list-group">
 <% @bookmarks.each do |bookmark| %>
-  <li class="list-group-item"><p><strong><%= bookmark.title %> </strong>| <%= bookmark.url %>  <%= link_to('Edit', edit_bookmark_path(bookmark), class: "btn btn-sm btn-default") %><span class="label label-default pull-right"><%= bookmark.category %></span></p>
+  <li class="list-group-item"><p><strong><%= bookmark.title %> </strong>| <%= bookmark.url %>
+  <%= link_to('Edit', edit_bookmark_path(bookmark), class: "btn btn-sm btn-default") %>
+  <%= link_to 'Delete', bookmark, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-sm btn-default" %>
+  <span class="label label-default pull-right"><%= bookmark.category %></span></p>
   <p class="list-group-item-text"><%= bookmark.comment %></p>
 
    </li>
