@@ -1,0 +1,67 @@
+<ul>
+<div class="page-header">
+  <h1>BookMarkarrrg
+    <small>Mark Your Shite
+    </small>
+  </h1>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Panel heading</div>
+  <div class="panel-body">
+    <p>...</p>
+  </div>
+
+  <table class="table table-striped">
+  <tr>
+    <td>
+      Website  <button type="button" class="btn btn-default"><%= link_to 'New Bookmark', new_bookmark_path %></button>
+    </td>
+    <td>
+      Category
+    </td>
+    <td>
+      Comments
+    </td>
+    <td>
+      Favourited
+    </td>
+  </tr>
+
+  <% @bookmarks.each do |bookmark| %>
+
+    <tr>
+      <td>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          Edit <span class="caret"></span>
+          </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#"><%= link_to('Edit', edit_bookmark_path(bookmark))%></a></li>
+              <li><a href="#"><%= link_to 'Remove', bookmark, method: :delete, data: {confirm: 'Are you sure, dude?'} %></a></li>
+              <li class="divider"></li>
+              <li><a href="#"><%= link_to 'Inspect', bookmark_path(bookmark[:id]) %></a></li>
+            </ul>
+        </div>
+        <%= link_to bookmark.title %>
+      </td>
+      <td>
+        <%= bookmark.category %>
+      </td>
+      <td>
+        <%= bookmark.comment %>
+      </td>
+      <td>
+        <%= bookmark.is_favourite %>
+      </td>
+    </tr>
+
+  <%end%>
+
+
+</div>
+
+</table>
+
+
+</ul>

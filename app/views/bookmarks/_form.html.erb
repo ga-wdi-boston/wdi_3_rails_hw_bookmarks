@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Edit Bookmark</div>
+  <div class="panel-body">
+
+
+    <h3>Edit Bookmark</h3>
+  <%= bootstrap_form_for @bookmark do |f| %>
+    <%= f.text_field :url %>
+    <br>
+    <%= f.text_area :title %>
+    <br>
+    <%= f.text_field :comment %>
+    <br>
+    <%= f.text_field :category %>
+    <br>
+    <%= f.text_field :is_favourite %>
+    <%= f.submit %>
+  <% end %>
+
+  </div>
+</div>
+
+
