@@ -20,7 +20,10 @@ class BookmarksController < ApplicationController
     else
       render :new
     end
+  end
 
+  def edit
+    @bookmark = Bookmark.find(params[:id])
   end
 
   private
