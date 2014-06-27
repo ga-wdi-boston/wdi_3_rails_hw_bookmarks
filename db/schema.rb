@@ -17,13 +17,15 @@ ActiveRecord::Schema.define(version: 20140626213647) do
   enable_extension "plpgsql"
 
   create_table "bookmarks", force: true do |t|
-    t.text     "title"
-    t.text     "url"
+    t.text     "title",       null: false
+    t.text     "url",         null: false
     t.text     "comment"
     t.text     "category"
-    t.boolean  "is_favorite"
+    t.boolean  "is_favorite", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "bookmarks", ["category"], name: "index_bookmarks_on_category", using: :btree
 
 end
