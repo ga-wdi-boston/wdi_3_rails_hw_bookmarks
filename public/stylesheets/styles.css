@@ -37,6 +37,10 @@ h1 {
   padding-left: 8px;
 }
 
+.check {
+  text-align: center;
+}
+
 .new-bookmark {
   padding: 50px 0px;
   text-align: center;

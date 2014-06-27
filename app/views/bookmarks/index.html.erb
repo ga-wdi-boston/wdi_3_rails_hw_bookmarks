@@ -1,21 +1,4 @@
-<div class="row">
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="row">
-     <div class="col-md-9">
-        <div class="row">
-            <h1>Bookmarkr</h1>
-        </div>
-        <div class="row">
-        <p class="subhead">disrupting the world of mobile based bookmarking software</p>
-        </div>
-    </div>
-     <div class="user-info col-md-3">
-        <span class="login"><a href="#">zhbanton@gmail.com</a></span>
-        <span class="signout"><a href="#">Sign out</a></span>
-    </div>
-    </div>
-  </nav>
-</div>
+
 
 <table class="table-striped">
     <thead>
@@ -24,6 +7,7 @@
             <th>Title</th>
             <th>Comment</th>
             <th>Category</th>
+            <th></th>
             <th></th>
             <th></th>
         </tr>
@@ -37,8 +21,13 @@
                 <td></td>
             <%end%>
             <td> <%=link_to(bookmark.title, bookmark.url)%> </td>
-            <td> <%=bookmark.comment%> </td>
+            <%if bookmark.comment == '' %>
+                <td></td>
+            <%else%>
+                <td class="check"><span class="glyphicon glyphicon-check"></span></td>
+            <%end%>
             <td> <%=bookmark.category%> </td>
+            <td> <%=link_to('view', bookmark_path(bookmark.id))%> </td>
             <td> <%=link_to('edit', edit_bookmark_path(bookmark))%> </td>
             <td> <%=link_to 'delete', bookmark, method: :delete, data: {confirm: 'Are you sure?'}%> </td>
         </tr>
@@ -48,5 +37,4 @@
 <div class="new-bookmark">
     <%= link_to 'new bookmark', new_bookmark_path %> </h3>
 </div>
-</body>
-</html>
+
