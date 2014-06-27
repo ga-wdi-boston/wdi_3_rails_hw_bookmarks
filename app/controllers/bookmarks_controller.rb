@@ -38,7 +38,7 @@ class BookmarksController < ApplicationController
   def update
     @bookmark = Bookmark.find(params[:id])
     if @bookmark.update(bookmark_params)
-      flash[:notice] = "You have updated the #{@bookmark.title}"
+      flash[:notice] = "You have updated #{@bookmark.title}"
       redirect_to @bookmark
     else
       flash.now[:alert] = @bookmark.errors.full_messages.join(', ')
