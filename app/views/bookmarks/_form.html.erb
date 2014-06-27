@@ -14,12 +14,12 @@
      <%= f.text_field :title %>
      <br>
      <%= f.label :category %> <br>
-     <%= f.text_area :category %>
+     <%= f.select :category, options_for_select(Bookmark::CATEGORIES) %>
      <br>
      <%= f.label :url %> <br>
-     <%= f.text_field :url %>
+     <%= f.url_field :url %>
      <br>
-     <%= f.label :is_favorite %> <br>
+     <%= f.label "Favorite" %>
      <%= f.check_box :is_favorite %>
      <br>
      <%= f.label :comment %> <br>
