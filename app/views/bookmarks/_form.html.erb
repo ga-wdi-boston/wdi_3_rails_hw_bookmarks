@@ -1,25 +1,33 @@
- <form action='/bookmarks' method='post'>
+<%= form_for(@bookmark) do |f| %>
+  <% if @bookmark.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bookmark.errors.count, "error") %> prohibited this bookmark from being saved:</h2>
 
-   <label> url
-    <input type="text" id="bookmark_url" name="bookmark[:url]"></input>
-   </label>
-   <br>
+      <ul>
+      <% @bookmark.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-   <label> Title
-    <input type="text" id="bookmark_title" name="bookmark[:title}"></input>
-   </label>
-   <br>
-
-   <label> Category
-     <input type="text" id="bookmark_category" name="bookmark[:category]"></input>
-   </label>
-   <br>
-
-   <label> Commentary
-     <input type="text" id="bookmark_comments" name="bookmark[:comment]"></input>
-   </label>
-   <br>
-
-   <input type='submit' value="Add Bookmark"></input>
-
- </form>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br>
+    <%= f.text_field :comment %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
