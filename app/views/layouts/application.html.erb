@@ -2,13 +2,44 @@
 <html>
 <head>
   <title>Wdi4RailsHwBookmarks</title>
+  <%= stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.0/css/foundation.min.css' %>
+  <%= javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.0/js/foundation.min.js' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<header>
+  <div class="contain-to-grid">
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class= "name">
+          <h1><%= link_to bookmarks_path do %><i class="fi-bookmark"></i> Bookmarkr<% end %></h1>
+        </li>
+        <li class="toggle-topbar"><%= link_to new_bookmark_path do %><i class="fi-plus add"></i><% end %></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+          <li><%= link_to new_bookmark_path do %><i class="fi-plus"></i> Create bookmark<% end %></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+</header>
+
+  <div class="row">
+    <div class="small-12 centered columns">
+      <% if flash[:notice].present? %>
+         <p class="notice"><%= flash[:notice] %></p>
+      <% end %>
+      <% if flash[:alert].present? %>
+         <p class="alert"><%= flash[:alert] %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <%= yield %>
 
 </body>
 </html>
