@@ -1,24 +1,31 @@
 <div class="container">
   <div class="row" id="header">
     <div class="page-header">
-      <h1>Bookmarkr <small><%= link_to 'Create a new bookmark', new_bookmark_path %> </small></h1>
-      <small class=“notice”><%= flash[:notice] %></small></h1>
-    </div>
+      <h1>
+        Bookmarkr
+        <small>
+          <%= link_to 'Create a new bookmark', new_bookmark_path %></small>
+      </h1>
+      <small class=“notice”>
+        <%= flash[:notice] %></small>
+    </h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+
+    <ul class="nav nav-pills nav-stacked">
+      <li>
+        <%= link_to('All', bookmarks_path) %></li>
+      <% @categories.each do |category| %>
+      <li>
+        <%= link_to(category, bookmarks_path(category: category)) %></li>
+      <% end %></ul>
   </div>
 
-  <div class="row">
-    <div class="col-md-2">
-
-      <ul>
-        <li> <%= link_to('All', bookmarks_path) %></li>
-        <% @categories.each do |category| %>
-          <li> <%= link_to(category, bookmarks_path(category: category)) %></li>
-        <% end %>
-      </ul>
-    </div>
-
-    <div class="col-md-10">
-     <table class="table table-hover">
+  <div class="col-md-10">
+    <table class="table table-hover">
       <tr>
         <th>Title</th>
         <th>Category</th>
@@ -26,21 +33,29 @@
         <th>Favorite</th>
         <th>Comments</th>
       </tr>
-        <% @bookmarks.each do |bookmark| %>
-            <tr>
-              <th><%= link_to(bookmark.title, bookmark.url) %></th>
-              <th><%= bookmark.category %></th>
-              <th><%= link_to('Details' , bookmark_path(bookmark.id)) %></th>
-              <th><%  if bookmark.is_favorited? %> <span class="glyphicon glyphicon-star"></span> <%end%></th>
-              <th><%  if bookmark.comment.present? %><span class="glyphicon glyphicon-comment"></span><%end%></th>
-              <th><%= link_to('Edit', edit_bookmark_path(bookmark.id))%></th>
-              <th><%= link_to 'Delete', bookmark, method: :delete, data: {confirm: 'Are you sure?'} %></th>
-            </tr>
-           <% end %>
-        </table>
-      </div>
+      <% @bookmarks.each do |bookmark| %>
+      <tr>
+        <th>
+          <%= link_to(bookmark.title, bookmark.url) %></th>
+        <th>
+          <%= bookmark.category %></th>
+        <th>
+          <%= link_to('Details' , bookmark_path(bookmark.id)) %></th>
+        <th>
+          <%  if bookmark.is_favorited? %>
+          <span class="glyphicon glyphicon-star" style="horizontal-align:middle"></span>
+          <%end%></th>
+        <th>
+          <%  if bookmark.comment.present? %>
+          <span class="glyphicon glyphicon-comment" style="horizontal-align:middle"></span>
+          <%end%></th>
+        <th>
+          <%= link_to('Edit', edit_bookmark_path(bookmark.id))%></th>
+        <th>
+          <%= link_to 'Delete', bookmark, method: :delete, data: {confirm: 'Are you sure?'} %></th>
+      </tr>
+      <% end %></table>
   </div>
-
-
+</div>
 
 </div>

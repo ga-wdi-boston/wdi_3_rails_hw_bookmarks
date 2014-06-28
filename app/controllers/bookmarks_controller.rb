@@ -24,8 +24,9 @@ class BookmarksController < ApplicationController
       flash[:notice] = "Bookmark successfully created"
       redirect_to bookmarks_path
     else
-      flash.now[:notice] = "Bookmark not saved"
+      flash.now[:notice]=@bookmark.errors.full_messages.join(', ')
       render :new
+      binding.pry
     end
   end
 

@@ -1,10 +1,19 @@
 #header{
-  color:black;
+  color: black;
 }
 
-.page-header{
+
+form {
+  margin: 0px auto;
+  width: 200px;
 }
 
 li {
   color: black;
 }
+
+h2{
+  text-align: center;
+}
+
+
