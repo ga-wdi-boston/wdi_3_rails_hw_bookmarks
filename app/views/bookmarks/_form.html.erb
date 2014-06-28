@@ -16,8 +16,8 @@
 <%= f.text_field :category %>
 </p>
 <p>
-<%= f.label :favorite %><br>
-<%= f.text_field :favorite %>
+<%= check_box_tag(:favorite) %>
+<%= label_tag(:favorite, "Favorite") %>
 </p>
 <p>
 <%= f.submit %>
