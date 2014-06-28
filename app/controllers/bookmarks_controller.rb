@@ -26,7 +26,6 @@ class BookmarksController < ApplicationController
     else
       flash.now[:notice]=@bookmark.errors.full_messages.join(', ')
       render :new
-      binding.pry
     end
   end
 

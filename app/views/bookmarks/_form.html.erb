@@ -10,27 +10,26 @@
         <% end %></ul>
 </div>
 <% end %>
-<div class = "form">
     <%= form_for @bookmark do |f| %>
     <%= f.label :title %>
     <br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title,class: 'form-control' %>
     <br>
     <%= f.label :url %>
     <br>
-    <%= f.text_area :url %>
+    <%= f.text_area :url, class: 'form-control' %>
     <br>
     <%= f.label :category %>
     <br>
-    <%= f.select :category, options_for_select(Bookmark::CATEGORIES) %>
+    <%= f.select :category, options_for_select(Bookmark::CATEGORIES), class: 'form-control' %>
     <br>
     <%= f.label :comment %>
     <br>
-    <%= f.text_field :comment %>
+    <%= f.text_field :comment,class: 'form-control' %>
     <br>
     <%= f.label :favorite? %>
     <br>
-    <%= f.check_box :is_favorited %>
+    <%= f.check_box :is_favorited,class: 'form-control' %>
     <br>
-    <%= f.submit %>
-    <% end %></div>
+    <%= f.submit "Add bookmark", class: 'form-control' %>
+    <% end %>
