@@ -1,3 +1,18 @@
+.page-header h1 a {
+  margin-top: 30px;
+  text-decoration: none;
+  color: #000;
+}
+.pull-right {
+  margin-right: 5px;
+}
+
+.button-text-left {
+  text-align: left;
+}
+
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

@@ -29,18 +29,21 @@
         <li><%= link_to "Serious", {category: 'serious'} %></li>
         <li><%= link_to "Useful", {category: 'useful'} %></li>
       </ul>
-      <%= link_to("Create new", new_bookmark_path, class: "btn btn-danger btn-md nav-justified") %>
+
     </div>
 
     <div class="col-md-6">
       <%= yield %>
     </div>
 
-    <div class="col-md-4">
-    <% if flash[:notice].present? %>
-      <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
-    <% end %>
-    <p class="alert"><%= flash[:alert] %></p>
+    <div class="col-md-2">
+      <%= link_to("Create new", new_bookmark_path, class: "btn btn-danger btn-md nav-justified") %>
+      <% if flash[:notice].present? %>
+        <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
+      <% end %>
+      <p class="alert"><%= flash[:alert] %></p>
+    </div>
+    <div class="col-md-2">
     </div>
 </div>
 
