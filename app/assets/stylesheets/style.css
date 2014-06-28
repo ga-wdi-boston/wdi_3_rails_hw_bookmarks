@@ -3,9 +3,15 @@
 }
 
 
+ul
+{
+  list-style-type: none;
+}
+
+
 form {
   margin: 0px auto;
-  width: 200px;
+  width: 400px;
 }
 
 li {
