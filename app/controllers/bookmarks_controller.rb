@@ -50,7 +50,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
     #Show all bookmarks
-    redirect_to @bookmarks, notice: "You have deleted the bookmark."
+    redirect_to bookmarks_path, notice: "You have deleted the bookmark."
   end
 
 
