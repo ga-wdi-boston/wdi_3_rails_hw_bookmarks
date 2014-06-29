@@ -1,5 +1,7 @@
 
-<h2><%= @bookmark.title %><%= @bookmark.favorite %></h2>
+<h2><%= @bookmark.title %><% if @bookmark.favorite == true %>
+      <span class="glyphicon glyphicon-heart pull-right"></span>
+      <% end %></h2>
 <%= link_to 'Edit', edit_bookmark_path(@bookmark), class: "btn btn-sm btn-default pull-right" %><h4><%= link_to @bookmark.url, @bookmark.url %></h4>
 <hr>
 <p><strong>Category</strong> | <%= @bookmark.category_id %></p>
