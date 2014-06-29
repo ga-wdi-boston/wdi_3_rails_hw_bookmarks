@@ -75,8 +75,9 @@ body {
   font-family: 'Frutiger Condensed', Arial, Helvetica, sans-serif;
   font-size: 1em;
 }
+
 a {
-  color: #f33;
+  color: #f93;
 }
 
 a:hover {
@@ -101,14 +102,42 @@ h2.title {
   padding-bottom: 20px;
 }
 
+input[type="checkbox"] {
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+}
+
+input[type="text"], select {
+  width: auto !important;
+}
+
+input[type="text"], textarea {
+  font-family: 'Courier New', monospace;
+}
+
+input[type="submit"] {
+  font-family: 'Frutiger Condensed', Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  padding: 3px 10px;
+}
+
+select {
+  font-family: 'Frutiger Condensed', Arial, Helvetica, sans-serif;
+  height: auto;
+  padding-top: 4px;
+  padding-bottom: 2px;
+}
+
 .list-item:first-child {
-  border-top: 1px solid #fc9;
+  border-top: 1px dotted #fc9;
 }
 
 .list-item {
-  border-bottom: 1px solid #fc9;
+  border-bottom: 1px dotted #fc9;
   clear: both;
-  height: 32px;
+  height: 22px;
 }
 
 .list-edit, .list-delete, .list-link, .list-category, .list-comments, .list-is-favorite, .list-icon-container {
@@ -119,29 +148,22 @@ h2.title {
   margin-right: 10px;
 }
 
-.list-link, .list-category {
-  padding: 3px 0;
-}
-
-.list-icon-container {
-  margin: 2px 0;
-}
-
 .list-comments {
-  background-image: image-url('glyphicons/png/glyphicons_029_notes_2.png');
+  background-image: image-url('comment.gif');
   background-repeat: no-repeat;
   background-size: auto;
-  height: 27px;
-  width: 20px;
+  height: 14px;
+  margin-top: 4px;
+  width: 14px;
 }
 
 .list-is-favorite {
-  background-image: image-url('glyphicons/png/glyphicons_343_thumbs_up.png');
+  background-image: image-url('favorite.gif');
   background-repeat: no-repeat;
   background-size: auto;
-  height: 21px;
-  margin-top: 3px;
-  width: 24px;
+  height: 12px;
+  margin-top: 5px;
+  width: 14px;
 }
 
 .form-element-container {
@@ -150,15 +172,16 @@ h2.title {
 
 .form-element-label {
   float: left;
+  min-width: 80px;
   width: 80px;
 }
 
-input[type="text"], select {
-  width: auto !important;
+.required {
+  color: #f00;
+  font-size: 0.75em;
 }
 
-input[type="submit"] {
-  font-family: 'ProximaNova', sans-serif;
-  font-size: 1em;
-  padding: 3px 10px;
+.required label:after {
+  color: #f00;
+  content: '*'
 }

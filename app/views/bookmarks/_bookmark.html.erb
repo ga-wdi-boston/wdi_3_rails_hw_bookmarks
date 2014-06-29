@@ -1,7 +1,7 @@
   <div class="list-item">
     <div class="list-icon-container">
-      <div class="list-edit"><%= link_to image_tag('glyphicons/png/glyphicons_030_pencil.png'), edit_bookmark_path(bookmark) %></div>
-      <div class="list-delete"><%= link_to image_tag('glyphicons/png/glyphicons_016_bin.png'), bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?'} %></div>
+      <div class="list-edit"><%= link_to image_tag('edit_right.gif'), edit_bookmark_path(bookmark) %></div>
+      <div class="list-delete"><%= link_to image_tag('trash.gif'), bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?'} %></div>
     </div>
     <div class="list-link"><%= link_to bookmark.title, counter_bookmark_path(bookmark), target: '_blank' %></div>
     <div class="list-category"><%= bookmark.category %></div>
