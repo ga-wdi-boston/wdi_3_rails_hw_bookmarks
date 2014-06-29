@@ -43,13 +43,9 @@ class BookmarksController < ApplicationController
   # GET /
   # GET /bookmarks
   def index
-    categories = Bookmark.pluck('distinct category').uniq.insert(0, "All")
-    bookmarks = Bookmark.all.order(:title)
-    @view = {
-      categories: categories,
-      bookmarks: bookmarks,
-      category: nil
-    }
+    @bookmarks = Bookmark.all.order(:title)
+    @category = nil;
+    @categories = get_categories
   end
 
   # GET /bookmarks/:id
@@ -63,13 +59,9 @@ class BookmarksController < ApplicationController
       redirect_to bookmarks_path
     end
 
-    categories = Bookmark.pluck('distinct category').uniq.insert(0, "All")
-    bookmarks = Bookmark.where('category = ?', params[:category]).order(:title)
-    @view = {
-      categories: categories,
-      bookmarks: bookmarks,
-      category: params[:category]
-    }
+    @bookmarks = Bookmark.where('category = ?', params[:category]).order(:title)
+    @category = params[:category]
+    @categories = get_categories
   end
 
   # GET bookmarks/counter/:id
@@ -84,11 +76,13 @@ class BookmarksController < ApplicationController
   end
 
   private
+
   def bookmark_params
     params.require(:bookmark).permit([:url, :title, :comments, :category, :is_favorite])
   end
 
+  # Returns the category array with 'All' prefixed as the first element
   def get_categories
-    Bookmark.pluck('distinct category').uniq.insert(0, "All")
+    ['All'] | Bookmark::CATEGORIES
   end
 end

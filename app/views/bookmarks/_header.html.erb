@@ -1,25 +1,26 @@
 <div class="row">
-<div class="small-12 columns">
+  <div class="small-12 columns">
 
-<div class="contain-to-grid">
-  <nav class="top-bar" data-topbar>
-    <ul class="title-area">
-      <li class="name"><h1 class="site-title"><%= link_to 'My Nifty Bookmark App', bookmarks_path %></h1></li>
-      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
-    <section class="top-bar-section">
-      <ul class="right">
-        <li><%= link_to 'Create', new_bookmark_path, class: 'new-btn' %></li>
-        <li class="divider"></li>
-        <li class="has-dropdown not-click">
-          <a href="#">Search</a>
-          <%= render 'search', categories: @view[:categories], category: @view[:category] %>
-        </li>
-      </ul>
-    </section>
-  </nav>
-</div>
+    <!-- From Foundation framework -->
+    <div class="contain-to-grid">
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name"><h1 class="site-title"><%= link_to 'My Nifty Bookmark App', bookmarks_path %></h1></li>
+          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+          <ul class="right">
+            <li><%= link_to 'Create', new_bookmark_path, class: 'new-btn' %></li>
+            <li class="divider"></li>
+            <li class="has-dropdown not-click">
+              <a href="#">Search</a>
+              <%= render 'search', categories: @categories, category: @category %>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </div>
 
-</div>
+  </div>
 </div>
