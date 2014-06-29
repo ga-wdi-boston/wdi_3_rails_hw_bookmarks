@@ -2,11 +2,11 @@ class BookmarksController < ApplicationController
 
   def index
     @bookmarks = Bookmark.all
-    if params[:category_id] == 1
+    if params[:category_id] == "1"
       @bookmarks = Bookmark.where(category_id: 1)
-    elsif params[:category_id] == 2
+    elsif params[:category_id] == "2"
       @bookmarks = Bookmark.where(category_id: 2)
-    elsif params[:category_id] == 3
+    elsif params[:category_id] == "3"
       @bookmarks = Bookmark.where(category_id: 3)
     end
   end
