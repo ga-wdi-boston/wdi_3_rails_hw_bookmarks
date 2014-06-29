@@ -7,8 +7,12 @@
   margin-right: 5px;
 }
 
-.button-text-left {
-  text-align: left;
+.button-space{
+  margin-top: 5px;
+}
+
+.bookmark a{
+  color: #d9534f;
 }
 
 
