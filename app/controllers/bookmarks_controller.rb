@@ -1,8 +1,18 @@
 class BookmarksController < ApplicationController
 
   def index
-    @bookmarks = Bookmark.all
+    @bookmarks = Bookmark.all.order(:title)
+
     @category = params[:category]
+#     if params[:category]
+
+# +      @bookmarks = Bookmark.where(category: params[:category])
+
+# +    else
+
+# +      @bookmarks = Bookmark.order(:title)
+
+# +    end
   end
 
   # #GET /products/:id (the prod number)

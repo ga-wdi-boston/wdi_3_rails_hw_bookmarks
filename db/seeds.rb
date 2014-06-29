@@ -15,7 +15,7 @@ bookmark_count.times do |i|
     url: "Bookmark url #{i}",
     title: "Title #{i}",
     comment: "Comment #{i}",
-    checkbox: (true if rand(2) == 0)
+    is_favorite: (true if rand(2) == 0)
   )
 end
 

@@ -11,7 +11,7 @@ class Bookmark < ActiveRecord::Base
 
   # validates :url, presence: true
   # validates :url, uniqueness: true
-  # validates :url, includes: 'http', true
+  # validates :url, :format => URI::regexp(%w(http https))
 
 
   # validates :title, presence: true
