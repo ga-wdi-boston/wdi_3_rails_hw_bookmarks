@@ -1,5 +1,5 @@
 class Bookmark < ActiveRecord::Base
-  CATEGORIES = %w[Serious Funny Usefull]
+  CATEGORIES = %w[Serious Funny Useful]
 
   # URL required with protocol prefix
   validates :url, presence: { message: 'A URL is required' }

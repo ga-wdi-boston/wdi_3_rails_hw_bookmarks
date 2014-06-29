@@ -5,7 +5,7 @@
     <div class="contain-to-grid">
       <nav class="top-bar" data-topbar>
         <ul class="title-area">
-          <li class="name"><h1 class="site-title"><%= link_to 'My Nifty Bookmark App', bookmarks_path %></h1></li>
+          <li class="name"><h1 class="site-title"><%= link_to 'My Simple Bookmark App', bookmarks_path %></h1></li>
           <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
           <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
         </ul>
@@ -15,7 +15,7 @@
             <li class="divider"></li>
             <li class="has-dropdown not-click">
               <a href="#">Search</a>
-              <%= render 'search', categories: @categories, category: @category %>
+              <%= render 'search', categories: @categories, category: @selected_category %>
             </li>
           </ul>
         </section>

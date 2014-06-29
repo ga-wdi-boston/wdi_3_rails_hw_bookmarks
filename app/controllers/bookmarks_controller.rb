@@ -2,7 +2,8 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks/new
   def new
-    @view = { bookmark: Bookmark.new, categories: get_categories }
+    @bookmark = Bookmark.new
+    @categories = get_categories
   end
 
   # POST /bookmarks
@@ -11,13 +12,15 @@ class BookmarksController < ApplicationController
     if @bookmark.valid? && @bookmark.save
       redirect_to bookmarks_path
     else
+      @categories = get_categories
       render :new
     end
   end
 
   # GET /bookmarks/:id/edit
   def edit
-    @view = { bookmark: Bookmark.find(params[:id]), categories: get_categories }
+    @bookmark = Bookmark.find(params[:id])
+    @categories = get_categories
   end
 
   # PATCH /bookmarks/:id
@@ -26,6 +29,7 @@ class BookmarksController < ApplicationController
     if @bookmark.valid? && @bookmark.update(bookmark_params)
       redirect_to bookmarks_path
     else
+      @categories = get_categories
       render :edit
     end
   end
@@ -36,6 +40,7 @@ class BookmarksController < ApplicationController
     if @bookmark.destroy
       redirect_to bookmarks_path
     else
+      @categories = get_categories
       render :show
     end
   end
@@ -43,24 +48,19 @@ class BookmarksController < ApplicationController
   # GET /
   # GET /bookmarks
   def index
-    @bookmarks = Bookmark.all.order(:title)
-    @category = nil;
+    if !params.has_key?(:category) || params[:category] == 'All'
+      @bookmarks = Bookmark.all.order(:title)
+      @selected_category = nil;
+    else
+      @bookmarks = Bookmark.where('category = ?', params[:category]).order(:title)
+      @selected_category = params[:category]
+    end
     @categories = get_categories
   end
 
   # GET /bookmarks/:id
   def show
-    @view = { bookmark: Bookmark.find(params[:id]), categories: get_categories }
-  end
-
-  # POST /bookmarks/category/:category
-  def filter_index
-    if params[:category] == 'All'
-      redirect_to bookmarks_path
-    end
-
-    @bookmarks = Bookmark.where('category = ?', params[:category]).order(:title)
-    @category = params[:category]
+    @bookmark = Bookmark.find(params[:id])
     @categories = get_categories
   end
 
