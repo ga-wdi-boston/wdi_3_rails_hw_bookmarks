@@ -11,22 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140629153358) do
+ActiveRecord::Schema.define(version: 20140629155834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookmarks", force: true do |t|
-    t.text     "url",        null: false
-    t.text     "title",      null: false
+    t.text     "url",         null: false
+    t.text     "title",       null: false
     t.text     "comment"
-    t.text     "category"
     t.boolean  "favorite"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_id"
   end
 
-  add_index "bookmarks", ["category"], name: "index_bookmarks_on_category", using: :btree
   add_index "bookmarks", ["title"], name: "index_bookmarks_on_title", using: :btree
 
   create_table "categories", force: true do |t|
