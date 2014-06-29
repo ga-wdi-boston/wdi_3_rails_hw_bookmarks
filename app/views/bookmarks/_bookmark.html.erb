@@ -2,4 +2,5 @@
   | Category: <%= bookmark.category %>
   | Favorite: <%= bookmark.is_favorite %>
   | Comments: <%= bookmark.comment %>
+  | <%= link_to "Edit bookmark", edit_bookmark_path(bookmark.id) %>
 </li>
