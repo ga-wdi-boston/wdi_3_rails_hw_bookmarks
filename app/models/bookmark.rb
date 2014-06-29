@@ -9,4 +9,5 @@ class Bookmark < ActiveRecord::Base
 
 
   validates :url, format: { :with => /https?:\/\/[\S]+/}
+  validates :favorite, inclusion: { in: [true, false] }
 end
