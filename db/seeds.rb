@@ -9,10 +9,16 @@ Category.create!(name: "funny")
 Category.create!(name: "useful")
 Category.create!(name: "serious")
 
-puts "Creating 20 Bookmarks"
-bookmark_count = 20
+puts "Creating 10 decent Bookmarks"
+bookmark_count = 10
 bookmark_count.times do |i|
   Bookmark.create!(title: "Bookmark #{i}", url: "http://#{i}.com", comment: "This is a very informative comment.", category_id: rand(1..3))
+end
+
+puts "Creating 10 great Bookmarks"
+bookmark_count = 10
+bookmark_count.times do |i|
+  Bookmark.create!(title: "Bookmark #{i}", url: "http://#{i+10}.com", comment: "This is a very informative comment.", category_id: rand(1..3), favorite: true)
 end
 
 
