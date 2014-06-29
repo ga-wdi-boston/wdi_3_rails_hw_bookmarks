@@ -3,6 +3,7 @@ class Bookmark < ActiveRecord::Base
 
   validates(:url, format: {with: /\A(http:\/\/).+\z/}, presence: true)
   validates(:category, inclusion: {in: Bookmark::CATEGORIES})
+  validates(:title, presence: true)
 
 
   def self.filter_by_category(cat)

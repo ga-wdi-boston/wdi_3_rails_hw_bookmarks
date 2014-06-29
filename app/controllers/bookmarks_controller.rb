@@ -24,7 +24,7 @@ class BookmarksController < ApplicationController
       flash[:notice] = "Bookmark Created"
       redirect_to @bookmark
     else
-      flash.now[:alert] = @bookmark.errors.full_messages.join('. ') + '.'
+      flash.now[:alert] = @bookmark.errors.full_messages.join(". \r\n") + '.'
       render :new
     end
   end
@@ -49,6 +49,14 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     @bookmark.delete
     redirect_to(bookmarks_path)
+  end
+
+  def redirect
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.click_count += 1
+    @bookmark.save
+    redirect_to(@bookmark.url)
+
   end
 
   private
