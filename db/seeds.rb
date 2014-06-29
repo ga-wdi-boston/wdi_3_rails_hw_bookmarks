@@ -5,14 +5,14 @@ Category.delete_all
 
 puts "Creating 3 initial categories"
 
-Category.create!(category: "funny")
-Category.create!(category: "useful")
-Category.create!(category: "serious")
+Category.create!(name: "funny")
+Category.create!(name: "useful")
+Category.create!(name: "serious")
 
 puts "Creating 20 Bookmarks"
 bookmark_count = 20
 bookmark_count.times do |i|
-  Bookmark.create!(title: "Bookmark #{i}", url: "http://#{i}.com", comment: "This is a very informative comment.", category: "funny")
+  Bookmark.create!(title: "Bookmark #{i}", url: "http://#{i}.com", comment: "This is a very informative comment.", category: rand(3))
 end
 
 

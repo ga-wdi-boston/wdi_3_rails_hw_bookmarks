@@ -1,3 +1,3 @@
-class Bookmark < ActiveRecord::Base
+class Category < ActiveRecord::Base
   validates :category, presence: true
 end

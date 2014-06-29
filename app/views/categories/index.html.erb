@@ -1,0 +1,13 @@
+<ul class="list-group">
+<% @categories.each do |category| %>
+  <li class="list-group-item"><p><strong><%= link_to category.category, bookmark_path(bookmark.id) %> </strong>| <%= link_to bookmark.url, bookmark.url %>
+  <%= link_to('Edit', edit_bookmark_path(bookmark), class: "btn btn-sm btn-default pull-right") %>
+  &nbsp;<%= link_to 'Delete', bookmark, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-sm btn-default pull-right" %>
+  <span class="label label-primary "><%= bookmark.category_id %></span></p>
+  <p class="list-group-item-text"><i><%= bookmark.comment %></i></p>
+
+   </li>
+
+<% end %>
+
+</ul>

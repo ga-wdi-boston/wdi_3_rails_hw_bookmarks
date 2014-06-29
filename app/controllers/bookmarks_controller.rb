@@ -3,11 +3,11 @@ class BookmarksController < ApplicationController
   def index
     @bookmarks = Bookmark.all
     if params[:category] == "funny"
-      @bookmarks = Bookmark.where(category: 'funny')
+      @bookmarks = Bookmark.where(category_id: '0')
     elsif params[:category] == "serious"
-      @bookmarks = Bookmark.where(category: 'serious')
+      @bookmarks = Bookmark.where(category_id: '1')
     elsif params[:category] == "useful"
-      @bookmarks = Bookmark.where(category: 'useful')
+      @bookmarks = Bookmark.where(category_id: '2')
     end
   end
 
@@ -53,6 +53,6 @@ class BookmarksController < ApplicationController
 
   private
   def bookmark_params
-    params.require(:bookmark).permit([:title, :url, :category, :comment, :favorite])
+    params.require(:bookmark).permit([:title, :url, :category_id, :comment, :favorite])
   end
 end
