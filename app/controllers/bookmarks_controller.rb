@@ -39,11 +39,18 @@ class BookmarksController < ApplicationController
 
     # Using strong params, update this bookmark
     if @bookmark.update(bookmark_params)
-      redirect_to @bookmark, notice: "You have updated the #{@bookmark.title}"
+      redirect_to @bookmark, notice: "You have updated the #{@bookmark.title}."
     else
     # Doesn't work, shows the form
       render :edit
     end
+  end
+
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.destroy
+    #Show all bookmarks
+    redirect_to @bookmarks, notice: "You have deleted the bookmark."
   end
 
 

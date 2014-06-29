@@ -1,13 +1,5 @@
 <ul> All Bookmarks
-<% @bookmarks.each do |bookmark| %>
-  <li>
-  URL is <%= bookmark.url %>,
-  Title is <%= bookmark.title %>,
-  Comment is <%= bookmark.comment %>
-  Category is <%= bookmark.category %>,
-  Is favorite? <%= bookmark.is_favorite %>
-  </li>
-<% end %>
+<%= render partial: 'bookmark', collection: @bookmarks %>
 </ul>
 
-
+<h3><%= link_to 'Create a new bookmark', new_bookmark_path %></h3>
