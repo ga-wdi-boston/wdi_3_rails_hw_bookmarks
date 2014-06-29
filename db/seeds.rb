@@ -12,7 +12,7 @@ Category.create!(name: "serious")
 puts "Creating 20 Bookmarks"
 bookmark_count = 20
 bookmark_count.times do |i|
-  Bookmark.create!(title: "Bookmark #{i}", url: "http://#{i}.com", comment: "This is a very informative comment.", category: rand(3))
+  Bookmark.create!(title: "Bookmark #{i}", url: "http://#{i}.com", comment: "This is a very informative comment.")
 end
 
 

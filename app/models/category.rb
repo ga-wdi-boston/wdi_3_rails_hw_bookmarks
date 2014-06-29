@@ -1,3 +1,4 @@
 class Category < ActiveRecord::Base
-  validates :category, presence: true
+  belongs_to :bookmark
+  validates :name, presence: true
 end
