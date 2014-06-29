@@ -1,0 +1,7 @@
+<%= render 'header' %>
+<div class="row">
+  <div class="small-6 columns">
+    <h2 class="title"><%= "Edit '#{@bookmark.title}' Bookmark" %></h2>
+    <%= render 'form', bookmark: @bookmark, btn_label: 'Update' %>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<ul class="dropdown">
+  <% categories.each do |category| %>
+  <li><%= link_to category, category_bookmark_path(category) %></li>
+  <% end %>
+</ul>
