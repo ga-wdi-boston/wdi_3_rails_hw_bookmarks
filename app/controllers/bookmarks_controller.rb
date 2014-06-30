@@ -1,11 +1,8 @@
 class BookmarksController < ApplicationController
 
   def index
-    @bookmarks = Bookmark.all.order(:title)
-    @category = params[:category]
-    Bookmark::VALID_CATEGORY.each do |category|
-      @bookmarks = Bookmark.where(:category == category)
-    end
+    @bookmarks = Bookmark.where(category: selected_category).order(:title)
+
   end
 
   def show
@@ -45,10 +42,14 @@ class BookmarksController < ApplicationController
   def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
-    redirect_to bookmarks_path, notice: "Bookmark deleted!"
+    flash[:success] = "Your bookmark has been deleted!"
   end
 
 private
+
+  def selected_category
+    params[:category].presence || Bookmark::VALID_CATEGORY
+  end
 
   def bookmark_params
     params.require(:bookmark).permit([:url, :title, :comment, :category, :is_checked_favorite])
