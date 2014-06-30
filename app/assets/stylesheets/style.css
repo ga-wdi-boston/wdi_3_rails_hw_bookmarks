@@ -1,0 +1,29 @@
+#header{
+  color: black;
+}
+
+
+ul
+{
+  list-style-type: none;
+}
+
+
+form {
+  margin: 0px auto;
+  width: 400px;
+}
+
+li {
+  color: black;
+}
+
+h2{
+  text-align: center;
+}
+
+h3{
+  text-align: center;
+}
+
+

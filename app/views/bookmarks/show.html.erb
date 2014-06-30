@@ -1,0 +1,37 @@
+<div class="container">
+
+  <div class="row">
+    <div class="page-header">
+      <h1>
+        <%= link_to('Bookmarkr', bookmarks_path)  %></h1>
+    </div>
+  </div>
+
+  <div class="col-md-10">
+    <table class="table table-hover">
+      <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Favorite</th>
+        <th>Comments</th>
+      </tr>
+      <tr>
+        <th>
+          <%= link_to(@bookmark.title, @bookmark.url) %></th>
+        <th>
+          <%= @bookmark.category %></th>
+        <th>
+          <%  if @bookmark.is_favorited? %>
+          <span class="glyphicon glyphicon-star"></span>
+          <%end%></th>
+        <th>
+          <%= @bookmark.comment %></th>
+        <th>
+          <%= link_to('Edit', edit_bookmark_path(@bookmark.id))%></th>
+        <th>
+          <%= link_to 'Delete', @bookmark, method: :delete, data: {confirm: 'Are you sure?'} %></th>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
