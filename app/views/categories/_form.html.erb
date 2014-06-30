@@ -1,8 +1,6 @@
 <%= form_for @category do |f| %>
 <div class="row">
-  <div class="col-md-1">
-  </div>
-  <div class="col-md-5">
+  <div class="col-md-6">
   &nbsp;
     <h4><%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -10,8 +8,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-1">
-  </div>
+
   <div class="col-md-6">
     <p><%= f.submit %></p>
   </div>

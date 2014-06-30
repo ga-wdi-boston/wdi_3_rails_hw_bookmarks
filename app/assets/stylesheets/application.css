@@ -15,9 +15,15 @@
   color: #d9534f;
 }
 
+.footer-bar {
+  text-align: center;
+  margin-top:70px;
+}
+
 .footer {
   background-color: #000;
-  height: 60px;
+  margin-top:10px;
+  height: 120px;
 }
 
 /*
