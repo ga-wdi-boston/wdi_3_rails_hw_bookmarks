@@ -1,3 +1,39 @@
+.page-header h1 a {
+  margin-top: 30px;
+  text-decoration: none;
+  color: #000;
+}
+.logo {
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  padding-top: -5px;
+
+
+}
+.pull-right {
+  margin-right: 5px;
+}
+
+.button-space{
+  margin-top: 5px;
+}
+
+body a.bookmark {
+  color: #d9534f;
+}
+
+.footer-bar {
+  text-align: center;
+  margin-top:70px;
+}
+
+.footer {
+  background-color: #000;
+  margin-top:10px;
+  height: 120px;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

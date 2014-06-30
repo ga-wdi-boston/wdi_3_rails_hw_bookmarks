@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wdi4RailsHwBookmarks</title>
+  <title>Bookmarkr | Katryn</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+  <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 
-<%= yield %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="page-header">
+        <h1><span class="glyphicon glyphicon-bookmark logo"></span><%= link_to " Bookmarkr", bookmarks_path %>
+        </h1>
+      </div>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="col-md-3">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><%= link_to("All", bookmarks_path) %></li>
+        <li><%= link_to "Funny", { controller: "bookmarks", category_id: "1" } %></li>
+        <li><%= link_to "Serious", { controller: "bookmarks", category_id: "2" } %></li>
+        <li><%= link_to "Useful", { controller: "bookmarks", category_id: "3" } %></li>
+      </ul>
+
+    </div>
+
+    <div class="col-md-6">
+    <% if flash[:notice].present? %>
+        <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
+      <% end %>
+      <% if flash[:alert].present? %>
+      <div class="alert alert-danger" role="alert"><%= flash[:alert] %></div>
+      <% end %>
+      <%= yield %>
+    </div>
+
+    <div class="col-md-3">
+      <%= link_to("New bookmark", new_bookmark_path, class: "btn btn-danger btn-md nav-justified") %>
+      <%= link_to("New category", new_category_path, class: "btn btn-primary btn-md nav-justified button-space") %>
+    </div>
+
+  </div>
+</div>
+<div class="footer-bar"
+<span class="glyphicon glyphicon-heart"></span> <span class="glyphicon glyphicon-heart"></span> <span class="glyphicon glyphicon-heart"></span> <span class="glyphicon glyphicon-heart"></span> <span class="glyphicon glyphicon-heart"></span> <span class="glyphicon glyphicon-heart"></span>
+</div>
+<div class="footer">
+</div>
 </body>
 </html>

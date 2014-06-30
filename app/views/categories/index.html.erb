@@ -1,0 +1,9 @@
+<ul class="list-group">
+  <% @categories.each do |category| %>
+    <li class="list-group-item">
+    <strong><%= link_to category.name, category_path(category.id) %> </strong>
+    <%= link_to('Edit', edit_category_path(category), class: "btn btn-sm btn-default pull-right") %>
+    &nbsp;<%= link_to 'Delete', category, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-sm btn-default pull-right" %>
+    </li>
+  <% end %>
+</ul>
