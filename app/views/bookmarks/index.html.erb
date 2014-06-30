@@ -4,13 +4,14 @@
     <h1 class="hero-text-index"> <%= link_to('Bookmarkr', bookmarks_path) %> </h1>
     <p>saving bookmarks one day at a time</p>
     <p>
-      <%= link_to('Add bookmark!', new_bookmark_path, :class => "btn btn-primary btn-large") %>
+      <%= link_to('Add bookmark', new_bookmark_path, :class => "btn btn-primary btn-large") %>
+      <%= link_to('Manage bookmarks', bookmarks_manage_path, :class => "btn btn-primary btn-large") %>
     </p>
   </div>
   <hr>
   <br>
 
-  <div class="btn-group">
+  <div class='btn-group'>
     <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
       Category <span class="caret"></span>
     </button>
@@ -19,8 +20,7 @@
       <li> <%=link_to("Useful", bookmarks_path(category: "useful")) %> </li>
       <li> <%=link_to("Serious", bookmarks_path(category: "serious")) %> </li>
    </ul>
-    <%= link_to('Manage your bookmarks', bookmarks_manage_path, :class => "btn btn-primary btn-lg") %>
-  </div>
+   </div>
   <br>
   <br>
 
@@ -34,13 +34,10 @@
                 <%= puts "x" %>
                 <% end %>
         </li>
-
-
-          <p> <% if bookmark.comment.present? %>
-                <small><%= bookmark.comment %> <small>
+          <p class="comment"> <% if bookmark.comment.present? %>
+                <%= bookmark.comment %>
               <% end %>
           </p>
-
         <% end %>
       </ul>
     </div>
@@ -49,9 +46,6 @@
   <br>
   <br>
 
-
-
-  <h4> <%= link_to('Manage your bookmarks', bookmarks_manage_path) %> </h4>
 </div>
 
 
