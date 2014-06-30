@@ -17,7 +17,9 @@ class Bookmark < ActiveRecord::Base
   validates :title, presence: true
   validates :title, uniqueness: true
 
-  validates :category, presence: true
-  validates :category, uniqueness: true
+  validates :category, inclusion: { in: VALID_CATEGORIES }
+
+  # validates :category, presence: true
+  # validates :category, uniqueness: true
 
 end

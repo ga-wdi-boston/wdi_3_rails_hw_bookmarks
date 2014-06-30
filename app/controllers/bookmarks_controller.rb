@@ -1,18 +1,15 @@
 class BookmarksController < ApplicationController
+  helper_method :commented
 
   def index
     @bookmarks = Bookmark.all.order(:title)
 
+    #shows the category a bookmark falls under
     @category = params[:category]
-#     if params[:category]
 
-# +      @bookmarks = Bookmark.where(category: params[:category])
-
-# +    else
-
-# +      @bookmarks = Bookmark.order(:title)
-
-# +    end
+    if #bookmark.comment.present?
+          #output a link to the show page
+    end
   end
 
   # #GET /products/:id (the prod number)
