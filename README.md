@@ -10,11 +10,19 @@ Create a Rails app that allows me to track my bookmarks! Bookmarks have:
 * a category (optional, select from "Serious", "Funny", or "Useful")
 * a checkbox that indicates this is a "favorite" bookmark (optional)
 
-The app root should show a list of all my bookmarks, sorted by title. URL and comment should not be displayed here, but I should be able to see which bookmarks have a comment, as well as which ones are "favorite". Clicking a bookmark's title should take me to its URL, and there should be an option to view all attributes of a bookmark. I should be able to add new bookmarks and edit or delete existing bookmarks. I should also be able to filter the list by category (e.g. show me only Serious bookmarks) *filter is optional*.
+
+    # Okay, so I have my model:
+    Bookmark
+      string url
+      string title
+      string description
+      bool favorite
+
+The app root should show a list of all my bookmarks, sorted by title. `Which means, GET /root should return a page displaying all bookmarks.` URL and comment should not be displayed here, but I should be able to see which bookmarks have a comment `don't display the comment in the index, just have "has comment yes/no"`, as well as which ones are "favorite". Clicking a bookmark's title should take me to its URL, and there should be an option to view all attributes of a bookmark `i.e. /books/:id`. I should be able to add new bookmarks and edit or delete existing bookmarks `CRUDdability - basically just add resources :bookmarks to routes.rb`. I should also be able to filter the list by category (e.g. show me only Serious bookmarks) *filter is optional*. `N/A`
 
 Since this is a decently-sized project, put some polish into it! The details of how to display the needed information are up to you &ndash; make your bookmarker a product someone would actually want to use. If you're feeling ambitious, you can try a CSS framework like [Bootstrap](http://getbootstrap.com/getting-started) or [Foundation](http://foundation.zurb.com/docs/applications.html).
 
-The *only* thing you can use a generator for, is creating new migrations. Scaffolding or other generators give -10 points to Ravenclaw. 
+The *only* thing you can use a generator for, is creating new migrations. Scaffolding or other generators give -10 points to Ravenclaw.
 
 One more thing: Make sure you provide some working seed data so we can easily test your app without typing in a bunch of bookmarks. Pulling down a fresh copy of your app and running `rake db:setup` should not give any errors.
 
