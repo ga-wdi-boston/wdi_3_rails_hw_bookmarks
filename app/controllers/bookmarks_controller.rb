@@ -24,6 +24,9 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
     if @bookmark.update(bookmark_params)
       redirect_to @bookmark, notice: 'Bookmark updated!'
