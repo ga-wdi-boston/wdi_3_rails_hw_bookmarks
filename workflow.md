@@ -73,3 +73,5 @@ For a "new" page, you're gonna make a form based on a Bookmark object. It looks 
     <% end %>
 
 Just copy and paste that.
+
+`def create`, `def update`, and `def destroy` should NOT display pages.
