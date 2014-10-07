@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20141007205040) do
   enable_extension "plpgsql"
 
   create_table "bookmarks", force: true do |t|
-    t.string  "URL",         null: false
-    t.string  "title",       null: false
+    t.string  "url",                         null: false
+    t.string  "title",                       null: false
     t.text    "description"
     t.string  "category"
-    t.boolean "favorite"
+    t.boolean "favorite",    default: false
   end
 
 end
