@@ -38,6 +38,14 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def destroy
+    @bookmark.destroy
+    respond_to do |format|
+      format.html { redirect_to bookmarks_url, notice: 'Bookmark was successfully destroyed.' }
+    end
+  end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
