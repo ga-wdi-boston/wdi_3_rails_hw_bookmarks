@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require 'faker'
+# require 'ffaker'
+
+7.times do
+  Bookmark.create!(url: Faker::Internet.url, title: Faker::Address.street_name, description: Faker::Lorem.sentence(3) , category: ["serious", "funny", "useful"].sample, favorite:["favorite", nil].sample)
+end

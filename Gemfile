@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.1.3"
+ruby "2.1.2"
 
 gem 'rails', '4.2.0.beta2'
 gem 'pg'
@@ -28,3 +28,7 @@ group :development, :test do
   # Turn off verbose logging of asset requests
   gem 'quiet_assets'
 end
+
+  # gem 'ffaker'
+
+  gem 'faker'

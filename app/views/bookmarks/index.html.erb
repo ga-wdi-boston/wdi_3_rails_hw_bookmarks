@@ -1,0 +1,32 @@
+<heading>
+  <h1>Here is a list of all the bookmarks:</h1>
+</heading>
+
+<!-- this is creates a table -->
+<table>
+<!-- this specifies the table header -->
+  <thead>
+    <tr>
+      <th>title</th>
+      <th>description</th>
+      <th>favorite</th>
+      <!-- <th colspan="3"></th> -->
+    </tr>
+  </thead>
+<!-- this specifies the table body -->
+  <tbody>
+    <% @bookmarks.each do |bookmark| %>
+      <tr>
+        <td><%= bookmark.title %></td>
+        <td><%= bookmark.description %></td>
+        <td><%= bookmark.favorite %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+
+
