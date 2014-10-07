@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+(1..3).each do |i|
+  Bookmark.create(title: "Bookmark ##{i}", url: "http://bookmarks/show/#{i}")
+end
