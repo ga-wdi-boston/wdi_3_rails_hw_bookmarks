@@ -1,7 +1,11 @@
+<h1>Bookmarkr</h1>
+
 <ul>
   <li>URL: <%= link_to @bookmark.url, @bookmark.url %></li>
   <li>Title: <%= @bookmark.title %></li>
   <li>Description: <%= @bookmark.description %></li>
 </ul>
 
+<%= link_to "Edit", edit_bookmark_path(@bookmark) %>
+<%= link_to "Delete", @bookmark, method: :delete %>
 <%= link_to "Back", bookmarks_path %>

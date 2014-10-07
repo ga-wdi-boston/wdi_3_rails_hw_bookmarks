@@ -27,12 +27,14 @@ class BookmarksController < ApplicationController
 
   def update
     @bookmark = Bookmark.find(params[:id])
-    @bookmark.update
+    @bookmark.update(bookmark_params)
+    redirect_to @bookmark
   end
 
   def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
+    redirect_to bookmarks_path
   end
 
   private
