@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-(1..3).each do |i|
-  Bookmark.create(title: "Bookmark ##{i}", url: "http://bookmarks/show/#{i}")
-end
+Bookmark.delete_all
+Bookmark.create(title: "Holly's LinkedIn", url: "http://www.linkedin.com/in/hollycmoody/")
+Bookmark.create(title: "Rat Terrier Adoption", url: "http://www.newrattitude.org/dogs.htm")
+Bookmark.create(title: "Yahoo Dashboard", url: "http://www.yahoo.com/")
+
