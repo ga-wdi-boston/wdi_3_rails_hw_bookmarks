@@ -15,6 +15,19 @@ class BookmarksController < ApplicationController
   def edit
   end
 
+  def create
+    @bookmark = Bookmark.new(bookmark_params)
+
+    respond_to do |format|
+      if @bookmark.save
+        format.html { redirect_to @bookmark, notice: 'Bookmark was successfully created.' }
+      else
+        format.html { render :new }
+      end
+    end
+  end
+
+
   def update
     respond_to do |format|
       if @bookmark.update(bookmark_params)
