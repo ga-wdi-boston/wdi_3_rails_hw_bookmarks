@@ -1,0 +1,32 @@
+<%= form_for(@bookmark) do |f| %>
+
+  <div class="field">
+    <h3><%= f.label :url %><br></h3>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
+    <h3><%= f.label :title %><br></h3>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <h3><%= f.label :description %><br></h3>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <h3><%= f.label :category %><br></h3>
+    <%= f.text_field :category %>
+  </div>
+
+  <div class="field">
+    <h3><%= f.label :favorite_flag %><br></h3>
+    <%= f.text_field :favorite_flag %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
