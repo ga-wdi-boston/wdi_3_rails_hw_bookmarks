@@ -4,9 +4,9 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Description</th>
       <th>Category</th>
-      <th>Favorite?</th>
+      <th>Description?</th>
+      <th>Favorited?</th>
     </tr>
   </thead>
 
@@ -14,9 +14,9 @@
     <% @bookmarks.each do |bookmark| %>
       <tr>
         <td><%= bookmark.title %></td>
-        <td><%= bookmark.description %></td>
         <td><%= bookmark.category %></td>
-        <td><%= bookmark.favorite_flag %></td>
+        <td><%= "y" if bookmark.description != "" %></td>
+        <td><%= "y" if bookmark.favorite_flag if bookmark.favorite_flag==true %></td>
         <td><%= link_to 'Show', bookmark %></td>
         <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
         <td><%= link_to 'Delete', bookmark, method: :delete, data: { confirm: 'Are you sure you want to delete this bookmark?'} %></td>

@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  URL:
-  <%= @bookmark.url %>
+<h2> <%= @bookmark.title %></h2>
 </p>
 
 <p>
-  Title:
-  <%= @bookmark.title %>
+  URL:
+  <%= @bookmark.url %>
 </p>
 
 <p>
@@ -21,8 +20,8 @@
 </p>
 
 <p>
-  Favorite?
-  <%= @bookmark.favorite_flag %>
+  Favorited?
+  <%= "yes" if @bookmark.favorite_flag == true %>
 </p>
 
 

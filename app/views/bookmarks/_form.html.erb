@@ -25,7 +25,8 @@
 
   <div class="field">
     <h3><%= f.label :favorite_flag %><br></h3>
-    <%= f.text_field :favorite_flag %>
+    <%= radio_button :bookmark, :favorite_flag,  :true %>Favorited<br>
+    <%= radio_button :bookmark, :favorite_flag,  :false %>Not Favorited<br>
   </div>
 
   <div class="actions">
