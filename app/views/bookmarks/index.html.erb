@@ -12,7 +12,7 @@
 		<h1>Bookmarks</h1>
 	
 		
-		<table>
+		<table class='display'>
 			<thead>
 				<tr>
 					<th>Title</th>
@@ -38,9 +38,9 @@
 						<% else %>
 							<td><input type='checkbox' ></td>
 						<% end %>
-						<td><%= link_to 'Attributes', bookmark %></td>
-						<td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
-						<td><%= link_to 'Delete', bookmark, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+						<td><%= link_to 'Attributes', bookmark, class: 'actions' %></td>
+						<td><%= link_to 'Edit', edit_bookmark_path(bookmark), class: 'actions' %></td>
+						<td><%= link_to 'Delete', bookmark, class: 'actions', method: :delete, data: { confirm: 'Are you sure?'} %></td>
 					</tr>
 				<% end %>
 			</tbody>
@@ -48,7 +48,7 @@
 		<br>
 		
 		
-		<%= link_to "Add New Bookmark", new_bookmark_path  %>
+		<%= link_to "Add Bookmark", new_bookmark_path, class: 'actions'  %>
 	
 	</body>
 </html>

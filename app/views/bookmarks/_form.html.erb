@@ -1,3 +1,4 @@
+<div class='display'>
 <%= form_for(@bookmark) do |f| %>
 	<% if @bookmark.errors.any? %>
 		<div id="error_explanation">
@@ -36,7 +37,8 @@
 	<%= f.check_box :checked %>
 </div>
 
- <div class="actions">
-    <%= f.submit "Add Bookmark"%>
+ <div>
+    <%= f.submit "Add Bookmark", class: 'actions' %>
  </div>
 <% end %>
+</div>
