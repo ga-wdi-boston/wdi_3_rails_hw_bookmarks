@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# Bookmark.delete_all
+
 Bookmark.create(title: "New York Times", url: "http://nyt.com", comment: "", category: :helpful, favorite_flag: false)
 
 Bookmark.create(title: "Gawker", url: "http://gawker.com", comment: "indulgence", category: :funny, favorite_flag: true)

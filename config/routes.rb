@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :bookmarks
+  resources :comments
   root 'bookmarks#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
