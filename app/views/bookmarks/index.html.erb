@@ -1,12 +1,11 @@
-<link rel="stylesheet" href="bookmarks/index.css">
+<link rel="stylesheet" href="bookmarks/style.css"/>
 
 <h1>Listing Bookmarks</h1>
 
 <table>
   <thead>
     <tr>
-      <th>URL</th>
-      <th>Title</th>
+      <th>Title/URL</th>
       <th>Comment</th>
       <th colspan="6"></th>
     </tr>
@@ -15,8 +14,7 @@
   <tbody>
     <% @bookmarks.each do |bookmark| %>
       <tr>
-        <td><%= bookmark.url %></td>
-        <td><%= bookmark.title %></td>
+        <td><%= link_to bookmark.title, bookmark.url %></td>
         <td><%= bookmark.comment %></td>
         
         <td><%= link_to 'Show', bookmark %></td>
