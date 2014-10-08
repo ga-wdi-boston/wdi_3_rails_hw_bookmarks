@@ -15,10 +15,13 @@
     <%= f.text_field :description %>
   </div>
 
+
   <div class="field">
     <h3><%= f.label :category %><br></h3>
-    <%= f.text_field :category %>
-  </div>
+    <%= radio_button :bookmark, :category,  :funny %>Funny<br>
+    <%= radio_button :bookmark, :category,  :serious %>Serious<br>
+    <%= radio_button :bookmark, :category,  :helpful %>Helpful
+ </div>
 
   <div class="field">
     <h3><%= f.label :favorite_flag %><br></h3>
