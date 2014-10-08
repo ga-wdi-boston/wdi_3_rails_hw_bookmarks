@@ -3,7 +3,7 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks
   def index
-    @bookmark = Bookmark.all
+    @bookmarks = Bookmark.all
   end
 
   # GET /bookmarks/1
@@ -49,10 +49,10 @@ class BookmarksController < ApplicationController
 
   private
     def set_bookmark
-      @bookmark = Bookmark.find(params:[id])
+      @bookmark = Bookmark.find(params[:id])
     end
 
     def bookmark_params
-      params.require(:bookmark).permit(:title, :url)
+      params.require(:bookmark).permit(:title, :category, :description, :favorite, :url)
     end
 end
