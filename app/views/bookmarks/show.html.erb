@@ -8,7 +8,7 @@
 
 <ul>
   <% @bookmark.comments.each do |comment| %>
-  <li><%= comment.text %></li>
+  <li><%= comment.text %> <%= link_to "Delete", comment, method: :delete %></li>
   <% end %>
 </ul>
 
