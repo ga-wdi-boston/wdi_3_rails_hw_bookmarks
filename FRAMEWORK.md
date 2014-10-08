@@ -11,7 +11,7 @@ Entry Attributes / Columns:
 Index View: index.html.erb  -->  /bookmarks
   * show ALL bookmarks
   * sorted by title
-  * show only columns: URL, title, category, favorite, description (only show whether one exists)
+  * show only columns: title, category, favorite, description (only show whether one exists)
   * do NOT display URL or description
   * Titles link to individual entry page
   * Optional: allow filter by category
