@@ -1,0 +1,1 @@
+input[type="url"].bkmk-input:invalid { border: 5px solid red; position:relative; }
