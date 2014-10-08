@@ -5,7 +5,7 @@ class CreateBookmark < ActiveRecord::Migration
       t.string :title, null: false
       t.string :description
       t.string :category
-      t.string :favorite
+      t.boolean :favorite
     end
   end
 end

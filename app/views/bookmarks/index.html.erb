@@ -10,7 +10,7 @@
     <tr>
     <!-- these set up the 'columns' for the table -->
       <th>title</th>
-      <th>description</th>
+      <!-- <th>description</th> -->
       <th>favorite</th>
       <!-- <th colspan="3"></th> -->
     </tr>
@@ -22,18 +22,18 @@
       <tr>
       <!-- these are what go into the rows -->
         <td><%= link_to bookmark.title, bookmark.url %></td>
-        <td><%unless bookmark.description.empty?%> * <%end%> </td>
+        <!-- <td><%#unless bookmark.description.empty?%> * <%#end%> </td> -->
         <td><%if bookmark.favorite %> (f) <%end%></td>
-        <td><%= link_to 'Show', bookmark %></td>
-        <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
-        <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '(View Bookmark)', bookmark %></td>
+        <td><%= link_to '(Edit Bookmark)', edit_bookmark_path(bookmark) %></td>
+        <td><%= link_to '(Destroy Bookmark)', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <!-- link to create a new bookmark -->
-<%= link_to 'New Bookmark', new_bookmark_path %>
+<%= link_to '(New Bookmark)', new_bookmark_path %>
 
 
 
