@@ -5,7 +5,16 @@ class BookmarksController < ApplicationController
   end
 
   def new
-    @bookmark = Bookark.new
+    @bookmark = Bookmark.new
   end
 
+  def create
+    # Bookmark.create(url: url, title: title,)
+    # binding.pry
+  end
+  def book_params
+      params.require(:entry).permit(:message, :name)
+  end
 end
+
+
