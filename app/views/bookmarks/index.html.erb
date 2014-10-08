@@ -14,7 +14,7 @@
     <% @bookmarks.each do |bookmark| %>
       <tr>
         <td><%= link_to bookmark.title, URL%></td>
-        <td><%= bookmark.comment %></td>
+        <td><%= bookmark.description %></td>
         <td><%= bookmark.checkbox %></td>
       </tr>
     <% end %>
@@ -22,4 +22,6 @@
 </table>
 
 <br>
+
+<%= link_to 'New Bookmark', new_bookmark_path %>
 
