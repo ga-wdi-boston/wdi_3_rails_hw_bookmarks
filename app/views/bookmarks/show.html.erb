@@ -1,0 +1,26 @@
+<h1>Bookmark Details </h1>
+<p id="notice"><%= notice %></p>
+
+<div class="show-details">
+  <p>
+    <strong>Link:</strong>
+    <%= link_to @bookmark.url, @bookmark.url %>
+  </p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @bookmark.title %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= @bookmark.category %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @bookmark.description %>
+  </p>
+</div>
+<%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
+<%= link_to 'Back', bookmarks_path %>
