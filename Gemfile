@@ -1,3 +1,6 @@
+#I NEED TO ADD BOOTSTRAP AFTER I FINISH SPECS
+
+
 source 'https://rubygems.org'
 ruby "2.1.2"
 
