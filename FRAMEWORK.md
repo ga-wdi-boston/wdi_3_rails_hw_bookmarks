@@ -27,7 +27,14 @@ Seed Data
   * Provide testing data for testing
   * Should not produce any errors when pulling down a fresh copy of app and running `rake db:setup`.
 
-
+NEXT STEPS:
+  * modify size of text fields to match requested input
+  * change boolean in favorite to checkbox
+  * link bookmark in title to show view
+  * make urls in show view link to actual site
+  * dropdown menu to select category
+  * how to show a bookmark *has* a description in index view without showing full description?
+  * include delete and edit buttons on show view as well
 
 ## Specifications
 

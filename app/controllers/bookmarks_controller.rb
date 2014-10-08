@@ -7,8 +7,17 @@ class BookmarksController < ApplicationController
   end
 
   # GET /bookmarks/1
-  # The `1` here indicates a specific entry of bookmark with ID 1
+  # The `1` here indicates a specific entry of bookmark with ID 1: Retrieves a single bookmark.
   def show
+    # @bookmark = Bookmark.find params[:id]
+
+    # to show what's actually being passed into @bookmark, put binding.pry here.
+
+    # Same as above:
+      # bookmark_id = params[:id]
+      # @bookmark = Bookmark.find bookmark_id
+
+    # @bookmark alone would return an array of a single bookmark's elements.
   end
 
   # GET /bookmarks/new
@@ -33,6 +42,7 @@ class BookmarksController < ApplicationController
 
   # PATCH/PUT /bookmarks/1
   def update
+
     if @bookmark.update(bookmark_params)
       redirect_to @bookmark, notice: 'Bookmark was successfully updated.'
     else
@@ -42,6 +52,7 @@ class BookmarksController < ApplicationController
 
   # DELETE /bookmarks/1
   def destroy
+    # @bookmark = Bookmark.find params[:id]
     @bookmark.destroy
 
     redirect_to bookmarks_url, notice: 'Bookmark was successfully destroyed.'
