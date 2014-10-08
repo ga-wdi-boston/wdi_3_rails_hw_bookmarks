@@ -14,7 +14,7 @@ The app root should show a list of all my bookmarks, sorted by title. URL and co
 
 Since this is a decently-sized project, put some polish into it! The details of how to display the needed information are up to you &ndash; make your bookmarker a product someone would actually want to use. If you're feeling ambitious, you can try a CSS framework like [Bootstrap](http://getbootstrap.com/getting-started) or [Foundation](http://foundation.zurb.com/docs/applications.html).
 
-The *only* thing you can use a generator for, is creating new migrations. Scaffolding or other generators give -10 points to Ravenclaw. 
+The *only* thing you can use a generator for, is creating new migrations. Scaffolding or other generators give -10 points to Ravenclaw.
 
 One more thing: Make sure you provide some working seed data so we can easily test your app without typing in a bunch of bookmarks. Pulling down a fresh copy of your app and running `rake db:setup` should not give any errors.
 
@@ -33,8 +33,20 @@ One more thing: Make sure you provide some working seed data so we can easily te
 * Code follows style conventions and has descriptive variable and method names
 * Repository has clean, logical, single-task commits with descriptive messages
 
+## Day 2
+
+Make use of the `has_many` relationship to add the ability of commenting on each bookmark. A user should be able to:
+
+* View all comments on a bookmark on the bookmark's show page.
+* Delete a comment
+* Edit a comment on another page
+* View a specific singular comment
+* See the number of comments each Bookmark has on the Bookmark index
+* When you delete a bookmark, make it so that the comments are automatically deleted
+
+
 ## Extra Challenges
 
 * Instead of the real URL, link bookmark titles to another path within your app that redirects to the real URL and increments a click-tracking counter. This will allow me to share specific bookmarks with friends and track their popularity.
-* A bookmark can have many comments
+* Comments can have sub-comments in a nested manner similar to Reddit or Hacker News.
 * Extra points will be awarded for crafting an impressive and attractive user experience that makes use of a CSS framework such as Bootstrap or Foundation.
