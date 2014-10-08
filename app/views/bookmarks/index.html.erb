@@ -1,3 +1,4 @@
+<!-- this is the hearder of the idex -->
 <heading>
   <h1>Here is a list of all the bookmarks:</h1>
 </heading>
@@ -7,6 +8,7 @@
 <!-- this specifies the table header -->
   <thead>
     <tr>
+    <!-- these set up the 'columns' for the table -->
       <th>title</th>
       <th>description</th>
       <th>favorite</th>
@@ -15,8 +17,10 @@
   </thead>
 <!-- this specifies the table body -->
   <tbody>
+  <!-- runs over each bookmark and does something -->
     <% @bookmarks.each do |bookmark| %>
       <tr>
+      <!-- these are what go into the rows -->
         <td><%= link_to bookmark.title %></td>
         <td><%= bookmark.description %></td>
         <td><%= bookmark.favorite %></td>
@@ -28,7 +32,8 @@
   </tbody>
 </table>
 
-<%= link_to 'New Bookmakr', new_bookmark_path %>
+<!-- link to create a new bookmark -->
+<%= link_to 'New Bookmark', new_bookmark_path %>
 
 
 
