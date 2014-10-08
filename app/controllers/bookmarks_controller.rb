@@ -33,6 +33,11 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def destroy
+    @bookmark.destroy
+    redirect_to bookmarks_url, notice: 'Bookmark was successfully deleted.'
+  end
+
   private
 
   def set_bookmark
