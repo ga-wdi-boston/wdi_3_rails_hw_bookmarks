@@ -13,6 +13,7 @@ class BookmarksController < ApplicationController
 # method show GETS the bookmark and shows it in a new page
 #based upon the id of the bookmark within the table
   def show
+    @comments = @bookmark.comments
   end
 
 

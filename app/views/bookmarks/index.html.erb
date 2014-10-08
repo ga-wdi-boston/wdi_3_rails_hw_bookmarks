@@ -23,7 +23,7 @@
       <!-- these are what go into the rows -->
         <td><%= link_to bookmark.title, bookmark.url %></td>
         <!-- <td><%#unless bookmark.description.empty?%> * <%#end%> </td> -->
-        <td><%if bookmark.favorite %> (f) <%end%></td>
+        <td><%if bookmark.favorite %> (yes) <%end%></td>
         <td><%= link_to '(View Bookmark)', bookmark %></td>
         <td><%= link_to '(Edit Bookmark)', edit_bookmark_path(bookmark) %></td>
         <td><%= link_to '(Destroy Bookmark)', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
