@@ -3,5 +3,5 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+ bookmarks = Bookmark.create( url: 'http://www.example.com', title: 'Sometitle' )
 #   Mayor.create(name: 'Emanuel', city: cities.first)

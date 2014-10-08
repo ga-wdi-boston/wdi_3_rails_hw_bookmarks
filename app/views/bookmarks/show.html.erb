@@ -1,1 +1,4 @@
-<h1>Here are your bookmarks:</h1>
+<h1>Bookmark:</h1>
+<%= @bookmark.title %><br>
+<%= link_to(@bookmark.url,@bookmark.url) %>
+<%= link_to 'Back', bookmarks_path %>
