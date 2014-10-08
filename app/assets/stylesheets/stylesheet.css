@@ -425,3 +425,41 @@ td,
 th {
   padding: 0;
 }
+/* END Normalize
+   ========================================================================== */
+  body {
+    background-color: #938299;
+    color: #443B47;
+    font-family: 'Dancing Script', cursive;
+  }
+  h1 {
+    font-size: 50px;
+    text-align: left;
+  }
+  h2 {
+    text-align: center;
+  }
+  p {
+    font-size: 20px;
+  }
+  a {
+    color: #443B47;
+  }
+
+table, th, td {
+  border: 1px solid #443B47;
+}
+table {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+th {
+  height: 50px;
+}
+  .show-details  {
+    width: 700px;
+    margin: 0 auto;
+  }
+
+
