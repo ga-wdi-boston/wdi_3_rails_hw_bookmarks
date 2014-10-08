@@ -22,4 +22,5 @@
 <div>
   <%= link_to '< All Links', bookmarks_path, class: 'btn btn-primary' %>
   <%= link_to 'Edit this link', edit_bookmark_path, class: 'btn btn-primary' %>
+  <%= link_to 'Delete this link', @bookmark, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-primary' %>
 </div>
