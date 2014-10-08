@@ -1,0 +1,25 @@
+<h1>This is the bookmarks project</h1>
+
+<%= form_for(@bookmark) do |f| %>
+
+  <div class= "field">
+    <%f.label : url %>
+    <%f.text_field : url %>
+  </div>
+
+  <div class= "field">
+    <%f.label : title %>
+    <%f.text_field : title %>
+  </div>
+
+  <div class= "field">
+    <%f.label : favorite %>
+    <%f.text field : favorite %>
+  </div>
+
+  <div class= "field">
+    <%f.label : comments %>
+    <%f.text_area : comments, rows: 6 %>
+  </div>
+
+<%end%>
