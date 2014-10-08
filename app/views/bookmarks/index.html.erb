@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<h1>List of Bookmarks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+<!-- iterates over the entries and posts the entries in table cells. -->
+  <tbody>
+    <% @bookmarks.each do |bookmark| %>
+      <tr>
+        <td><%= link_to bookmark.title, URL%></td>
+        <td><%= bookmark.comment %></td>
+        <td><%= bookmark.checkbox %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
