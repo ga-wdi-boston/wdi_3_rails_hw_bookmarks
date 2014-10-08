@@ -14,3 +14,4 @@ Bookmark.create(title: "AOL", url: "http://aol.com", comment: "lol", category: :
 
 Bookmark.create(title: "Reddit", url: "http://www.reddit.com", comment: "timesink", category: :funny, favorite_flag: true)
 
+Bookmark.create(title: "Jezebel", url: "http://jezebel.com", comment: "preach it", category: :serious, favorite_flag: true)
