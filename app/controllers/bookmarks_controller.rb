@@ -9,8 +9,23 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
   end
 
+  def create
+    @bookmark = Bookmark.new(bookmark_params)
+
+    if @bookmark.save
+      redirect_to @bookmark, notice: 'Bookmark was successfully created.'
+    else
+      render :new
+    end
+  end
+
   private
+
   def set_bookmark
     @bookmark = Bookmark.find(params[:id])
+  end
+
+  def bookmark_params
+    params.require(:bookmark).permit(:url, :title, :description, :category, :favorite)
   end
 end
