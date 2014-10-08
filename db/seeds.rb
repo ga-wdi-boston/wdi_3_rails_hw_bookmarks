@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Bookmark.create(url: "www.nytimes.com", title: "New York Times", comment: "news source")
+Bookmark.create(url: "www.aljazeera.com", title: "Al Jazeera", comment: "My favorite news source.")
