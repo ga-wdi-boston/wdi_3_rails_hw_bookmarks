@@ -1,5 +1,8 @@
 class BookmarksController < ApplicationController
 
+#NEED TO SWITCH INDEX AND SHOW SO SHOW ACTION AND VIEW BECOMES THE ROOT/LANDING PAGE
+
+#NEED TO WORK MORE WITH PLURALIZATION AND SINGULAR USAGE IN CONTROLLERS
 
   def index
     @bookmarks = Bookmark.all.order(:title)
@@ -9,12 +12,13 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
   end
 
+#NEED TO GET TITLE TO ALPHABETIZE
 
   def show
     @bookmark = Bookmark.find(params[:id])
   end
 
-
+#SOME OF THIS MAGIC WAS COPIED AND PASTED
   def create
     @bookmark = Bookmark.create(bookmark_params)
     if @bookmark.save
