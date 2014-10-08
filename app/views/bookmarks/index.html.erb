@@ -1,0 +1,17 @@
+<h1>These are your bookmarks:</h1>
+
+<table border="1">
+  <% @bookmarks.each do |bookmark| %>
+    <tr>
+      <td> <%= bookmark.url %> </td>
+      <td> <%= bookmark.title %> </td>
+      <td> <%= bookmark.description %> </td>
+      <td> <%= bookmark.category %> </td>
+      <td> <%= bookmark.checkbox %> </td>
+      <td> <%= bookmark.created_at %> </td>
+      <td> <%= bookmark.updated_at %> </>
+    </tr>
+  <% end %>
+</table>
+<p></p>
+<button type="button">Add Bookmark</button>
