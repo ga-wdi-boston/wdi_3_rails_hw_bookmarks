@@ -15,7 +15,7 @@
       <tr>
         <td><%= link_to bookmark.title, bookmark.url %></td>
         <td><%= bookmark.category %></td>
-        <td><%= "y" if bookmark.description != "" %></td>
+        <td><%= "y" if bookmark.comment != "" %></td>
         <td><%= "y" if bookmark.favorite_flag if bookmark.favorite_flag==true %></td>
         <td><%= link_to 'View More', bookmark %></td>
       </tr>

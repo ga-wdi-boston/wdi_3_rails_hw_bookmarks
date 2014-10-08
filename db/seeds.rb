@@ -6,8 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Bookmark.create(title: "New York Times", url: "http://nyt.com", description: "", category: :helpful, favorite_flag: false)
+Bookmark.create(title: "New York Times", url: "http://nyt.com", comment: "", category: :helpful, favorite_flag: false)
 
-Bookmark.create(title: "Gawker", url: "http://gawker.com", description: "indulgence", category: :funny, favorite_flag: true)
+Bookmark.create(title: "Gawker", url: "http://gawker.com", comment: "indulgence", category: :funny, favorite_flag: true)
 
-Bookmark.create(title: "AOL", url: "http://aol.com", description: "lol", category: :funny, favorite_flag: false)
+Bookmark.create(title: "AOL", url: "http://aol.com", comment: "lol", category: :funny, favorite_flag: false)
+
+Bookmark.create(title: "Reddit", url: "http://www.reddit.com", comment: "timesink", category: :funny, favorite_flag: true)
+

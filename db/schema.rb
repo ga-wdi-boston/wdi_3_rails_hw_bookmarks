@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20141007204510) do
   create_table "bookmarks", force: true do |t|
     t.string  "url",           null: false
     t.string  "title",         null: false
-    t.string  "description"
+    t.string  "comment"
     t.string  "category"
     t.boolean "favorite_flag"
   end
