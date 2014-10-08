@@ -1,13 +1,17 @@
 class BookmarksController < ApplicationController
-  before_action :set_bookmark, only: [:show, :edit, :update, :destroy]
+
 
   def index
-    @bookmarks = Bookmark.all
+    @bookmarks = Bookmark.all.order(:title)
   end
 
-  def set_bookmark
+  def new
+    @bookmark = Bookmark.new
   end
 
   def show
   end
+
+
+
 end
