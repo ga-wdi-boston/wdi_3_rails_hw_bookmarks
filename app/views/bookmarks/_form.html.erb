@@ -11,16 +11,16 @@
   <% end %>
   <p>
     <%= f.label :title %><br>
-    <%= f.text_field :title, class: 'bkmk-input title' %>
+    <%= f.text_field :title, class: 'form-control bkmk-input title' %>
   </p>
   <p>
     <%= f.label :url %><br>
-    <%= f.url_field :url, class: 'bkmk-input url' %>
+    <%= f.url_field :url, class: 'form-control bkmk-input url' %>   
   </p>
   <p>
     <%= f.label :category %><br>
-    <%= f.text_field :category, class: 'bkmk-input category' %>
+    <%= f.text_field :category, class: 'form-control bkmk-input category' %>
   </p>
-  <p><%= f.check_box :checkbox, class: 'bkmk-input checked' %><%= f.label :checkbox, 'Favorite' %></p>
-  <p><%= f.submit :submit, class: 'bkmk-input submit', value: 'Save Bookmark' %></p>
+  <p><%= f.check_box :checkbox, class: 'form-control bkmk-input checked' %><%= f.label :checkbox, 'Favorite' %></p>
+  <p><%= f.submit :submit, class: 'btn btn-primary bkmk-input submit', value: 'Save Bookmark' %></p>
 <% end %>

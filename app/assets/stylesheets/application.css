@@ -10,6 +10,16 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bootstrap.min
  *= require_tree .
  *= require_self
  */
+
+body { padding-top: 60px; }
+p,a,ul,li,h1,h2,h3,h4,h5,h6 { font-family: 'Source Sans Pro', sans-serif; }
+ul.nav.navbar-nav li a { color:white; }
+ul.nav.navbar-nav li a:hover { background-color: #999; }
+ul.nav.navbar-nav li ul li a { color: #999;}
+ul.nav.navbar-nav li ul li a:hover { background-color: #ccc; }
+a.navbar-brand { color: white; }
+.bkmkr-navbar { background-color: #ccc; }

@@ -1,12 +1,22 @@
-<% @bookmarks.each do |bookmark| %>
-  <div class="bookmark-listing">
-    <h2 class="bookmark-title"><%= link_to bookmark.title, bookmark.url %></h2>
-    <%= link_to 'View Details', bookmark_path(bookmark), class: 'bookmark-link' %>
-    <% if bookmark.checkbox %>
-       &#9733;
-    <% end %>
-    <% if bookmark.comments.length > 0 %>
-      <span><%= bookmark.comments.length %> Comments</span>
-    <% end %>
+<div class="container">
+  <% @bookmarks.each do |bookmark| %>
+  <div class="row">
+    <div class="col-md-2">
+      
+    </div>
+    <div class="col-md-4">
+      <h2 class="bookmark-title"><%= link_to bookmark.title, bookmark.url %></h2>
+      <%= link_to 'View Details', bookmark_path(bookmark), class: 'btn btn-primary btn-sm bookmark-link' %>
+      <% if bookmark.comments.length > 0 %>
+        <span><%= bookmark.comments.length %> Comments</span>
+      <% end %>
+      <% if bookmark.checkbox %>
+         &#9733;
+      <% end %>
+    </div>
   </div>
-<% end %>
+  <hr>
+  <% end %>
+
+</div>
+
