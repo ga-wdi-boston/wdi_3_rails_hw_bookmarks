@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Bookmark.delete_all
-Bookmark.create(title: "Holly's LinkedIn", url: "http://www.linkedin.com/in/hollycmoody/")
-Bookmark.create(title: "Rat Terrier Adoption", url: "http://www.newrattitude.org/dogs.htm")
-Bookmark.create(title: "Yahoo Dashboard", url: "http://www.yahoo.com/")
+Bookmark.create(title: "Holly's LinkedIn", url: "http://www.linkedin.com/in/hollycmoody/", category: "Serious", description: "Holly's LinkedIn account.")
+Bookmark.create(title: "Rat Terrier Adoption", url: "http://www.newrattitude.org/dogs.htm",  category: "Useful", description: "Save the ratties!! Take home a cutie!!")
+Bookmark.create(title: "Yahoo Dashboard", url: "http://www.yahoo.com/", category: "Funny", description: "Yahoo Dashboard to see stocks and news.")
 
