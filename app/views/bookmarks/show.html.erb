@@ -1,27 +1,23 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @bookmark.title %></h1>
 <p>
   <strong>Url:</strong>
-  <%= @bookmark.url %>
+  <%= link_to @bookmark.url, @bookmark.url %>
 </p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @bookmark.title %>
-</p>
-
-<p>
-  <strong>Description</strong>
+  <strong>Description:</strong>
   <%= @bookmark.description %>
 </p>
 
 <p>
-  <strong>Category</strong>
+  <strong>Category:</strong>
   <%= @bookmark.category %>
 </p>
 
 <p>
-  <strong>Favorite</strong>
+  <strong>Favorite:</strong>
   <%= @bookmark.favorite %>
 </p>
 <%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
