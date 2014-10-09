@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Bookmark.delete_all
+
+
 bookmarks_list = [
   ["Google", "Useful", "Search Engine", true, "http://www.google.com"],
   ["New York Times", "Serious", "News", true, "http://www.nytimes.com"],
