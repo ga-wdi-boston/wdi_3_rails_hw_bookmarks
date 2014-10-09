@@ -5,6 +5,12 @@
   <dt>Comment: </dt><dd><%= @bookmark.comment %></dd>
 </dl>
 
+<ol>
+<% @bookmark.comments.each do |comment| %>
+  <li><%= comment.comment %></li>
+<% end %>
+</ol>
+
 <%= link_to 'Delete',
         {controller: :bookmarks, action: :destroy, id: @bookmark },
         method: :delete %>
