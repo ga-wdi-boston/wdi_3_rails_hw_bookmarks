@@ -8,6 +8,7 @@ class BookmarksController < ApplicationController
   def show
     @comment = @bookmark.comments.build
     @comments = @bookmark.comments
+    time = @commented.created_at
   end
 
   def edit
