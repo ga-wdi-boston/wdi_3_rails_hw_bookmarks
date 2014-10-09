@@ -10,6 +10,13 @@ class CommentsController < ApplicationController
     # @comment = Comment.find(params[:id])
   end
 
+  def delete
+    @comment.destroy(comment_params)
+    respond_to @comment.bookmark
+
+  end
+
+
 
   private
   def comment_params
