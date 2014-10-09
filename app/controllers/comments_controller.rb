@@ -6,6 +6,15 @@ class CommentsController < ApplicationController
 
   end
 
+  def show
+    # @bookmark = Bookmark.find(params[:id])
+    @comment = Comment.find(params[:id])
+
+
+
+  end
+
+
   def new
     # @comment = Comment.find(params[:id])
   end
