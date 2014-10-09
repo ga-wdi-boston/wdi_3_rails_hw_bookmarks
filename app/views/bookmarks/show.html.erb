@@ -35,9 +35,10 @@ are to be displayed when you ask to show a entry -->
 <ul>
  <h5> Comments: </h5>
   <% @comments.each do |c| %>
-    <li><%= c.comment %>  <%= link_to "Delete Comment", c.comment, method: :delete, data: { confirm: 'Are you sure?'} %></li>
+    <li><%= c.comment %> <%= link_to "Delete Comment", comment_path(c), method: :delete, data: { confirm: 'Are you sure?'} %> </li>
   <%end%>
 </ul>
+
 
 <h2> New Comment </h2>
 

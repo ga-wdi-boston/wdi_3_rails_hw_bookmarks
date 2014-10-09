@@ -17,6 +17,8 @@ class BookmarksController < ApplicationController
     @comments = @bookmark.comments
     @bookmark = Bookmark.find(params[:id])
     @comment = @bookmark.comments.new
+    # @comment_id = Comment.find(params[:id])
+    # binding.pry
   end
 
 
