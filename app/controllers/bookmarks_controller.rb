@@ -17,7 +17,9 @@ class BookmarksController < ApplicationController
   end
 
   def show
+    # binding.pry
     @bookmark_comments = @bookmark.comments
+    @comment = Comment.new(bookmark_id: @bookmark.id)
     # @comments = Comment.all
     # @bookmark_comments = @comments.where(bookmark_id: params[:id])
   end
