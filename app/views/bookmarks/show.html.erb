@@ -2,8 +2,17 @@
 <dl>
   <dt>URL: </dt> <dd><%= @bookmark.url %></dd>
   <dt>Favorite: </dt><dd><%= @bookmark.favorite %></dd>
-  <dt>Comment: </dt><dd><%= @bookmark.comment %></dd>
+  <dt>Comments: </dt>
+
+  <ul>
+<% @bookmark.comments.each do |comment| %>
+  <li><%= comment.comment %></li>
+<% end %>
+</ul>
+
 </dl>
+
+
 
 <%= link_to 'Delete',
         {controller: :bookmarks, action: :destroy, id: @bookmark },
