@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   root 'bookmarks#index'
-  resources :bookmarks, only: [:show, :new, :create, :edit, :update, :destroy]
-
-  resources :comments, only: [:new, :create]
+  resources :bookmarks
+  resources :comments
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
