@@ -2,9 +2,11 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   def show
+    binding.pry
   end
 
   def create
+    binding.pry
     @comment = Comment.create(comment_params)
     redirect_to @comment.bookmark
   end
@@ -13,7 +15,8 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @comment = Comment.new
+    binding.pry
+    @comment = Comment.create(comment_params)
   end
 
   def update
@@ -22,9 +25,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    bookmark = @comment.bookmark
     @comment.destroy
-    redirect_to bookmark
+    redirect_to @bookmark
   end
 
   private
@@ -33,6 +35,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:content, :created_at, :boommark)
+    params.require(:comment).permit(:content, :created_at, :bookmark_id)
   end
 end
