@@ -4,9 +4,6 @@
 		<title>Bookmarks</title>
 	</head>
 	<body>
-	
-	
-	
 		<p id="notice"><%= notice %></p>
 		
 		<h1>Bookmarks</h1>
@@ -18,7 +15,7 @@
 					<th>Title</th>
 					<th>Commented</th>
 					<th>Favorites</th>
-					<th colspan="2"></th>
+					<th colspan="3"></th>
 				</tr>
 			</thead>
 		
@@ -34,9 +31,9 @@
 							<td>No</td>
 						<% end %>
 						<% if bookmark.checked %>
-							<td><input type='checkbox' checked></td>
+							<td>*</td>
 						<% else %>
-							<td><input type='checkbox' ></td>
+							<td>-</td>
 						<% end %>
 						<td><%= link_to 'Attributes', bookmark, class: 'actions' %></td>
 						<td><%= link_to 'Edit', edit_bookmark_path(bookmark), class: 'actions' %></td>
