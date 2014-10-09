@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  def new
+  def create
     @comment = Bookmark.create(comment_params)
     redirect_to @comment.bookmark
   end
