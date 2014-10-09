@@ -3,8 +3,8 @@ class CreateComments < ActiveRecord::Migration
     create_table :comments do |t|
       t.string :message
       t.string :name
+      t.timestamp :created_at, null: false
       t.belongs_to :bookmark, index: true
-      t.timestamps null: false
     end
   end
 end
