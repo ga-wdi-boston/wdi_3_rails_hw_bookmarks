@@ -2,7 +2,7 @@
 <%= form_for([@bookmark, @bookmark.tags.build]) do |f| %>
   <p>
     <%= f.label :tag_text %><br>
-    <%= f.text_field :tag_text %>
+    <%= f.text_field :tag_text, class: 'form-control' %>
   </p>
   <p>
     <%= f.submit :submit, value: 'Add Tag', class: 'btn btn-default' %>
