@@ -2,6 +2,7 @@
 
 
 * Fork and clone, rake db:reset (db:drop db:create db:migrate db:seed)
+* <code>$ bundle</code>
 * Start your server
 * Navigate to http://localhost:3000
 
@@ -37,8 +38,6 @@ This version of Bookmarkr allows for:
 * View a specific singular comment
 * <del>See the number of comments each Bookmark has on the Bookmark index</del>
 * <del>When you delete a bookmark, make it so that the comments are automatically deleted</del>
-
-
 
 
 *"Who got this CRUD all over my bookmarks?"*
