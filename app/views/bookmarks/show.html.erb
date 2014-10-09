@@ -4,32 +4,32 @@
 are to be displayed when you ask to show a entry -->
 <div>
   <p>
-    <strong>URL:</strong>
+    <h5>URL:</h5>
     <%= @bookmark.url %>
   </p>
 
   <p>
-    <strong>Title:</strong>
+    <h5>Title:</h5>
     <%= @bookmark.title %>
   </p>
 
   <p>
-    <strong>Description:</strong>
+    <h5>Description:</h5>
     <%= @bookmark.description %>
   </p>
 
   <p>
-    <strong>Category:</strong>
+    <h5>Category:</h5>
     <%= @bookmark.category %>
   </p>
 
   <p>
-    <strong>Favorite:</strong>
+    <h5>Favorite:</h5>
     <%= @bookmark.favorite %>
   </p>
 
   <ul>
-   <strong> Comments: </strong>
+   <h5> Comments: </h5>
     <% @comments.each do |c| %>
       <li><%= c.comment %></li>
     <%end%>

@@ -6,6 +6,7 @@ class BookmarksController < ApplicationController
   #method index collects all the instances of bookmarks
   def index
     @bookmarks = Bookmark.order(:title)
+    # @comment_num = @bookmark.comment.count
     # @title = Bookmark.title
 
   end
