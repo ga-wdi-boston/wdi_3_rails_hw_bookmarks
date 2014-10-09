@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
+  def show
+  end
+
   def create
     @comment = Comment.create(comment_params)
     redirect_to @comment.bookmark
@@ -25,6 +28,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:content, :boommark)
+    params.require(:comment).permit(:content, :created_at, :boommark)
   end
 end

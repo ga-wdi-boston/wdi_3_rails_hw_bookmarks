@@ -1,0 +1,16 @@
+<h1>Comment Details </h1>
+<p id="notice"><%= notice %></p>
+
+<div class="show-details">
+  <p>
+    <strong>Created on:</strong>
+    <%= @comment.created_at.strftime("%Y-%m-%d") %>
+  </p>
+  <p>
+    <strong>Comment:</strong>
+    <%= @comment.content %>
+  </p>
+</div>
+<%= link_to 'Edit Comment', edit_comment_path(@comment) %> |
+<%= link_to 'Delete Comment', @comment, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back to bookmark', bookmarks_path(@comment.bookmark) %>
