@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def create
-    @song = Song.create(song_params)
+    @comment = Comment.create(song_params)
     redirect_to @comment.bookmark
   end
 
