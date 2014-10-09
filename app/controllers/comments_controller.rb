@@ -17,9 +17,14 @@ class CommentsController < ApplicationController
   end
 
   def update
-    binding.pry
     @comment.update(comment_params)
     redirect_to @comment.bookmark
+  end
+
+  def destroy
+    bookmark = @comment.bookmark
+    @comment.destroy
+    redirect_to bookmark
   end
 
   private
