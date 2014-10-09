@@ -1,5 +1,6 @@
 class BookmarksController < ApplicationController
-
+#before action calls a defined method before each action so Bookmark.find(params[:id] could be called
+  #before each action that uses it)
 #NEED TO SWITCH INDEX AND SHOW SO SHOW ACTION AND VIEW BECOMES THE ROOT/LANDING PAGE
 
 #NEED TO WORK MORE WITH PLURALIZATION AND SINGULAR USAGE IN CONTROLLERS
@@ -10,12 +11,18 @@ class BookmarksController < ApplicationController
 
   def new
     @bookmark = Bookmark.new
+
   end
 
 #NEED TO GET TITLE TO ALPHABETIZE
 
   def show
+    # @comments = @bookmark.comments
+    # @bookmark = Bookmark.find(params[:id])
+    # @comment = @bookmark.comments.new
     @bookmark = Bookmark.find(params[:id])
+    # create a new comment where we specify that the attribute bookmark_id is 1
+    @comment = Comment.new(bookmark_id: params[:id])
   end
 
 #SOME OF THIS MAGIC WAS COPIED AND PASTED
@@ -24,6 +31,7 @@ class BookmarksController < ApplicationController
     if @bookmark.save
       flash[:notice] = 'Bookmark created!'
       redirect_to bookmarks_path
+      #redirect_to action: :index
     else
       flash.now[:alert]=@bookmark.errors.full_messages.join(', ')
       render :new
@@ -41,6 +49,7 @@ class BookmarksController < ApplicationController
       redirect_to @bookmark, notice: "Bookmark update complete"
     else
       render :edit
+      #this re-renders the new
     end
   end
 
@@ -55,3 +64,4 @@ private
     end
 end
 
+#This is  saying we are looking for a has :bookmark that contains these hashes in it

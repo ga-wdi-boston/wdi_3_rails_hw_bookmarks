@@ -1,2 +1,7 @@
-<%= render 'form', bookmark: @bookmark %>
-      <%= link_to 'Back', bookmarks_path %>
+
+
+<h1>Edit: <%= @bookmark.title %></h1>
+
+<%= render "form" %>
+
+<%= link_to 'Back', bookmarks_path %>

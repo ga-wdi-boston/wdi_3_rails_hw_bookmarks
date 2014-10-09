@@ -1,4 +1,4 @@
 class Comment < ActiveRecord::Base
-  belongs_to :bookmarks  dependent::destroy
+  belongs_to :bookmark
 
 end

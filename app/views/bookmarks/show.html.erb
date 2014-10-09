@@ -3,6 +3,36 @@
 root 'bookmarks#index' to 'bookmarks#show' -->
 
 <h1>Bookmark:</h1>
-<%= @bookmark.title %><br>
-<%= link_to(@bookmark.url,@bookmark.url) %>
+<ul>
+  <li>Title:h<%= @bookmark.title %></li> <!--because you have a migration with title you can call .column name, rails magic for free -->
+  <li>Url: <%= @bookmark.url %></li>
+  <li>Favorite: <%= @bookmark.favorite %></li>
+  <li><%= link_to(@bookmark.url,@bookmark.url) %></li>
+  <li><%= link_to 'Back', bookmarks_path %></li>
+
+</ul>
+
+<h2>Comments:</h2>
+<ul>
+<% @bookmark.comments.each do |comment| %>
+  <li><%= comment.content %></li>
+<% end %>
+</ul>
+
+<%= form_for @comment do |f| %>
+  <%= f.hidden_field :bookmark_id %>
+  <%= f.text_field :content, placeholder: "Comment" %><br>
+<%= f.submit "Submit" %>
+<% end %>
+
 <%= link_to 'Back', bookmarks_path %>
+
+
+
+<br>
+
+<%= link_to 'New Bookmark', new_bookmark_path %>
+
+
+
+

@@ -7,7 +7,7 @@
   <%= f.text_field :title, placeholder: "Title" %><br>
   <%= f.url_field :url, placeholder: "Paste URL" %><br>
   <%= f.text_area :description, placeholder: "Describe" %><br>
-  <%= "Check Favorite" %>
+  <%= f.label :favorite %>
   <%= f.check_box :favorite %><br>
 <%= f.submit "Submit" %>
 <% end %>
