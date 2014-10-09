@@ -1,1 +1,3 @@
+.bookmarks-container { margin-top: 50px; }
+h2.bookmark-title { margin-top: 0; padding: 0; }
 input[type="url"].bkmk-input:invalid { border: 5px solid red; position:relative; }
