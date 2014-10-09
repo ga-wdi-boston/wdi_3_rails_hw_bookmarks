@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :bookmarks do 
-    resources :comments do
-      resources :subcomments
-    end
+  resources :bookmarks do
+    resources :comments
     resources :tags
   end
 

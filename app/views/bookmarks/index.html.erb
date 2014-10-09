@@ -1,9 +1,6 @@
 <div class="container">
   <% @bookmarks.each do |bookmark| %>
   <div class="row">
-    <div class="col-md-2">
-      
-    </div>
     <div class="col-md-4">
       <h2 class="bookmark-title"><%= link_to bookmark.title, bookmark.url %></h2>
       <%= link_to 'View Details', bookmark_path(bookmark), class: 'btn btn-primary btn-sm bookmark-link' %>
