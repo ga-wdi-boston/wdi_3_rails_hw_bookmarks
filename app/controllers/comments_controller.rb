@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def index
-    @comments = Comment.order()
+    @comments = Comment.order(:created_at)
   end
 
   def create

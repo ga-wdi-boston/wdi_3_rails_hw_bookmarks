@@ -4,6 +4,7 @@ class CreateComments < ActiveRecord::Migration
       t.string :message
       t.string :name
       t.belongs_to :bookmark, index: true
+      t.timestamps null: false
     end
   end
 end
