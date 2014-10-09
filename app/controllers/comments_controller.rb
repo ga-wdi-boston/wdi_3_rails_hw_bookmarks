@@ -1,4 +1,8 @@
 class CommentsController < ApplicationController
+  def index
+    @comments = Comment.order()
+  end
+
   def create
     @comment = Bookmark.create(comment_params)
     redirect_to @comment.bookmark

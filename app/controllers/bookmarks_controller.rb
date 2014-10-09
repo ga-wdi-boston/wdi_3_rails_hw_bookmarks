@@ -11,13 +11,6 @@ class BookmarksController < ApplicationController
     @comments = @bookmark.comments
   end
 
-  def new
-    @bookmark = Bookmark.new
-  end
-
-  def edit
-  end
-
   def create
     @bookmark = Bookmark.new(bookmark_params)
 
@@ -28,12 +21,19 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def new
+    @bookmark = Bookmark.new
+  end
+
   def update
     if @bookmark.update_attributes(bookmark_params)
       redirect_to @bookmark, notice: 'Bookmark was successfully updated.'
     else
       render :edit
     end
+  end
+
+  def edit
   end
 
   def destroy
