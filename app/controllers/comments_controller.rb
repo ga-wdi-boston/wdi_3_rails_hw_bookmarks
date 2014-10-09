@@ -1,9 +1,4 @@
 class CommentsController < ApplicationController
-  def index
-    @comments = Comment.order(:created_at)
-    @bookmark = Bookmark.find(params[:id])
-  end
-
   def new
     @comment = Comment.new
   end
@@ -15,7 +10,7 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:bookmark).permit(:message, :bookmark_id)
+    params.require(:bookmark).permit(:message, :bookmark_id, :created_at, :updated_at)
   end
 
 end

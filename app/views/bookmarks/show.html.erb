@@ -30,4 +30,12 @@
 <%= render 'comment_form' %>
 
 <hr>
-<%= render comments/index %>
+
+<% @comments.each do |comment| %>
+  <p>
+    <%= comment.message %>
+    <br>
+    <strong><%= comment.name %></strong>
+  </p>
+<% end %>
+
