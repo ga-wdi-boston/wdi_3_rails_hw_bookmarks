@@ -1,3 +1,6 @@
 <p><%= comment.body %></p>
+<!-- edit link goes here -->
 <%= link_to 'Destroy Comment', [comment.bookmark, comment], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-info btn-xs'  %>
+<h6>Reply to this comment</h6>
+  <%= render 'subcomments/form' %>
 <hr>  
