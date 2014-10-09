@@ -1,6 +1,7 @@
 class BookmarksController < ApplicationController
   # this will run beofre everything, just refactoring DRY don't repeat yourself
-  before_action :find_bookmark, only: [:show, :destroy] #:edit, :destroy
+  before_action :find_bookmark, only: [:show, :destroy, :edit, :update]
+
   def index
     @bookmarks = Bookmark.all
   end
@@ -21,6 +22,17 @@ class BookmarksController < ApplicationController
   def destroy
     @bookmark.destroy
     redirect_to bookmarks_path
+  end
+
+  def edit
+  end
+
+  def update
+    if @bookmark.update(allowed_params)
+      redirect_to bookmark_path
+    else
+      render "edit"
+    end
   end
 
 # these can be called only from within the methods of this class only
