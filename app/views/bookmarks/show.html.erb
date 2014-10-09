@@ -35,7 +35,7 @@
     </ol>
   </p>
 </div>
-<%= link_to 'Add New Comment', new_comment_path %> |
+<%= link_to 'Add New Comment', new_comment_path(@bookmark) %> |
 <%= link_to 'Edit Bookmark', edit_bookmark_path(@bookmark) %> |
 <%= link_to 'Delete Bookmark', @bookmark, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', bookmarks_path %>

@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
 
   def new
     binding.pry
-    @comment = Comment.create(comment_params)
+    @comment = Comment.new
   end
 
   def update
