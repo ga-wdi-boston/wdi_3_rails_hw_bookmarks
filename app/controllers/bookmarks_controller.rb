@@ -6,6 +6,9 @@ class BookmarksController < ApplicationController
   end
 
   def show
+    @bookmark = Bookmark.find(params[:id])
+    @comment = @bookmark.comment.build
+    @comments = @bookmark.comments
   end
 
   def new

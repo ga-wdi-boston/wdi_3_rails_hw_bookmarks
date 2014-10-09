@@ -1,10 +1,6 @@
 <%= form_for(@comment) do |f| %>
-  <div class="field">
-    <%= f.hidden_field :bookmark_id %>
-    <%= f.text_area_tag :message size: "24x6" %>
-  </div>
+  <%= f.hidden_field :bookmark_id %>
+  <%= f.text_area(:message, size:"24x6") %>
 
-  <div class="actions">
-    <%= f.submit "Post Comment" %>
-  </div>
+  <%= f.submit "Post Comment" %>
 <% end %>
