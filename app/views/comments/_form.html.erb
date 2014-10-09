@@ -10,12 +10,7 @@
       </ul>
     </div>
   <% end %>
-
   <%= f.hidden_field :bookmark_id %>
-  <div class="field">
-    <%= f.label Bookmark %><br>
-    <%= f.text_field @comment.bookmark.title %>
-  </div>
   <div class="field">
     <%= f.label :content %><br>
     <%= f.text_field :content %>
