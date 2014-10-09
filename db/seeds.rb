@@ -26,13 +26,13 @@ bookmarks_list.each do |title, category, description, favorite, url, id|
   Bookmark.create(title: title, category: category, description: description, favorite: favorite, url: url, id: id)
 
   comments_list = [
-    ["Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.", "John Smith", id],
-    ["Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.", "stephen", id],
-    ["Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna", "r.c.", id],
-    ["Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.", "samantha richards", id]
+    ["Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.", "John Smith"],
+    ["Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.", "stephen"],
+    ["Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna", "r.c."],
+    ["Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.", "samantha richards"]
   ]
 
-  comments_list.each do |message, name, bookmark_id|
-    Comment.create(message: message, name: name, bookmark_id: bookmark_id)
+  comments_list.each do |message, name|
+    Comment.create(message: message, name: name, bookmark_id: id)
   end
 end
