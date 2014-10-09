@@ -1,7 +1,9 @@
 <!-- links to the stylesheet -->
-<link rel="stylesheet" href="assets/stylesheet/show_stylesheet.css" >
+<!-- <link rel="stylesheet" href="assets/stylesheet/show_stylesheet.css" > -->
 <!-- below are all the things of bookmark that
 are to be displayed when you ask to show a entry -->
+
+
 <div>
   <p>
     <h5>URL:</h5>
@@ -27,15 +29,25 @@ are to be displayed when you ask to show a entry -->
     <h5>Favorite:</h5>
     <%= @bookmark.favorite %>
   </p>
-
-  <ul>
-   <h5> Comments: </h5>
-    <% @comments.each do |c| %>
-      <li><%= c.comment %></li>
-    <%end%>
-  </ul>
-
-<!-- links to edit the bookmark, and link back to index -->
-    <%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
-    <%= link_to 'Back', bookmarks_path %>
 </div>
+  <%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
+  <%= link_to 'Back', bookmarks_path %>
+<ul>
+ <h5> Comments: </h5>
+  <% @comments.each do |c| %>
+    <li><%= c.comment %></li>
+  <%end%>
+</ul>
+
+<h2> New Comment </h2>
+
+<%= form_for @comment do |f| %>
+  <%= f.hidden_field :bookmark_id %>
+  <%= f.label :comment %>
+  <%= f.text_area :comment %>
+  <%= f.submit %>
+<%end%>
+
+
+
+

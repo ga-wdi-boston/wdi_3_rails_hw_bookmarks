@@ -15,6 +15,8 @@ class BookmarksController < ApplicationController
 #based upon the id of the bookmark within the table
   def show
     @comments = @bookmark.comments
+    @bookmark = Bookmark.find(params[:id])
+    @comment = @bookmark.comments.new
   end
 
 
