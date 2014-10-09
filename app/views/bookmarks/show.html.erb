@@ -21,6 +21,7 @@
 
 <%= form_for @comment do |f| %>
   <%= f.text_field :body %>
+  <%= f.hidden_field :bookmark_id %>
   <%= f.submit "Add Comment" %>
 <% end %>
 
