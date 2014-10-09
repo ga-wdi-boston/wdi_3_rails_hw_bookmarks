@@ -1,5 +1,5 @@
 <div class='display'>
-<%= form_for @bookmark do |f| %>
+<%= form_for([@bookmark, @comment]) do |f| %>
 	<% if @bookmark.errors.any? %>
 		<div id="error_explanation">
 			<h2><%= pluralize(@bookmark.errors.count, "error") %> prohibited this bookmark from being saved:</h2>
@@ -20,6 +20,11 @@
 <div class="field">
 	<%= f.label :title %><br>
 	<%= f.text_field :title %>
+</div>
+
+<div class="field">
+	<%= f.label :comment %><br>
+	<%= f.text_field :comment %>
 </div>
 
 <div class="field">

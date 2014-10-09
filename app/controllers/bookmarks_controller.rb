@@ -16,6 +16,7 @@ class BookmarksController < ApplicationController
 
 	def create
 		@bookmark = Bookmark.new(bookmark_params)
+		@comment = @bookmark.comments.new
 
 		respond_to do |format|
 			if @bookmark.save
