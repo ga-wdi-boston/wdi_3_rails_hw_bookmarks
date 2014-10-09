@@ -1,10 +1,15 @@
 class CommentsController < ApplicationController
   def index
     @comments = Comment.order(:created_at)
+    @bookmark = Bookmark.find(params[:id])
+  end
+
+  def new
+    @comment = Comment.new
   end
 
   def create
-    @comment = Bookmark.create(comment_params)
+    @comment = Comment.new(comment_params)
     redirect_to @comment.bookmark
   end
 

@@ -1,28 +1,16 @@
 class BookmarksController < ApplicationController
-  before_action :set_bookmark, only: [:show, :edit, :update, :destroy]
+  before_action :find_bookmark, only: [:show, :edit, :update, :destroy]
 
   def index
     @bookmarks = Bookmark.order(:title)
   end
 
   def show
-    @bookmark = Bookmark.find(params[:id])
     @comment = @bookmark.comments.build
     @comments = @bookmark.comments
   end
 
-  def create
-    @bookmark = Bookmark.new(bookmark_params)
-
-    if @bookmark.save
-      redirect_to @bookmark, notice: 'Bookmark was successfully created.'
-    else
-      render :new
-    end
-  end
-
-  def new
-    @bookmark = Bookmark.new
+  def edit
   end
 
   def update
@@ -33,7 +21,17 @@ class BookmarksController < ApplicationController
     end
   end
 
-  def edit
+  def new
+    @bookmark = Bookmark.new
+  end
+
+  def create
+    @bookmark = Bookmark.new(bookmark_params)
+    if @bookmark.save
+      redirect_to @bookmark, notice: 'Bookmark was successfully created.'
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -42,7 +40,7 @@ class BookmarksController < ApplicationController
   end
 
   private
-    def set_bookmark
+    def find_bookmark
       @bookmark = Bookmark.find(params[:id])
     end
 

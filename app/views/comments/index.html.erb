@@ -1,0 +1,11 @@
+<table>
+  <% @comments.each do |comment| %>
+  <tr>
+    <td>
+      <%= comment.message %>
+      <br>
+      <strong><%= comment.name %></strong>
+    </td>
+  </tr>
+
+</table>
