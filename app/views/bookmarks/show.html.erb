@@ -31,13 +31,13 @@
 
 <hr>
 
-<% @comments.each do |comment| %>
+<% @bookmark.comments.each do |comment| %>
   <p>
     <%= comment.message %>
     <br>
     <strong><%= comment.name %></strong>
     <br>
-    <%= comment.time %>
+    <%= comment.created_at %>
   </p>
 <% end %>
 

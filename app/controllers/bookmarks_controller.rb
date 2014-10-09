@@ -6,9 +6,8 @@ class BookmarksController < ApplicationController
   end
 
   def show
-    @comment = @bookmark.comments.build
-    @comments = @bookmark.comments
-    time = @commented.created_at
+    @bookmark = Bookmark.find(params[:id])
+    @comment = Comment.new(bookmark_id: params[:id])
   end
 
   def edit
