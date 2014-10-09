@@ -5,7 +5,7 @@
 * Start your server
 * Navigate to http://localhost:3000
 
-This version of Bookmarkr&trade allows for:
+This version of Bookmarkr allows for:
 
 * creating, editing and deleting bookmarks
 * creating, editing, and deleting comments on bookmarks
@@ -17,26 +17,28 @@ This version of Bookmarkr&trade allows for:
 #### Day 1
 
 * <del>App has a database schema with appropriate columns and indexes</del>
-* App has working seed data that creates a variety of bookmarks
-* User can view bookmarks in an alphabetical list with titles/categories (category optional)
-* User can view all attributes of a specific bookmark
-* User can submit new bookmarks
-* User can edit the attributes of existing bookmarks
-* User can delete existing bookmarks
-* App has at least basic styles to provide an attractive and intuitive experience
-* App generates HTML and CSS that validates with no errors
-* Code is placed in the correct locations and files according to Rails conventions
-* Code follows style conventions and has descriptive variable and method names
-* Repository has clean, logical, single-task commits with descriptive messages
+* <del>App has working seed data that creates a variety of bookmarks</del>
+* <del>User can view bookmarks in an alphabetical list with titles/categories (category optional)</del>
+* <del>User can view all attributes of a specific bookmark</del>
+* <del>User can submit new bookmarks</del>
+* <del>User can edit the attributes of existing bookmarks</del>
+* <del>User can delete existing bookmarks</del>
+* <del>App has at least basic styles to provide an attractive and intuitive experience</del>
+* <del>App generates HTML and CSS that validates with no errors</del>
+* <del>Code is placed in the correct locations and files according to Rails conventions</del>
+* <del>Code follows style conventions and has descriptive variable and method names</del>
+* <del>Repository has clean, logical, single-task commits with descriptive messages</del>
 
 #### Day 2
 
-* View all comments on a bookmark on the bookmark's show page. 
-* Delete a comment
-* Edit a comment on another page
+* <del>View all comments on a bookmark on the bookmark's show page. </del>
+* <del>Delete a comment</del>
+* <del>Edit a comment on another page</del>
 * View a specific singular comment
-* See the number of comments each Bookmark has on the Bookmark index
-* When you delete a bookmark, make it so that the comments are automatically deleted
+* <del>See the number of comments each Bookmark has on the Bookmark index</del>
+* <del>When you delete a bookmark, make it so that the comments are automatically deleted</del>
+
+
 
 
 *"Who got this CRUD all over my bookmarks?"*
