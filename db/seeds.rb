@@ -8,7 +8,6 @@
 
 Bookmark.delete_all
 
-
 bookmarks_list = [
   ["Google", "Useful", "Search Engine", true, "http://www.google.com"],
   ["New York Times", "Serious", "News", true, "http://www.nytimes.com"],
@@ -23,3 +22,4 @@ bookmarks_list = [
 bookmarks_list.each do |title, category, description, favorite, url|
   Bookmark.create( title: title, category: category, description: description, favorite: favorite, url: url)
 end
+
