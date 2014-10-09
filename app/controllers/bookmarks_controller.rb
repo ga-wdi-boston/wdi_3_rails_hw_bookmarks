@@ -9,12 +9,20 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    # Bookmark.create(url: url, title: title,)
-    # binding.pry
+    @bookmark = Bookmark.new(allowed_params)
+    @bookmark.save
+    redirect_to action: :index
   end
-  def book_params
-      params.require(:entry).permit(:message, :name)
+
+  def destroy
+    @bookmark.destroy
+    redirect_to action: :index
   end
+
+  def allowed_params
+    params.require(:bookmark).permit(:url, :title, :description, :category, :checkbox)
+  end
+
 end
 
 
