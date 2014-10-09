@@ -1,1 +1,12 @@
-<h1>Bookmark View</h1>
+<h1>This is Bookmark for <%= @bookmark[:url] %></h1>
+
+<table border="1">
+  <tr><td>Title:</td><td> <%= link_to @bookmark.title, @bookmark.url %> </td></tr>
+  <tr><td>Description:</td><td> <%= @bookmark.description %> </td></tr>
+  <tr><td>Category:</td><td> <%= @bookmark.category %> </td></tr>
+  <tr><td>Checkbox:</td><td> <%= @bookmark.checkbox %> </td></tr>
+  <tr><td>Created:</td><td> <%= @bookmark.created_at %> </td></tr>
+  <tr><td>Updated:</td><td> <%= @bookmark.updated_at %> </td></tr>
+</table>
+
+<%= link_to "Back to All Bookmarks", bookmarks_path %>

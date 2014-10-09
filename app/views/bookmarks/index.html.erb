@@ -3,7 +3,7 @@
 <table border="1">
   <% @bookmarks.each do |bookmark| %>
     <tr>
-      <td> <%= bookmark.url %> </td>
+      <td> <%= link_to bookmark.url, bookmark.url %> </td>
       <td> <%= bookmark.title %> </td>
       <td> <%= bookmark.description %> </td>
       <td> <%= bookmark.category %> </td>
