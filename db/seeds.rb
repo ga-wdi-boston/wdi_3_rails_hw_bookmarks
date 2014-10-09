@@ -5,6 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Bookmark.create(url: 'http://mashable.com/', title: 'Mashable')
-Bookmark.create(url: 'http://www.wired.com/', title: 'Wired', comment: 'Comment also', category: 'News', checked: true)
-Bookmark.create(url: 'http://tutsplus.com/', title: 'Tuts', comment: 'Comment')
+
+mashable = Bookmark.create(url: 'http://mashable.com/', title: 'Mashable')
+wired = Bookmark.create(url: 'http://www.wired.com/', title: 'Wired', category: 'News', checked: true)
+tuts = Bookmark.create(url: 'http://tutsplus.com/', title: 'Tuts')
+
+mashable.comments.create(comment: 'Mashable is one of the best technology news website in the world.')
+wired.comments.create(comment: 'Wired is the most seccussful new stand in the world')
+wired.comments.create(comment: 'Wired also has a magazine.')
+tuts.comments.create(comment: 'Tuts is both news and educational website that teaches about cs.')
+
+
