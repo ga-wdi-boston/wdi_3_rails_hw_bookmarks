@@ -1,3 +1,29 @@
+
+## Day 2 -- COMMENTS
+
+Each bookmark has many comments.
+Comments database (belongs_to :bookmarks)
+  * Message (string)
+  * Name (string)
+
+
+## Show Page Requirements
+After bookmark info:
+  * Form for new comment
+  * Show submitted comments below form
+      - sort by most recent at the top.
+
+## New Comment Submission
+  * Upon submit redirect to show page, with blank form and last submitted comment at the top of all comments
+  * for later -- include navigation to show comments 10 at a time. 'previous' button for last 10, etc. 'next' for earlier 10.
+
+## Comment Form
+  * Maybe create separate _form file, and `render 'form' inside show view?
+
+
+
+## Day 1 -- BOOKMARKS
+
 Database: Bookmarks
 
 Entry Attributes / Columns:
@@ -53,13 +79,7 @@ NEXT STEPS AFTER DAY 1:
   * Repository has clean, logical, single-task commits with descriptive messages
 
 
-## Day 2 -- COMMENTS
 
-Each bookmark has many comments.
-Comment database (belongs_to :bookmarks)
-  * Message (string)
-  * Name (string)
-  *
 
 Make use of the `has_many` relationship to add the ability of commenting on each bookmark. A user should be able to:
 
