@@ -26,8 +26,15 @@
 <h2>Comments</h2>
 <ol>
 <% @bookmark.comments.each do |comment| %>
-  <li><%= comment.body %></li>
+  <li><%= comment.body %>
+    <ul class="comment-menu">
+        <li>View</li>
+        <li>Edit</li>
+        <li>Delete</li>
+    </ul>
+  </li>
 <% end %>
+<!-- <% binding.pry %> -->
 </ol>
 
 <%= form_for @comment do |f| %>
