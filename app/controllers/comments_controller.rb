@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+  before_action :find_comment, only: [:show, :edit, :update, :destroy]
+
   def create
     @comment = Comment.create(comment_params)
     redirect_to @comment.bookmark#bookmarks_path(Bookmark.comment#@comment.bookmark
@@ -8,10 +10,8 @@ class CommentsController < ApplicationController
 
   def show
     # @bookmark = Bookmark.find(params[:id])
-    @comment = Comment.find(params[:id])
-
-
-
+    # @comment = Comment.find(params[:id])
+    # find_comment
   end
 
 
@@ -20,19 +20,20 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = Comment.find(params[:id])
+    # find_comment
+    # @comment = Comment.find(params[:id])
   end
 
 
   def update
-    @comment = Comment.find(params[:id])
+    # @comment = find_comment #Comment.find(params[:id])
     @comment.update(comment_params)
     redirect_to @comment.bookmark
   end
 
   def destroy
     # binding.pry
-    @comment = Comment.find(params[:id])
+    # @comment = find_comment   #Comment.find(params[:id])
     # @comment.destroy
     # binding.pry
     @comment.destroy #(comment_params)
@@ -46,7 +47,8 @@ class CommentsController < ApplicationController
   private
 
   def find_comment
-    @comment = Bookmark.comment.find(Bookmark.comment)#Comment.find(params[:id])
+    # @comment = Bookmark.comment.find(Bookmark.comment)#Comment.find(params[:id])
+    @comment = Comment.find(params[:id])
   end
 
 
