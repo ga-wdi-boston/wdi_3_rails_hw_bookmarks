@@ -10,7 +10,8 @@
       <td> <%= bookmark.checkbox %> </td>
       <td> <%= bookmark.created_at %> </td>
       <td> <%= bookmark.updated_at %> </td>
-      <td> <%= link_to "Delete", {controller: :bookmarks, action: :destroy, id: bookmark } %> </td>
+      <td><%= link_to 'Show Bookmark', bookmark_path(bookmark) %></td>
+      <td> <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure'}, class: 'button' %> </td>
       <td> <%= link_to "Edit" %> </td>
     </tr>
   <% end %>
