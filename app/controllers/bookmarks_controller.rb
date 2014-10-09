@@ -17,6 +17,9 @@ class BookmarksController < ApplicationController
   end
 
   def show
+    @bookmark_comments = @bookmark.comments
+    # @comments = Comment.all
+    # @bookmark_comments = @comments.where(bookmark_id: params[:id])
   end
 
   def destroy

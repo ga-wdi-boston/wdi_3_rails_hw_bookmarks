@@ -12,3 +12,9 @@
 <%= link_to "Edit Bookmark", edit_bookmark_path %>
 <br><%= link_to "Back to All Bookmarks", bookmarks_path %>
 
+<table border="1">
+  <% @bookmark_comments.each do |comment| %>
+    <tr><td><%= comment.body %></td></tr>
+  <% end %>
+</table>
+<%= link_to "Add Comment" %>
