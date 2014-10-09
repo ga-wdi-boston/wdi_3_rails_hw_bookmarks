@@ -25,11 +25,11 @@
     <strong>Comments:</strong>
     <ol>
       <% @bookmark.comments.each do |comment| %>
-        <li><%= comment.content %></li>
+        <li><%= comment.content %><%= link_to "Edit Comment", edit_comment_path(comment) %></li>
       <% end %>
     </ol>
   </p>
 </div>
-<%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
-<%= link_to 'Destroy', @bookmark, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Edit Bookmark', edit_bookmark_path(@bookmark) %> |
+<%= link_to 'Destroy Bookmark', @bookmark, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', bookmarks_path %>
