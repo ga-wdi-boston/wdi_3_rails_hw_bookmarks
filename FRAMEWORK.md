@@ -12,6 +12,7 @@ After bookmark info:
   * Form for new comment
   * Show submitted comments below form
       - sort by most recent at the top.
+      - maybe create a separate view template for comments index page and render view inside bookmark show page?
 
 ## New Comment Submission
   * Upon submit redirect to show page, with blank form and last submitted comment at the top of all comments
