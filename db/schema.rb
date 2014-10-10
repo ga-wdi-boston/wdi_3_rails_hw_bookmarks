@@ -25,9 +25,10 @@ ActiveRecord::Schema.define(version: 20141008232450) do
   end
 
   create_table "comments", force: true do |t|
-    t.string  "message"
-    t.string  "name"
-    t.integer "bookmark_id"
+    t.string   "message"
+    t.string   "name"
+    t.datetime "created_at",  null: false
+    t.integer  "bookmark_id"
   end
 
   add_index "comments", ["bookmark_id"], name: "index_comments_on_bookmark_id", using: :btree

@@ -1,43 +1,52 @@
 <p id="notice"><%= notice %></p>
 
-<h2><%= @bookmark.title %></h2>
 
-<p>
+<p><%= link_to 'Edit Bookmark', edit_bookmark_path(@bookmark) %> | <%= link_to 'Back to Bookmarks', bookmarks_path %></p>
+
+<h2><%= @bookmark.title %></h2>
+  <p>
   <strong>Description:</strong>
   <%= @bookmark.description %>
-</p>
+  </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @bookmark.category %>
-</p>
+  <p>
+    <strong>Category:</strong>
+    <%= @bookmark.category %>
+  </p>
 
-<p>
-  <strong>Favorite:</strong>
-  <%= @bookmark.favorite %>
-</p>
+  <p>
+    <strong>Favorite:</strong>
+    <%= @bookmark.favorite %>
+  </p>
 
-<p>
-  <strong>URL:</strong>
-  <%= @bookmark.url %>
-</p>
+  <p>
+    <strong>URL:</strong>
+    <%= link_to @bookmark.url, @bookmark.url %>
+  </p>
 
-<%= link_to 'Edit Bookmark', edit_bookmark_path(@bookmark) %> | <%= link_to 'Back to Bookmarks', bookmarks_path %>
-
+<br>
 
 <h3>Comments</h3>
 
-<%= render 'comment_form' %>
+<%= form_for(@comment) do |f| %>
+  <div class="field">
+    <%= f.hidden_field :bookmark_id %><br>
+    <%= f.text_field :name, placeholder: "Your Name" %><br><br>
+    <%= f.text_area(:message, placeholder: "Comment", size: "75x6") %><br>
+    <br>
+  </div>
+  <div class="action">
+    <%= f.submit "Post Comment" %>
+  </div>
+<% end %>
 
 <hr>
 
 <% @bookmark.comments.each do |comment| %>
   <p>
-    <%= comment.message %>
-    <br>
     <strong><%= comment.name %></strong>
     <br>
-    <%= comment.created_at %>
+    <%= comment.message %>
   </p>
 <% end %>
 

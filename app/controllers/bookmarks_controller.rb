@@ -6,8 +6,8 @@ class BookmarksController < ApplicationController
   end
 
   def show
-    @bookmark = Bookmark.find(params[:id])
     @comment = Comment.new(bookmark_id: params[:id])
+    # @comments = Comment.order(:created_at :desc)
   end
 
   def edit
