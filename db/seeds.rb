@@ -10,24 +10,24 @@ Bookmark.delete_all
 Comment.delete_all
 
 def run_seed(bookmarks_list, comments_list)
-  bookmarks_list.each do |title, category, description, favorite, url, id|
-    Bookmark.create(title: title, category: category, description: description, favorite: favorite, url: url, id: id)
+  bookmarks_list.each do |title, category, description, favorite, url|
+    new_bookmark = Bookmark.create(title: title, category: category, description: description, favorite: favorite, url: url)
 
     comments_list.each do |message, name, created_at|
-      Comment.create(message: message, name: name, created_at: created_at, bookmark_id: id)
+      Comment.create(message: message, name: name, created_at: created_at, bookmark_id: new_bookmark.id)
     end
   end
 end
 
   bookmarks_list = [
-    ["Google", "Useful", "Search Engine", true, "http://www.google.com", 1],
-    ["New York Times", "Serious", "News", true, "http://www.nytimes.com", 2],
-    ["Just Jared", "Funny", "Celebrity Nonsense", false, "http://www.justjared.com", 3],
-    ["Pinterest", "Useful", "Ideas, photos, other cool stuff", false, "http://www.pinterest.com", 4],
-    ["General Assembly", "Serious", "All things WDI", true, "http://generalassemb.ly", 5],
-    ["Amazon", "Useful", "Shopping mecca", true, "http://www.amazon.com", 6],
-    ["CelticsBlog", "Useful", "Celtics news, scores, discussion, and other stuff.", true, "http://www.celticsblog.com", 7],
-    ["The Ultimate Siri Guide", "Useful", "Walkthrough of most important Siri dictation commands.", false, "http://www.idownloadblog.com/2014/03/08/siri-guide/", 8]
+    ["Google", "Useful", "Search Engine", true, "http://www.google.com"],
+    ["New York Times", "Serious", "News", true, "http://www.nytimes.com"],
+    ["Just Jared", "Funny", "Celebrity Nonsense", false, "http://www.justjared.com"],
+    ["Pinterest", "Useful", "Ideas, photos, other cool stuff", false, "http://www.pinterest.com"],
+    ["General Assembly", "Serious", "All things WDI", true, "http://generalassemb.ly"],
+    ["Amazon", "Useful", "Shopping mecca", true, "http://www.amazon.com"],
+    ["CelticsBlog", "Useful", "Celtics news, scores, discussion, and other stuff.", true, "http://www.celticsblog.com"],
+    ["The Ultimate Siri Guide", "Useful", "Walkthrough of most important Siri dictation commands.", false, "http://www.idownloadblog.com/2014/03/08/siri-guide/"]
   ]
 
   comments_list = [
