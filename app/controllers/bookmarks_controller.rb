@@ -1,6 +1,7 @@
 class BookmarksController < ApplicationController
   # this will run beofre everything, just refactoring DRY don't repeat yourself
   before_action :find_bookmark, only: [:show, :destroy, :edit, :update]
+  before_action :authenticate_user!, except: [:show, :index]
 
   def index
     @bookmarks = Bookmark.all
