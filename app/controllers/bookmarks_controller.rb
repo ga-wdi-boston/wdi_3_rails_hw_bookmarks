@@ -5,6 +5,7 @@ class BookmarksController < ApplicationController
 
   def index
     @bookmarks = Bookmark.all
+    # @user = current_user
   end
 
   def new
@@ -18,9 +19,10 @@ class BookmarksController < ApplicationController
   end
 
   def show
-    # binding.pry
     @bookmark_comments = @bookmark.comments
     @comment = Comment.new(bookmark_id: @bookmark.id)
+    @users = User.all
+    # binding.pry
     # @comments = Comment.all
     # @bookmark_comments = @comments.where(bookmark_id: params[:id])
   end

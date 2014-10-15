@@ -12,16 +12,29 @@
 <%= link_to "Edit Bookmark", edit_bookmark_path %>
 <br><%= link_to "Back to All Bookmarks", bookmarks_path %>
 
-<br><h3>comments:</h3>
-<table border="1">
-  <% @bookmark_comments.each do |comment| %>
-    <tr><td><%= comment.body %></td></tr>
-  <% end %>
-</table>
 
-<%= form_for @comment do |f| %>
-  <%= f.text_field :body %>
-  <%= f.hidden_field :bookmark_id %>
-  <%= f.submit "Add Comment" %>
+<% if @bookmark_comments.empty? %>
+  <p> this bookmark has no comments </p>
+<% else %>
+  <br><h3>comments:</h3>
+  <table border="1">
+    <% @bookmark_comments.each do |comment| %>
+    <tr><td><%= comment.body %></td><td><%= @users.find(comment.user_id).email %></td></tr>
+    <% end %>
+  </table>
+<% end %>
+
+
+
+
+<% if user_signed_in? %>
+  <%= form_for @comment do |f| %>
+    <%= f.text_field :body %>
+    <%= f.hidden_field :bookmark_id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.submit "Add Comment" %>
+  <% end %>
+<% else %>
+  <p>Log in to leave a comment...</p>
 <% end %>
 

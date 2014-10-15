@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
   private
 
   def allowed_params
-    params.require(:comment).permit(:body, :bookmark_id)
+    params.require(:comment).permit(:body, :bookmark_id, :user_id)
   end
 
 end
