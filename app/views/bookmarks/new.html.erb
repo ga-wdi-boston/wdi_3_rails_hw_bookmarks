@@ -1,21 +1,7 @@
 
 <h1>Enter new bookmark:</h1>
 
-<%= form_for @bookmark do |f| %>
-  <%= f.label :url %>
-  <%= f.text_field :url %>
-  <br><%= f.label :title %>
-  <%= f.text_field :title %>
-  <br><%= f.label :description %>
-  <%= f.text_field :description %>
-  <br><%= f.label :category %>
-  <%= f.text_field :category %>
-  <br><%= f.label :checkbox %>
-  <%= f.text_field :checkbox %>
-
-  <br><%= f.submit "Add Bookmark" %>
-<% end %>
+<%= render 'bookmarks/bookmark_form' %>
 
 <%= link_to "Back to All Bookmarks", bookmarks_path %>
 
-<!-- url: {action: "create"}, html: {class: "nifty_form"} -->

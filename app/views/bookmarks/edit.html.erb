@@ -1,18 +1,6 @@
 <h1>Edit this Bookmark</h1>
 
-<%= form_for @bookmark do |f| %>
-  <%= f.label :url %>
-  <%= f.text_field :url %>
-  <br><%= f.label :title %>
-  <%= f.text_field :title %>
-  <br><%= f.label :description %>
-  <%= f.text_field :description %>
-  <br><%= f.label :category %>
-  <%= f.text_field :category %>
-  <br><%= f.label :checkbox %>
-  <%= f.text_field :checkbox %>
+<%= render 'bookmarks/bookmark_form' %>
 
-  <br><%= f.submit "Save Bookmark" %>
-<% end %>
 <br><%= link_to "Back to All Bookmarks", bookmarks_path %>
 
