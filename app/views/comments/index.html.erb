@@ -1,0 +1,8 @@
+<h2>Comments</h2>
+
+<div>
+	<% @comments.each do |comment| %>
+		<p><strong><%= comment.bookmark.title %></strong></p>
+		<p><%= comment.comment %></p>
+	<% end %>
+</div>

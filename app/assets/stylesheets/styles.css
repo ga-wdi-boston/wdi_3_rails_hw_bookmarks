@@ -1,0 +1,18 @@
+.actions {
+	text-decoration: none;
+	border: 1px solid #800000;
+	background-color: black;
+	color: white;
+	width: 100px;
+	height: 30px;
+}
+
+.actions:hover {
+	background-color: #800000;
+	cursor: pointer;
+}
+
+.display {
+	background-color: lightgrey;
+	width: 50%;
+}

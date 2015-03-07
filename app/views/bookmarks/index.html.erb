@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bookmarks</title>
+	</head>
+	<body>
+		<p id="notice"><%= notice %></p>
+		
+		<h1>Bookmarks</h1>
+	
+		
+		<table class='display'>
+			<thead>
+				<tr>
+					<th align='left'>Title</th>
+					<th align='left'>Commented</th>
+					<th align='left'>Favorites</th>
+				</tr>
+			</thead>
+		
+			<tbody>
+		
+				<% @bookmarks.sort_by {|bookmark| bookmark.title} %>
+				<% @bookmarks.each do |bookmark| %>
+					<tr>
+						<td><%= link_to(bookmark.title, bookmark.url) %></td>
+						<td></td>
+						<% if bookmark.checked %>
+							<td>*</td>
+						<% else %>
+							<td>-</td>
+						<% end %>
+						<td><%= link_to 'Attributes', bookmark, class: 'actions' %></td>
+						<td><%= link_to 'Edit', edit_bookmark_path(bookmark), class: 'actions' %></td>
+						<td><%= link_to 'Delete', bookmark, class: 'actions', method: :delete, data: { confirm: 'Are you sure?'} %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<br>
+		
+		
+		<%= link_to "Add Bookmark", new_bookmark_path, class: 'actions'  %>
+	
+	</body>
+</html>

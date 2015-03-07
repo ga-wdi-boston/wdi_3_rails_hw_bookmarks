@@ -1,0 +1,30 @@
+<div class='display'>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+	<strong>Title:</strong>
+	<%= @bookmark.title %>
+</p>
+
+<p>
+	<strong>URL:</strong>
+	<%= @bookmark.url %>
+</p>
+
+<p>
+	<strong>Comment:</strong>
+	<%= @comment.comment %>
+</p>
+
+<p>
+	<strong>Category:</strong>
+	<%= @bookmark.category %>
+</p>
+
+<p>
+	<strong>Checked:</strong>
+	<%= @bookmark.checked %>
+</p>
+</div>
+<%= link_to '<<Back', bookmarks_path, class: 'actions' %>
