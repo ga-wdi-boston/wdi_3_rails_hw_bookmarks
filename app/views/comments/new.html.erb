@@ -1,0 +1,7 @@
+<%= form_for @comment do |f| %>
+  <%= f.hidden_field :bookmark_id %>
+  <%= f.text_field :content, placeholder: "Comment" %><br>
+<%= f.submit "Submit" %>
+<% end %>
+
+<%= link_to 'Back', bookmarks_path %>

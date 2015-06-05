@@ -1,5 +1,8 @@
+#I NEED TO ADD BOOTSTRAP AFTER I FINISH SPECS
+
+
 source 'https://rubygems.org'
-ruby "2.1.3"
+ruby "2.1.2"
 
 gem 'rails', '4.2.0.beta2'
 gem 'pg'
