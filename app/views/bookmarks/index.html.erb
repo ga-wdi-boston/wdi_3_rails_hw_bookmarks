@@ -1,0 +1,28 @@
+<h1>Look at alllllll my bookmarks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Description?</th>
+      <th>Favorited?</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookmarks.each do |bookmark| %>
+      <tr>
+        <td><%= link_to bookmark.title, bookmark.url %></td>
+        <td><%= bookmark.category %></td>
+        <td><%= "y" if bookmark.comment != "" %></td>
+        <td><%= "y" if bookmark.favorite_flag if bookmark.favorite_flag==true %></td>
+        <td><%= link_to 'View More', bookmark %></td>
+      </tr>
+    <% end %>
+  </tbody>
+ </table>
+
+<p>
+  <%= link_to 'Add a New Bookmark', new_bookmark_path %>
+</p>
