@@ -1,0 +1,13 @@
+/*connected stylesheet to show.html.erb*/
+
+div {
+  background-color: yellow;
+}
+
+p {
+  color: green;
+}
+
+p strong {
+  color:blue;
+}

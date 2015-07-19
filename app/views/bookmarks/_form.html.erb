@@ -1,0 +1,35 @@
+<!-- #sets up the form for bookmark -->
+<%= form_for(@bookmark) do |f| %>
+
+<!-- all the classes of 'field' below are what actually
+get the user input from the user -->
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+
+   <div class="field">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+  </div>
+
+   <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_field :description %>
+  </div>
+
+   <div class="field">
+      <%= f.label :category %><br>
+      <%= f.text_field :category %>
+  </div>
+
+   <div class="field">
+      <%= f.label :favorite %><br>
+      <%= f.check_box :favorite %>
+  </div>
+  <!-- class actions is what actually submits the
+  new bookmark/update/delete -->
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

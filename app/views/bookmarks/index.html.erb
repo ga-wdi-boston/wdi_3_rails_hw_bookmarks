@@ -1,0 +1,43 @@
+<!-- this is the hearder of the idex -->
+<heading>
+  <h1>Here is a list of all the bookmarks:</h1>
+</heading>
+
+<!-- this is creates a table -->
+<table>
+<!-- this specifies the table header -->
+  <thead>
+    <tr>
+    <!-- these set up the 'columns' for the table -->
+      <th>Title</th>
+      <!-- <th>description</th> -->
+      <th>Favorite</th>
+      <!-- <th colspan="3"></th> -->
+      <th>Number of Comments</th>
+    </tr>
+  </thead>
+<!-- this specifies the table body -->
+  <tbody>
+  <!-- runs over each bookmark and does something -->
+    <% @bookmarks.each do |bookmark| %>
+      <tr>
+      <!-- these are what go into the rows -->
+        <td><%= link_to bookmark.title, bookmark.url %></td>
+        <!-- <td><%#unless bookmark.description.empty?%> * <%#end%> </td> -->
+        <td><%if bookmark.favorite %> (yes) <%end%></td>
+        <td><%=bookmark.comments.count%> </td>
+        <td><%= link_to '(View Bookmark)', bookmark %></td>
+        <td><%= link_to '(Edit Bookmark)', edit_bookmark_path(bookmark) %></td>
+        <td><%= link_to '(Destroy Bookmark)', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- link to create a new bookmark -->
+<%= link_to '(New Bookmark)', new_bookmark_path %>
+
+
+
+
+

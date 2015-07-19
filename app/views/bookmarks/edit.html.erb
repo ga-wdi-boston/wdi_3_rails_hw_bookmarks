@@ -1,0 +1,8 @@
+<h1> Editing Entry </h1>
+<!-- uses the render html.erb file -->
+<%= render 'form' %>
+
+<!-- makes link to show the bookmark(calls show method)
+and the other link goes back to the index (index method) -->
+<%= link_to 'Show', @bookmark %> |
+<%= link_to 'Back', bookmarks_path %>

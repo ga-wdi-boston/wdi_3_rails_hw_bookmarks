@@ -1,0 +1,59 @@
+<!-- links to the stylesheet -->
+<!-- <link rel="stylesheet" href="assets/stylesheet/show_stylesheet.css" > -->
+<!-- below are all the things of bookmark that
+are to be displayed when you ask to show a entry -->
+
+
+<div>
+  <p>
+    <h5>URL:</h5>
+    <%= @bookmark.url %>
+  </p>
+
+  <p>
+    <h5>Title:</h5>
+    <%= @bookmark.title %>
+  </p>
+
+  <p>
+    <h5>Description:</h5>
+    <%= @bookmark.description %>
+  </p>
+
+  <p>
+    <h5>Category:</h5>
+    <%= @bookmark.category %>
+  </p>
+
+  <p>
+    <h5>Favorite:</h5>
+    <%= @bookmark.favorite %>
+  </p>
+</div>
+  <%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
+  <%= link_to 'Back', bookmarks_path %>
+<ul>
+ <h5> Comments: </h5>
+  <% @comments.each do |c| %>
+    <li><%= c.comment %> <%= link_to "(delete comment)", comment_path(c), method: :delete, data: { confirm: 'Are you sure?'} %> <%= link_to "(edit)", edit_comment_path(c) %> <%= link_to "(view)", comment_path(c) %></li>
+  <%end%>
+</ul>
+
+
+<h2> New Comment </h2>
+
+<%= form_for @comment do |f| %>
+  <%= f.hidden_field :bookmark_id %>
+  <%= f.label :comment %>
+  <%= f.text_area :comment %>
+  <%= f.submit %>
+
+<%end%>
+
+
+
+
+
+
+
+
