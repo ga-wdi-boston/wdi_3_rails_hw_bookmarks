@@ -18,6 +18,8 @@ group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
   # https://github.com/deivid-rodriguez/pry-byebug
   gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'awesome_print'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0.0.beta4'
