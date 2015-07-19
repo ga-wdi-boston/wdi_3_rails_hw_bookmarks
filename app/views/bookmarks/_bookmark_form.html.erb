@@ -1,0 +1,14 @@
+<%= form_for @bookmark do |f| %>
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+  <br><%= f.label :title %>
+  <%= f.text_field :title %>
+  <br><%= f.label :description %>
+  <%= f.text_field :description %>
+  <br><%= f.label :category %>
+  <%= f.select :category, [['Serious','Serious'],['Funny','Funny'],['Useful','Useful'],['Sports','Sports'],['Educational','Educational'],['News','News']] %>
+  <br>Favorite? <%= f.check_box :checkbox, {}, "favorite", "not-favorite" %>
+
+
+  <br><%= f.submit "Save Bookmark" %>
+<% end %>

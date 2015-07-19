@@ -1,0 +1,21 @@
+<h1>These are your bookmarks:</h1>
+
+<table border="1">
+  <% @bookmarks.each do |bookmark| %>
+    <tr>
+      <td> <%= link_to bookmark.url, bookmark.url %> </td>
+      <td> <%= bookmark.title %> </td>
+      <td> <%= bookmark.description %> </td>
+      <td> <%= bookmark.category %> </td>
+      <td> <%= bookmark.checkbox %> </td>
+      <td> <%= bookmark.created_at %> </td>
+      <td> <%= bookmark.updated_at %> </td>
+      <td><%= link_to 'Show Bookmark', bookmark_path(bookmark) %></td>
+      <td> <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure'}, class: 'button' %> </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "Add Bookmark", new_bookmark_path %>
+
+
