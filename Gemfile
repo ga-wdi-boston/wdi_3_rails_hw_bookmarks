@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.1.3"
+ruby "2.1.2"
 
 gem 'rails', '4.2.0.beta2'
 gem 'pg'
@@ -17,6 +17,7 @@ group :development, :test do
 
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
   # https://github.com/deivid-rodriguez/pry-byebug
+  gem 'pry-rails'
   gem 'pry-byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -28,3 +29,5 @@ group :development, :test do
   # Turn off verbose logging of asset requests
   gem 'quiet_assets'
 end
+
+gem 'foundation-rails'
