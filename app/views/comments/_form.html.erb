@@ -1,0 +1,9 @@
+<%= form_for([@bookmark, @bookmark.comments.build]) do |f| %>
+  <p>
+    <%= f.label :body, value: 'Got something to say?' %><br>
+    <%= f.text_field :body, class: 'form-control' %>
+  </p>
+  <p>
+    <%= f.submit :submit, value: 'Add Comment', class: 'btn btn-default' %>
+  </p>
+<% end %>

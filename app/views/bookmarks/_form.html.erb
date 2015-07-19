@@ -1,0 +1,26 @@
+<%= form_for @bookmark do |f| %>
+  <% if @bookmark.errors.any? %>
+    <div class="alert alert-danger" id="error_explanation">
+      <h2><%= pluralize(@bookmark.errors.count, 'error') %> prohibited this bookmark from being saved.</h2>
+      <ul>
+        <% @bookmark.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: 'form-control bkmk-input title' %>
+  </p>
+  <p>
+    <%= f.label :url %><br>
+    <%= f.url_field :url, class: 'form-control bkmk-input url' %>   
+  </p>
+  <p>
+    <%= f.label :category %><br>
+    <%= f.text_field :category, class: 'form-control bkmk-input category' %>
+  </p>
+  <p><%= f.check_box :checkbox, class: 'form-control bkmk-input checked' %><%= f.label :checkbox, 'Favorite' %></p>
+  <p><%= f.submit :submit, class: 'btn btn-primary bkmk-input submit', value: 'Save Bookmark' %></p>
+<% end %>

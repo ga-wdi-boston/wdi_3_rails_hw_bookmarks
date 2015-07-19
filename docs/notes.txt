@@ -1,0 +1,7 @@
+Edit comments
+give comments show page
+bookmark model: bind destruction to comments
+url handler, click tracking
+add subcomments to comments
+add footer with GA logo and project information
+sass sprite sheet with retina and background position

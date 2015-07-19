@@ -1,0 +1,18 @@
+<nav class="navbar navbar-fixed-top bkmkr-navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'Bookmarkr', root_path, class: 'navbar-brand' %>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'New Bookmark', new_bookmark_path %></li>
+      </ul>
+    </div>
+  </div>
+</nav>

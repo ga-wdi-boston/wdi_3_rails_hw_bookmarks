@@ -1,5 +1,45 @@
 # Bookmarkr&trade;
 
+
+* Fork and clone, rake db:reset (db:drop db:create db:migrate db:seed)
+* <code>$ bundle</code>
+* Start your server
+* Navigate to http://localhost:3000
+
+This version of Bookmarkr allows for:
+
+* creating, editing and deleting bookmarks
+* creating, editing, and deleting comments on bookmarks
+* creating tags on bookmarks
+* utilizes bootstrap for styling
+
+## Specifications
+
+#### Day 1
+
+* <del>App has a database schema with appropriate columns and indexes</del>
+* <del>App has working seed data that creates a variety of bookmarks</del>
+* <del>User can view bookmarks in an alphabetical list with titles/categories (category optional)</del>
+* <del>User can view all attributes of a specific bookmark</del>
+* <del>User can submit new bookmarks</del>
+* <del>User can edit the attributes of existing bookmarks</del>
+* <del>User can delete existing bookmarks</del>
+* <del>App has at least basic styles to provide an attractive and intuitive experience</del>
+* <del>App generates HTML and CSS that validates with no errors</del>
+* <del>Code is placed in the correct locations and files according to Rails conventions</del>
+* <del>Code follows style conventions and has descriptive variable and method names</del>
+* <del>Repository has clean, logical, single-task commits with descriptive messages</del>
+
+#### Day 2
+
+* <del>View all comments on a bookmark on the bookmark's show page. </del>
+* <del>Delete a comment</del>
+* <del>Edit a comment on another page</del>
+* View a specific singular comment
+* <del>See the number of comments each Bookmark has on the Bookmark index</del>
+* <del>When you delete a bookmark, make it so that the comments are automatically deleted</del>
+
+
 *"Who got this CRUD all over my bookmarks?"*
 
 This is a 2-day Homework, with tasks for Day 1, and separate tasks for Day 2.

@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1><%= @bookmark.title %></h1>
+      <p>URL: <%= link_to @bookmark.url, @bookmark.url %></p>
+      <p>Category: <%= @bookmark.category %></p>
+      <% if @bookmark.checkbox %>
+        <p>This link is a Favorite!</p>
+      <% end %>
+      <hr>
+    </div>
+  </div>  
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Comments:</h2>
+      <%= render @bookmark.comments %>
+      <%= render 'comments/form' %> 
+    </div>
+    <div class="col-md-4">
+      <% @bookmark.tags.each do |tag| %>
+      <a class="btn btn-info tag" href="#"><%= tag.tag_text %></a>
+      <% end %>
+      <%= render 'tags/form' %>   
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 nav-links">
+      <hr>
+      <%= link_to '< All Links', bookmarks_path, class: 'btn btn-primary' %>
+      <%= link_to 'Edit this link', edit_bookmark_path, class: 'btn btn-primary' %>
+      <%= link_to 'Delete this link', @bookmark, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-primary' %>    
+    </div>
+  </div>
+</div>
