@@ -1,0 +1,10 @@
+<%= stylesheet_link_tag "style.css" %>
+
+<h1>New Entry</h1>
+
+<%= render 'form' %>
+
+<div class="navigation">
+	<%= link_to 'New Bookmark', new_bookmark_path %>|
+	<%= link_to 'Back to Bookmarks', bookmarks_path %>
+</div>
