@@ -1,0 +1,19 @@
+body {
+  background-color: #F4F1E0;
+}
+.wrapper {
+  max-width: 1000px;
+  min-width: 400px;
+  margin: 0 auto;
+  background-color: #D77A44;
+  text-align: center;
+}
+h1, h2 {
+    padding: 15px 15px 15px 15px;
+  color: #144955;
+}
+
+th {
+  border: 2px solid #274254;
+  padding: 5px 30px 5px 30px;
+}
