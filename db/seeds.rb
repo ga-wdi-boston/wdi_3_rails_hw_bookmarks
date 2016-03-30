@@ -5,3 +5,64 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Bookmark.delete_all
+
+Bookmark.create!(
+  url: 'http://www.google.com',
+  title: 'Google',
+  comment: 'really good search engine',
+  category: 'useful',
+  is_checked_favorite: true
+  )
+
+Bookmark.create!(
+  url: 'http://www.nytimes.com',
+  title: 'New York Times Online',
+  comment: 'all the news all the time',
+  category: 'serious',
+  is_checked_favorite: true
+  )
+
+Bookmark.create!(
+  url: 'http://whatshouldwecallme.tumblr.com/',
+  title: 'WhatShouldWeCallMe',
+  category: 'funny',
+  is_checked_favorite: true
+  )
+
+Bookmark.create!(
+  url: 'http://www.ruby-doc.org/core-2.1.2/Array.html',
+  title: 'Ruby Arrays',
+  comment: 'A description of the Array Object and its methods',
+  category: 'useful',
+  is_checked_favorite: false
+  )
+
+Bookmark.create!(
+  url: 'http://www.gmail.com',
+  title: 'Gmail',
+  category: 'useful',
+  is_checked_favorite: true
+  )
+
+Bookmark.create!(
+  url: 'http://facebook.com',
+  title: 'The Facebook',
+  is_checked_favorite: true
+  )
+
+Bookmark.create!(
+  url: 'http://www.github.com',
+  title: 'Github',
+  category: 'useful',
+  is_checked_favorite: false
+  )
+
+Bookmark.create!(
+  url: 'http://www.mbta.com',
+  title: 'MBTA',
+  category: 'useful',
+  is_checked_favorite: true
+  )
+

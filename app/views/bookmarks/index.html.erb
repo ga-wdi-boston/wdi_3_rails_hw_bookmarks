@@ -1,0 +1,52 @@
+
+<div class="container">
+  <div class="hero-unit">
+    <h1 class="hero-text-index"> <%= link_to('Bookmarkr', bookmarks_path) %> </h1>
+    <p>saving bookmarks one day at a time</p>
+    <p>
+      <%= link_to('Add bookmark', new_bookmark_path, :class => "btn btn-primary btn-large") %>
+      <%= link_to('Manage bookmarks', bookmarks_manage_path, :class => "btn btn-primary btn-large") %>
+    </p>
+  </div>
+  <hr>
+  <br>
+
+  <div class='btn-group'>
+    <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
+      Category <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li> <%=link_to("Funny", bookmarks_path(category: "funny")) %> </li>
+      <li> <%=link_to("Useful", bookmarks_path(category: "useful")) %> </li>
+      <li> <%=link_to("Serious", bookmarks_path(category: "serious")) %> </li>
+   </ul>
+   </div>
+  <br>
+  <br>
+
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <ul class='list'>
+        <% @bookmarks.each do |bookmark| %>
+        <li> <%= link_to(bookmark.title, bookmark.url, :target => "_blank") %>
+             <% if bookmark.is_checked_favorite %>
+                <%= puts "x" %>
+                <% end %>
+        </li>
+          <p class="comment"> <% if bookmark.comment.present? %>
+                <%= bookmark.comment %>
+              <% end %>
+          </p>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+
+</div>
+
+
+

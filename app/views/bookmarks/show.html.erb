@@ -1,0 +1,26 @@
+
+<div class="page-header">
+  <h1 class="hero-text-header">Your Bookmark Details <small>check me out!</small></h1>
+</div>
+<br>
+
+<%= link_to('Edit this bookmark', edit_bookmark_path,:class => "btn btn-primary btn-large") %> </h4>
+<%= link_to('Delete this bookmark', @bookmark, method: :delete, data: {confirm: 'Are you sure you want to delete?'}, :class => "btn btn-primary btn-large")%>
+<br>
+<br>
+
+<ul class='list'>
+
+  <li> <%= @bookmark.title %> </li>
+  <li> <%= @bookmark.url %> </li>
+  <li> <%= @bookmark.comment %> </li>
+  <li> <%= @bookmark.category %> </li>
+
+</ul>
+<br>
+<br>
+
+
+<br>
+<br>
+<h4 class="bookmarkr"> <%= link_to('Bookmarkr', bookmarks_path) %> </h4>
