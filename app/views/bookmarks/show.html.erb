@@ -1,0 +1,10 @@
+<p>
+  Name is <%= @bookmark.title %><br>
+  URL is <%= @bookmark.url %><br>
+  Category is <%= @bookmark.category %><br>
+  Comments on this bookmark are <%= @bookmark.comment %><br><br>
+
+  <%= link_to 'Update', edit_bookmark_path(@bookmark) %>
+   <%= link_to 'Index', bookmarks_path(@bookmark)%>
+
+</p>
