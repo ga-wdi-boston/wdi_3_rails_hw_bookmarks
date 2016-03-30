@@ -1,0 +1,55 @@
+<div class='row'>
+  <div class='large-3 columns'>
+  </div>
+  <div class='large-6 columns large-offset-3'>
+    <%= form_for @bookmark do |f| %>
+      <% if @bookmark.errors.any? %>
+        <div id='error_explanation'>
+        <h2><% pluralize(@bookmark.errors.count, 'error') %> prohibited this bookmark from being saved:</h2>
+        <ul>
+        <% @bookmark.errors.full_messages.each do |bookmark|%>
+          <li><%= bookmark %></li>
+        <% end %>
+        </ul>
+        </div>
+      <% end %>
+        <div>
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+        </div>
+        <div class='row collapse'>
+          <div class="small-3 large-2 columns">
+            <span class="prefix">http://</span>
+          </div>
+          <div class="small-9 large-10 columns">
+            <%= f.text_field :url %>
+          </div>
+        </div>
+        <div>
+        <%= f.label :comment %>
+        <%= f.text_field :comment %>
+        </div>
+        <div class="row category_selection">
+          <div class='switch small'>
+            <%= f.radio_button(:category, 'Funny')%>
+            <%= f.label (:category_funny), 'Funny' %>
+          </div>
+          <div class='switch small'>
+            <%= f.radio_button(:category, 'Serious') %>
+            <%= f.label (:category_serious), 'Serious' %>
+          </div>
+          <div class='switch small'>
+            <%= f.radio_button(:category, 'Useful') %>
+            <%= f.label (:category_useful), 'Useful' %>
+          </div>
+        </div>
+        <div class="switch">
+          <%= f.check_box :is_favorite %>
+          <%= f.label :is_favorite, 'Favorite?' %>
+        </div>
+        <%= f.submit class: 'button' %>
+    <% end %>
+  </div>
+  <div class='large-3 columns'>
+  </div>
+</div>
