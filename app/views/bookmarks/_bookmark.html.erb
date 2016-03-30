@@ -1,0 +1,12 @@
+
+<br>
+<%= link_to(bookmark.title, bookmark_path(bookmark.id)) %>
+
+|<%= bookmark.category %>
+
+|<%= "Favorite" unless bookmark.is_favorite == false  %>
+
+|<%= "Comment" unless not bookmark.comment.present? %>
+
+| <%= link_to('Edit', edit_bookmark_path(bookmark)) %>
+| <%= link_to 'Delete', bookmark, method: :delete, data: {confirm: 'Are you sure?'} %>

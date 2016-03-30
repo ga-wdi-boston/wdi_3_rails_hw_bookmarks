@@ -1,0 +1,13 @@
+<p>
+<%= link_to 'Back to Index', bookmarks_path(@bookmark) %>
+<br>
+<%= @bookmark.title %>
+<br>
+<a href="<%= @bookmark.url %>" target="_blank"> <%= @bookmark.url %> </a>
+<br>
+Comment: <%= @bookmark.comment %>
+<br>
+<%= "Favorite" unless @bookmark.is_favorite == false  %>
+<br>
+<%= link_to 'Update', edit_bookmark_path(@bookmark) %>
+</p>
